@@ -1,6 +1,6 @@
 # 06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE
 
-Version : v0.2  
+Version : v0.3  
 Statut : document de travail sur l’intégration d’influences stylistiques supplémentaires.
 
 ## Objet
@@ -18,7 +18,7 @@ L’intégration doit rester :
 
 ```text
 subtile ;
-techniquement connectée au reste du système ;
+technquement connectée au reste du système ;
 esthétiquement cohérente ;
 configurable ;
 non plaquée ;
@@ -440,9 +440,12 @@ Comment garder ouvert le champ d’idées au-delà des exemples listés ?
 
 # 4. Acid
 
-## Éléments explicitement retenus
+## Statut général
 
-L’acid intéresse Vesperare par :
+L’acid n’est pas retenu comme style à importer, ni comme imitation de TB-303.  
+Il est retenu principalement comme source de phénomènes : ligne vivante, résonance contrôlée, torsion, hypnose par variation de timbre, avec acidité / accent / matière liquide ou nerveuse seulement si ces éléments sont dosés, naturalisés et intégrés avec cohérence.
+
+## Éléments explicitement retenus
 
 ```text
 ligne vivante ;
@@ -459,123 +462,164 @@ accent ;
 matière liquide / nerveuse.
 ```
 
-Ces éléments doivent être intégrés avec goût, cohérence et forte connexion au reste du style.
+Ces éléments doivent être intégrés avec goût, cohérence et forte connexion au reste du style. Ils ne doivent pas devenir des signes acid trop autonomes.
 
-## Résonance acid naturalisée
-
-La résonance contrôlée doit être pensée à partir de phénomènes acoustiques naturels et de systèmes de réverbération / résonance.
-
-Elle peut venir de :
-
-```text
-résonance de métal ;
-résonance de bol ;
-résonance de gong ;
-résonance de tube ;
-résonance de gorge / voix ;
-résonance de didgeridoo ;
-résonance de peau ;
-résonance filtrée dans une reverb ;
-résonance de pièce ou d’espace ;
-feedback contrôlé ;
-filtrage résonant d’un son acoustique.
-```
-
-## Torsion naturalisée
-
-La torsion doit suivre le même esprit : elle doit venir d’une déformation de la matière, pas seulement d’un filtre électronique plaqué.
-
-Possibilités :
-
-```text
-résonance qui s’étrangle ;
-formant vocal qui se plie ;
-filtre qui tire une résonance de gong ;
-bol ou cloche dont les partiels deviennent instables ;
-reverb filtrée qui se tord ;
-colonne d’air / didgeridoo qui change de pression ;
-feedback acoustique contrôlé ;
-filtrage expressif de matière naturelle.
-```
-
-## Éléments omis à discuter
-
-À discuter :
-
-```text
-TB-303 comme contrainte historique ;
-slide ;
-octave jumps ;
-squelch ;
-acid line comme ligne basse/mélodique hybride ;
-variation de timbre plus importante que variation mélodique ;
-acid house vs acid techno ;
-caractère psychédélique / euphorique / corrosif possible ;
-jeu performatif du filtre en temps réel.
-```
-
-## Détail des éléments acid à discuter
+## Éléments abandonnés ou fortement rétrogradés
 
 ### TB-303 comme contrainte historique
 
-À discuter non comme imitation de machine, mais comme modèle de limitation créative : séquence courte, paramètres réduits, accent, slide, hauteur, filtre, résonance.  
-Dans Vesperare, cela pourrait devenir un principe de ligne contrainte appliquée à une matière acoustique.
+Non retenu comme axe de conception actuel.  
+Le projet ne doit pas s’organiser autour de la TB-303, même comme contrainte historique. Si des ressemblances apparaissent plus tard, elles devront venir des phénomènes sonores eux-mêmes, pas d’une imitation de l’objet 303.
+
+## Éléments à intégrer seulement par phénomènes acoustiques correspondants
 
 ### Slide
 
-Le slide peut devenir : glissement de hauteur, de formant, de filtre, de résonance, de partiel, de pression ou de timbre.  
-Il doit être dosé pour rester intégré.
+À intégrer seulement s’il existe des phénomènes acoustiques comparables : glissements de hauteur, de pression, de formants, de partiels, de résonance, de colonne d’air, de voix, de gong, de bol, de didgeridoo, etc.
 
-### Octave jumps
-
-Les sauts d’octave peuvent devenir des déplacements de registre ou de partiels. Ils peuvent être utiles pour créer une ligne vive, mais risquent d’être trop explicites s’ils imitent directement l’acid.
+Le slide doit être intégré comme phénomène acoustique ou perceptif, jamais comme simple citation acid.
 
 ### Squelch
 
-Le squelch peut être compris comme une résonance humide / grinçante / pressurisée.  
-Dans Vesperare, il faudrait le naturaliser : gorge, métal, bol, didgeridoo, feedback, reverb filtrée, friction acoustique.
+Même principe que pour le slide.
 
-### Acid line basse/mélodique hybride
+À intégrer seulement s’il correspond à des phénomènes acoustiques ou naturalisés : gorge, métal, bol, didgeridoo, résonance humide, feedback contrôlé, reverb filtrée, friction, pression de matière.
 
-Une acid line est souvent entre basse, mélodie, motif rythmique et timbre.  
-Dans Vesperare, cette hybridité est intéressante : ligne de matière plutôt que mélodie au sens classique.
+Le squelch ne doit pas devenir une signature acid reconnaissable par défaut.
 
-### Variation de timbre plus importante que variation mélodique
+### Déformations sonores
 
-Élément très compatible avec le projet. Une ligne peut rester presque identique en hauteur, mais vivre par le filtre, la résonance, l’enveloppe, le grain et la pression.
+Toutes les déformations sonores de type acid doivent être relues comme phénomènes acoustiques ou naturalisables : torsion de résonance, reverb qui se plie, filtre qui révèle des partiels, matière qui se resserre, pression qui modifie le timbre, etc.
 
-### Acid house vs acid techno
+## Éléments à intégrer comme variations esthétiques dosées
 
-À discuter pour comprendre différents degrés : plus groove/house, plus dur/techno, plus hypnotique, plus corrosif, plus euphorique.  
-Pas pour choisir un style, mais pour comprendre les variantes d’énergie acid.
+### Octave jumps
 
-### Caractère psychédélique / euphorique / corrosif
+À intégrer seulement comme variation esthétique lorsque cela peut s’intégrer sans trop bousculer le style.
 
-À discuter comme familles d’affects possibles, à doser.  
-Le corrosif doit rester compatible avec l’intensité sans agression ; l’euphorique doit rester compatible avec la cohérence globale ; le psychédélique peut rejoindre les halos, résonances, microtonalités et torsions.
-
-### Jeu performatif du filtre en temps réel
-
-Très important pour la performance : un geste de filtre peut devenir un geste instrumental.  
-Dans Vesperare, il peut s’appliquer à des matières acoustiques, voix, gongs, didgeridoo, percussions, réverbérations ou halos.
-
-## Éléments omis non retenus actuellement
-
-Parmi les éléments précédemment omis, le reste n’est pas retenu pour l’instant.
-
-## Intégration possible dans Vesperare
-
-L’acid peut devenir :
+Dans Vesperare, cela peut devenir :
 
 ```text
-ligne de matière résonante ;
-filtre comme geste instrumental ;
-torsion contrôlée d’un matériau acoustique ;
-variation timbrale hypnotique ;
-ligne basse/mélodique hybride naturalisée ;
-résonance de didgeridoo, voix, bol, cloche, gong ou tube ;
-accent et slide comme propriétés de matière, pas imitation directe de TB-303 ;
-résonance et torsion intégrées dans des reverbs, halos et phénomènes acoustiques naturalisés.
+déplacement de registre ;
+saut entre partiels ;
+passage entre grave corporel et aigu brillant ;
+changement d’étage spectral ;
+variation ponctuelle de tension.
+```
+
+Ces sauts ne doivent pas devenir une grammaire dominante.
+
+## Acid line comme ligne basse / mélodique hybride
+
+À intégrer comme complément aux autres éléments du style, toujours en cohérence totale avec l’ensemble.
+
+La ligne acid ne doit pas devenir un module autonome séparé. Elle peut enrichir :
+
+```text
+basses naturalisées ;
+lignes de matière ;
+résonances de didgeridoo ;
+voix formantisées ;
+gongs ou bols filtrés ;
+percussions tonales ;
+champs microtonaux ;
+patterns de partiels ;
+formes de tension corporelle.
+```
+
+Son caractère mélodique ou basse/mélodique doit être évalué selon le contexte global du projet.
+
+## Variation de timbre plus importante que variation mélodique
+
+Élément compatible, mais à intégrer dans les phénomènes déjà présents dans Vesperare.
+
+Les nuances propres à l’acid peuvent enrichir :
+
+```text
+contour sculpté ;
+résonance contrôlée ;
+torsion ;
+hypnose active ;
+lignes de matière ;
+formes microtonales ;
+halos filtrés ;
+partiels mouvants ;
+pression corporelle.
+```
+
+Mais cette logique doit respecter la cohérence totale du style et être liée à des phénomènes acoustiques correspondants lorsque c’est possible.
+
+## Acid house vs acid techno
+
+Ne pas construire une opposition structurante autour de ces deux catégories.
+
+On peut s’inspirer un peu des deux, mais il faudra discuter comment leurs caractères résonnent avec les autres éléments stylistiques du projet.
+
+Questions à discuter plus tard :
+
+```text
+qu’est-ce qui relève du groove / rebond ?
+qu’est-ce qui relève de la pression / tunnel ?
+qu’est-ce qui relève du jeu de filtre ?
+qu’est-ce qui relève de l’hypnose ?
+qu’est-ce qui est compatible avec Vesperare sans citation trop directe ?
+```
+
+## Psychédélique / euphorique / corrosif
+
+Ces termes ne sont pas retenus comme éléments techniques suffisamment caractérisables.
+
+Ils peuvent décrire des affects ou des résultats possibles, mais ils ne doivent pas devenir des modules ou fonctions de conception par eux-mêmes.
+
+Les phénomènes que ces mots recouvrent éventuellement — résonances, microtonalités, halos, filtrages, saturation, corrosion de partiels, expansion, intensité — doivent être traités selon les mêmes règles que slide / squelch : comme phénomènes acoustiques ou naturalisables, à intégrer dans la cohérence globale.
+
+## Jeu performatif du filtre en temps réel
+
+Ce point ne doit pas être traité isolément comme “acid”.
+
+Il sera intégré naturellement dans les étapes futures concernant :
+
+```text
+sélection des paramètres ;
+organisation des contrôles live ;
+configurations de scènes ;
+arrangements live ;
+contrôle de résonance ;
+contrôle de torsion ;
+contrôle de filtrage ;
+contrôle de phénomènes acoustiques naturalisés.
+```
+
+Le filtre pourra devenir un geste performatif, mais seulement dans le cadre plus large du système de contrôle live de Vesperare.
+
+## Synthèse acid actuelle
+
+L’acid apporte surtout à Vesperare :
+
+```text
+ligne vivante ;
+résonance contrôlée ;
+torsion ;
+hypnose par variation de timbre ;
+variation timbrale plus importante que variation mélodique ;
+possibilité de ligne basse / mélodique hybride, si cohérente ;
+possibilité d’acidité, d’accent ou de matière liquide / nerveuse, mais très dosée.
+```
+
+Ce qui est rejeté ou fortement limité :
+
+```text
+TB-303 comme modèle structurant ;
+slide comme citation acid ;
+squelch comme signature acid ;
+octave jumps comme grammaire dominante ;
+psychédélique / euphorique / corrosif comme catégories techniques autonomes.
+```
+
+Principe final :
+
+```text
+Tout élément acid doit être converti en phénomène acoustique, résonant, timbral ou performatif compatible avec Vesperare, ou être abandonné.
 ```
 
 ---
@@ -640,7 +684,7 @@ Comment faire que filtre, reverb, feedback, sidechain, delay, saturation, réson
 
 # 6. Prochaine étape
 
-Approfondir chaque style avec une fiche plus détaillée, en commençant par le dubstep ou l’acid selon les priorités de conception.
+Approfondir chaque style avec une fiche plus détaillée, en commençant par le dubstep ou le jazz selon les priorités de conception.
 
 Pour chaque fiche :
 
