@@ -18,7 +18,7 @@ L’intégration doit rester :
 
 ```text
 subtile ;
-technquement connectée au reste du système ;
+techniquement connectée au reste du système ;
 esthétiquement cohérente ;
 configurable ;
 non plaquée ;
