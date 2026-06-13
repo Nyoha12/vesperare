@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v2.1  
+Version : v2.2  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -137,9 +137,10 @@ Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_
 ```text
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
+/docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
 ```
 
-Rôle : accueillir les instruments / sources candidates, puis exécuter un protocole séparé pour décider quels genres de samples et quels samples concrets doivent être constitués avant le live selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale.
+Rôle : accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
 
 `01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL` demande :
 
@@ -150,7 +151,14 @@ quels instruments, sources, objets, lieux ou matières pourraient être intéres
 `02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL` demande :
 
 ```text
-quels genres de samples et quels samples concrets faut-il vraiment constituer avant le live ?
+quels genres de samples et quels samples concrets faut-il vraiment constituer avant le live,
+selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale ?
+```
+
+`03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE` demande :
+
+```text
+comment transformer les sample needs validés en source_need, assets, pools et décisions de préparation ?
 ```
 
 Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
@@ -245,7 +253,7 @@ Gong = impact + halo + partiels + beauté autonome + résolution ;
 Sub = corps + pitch_center + pression + résolution ;
 Pré-drop = rythmique + corporel + spectral + harmonique ;
 Halo = espace + queue + harmonie + risque d’ambientisation ;
-Tambour sur cadre = peau + corps + impact + risque de cliché rituel ;
+Tambour sur cadre = peau + corps + impact + risque de dérive rituelle plaquée ;
 Shruti / harmonium = bourdon + souffle + battements + halo harmonique + risque décoratif.
 ```
 
@@ -287,7 +295,9 @@ ne pas construire de corpus massif non justifié ;
 accepter qu’une banque ciblée devienne grande si les besoins réels l’exigent ;
 faire du sound design une écologie d’objets et de relations, pas une banque décorative ;
 commencer la base par instruments / sources candidates et source_needs, pas par fichiers audio ;
-avant de constituer un corpus, exécuter le protocole de découverte des besoins en samples ;
+avant de constituer un corpus, exécuter le protocole pré-live des besoins de samples ;
+évaluer l’existant et le pouvoir de traitement live avant d’augmenter la quantité de samples ;
+évaluer la génération / modélisation comme alternative réelle mais sans supposer qu’elle remplace les instruments complexes ;
 prévoir une couche mix/master subtile, professionnelle et intégrée ;
 ne pas laisser les outils guider l’esthétique trop tôt ;
 prévoir des recherches d’outils à des seuils précis.
@@ -319,7 +329,7 @@ Question :
 quels genres de samples et quels samples concrets faut-il vraiment constituer avant le live ?
 ```
 
-Un sample need pré-live n’est pas encore un fichier audio. C’est un manque fonctionnel / esthétique / technique à documenter.
+Un sample need pré-live n’est pas encore un fichier audio. C’est un manque fonctionnel / esthétique / technique à documenter, en tenant compte de l’existant, du traitement live possible et des limites réalistes de la génération / simulation.
 
 ## Source needs
 
@@ -377,6 +387,7 @@ README.md
 /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
+/docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -387,7 +398,8 @@ README.md
 ```text
 1. Exécuter 02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL une première fois.
 2. Produire SAMPLE_NEEDS_INITIAL.
-3. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
-4. Créer les premières fiches source_need prioritaires.
-5. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
+3. Passer par 03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.
+4. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
+5. Créer les premières fiches source_need prioritaires.
+6. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
 ```
