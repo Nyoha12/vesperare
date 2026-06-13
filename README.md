@@ -65,6 +65,14 @@ Conversion des décisions esthétiques en phénomènes sonores, puis en architec
 
 Fiches modèles permettant de vérifier concrètement la grille objets / rôles / trajectoires / scènes / paramètres, sans prototypage.
 
+### Spécifications détaillées de modules
+
+```text
+/docs/modules/01_OBJECT_REGISTRY.md
+```
+
+Développement progressif des modules de l’architecture technique, en commençant par l’Object Registry.
+
 ### Validation, outils et mémoire
 
 ```text
@@ -92,7 +100,9 @@ Préparation des futures validations, ressources techniques, outils et points d�
   ↓
 09 fiches modèles
   ↓
+docs/modules spécifications détaillées
+  ↓
 03 validation / tests
 ```
 
-Le prochain travail recommandé est d’auditer les fiches modèles pour repérer ce qui manque encore dans `01` ou `02`, puis de détailler les modules de `02_SPECIFICATION_MAX_FOR_LIVE.md` un par un.
+Le prochain travail recommandé est de continuer le développement détaillé des modules de `02_SPECIFICATION_MAX_FOR_LIVE.md`, en commençant par `docs/modules/01_OBJECT_REGISTRY.md`.
