@@ -47,9 +47,10 @@ Définition du style personnel, des fonctions techno retenues et des éléments 
 07_PITCH_HARMONIQUES_MICROTONALITE.md
 08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
 10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md
+11_AUDIT_COHERENCE_NOTATION_CATEGORIES_RESPONSABILITES.md
 ```
 
-Organisation du pitch, des partiels, de la microtonalité, des objets sonores, des rôles, des scènes, des trajectoires, des contrôles contextuels, du sound design, du mix/master et des recherches d’outils futures.
+Organisation du pitch, des partiels, de la microtonalité, des objets sonores, des rôles, des scènes, des trajectoires, des contrôles contextuels, du sound design, du mix/master, des recherches d’outils futures et de la cohérence globale de notation / catégories / responsabilités.
 
 ### Pont vers la technique
 
@@ -104,6 +105,8 @@ Préparation des futures validations, ressources techniques, outils et points d�
   ↓
 10 sound design / mix / outils — contraintes transversales
   ↓
+11 audit cohérence notation / catégories / responsabilités
+  ↓
 01 phénomènes sonores
   ↓
 02 spécification Max for Live
@@ -115,4 +118,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de revenir vers `03_VALIDATION_TESTS_EXTENSIONS.md` pour définir les validations conceptuelles par module, puis de prévoir un audit global de cohérence notation / catégories / responsabilités.
+Le prochain travail recommandé est de synchroniser légèrement `01_CAHIER_DES_PHENOMENES_SONORES` et `02_SPECIFICATION_MAX_FOR_LIVE` avec les modules détaillés, puis de détailler `Conflict / Protection Manager`.
