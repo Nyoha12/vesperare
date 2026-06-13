@@ -76,9 +76,10 @@ Fiches modèles permettant de vérifier concrètement la grille objets / rôles 
 /docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
 /docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
 /docs/modules/05_CONTEXTUAL_CONTROL_ROUTER.md
+/docs/modules/06_CONDUCTOR_ROUTER_INTERFACE.md
 ```
 
-Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les premiers documents détaillent Object Registry, Trajectory Engine, leur contrat d’interaction, Scene / Performance Conductor, puis Contextual Control Router.
+Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les documents actuels détaillent Object Registry, Trajectory Engine, leur contrat d’interaction, Scene / Performance Conductor, Contextual Control Router, puis l’audit Conductor ↔ Router.
 
 ### Validation, outils et mémoire
 
@@ -114,4 +115,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est d’auditer l’interface `Scene / Performance Conductor ↔ Contextual Control Router`, puis de revenir vers `03_VALIDATION_TESTS_EXTENSIONS.md` pour définir les validations conceptuelles par module.
+Le prochain travail recommandé est de revenir vers `03_VALIDATION_TESTS_EXTENSIONS.md` pour définir les validations conceptuelles par module, puis de prévoir un audit global de cohérence notation / catégories / responsabilités.
