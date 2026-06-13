@@ -56,10 +56,12 @@ Organisation du pitch, des partiels, de la microtonalité, des objets sonores, d
 
 ```text
 01_CAHIER_DES_PHENOMENES_SONORES.md
+01A_SYNCHRONISATION_PHENOMENES_MODULES.md
 02_SPECIFICATION_MAX_FOR_LIVE.md
+02A_SYNCHRONISATION_ARCHITECTURE_MODULES.md
 ```
 
-Conversion des décisions esthétiques en phénomènes sonores, puis en architecture Max for Live / Ableton Live.
+Conversion des décisions esthétiques en phénomènes sonores, puis en architecture Max for Live / Ableton Live. Les fichiers `01A` et `02A` sont des addenda de synchronisation prudente : ils mettent à jour la lecture de `01` et `02` sans remplacer leurs contenus détaillés.
 
 ### Appendice de modélisation
 
@@ -109,7 +111,11 @@ Préparation des futures validations, ressources techniques, outils et points d�
   ↓
 01 phénomènes sonores
   ↓
+01A synchronisation phénomènes / modules
+  ↓
 02 spécification Max for Live
+  ↓
+02A synchronisation architecture / modules
   ↓
 09 fiches modèles
   ↓
@@ -118,4 +124,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de synchroniser légèrement `01_CAHIER_DES_PHENOMENES_SONORES` et `02_SPECIFICATION_MAX_FOR_LIVE` avec les modules détaillés, puis de détailler `Conflict / Protection Manager`.
+Le prochain travail recommandé est de détailler `Conflict / Protection Manager`, car les synchronisations `01A` et `02A` confirment que l’arbitrage des conflits et protections est devenu le prochain nœud transversal prioritaire.
