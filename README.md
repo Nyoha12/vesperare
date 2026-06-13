@@ -134,4 +134,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de créer les premières fiches `source_need` prioritaires — gongs, voix, didgeridoo, sub, eau / pluie, field recordings, polytexture micro-impacts — avant `Output / Mix / Performance Layer`.
+Le prochain travail recommandé est de créer `INSTRUMENT_SOURCE_CANDIDATES_INITIAL`, puis les premières fiches `source_need` prioritaires — gongs, voix, didgeridoo, sub, eau / pluie, field recordings, polytexture micro-impacts — avant `Output / Mix / Performance Layer`.
