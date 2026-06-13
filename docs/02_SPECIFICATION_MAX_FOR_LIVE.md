@@ -1,6 +1,6 @@
 # 02_SPECIFICATION_MAX_FOR_LIVE
 
-Version : v0.2  
+Version : v0.3  
 Statut : spécification architecturale synchronisée avec les documents 05–08 et le cahier des phénomènes v0.3.
 
 ## Objet
@@ -62,7 +62,382 @@ possibilité de performance complète.
 
 ---
 
-# 1. Architecture générale
+# 1. Architecture d’organisation progressive des informations
+
+## Rôle
+
+Avant de construire des devices, il faut organiser progressivement les informations qui permettront au système d’être cohérent : dépendances, automatisations internes, modules, objets, rôles, trajectoires, paramètres et contrôles.
+
+Cette couche n’est pas un module sonore. C’est une méthode d’architecture et de documentation pour éviter que le projet devienne :
+
+```text
+une accumulation de paramètres ;
+une liste de devices indépendants ;
+un ensemble de macros trop abstraites ;
+un système autonome mal situé ;
+un patch impossible à jouer en live.
+```
+
+## Principe
+
+Chaque information ajoutée au projet doit progressivement pouvoir être située dans cette chaîne :
+
+```text
+intention musicale
+→ fonction
+→ phénomène
+→ objet sonore
+→ rôle
+→ trajectoire / scène
+→ dimension affectée
+→ dépendances
+→ automatisations possibles
+→ paramètres techniques
+→ groupement de contrôles
+→ garde-fous
+```
+
+On ne doit pas tout définir immédiatement au même niveau de détail. Mais on doit savoir **où chaque information ira plus tard**.
+
+## Niveaux d’information
+
+### Niveau 1 — Esthétique / intention
+
+```text
+corps techno ;
+hypnose ;
+intensité sans agression ;
+naturalisation ;
+polytexture ;
+sub / masse ;
+suspension ;
+torsion ;
+champs harmoniques ;
+performance complète.
+```
+
+### Niveau 2 — Phénomènes et objets
+
+```text
+phénomène sonore ;
+objet sonore ;
+rôle musical ;
+capacité de trajectoire ;
+risque musical ;
+relation aux autres objets.
+```
+
+### Niveau 3 — Système et dépendances
+
+```text
+module responsable ;
+entrées ;
+sorties ;
+variables internes ;
+dépendances amont ;
+dépendances aval ;
+conflits possibles ;
+garde-fous.
+```
+
+### Niveau 4 — Paramètres et automatisations
+
+```text
+paramètres techniques ;
+modulations ;
+automatisations programmées ;
+automatisations contextuelles ;
+automatisations de sécurité ;
+contrôles live associés.
+```
+
+### Niveau 5 — Interface et jeu
+
+```text
+contrôles permanents ;
+contrôles contextuels ;
+contrôles par objet ;
+contrôles par trajectoire ;
+contrôles profonds ;
+contrôles d’urgence.
+```
+
+## Types de dépendances à documenter
+
+Une dépendance n’est pas seulement une connexion technique. Elle peut être musicale, perceptive ou performative.
+
+```text
+dépendance musicale : une fonction dépend d’un objet ou d’un rôle ;
+dépendance spectrale : un objet dépend du sub, du halo ou d’un centre spectral ;
+dépendance rythmique : une trajectoire dépend d’un état de grille, syncope ou densité ;
+dépendance harmonique : un événement dépend d’un champ de partiels ou d’une tension microtonale ;
+dépendance formelle : un drop, peak ou retour dépend d’une phase de scène ;
+dépendance de contrôle : un paramètre dépend d’un contrôle permanent ou contextuel ;
+dépendance de sécurité : une action dépend d’un garde-fou spectral, spatial ou corporel ;
+dépendance live : une transformation dépend d’un instrument ou signal entrant.
+```
+
+## Types d’automatisations internes
+
+Le mot automatisation ne signifie pas que le système compose à la place du compositeur. Il désigne des relations programmées, modulables ou conditionnelles entre éléments.
+
+### Automatisation programmée
+
+Définie à l’avance dans une scène ou une trajectoire.
+
+```text
+une suspension retire progressivement l’impact ;
+un pré-drop retient le sub ;
+un peak ouvre les partiels et l’espace ;
+une beauté autonome prépare une réincorporation.
+```
+
+### Automatisation contextuelle
+
+Dépend de la scène, de l’état, des objets actifs et des trajectoires.
+
+```text
+si le gong est rôle = masse de résolution, limiter sa queue ;
+si la voix est rôle = signal, préserver intelligibilité ;
+si le sub est rôle = fondation, protéger le centre grave.
+```
+
+### Automatisation réactive
+
+Dépend d’une entrée live ou d’une analyse de signal.
+
+```text
+un gong live augmente halo mais réduit densité ;
+une voix live ouvre un espace mais protège la sémantique ;
+un didgeridoo live influence sub et centre spectral.
+```
+
+### Automatisation de garde-fou
+
+Protège la performance.
+
+```text
+limiter harshness ;
+réduire halo excessif ;
+stabiliser sub ;
+réduire densité ;
+préserver impact ;
+laisser place à l’instrument live.
+```
+
+### Automatisation de transition
+
+Organise un passage entre états.
+
+```text
+corps → suspension ;
+pré-drop → résolution ;
+matière exposée → retour techno ;
+torsion → expansion ;
+champ harmonique → stabilisation.
+```
+
+## Logique fine de groupements de paramètres
+
+Les paramètres ne doivent pas être groupés d’abord selon les devices techniques. Ils doivent être groupés selon ce que le performeur doit comprendre et jouer.
+
+### Groupement par fonction
+
+```text
+Corps / Fondation ;
+Tension / Résolution ;
+Densité / Polytexture ;
+Espace / Halo ;
+Pitch / Harmoniques ;
+Voix / Présence ;
+Live Input / Réaction.
+```
+
+### Groupement par objet
+
+```text
+Gong ;
+Voix ;
+Sub ;
+Polytexture ;
+Halo ;
+Clochettes ;
+Didgeridoo ;
+Field recording.
+```
+
+### Groupement par trajectoire
+
+```text
+Pré-drop ;
+Suspension ;
+Expansion ;
+Torsion ;
+Réincorporation ;
+Densification ;
+Résolution ;
+Beauté autonome.
+```
+
+### Groupement par dimension
+
+```text
+rythme ;
+impact ;
+sub ;
+spectre ;
+halo ;
+espace ;
+harmonie ;
+microtonalité ;
+forme ;
+lisibilité ;
+confort.
+```
+
+### Groupement par urgence / protection
+
+```text
+Retour au corps ;
+Stabiliser sub ;
+Réduire densité ;
+Réduire halo ;
+Limiter aigus ;
+Annuler drop ;
+Geler ;
+Reprise.
+```
+
+## Principe d’interface
+
+L’interface ne doit pas donner accès à tout au même niveau.
+
+```text
+Tout doit être programmable.
+Mais tout ne doit pas être visible au premier plan.
+```
+
+Les contrôles doivent être hiérarchisés ainsi :
+
+```text
+1. contrôles permanents ;
+2. contrôles contextuels ;
+3. contrôles par objet ;
+4. contrôles par trajectoire ;
+5. contrôles profonds ;
+6. contrôles d’urgence.
+```
+
+Le Contextual Control Router devra donc présenter les bons contrôles selon :
+
+```text
+scène active ;
+état actif ;
+trajectoires actives ;
+phase de trajectoire ;
+objet prioritaire ;
+rôle musical ;
+risques détectés ;
+niveau d’autonomie autorisé.
+```
+
+## Fiches progressives à produire plus tard
+
+Avant prototypage, chaque élément important devra pouvoir être documenté sous forme de fiche.
+
+### Fiche objet sonore
+
+```text
+nom ;
+famille matérielle ;
+fonctions possibles ;
+rôles possibles ;
+profil spectral ;
+profil pitch / partiels ;
+capacités de trajectoire ;
+risques ;
+garde-fous ;
+contrôles associés.
+```
+
+### Fiche trajectoire
+
+```text
+nom ;
+esprit musical ;
+opérations ;
+phases ;
+objets possibles ;
+rôles impliqués ;
+dimensions affectées ;
+dépendances ;
+contrôles contextuels ;
+conditions de résolution / bifurcation ;
+risques.
+```
+
+### Fiche scène
+
+```text
+nom ;
+état principal ;
+objets actifs ;
+rôles actifs ;
+trajectoires autorisées ;
+événements armés ;
+automatisations programmées ;
+contrôles prioritaires ;
+contrôles d’urgence ;
+bifurcations possibles.
+```
+
+### Fiche module
+
+```text
+nom ;
+rôle ;
+entrées ;
+sorties ;
+variables internes ;
+dépendances ;
+interactions ;
+risques ;
+priorité ;
+forme possible dans Max for Live / Ableton.
+```
+
+### Fiche groupement de paramètres
+
+```text
+nom du groupe ;
+niveau : permanent / contextuel / objet / trajectoire / profond / urgence ;
+paramètres inclus ;
+objets concernés ;
+trajectoires concernées ;
+conditions d’affichage ;
+risques de contrôle ;
+contrôles de protection associés.
+```
+
+## Matrices à construire progressivement
+
+```text
+objets × rôles ;
+objets × trajectoires ;
+rôles × dimensions ;
+phénomènes × variables ;
+trajectoires × phases ;
+modules × dépendances ;
+paramètres × contrôles ;
+contrôles × contexte ;
+risques × garde-fous.
+```
+
+Ces matrices doivent être construites progressivement, seulement lorsque les informations sont assez stables.
+
+---
+
+# 2. Architecture générale
 
 ## Schéma conceptuel
 
@@ -122,7 +497,7 @@ Outil satellite :
 
 ---
 
-# 2. Scene / Performance Conductor
+# 3. Scene / Performance Conductor
 
 ## Rôle
 
@@ -187,7 +562,7 @@ confusion entre état, scène et trajectoire.
 
 ---
 
-# 3. Object Registry
+# 4. Object Registry
 
 ## Rôle
 
@@ -255,7 +630,7 @@ trop de métadonnées inutilisables en live.
 
 ---
 
-# 4. Trajectory Engine
+# 5. Trajectory Engine
 
 ## Rôle
 
@@ -352,7 +727,7 @@ trop de trajectoires simultanées.
 
 ---
 
-# 5. Pitch / Harmonic Field Manager
+# 6. Pitch / Harmonic Field Manager
 
 ## Rôle
 
@@ -426,7 +801,7 @@ instabilité constante sans résolution.
 
 ---
 
-# 6. Function / Phenomenon Engines
+# 7. Function / Phenomenon Engines
 
 ## Rôle
 
@@ -489,7 +864,7 @@ trop d’autonomie locale.
 
 ---
 
-# 7. Timbre & Material Mapper
+# 8. Timbre & Material Mapper
 
 ## Rôle
 
@@ -562,7 +937,7 @@ perte de contour.
 
 ---
 
-# 8. Sound Engines / Instruments
+# 9. Sound Engines / Instruments
 
 ## Rôle
 
@@ -617,7 +992,7 @@ latence ou instabilité live.
 
 ---
 
-# 9. Live Audio Listener / Live Object Interpreter
+# 10. Live Audio Listener / Live Object Interpreter
 
 ## Rôle
 
@@ -680,7 +1055,7 @@ classification trop pauvre.
 
 ---
 
-# 10. Impact Matrix / Influence Router
+# 11. Impact Matrix / Influence Router
 
 ## Rôle
 
@@ -739,7 +1114,7 @@ réduction excessive des couches générées.
 
 ---
 
-# 11. Spectral & Comfort Governor
+# 12. Spectral & Comfort Governor
 
 ## Rôle
 
@@ -802,7 +1177,7 @@ ne pas comprendre le rôle musical d’une saturation ou d’une rugosité.
 
 ---
 
-# 12. Halo / Space / Resonance Controller
+# 13. Halo / Space / Resonance Controller
 
 ## Rôle
 
@@ -862,7 +1237,7 @@ perte de proximité.
 
 ---
 
-# 13. Contextual Control Router
+# 14. Contextual Control Router
 
 ## Rôle
 
@@ -921,7 +1296,7 @@ perte de jouabilité.
 
 ---
 
-# 14. Conflict / Protection Manager
+# 15. Conflict / Protection Manager
 
 ## Rôle
 
@@ -967,7 +1342,7 @@ alerte au Control Router.
 
 ---
 
-# 15. Macro Control Layer
+# 16. Macro Control Layer
 
 ## Rôle
 
@@ -1019,7 +1394,7 @@ contrôles contextuels mal hiérarchisés.
 
 ---
 
-# 16. Output / Mix / Performance Layer
+# 17. Output / Mix / Performance Layer
 
 ## Rôle
 
@@ -1042,7 +1417,7 @@ préparation à la diffusion.
 
 ---
 
-# 17. Ableton Extensions SDK
+# 18. Ableton Extensions SDK
 
 ## Rôle
 
@@ -1068,7 +1443,7 @@ Ne remplace pas Max for Live pour le temps réel.
 
 ---
 
-# 18. Priorités de développement conceptuel
+# 19. Priorités de développement conceptuel
 
 Aucun prototype ne doit être lancé maintenant. Mais l’ordre de clarification technique peut être établi.
 
@@ -1083,7 +1458,10 @@ scène ;
 état ;
 dimension ;
 protection ;
-contrôle contextuel.
+contrôle contextuel ;
+groupement de paramètres ;
+dépendance ;
+automatisation interne.
 ```
 
 ## Priorité 2 — Conductor / Registry / Trajectory
@@ -1094,9 +1472,19 @@ Définir comment Scene Conductor, Object Registry et Trajectory Engine communiqu
 
 Définir la gestion des centres spectraux, partiels, formants, microtonalité et sub.
 
-## Priorité 4 — Interface live
+## Priorité 4 — Interface live et groupements de paramètres
 
-Définir les contrôles permanents, contextuels, profonds et d’urgence.
+Définir les contrôles permanents, contextuels, par objet, par trajectoire, profonds et d’urgence.
+
+Définir les règles de présentation :
+
+```text
+quand un contrôle apparaît ;
+pourquoi il apparaît ;
+quel objet / rôle / trajectoire il concerne ;
+quel paramètre profond il affecte ;
+quel garde-fou le limite.
+```
 
 ## Priorité 5 — Prototypes réutilisables
 
@@ -1104,7 +1492,7 @@ Seulement après clarification : prototypes ciblés, documentés, réutilisables
 
 ---
 
-# 19. Prochaine tâche pour ce document
+# 20. Prochaine tâche pour ce document
 
 Développer chaque module avec :
 
@@ -1113,6 +1501,9 @@ entrées ;
 sorties ;
 variables internes ;
 interactions ;
+dépendances ;
+automatisations internes ;
+groupements de paramètres ;
 risques ;
 priorité de développement ;
 besoin de recherche ;
