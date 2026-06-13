@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v2.6  
+Version : v2.7  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -142,9 +142,10 @@ Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_
 /docs/assets/04_SAMPLE_NEEDS_INITIAL.md
 /docs/assets/05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.md
 /docs/assets/06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS.md
+/docs/assets/07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS.md
 ```
 
-Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, vérifier l’existant réel et le pouvoir de traitement live avec peu de samples, intégrer les propositions spontanées de Yohan, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
+Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, intégrer les données fixes de live de Yohan, analyser les besoins depuis zéro sample, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
 
 `00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX` demande :
 
@@ -178,16 +179,29 @@ comment transformer les sample needs validés en source_need, assets, pools et d
 une première table d’audit prudente : besoins → existant → traitement live → génération réaliste → minimum de samples.
 ```
 
-`05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT` demande :
+`05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT` fixe désormais :
 
 ```text
-qu’est-ce qui existe déjà réellement, et jusqu’où peut-on aller avec 1, 3 ou 5 bons samples traités en live ?
+didgeridoo et guimbardes toujours live ;
+gong et tambour sur cadre parfois live ;
+zéro sample initial ;
+accès possible à des samples seulement si besoin réel ;
+génération / simulation à analyser besoin par besoin.
 ```
 
 `06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS` fournit :
 
 ```text
 les propositions spontanées de Yohan comme sources candidates et des besoins potentiels maximaux générés à partir d’elles, sans validation.
+```
+
+`07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS` demande :
+
+```text
+quels besoins initiaux sont couverts par le live fixe,
+lesquels sont seulement couverts par live occasionnel,
+lesquels doivent être analysés côté génération / simulation,
+et lesquels peuvent justifier un minimum de samples ?
 ```
 
 Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
@@ -432,6 +446,7 @@ README.md
 /docs/assets/04_SAMPLE_NEEDS_INITIAL.md
 /docs/assets/05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.md
 /docs/assets/06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS.md
+/docs/assets/07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -440,10 +455,8 @@ README.md
 # 10. Prochaine étape recommandée
 
 ```text
-1. Confronter 06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS à 05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.
-2. Renseigner quels instruments existent physiquement, lesquels sont jouables live, lesquels nécessitent samples ou collaboration.
-3. Confirmer ou invalider les besoins potentiels.
-4. Passer par 03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.
-5. Créer les premières fiches source_need prioritaires.
-6. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
+1. Créer SOURCE_NEED_LIVE_JAW_HARPS_FORMANT_MICROPULSE.
+2. Créer SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS.
+3. Ensuite seulement : analyser les source_needs minimaux pour samples peaux / gongs / voix / field recordings.
+4. Puis reprendre Output / Mix / Performance Layer.
 ```
