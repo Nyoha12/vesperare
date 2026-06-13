@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.4  
+Version : v1.5  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -61,9 +61,12 @@ Rôle : définir l’esprit musical, les fonctions retenues de la techno, puis l
 ```text
 07_PITCH_HARMONIQUES_MICROTONALITE.md
 08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
+10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md
 ```
 
-Rôle : organiser les grands nœuds qui traversent tous les phénomènes et toute la technique : pitch, partiels, microtonalité, objets sonores, scènes, trajectoires, contrôles contextuels et autonomie située.
+Rôle : organiser les grands nœuds qui traversent tous les phénomènes et toute la technique : pitch, partiels, microtonalité, objets sonores, scènes, trajectoires, contrôles contextuels, sound design, contraintes de mix/master et recherche future d’outils.
+
+Le document `10` est une contrainte transversale différée : il ne remplace pas les modules, mais empêche l’architecture de devenir incompatible avec les futures méthodes de sound design, la couche mix/master et les recherches d’outils.
 
 ### D. Document phénoménologique de transfert
 
@@ -73,7 +76,7 @@ Rôle : organiser les grands nœuds qui traversent tous les phénomènes et tout
 
 Rôle : convertir les décisions stylistiques et transversales en phénomènes sonores manipulables : définitions, supports, risques, variables, rôles possibles, trajectoires possibles.
 
-Ce document doit être relu après les documents `05–08`, car il sert de pont entre esthétique et technique.
+Ce document doit être relu après les documents `05–08` et `10`, car il sert de pont entre esthétique, sound design et technique.
 
 ### E. Document de spécification technique
 
@@ -83,7 +86,7 @@ Ce document doit être relu après les documents `05–08`, car il sert de pont 
 
 Rôle : traduire les phénomènes, objets, rôles, trajectoires, contrôles et garde-fous en architecture Max for Live / Ableton Live.
 
-Ce document ne doit pas être mis à jour seulement par ajout de modules : il doit rester cohérent avec le système esthétique complet.
+Ce document ne doit pas être mis à jour seulement par ajout de modules : il doit rester cohérent avec le système esthétique complet, y compris les contraintes sound design / mix / outils.
 
 ### F. Appendice de modélisation conceptuelle
 
@@ -167,7 +170,8 @@ propager seulement ce qui est assez stable ;
 utiliser les fiches modèles pour vérifier les abstractions avant prototypage ;
 détailler les modules seulement quand leur rôle dans l’architecture est clair ;
 ne jamais transformer les catégories en cases exclusives ;
-auditer les interfaces avant que les modules ne divergent.
+auditer les interfaces avant que les modules ne divergent ;
+intégrer les contraintes sound design / mix / outils sans les développer trop tôt.
 ```
 
 ## Règle anti-prototype prématuré
@@ -219,6 +223,23 @@ mode fermé ;
 preset stylistique ;
 catégorie unique ;
 rôle permanent imposé.
+```
+
+## Règle sound design / mix / outils
+
+Les méthodes de sound design, la couche mix/master et les recherches d’outils doivent être intégrées comme contraintes d’architecture, mais développées au bon moment.
+
+Principes :
+
+```text
+préserver la reconnaissance de source quand elle sert la musique ;
+accepter l’abstraction quand la fonction l’exige ;
+permettre sources réelles, samples, live, synthèse, resynthèse et hybridation ;
+ne pas construire de corpus massif sauf nécessité ;
+faire du sound design une écologie d’objets et de relations, pas une banque de sons ;
+prévoir une couche mix/master subtile, professionnelle et intégrée ;
+ne pas laisser les outils guider l’esthétique trop tôt ;
+prévoir des recherches d’outils à des seuils précis.
 ```
 
 ## Terminologie
@@ -454,6 +475,14 @@ La performance doit être pensée comme un réseau programmable d’états, scè
 
 Ce niveau est organisé dans `08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md`.
 
+### Sound design, mix/master et outils
+
+Le sound design doit être pensé comme écologie d’objets et de relations : sources, comportements, densité, espace, masquage, hybridation, reconnaissance, abstraction.
+
+La couche mix/master doit être intégrée plus tard comme contrainte subtile, professionnelle, adaptable aux contextes club / hors-club / ingénieur son / autonomie.
+
+Les recherches d’outils doivent intervenir à des seuils précis, sans guider l’esthétique trop tôt.
+
 ### Instruments live
 
 Les instruments live ne doivent pas être classés rigidement. Didgeridoo, gongs, tambours, voix ou autres instruments peuvent être des phénomènes multidimensionnels. Le système doit analyser ou recevoir leurs caractéristiques et permettre de configurer leur impact.
@@ -472,6 +501,7 @@ README.md
 /docs/07_PITCH_HARMONIQUES_MICROTONALITE.md
 /docs/08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
 /docs/09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
+/docs/10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md
 /docs/modules/01_OBJECT_REGISTRY.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
 /docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
@@ -489,6 +519,8 @@ README.md
 07_PITCH_HARMONIQUES_MICROTONALITE
         ↓
 08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS
+        ↓
+10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES
         ↓
 01_CAHIER_DES_PHENOMENES_SONORES
         ↓
@@ -511,11 +543,13 @@ Le document `04_RESSOURCES_ET_BOITE_A_OUTILS` alimente surtout la spécification
 
 Le document `09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES` est un appendice de vérification : il peut rétroagir vers `01` et `02` si une fiche révèle une incohérence ou un manque.
 
+Le document `10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES` est une contrainte transversale : il doit influencer `01`, `02`, les modules et les recherches d’outils au bon moment.
+
 Les documents `docs/modules/` développent progressivement les modules prioritaires de `02` lorsque les fiches et audits montrent que leur rôle est assez clair.
 
 ## Prochaine synchronisation documentaire
 
-À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Les modules Object Registry, Trajectory Engine, Registry ↔ Trajectory Interface et Scene / Performance Conductor sont détaillés.
+À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Les modules Object Registry, Trajectory Engine, Registry ↔ Trajectory Interface et Scene / Performance Conductor sont détaillés. Le document `10` inscrit les contraintes différées de sound design, mix/master et recherche d’outils.
 
 Ordre recommandé maintenant :
 
