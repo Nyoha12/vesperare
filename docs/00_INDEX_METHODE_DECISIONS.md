@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v2.2  
+Version : v2.3  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -138,9 +138,10 @@ Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
+/docs/assets/04_SAMPLE_NEEDS_INITIAL.md
 ```
 
-Rôle : accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
+Rôle : accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
 
 `01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL` demande :
 
@@ -159,6 +160,12 @@ selon les besoins, l’existant et les limites des engines / génération / simu
 
 ```text
 comment transformer les sample needs validés en source_need, assets, pools et décisions de préparation ?
+```
+
+`04_SAMPLE_NEEDS_INITIAL` fournit :
+
+```text
+une première table d’audit prudente : besoins → existant → traitement live → génération réaliste → minimum de samples.
 ```
 
 Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
@@ -388,6 +395,7 @@ README.md
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
+/docs/assets/04_SAMPLE_NEEDS_INITIAL.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -396,8 +404,8 @@ README.md
 # 10. Prochaine étape recommandée
 
 ```text
-1. Exécuter 02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL une première fois.
-2. Produire SAMPLE_NEEDS_INITIAL.
+1. Vérifier l’existant réel de Yohan : samples, prises, instruments, objets, packs éventuels.
+2. Tester conceptuellement ce que peu de samples peuvent produire par traitement live.
 3. Passer par 03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.
 4. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
 5. Créer les premières fiches source_need prioritaires.
