@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v0.7  
+Version : v0.8  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -166,6 +166,12 @@ La microtonalité, les partiels, les formants, les hauteurs ressenties et les ce
 
 Ils sont organisés dans `07_PITCH_HARMONIQUES_MICROTONALITE.md`.
 
+### Performance, scènes, trajectoires et objets
+
+La performance doit être pensée comme un réseau programmable d’états, scènes, trajectoires, objets sonores, implications, contrôles contextuels et autonomies situées.
+
+Ce niveau est organisé dans `08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md`.
+
 ### Instruments live
 
 Les instruments live ne doivent pas être classés rigidement. Didgeridoo, gongs, tambours, voix ou autres instruments peuvent être des phénomènes multidimensionnels. Le système doit analyser ou recevoir leurs caractéristiques et permettre de configurer leur impact.
@@ -182,6 +188,7 @@ README.md
 /docs/05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
 /docs/06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
 /docs/07_PITCH_HARMONIQUES_MICROTONALITE.md
+/docs/08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -193,6 +200,8 @@ README.md
 06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE
         ↓
 07_PITCH_HARMONIQUES_MICROTONALITE
+        ↓
+08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS
         ↓
 01_CAHIER_DES_PHENOMENES_SONORES
         ↓
