@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v0.9  
+Version : v1.0  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -85,7 +85,17 @@ Rôle : traduire les phénomènes, objets, rôles, trajectoires, contrôles et g
 
 Ce document ne doit pas être mis à jour seulement par ajout de modules : il doit rester cohérent avec le système esthétique complet.
 
-### F. Validation, outils et mémoire
+### F. Appendice de modélisation conceptuelle
+
+```text
+09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
+```
+
+Rôle : tester concrètement les grilles de `02` par des fiches modèles : objets sonores, trajectoires, scènes et groupements de paramètres.
+
+Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il sert à vérifier que les abstractions sont utilisables, cohérentes et non trop générales.
+
+### G. Validation, outils et mémoire
 
 ```text
 03_VALIDATION_TESTS_EXTENSIONS.md
@@ -110,7 +120,9 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 5. Propagation vers la spécification technique si la décision affecte l’architecture
    ↓
-6. Propagation vers validation/tests seulement si un module futur est assez clair
+6. Vérification par fiches modèles si l’abstraction devient trop générale
+   ↓
+7. Propagation vers validation/tests seulement si un module futur est assez clair
 ```
 
 Principe :
@@ -119,7 +131,8 @@ Principe :
 ne pas transformer immédiatement chaque idée en module ;
 ne pas transformer immédiatement chaque phénomène en prototype ;
 ne pas multiplier les documents sans nécessité ;
-propager seulement ce qui est assez stable.
+propager seulement ce qui est assez stable ;
+utiliser les fiches modèles pour vérifier les abstractions avant prototypage.
 ```
 
 ## Règle anti-prototype prématuré
@@ -238,6 +251,20 @@ densification polytexturale ;
 résolution microtonale.
 ```
 
+### Fiches modèles
+
+Désignent des cas conceptuels concrets permettant de vérifier les abstractions sans prototyper.
+
+Exemples :
+
+```text
+fiche objet : Gong ;
+fiche objet : Voix ;
+fiche trajectoire : Pré-drop naturalisé ;
+fiche scène : Suspension avant résolution ;
+fiche groupement : Tension / Résolution.
+```
+
 ### Variables internes
 
 Servent au fonctionnement du patch Max for Live.
@@ -344,6 +371,7 @@ README.md
 /docs/06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
 /docs/07_PITCH_HARMONIQUES_MICROTONALITE.md
 /docs/08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
+/docs/09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -362,37 +390,26 @@ README.md
         ↓
 02_SPECIFICATION_MAX_FOR_LIVE
         ↓
+09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES
+        ↓
 03_VALIDATION_TESTS_EXTENSIONS
 ```
 
 Le document `04_RESSOURCES_ET_BOITE_A_OUTILS` alimente surtout la spécification technique.
 
+Le document `09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES` est un appendice de vérification : il peut rétroagir vers `01` et `02` si une fiche révèle une incohérence ou un manque.
+
 ## Prochaine synchronisation documentaire
 
-À ce stade, les documents `05–08` sont assez mûrs pour servir de base à une synchronisation descendante.
+À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles.
 
-Ordre recommandé :
+Ordre recommandé maintenant :
 
 ```text
-1. Mettre à jour 01_CAHIER_DES_PHENOMENES_SONORES
-   - intégrer objets sonores ;
-   - intégrer rôles musicaux ;
-   - intégrer trajectoires possibles ;
-   - intégrer dimensions affectées ;
-   - intégrer liens pitch / partiels / microtonalité.
-
-2. Refonte de 02_SPECIFICATION_MAX_FOR_LIVE
-   - intégrer Object Registry ;
-   - intégrer Trajectory Engine ;
-   - intégrer Scene / Performance Conductor ;
-   - intégrer Contextual Control Router ;
-   - intégrer Pitch / Harmonic Field Manager ;
-   - intégrer Conflict / Protection Manager.
-
-3. Mettre à jour 03_VALIDATION_TESTS_EXTENSIONS
-   - définir validations conceptuelles ;
-   - définir futurs prototypes réutilisables ;
-   - éviter tests prématurés ou jetables.
+1. Développer quelques fiches modèles supplémentaires si nécessaire.
+2. Auditer les fiches : repérer ce qui manque dans 01 ou 02.
+3. Revenir dans 02 pour détailler les modules un par un.
+4. Revenir dans 03 pour définir les validations par module.
 ```
 
 ## Règle de mise à jour
