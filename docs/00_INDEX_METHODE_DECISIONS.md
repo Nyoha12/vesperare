@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.0  
+Version : v1.1  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -95,7 +95,31 @@ Rôle : tester concrètement les grilles de `02` par des fiches modèles : objet
 
 Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il sert à vérifier que les abstractions sont utilisables, cohérentes et non trop générales.
 
-### G. Validation, outils et mémoire
+### G. Spécifications détaillées de modules
+
+```text
+/docs/modules/01_OBJECT_REGISTRY.md
+```
+
+Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, un par un, sans prototyper.
+
+Ces documents doivent préciser :
+
+```text
+rôle du module ;
+modèle de données ;
+entrées ;
+sorties ;
+dépendances ;
+relations avec les autres modules ;
+risques ;
+garde-fous ;
+formes possibles dans Max for Live / Ableton.
+```
+
+Le premier module détaillé est `01_OBJECT_REGISTRY`, car les fiches modèles ont montré qu’il conditionne Trajectory Engine, Timbre Mapper, Pitch Manager, Control Router, Conflict Manager et Live Object Interpreter.
+
+### H. Validation, outils et mémoire
 
 ```text
 03_VALIDATION_TESTS_EXTENSIONS.md
@@ -122,7 +146,9 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 6. Vérification par fiches modèles si l’abstraction devient trop générale
    ↓
-7. Propagation vers validation/tests seulement si un module futur est assez clair
+7. Développement d’une spécification détaillée de module si le module devient prioritaire
+   ↓
+8. Propagation vers validation/tests seulement si un module futur est assez clair
 ```
 
 Principe :
@@ -132,7 +158,8 @@ ne pas transformer immédiatement chaque idée en module ;
 ne pas transformer immédiatement chaque phénomène en prototype ;
 ne pas multiplier les documents sans nécessité ;
 propager seulement ce qui est assez stable ;
-utiliser les fiches modèles pour vérifier les abstractions avant prototypage.
+utiliser les fiches modèles pour vérifier les abstractions avant prototypage ;
+détailler les modules seulement quand leur rôle dans l’architecture est clair.
 ```
 
 ## Règle anti-prototype prématuré
@@ -265,6 +292,22 @@ fiche scène : Suspension avant résolution ;
 fiche groupement : Tension / Résolution.
 ```
 
+### Spécifications détaillées de modules
+
+Désignent des documents qui approfondissent un module de `02` lorsque son rôle devient clair.
+
+Exemples :
+
+```text
+Object Registry ;
+Trajectory Engine ;
+Scene / Performance Conductor ;
+Pitch / Harmonic Field Manager ;
+Contextual Control Router.
+```
+
+Ces documents ne sont pas des prototypes. Ils précisent les données, dépendances, interactions, risques et garde-fous avant toute implémentation.
+
 ### Variables internes
 
 Servent au fonctionnement du patch Max for Live.
@@ -372,6 +415,7 @@ README.md
 /docs/07_PITCH_HARMONIQUES_MICROTONALITE.md
 /docs/08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
 /docs/09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
+/docs/modules/01_OBJECT_REGISTRY.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -392,6 +436,8 @@ README.md
         ↓
 09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES
         ↓
+docs/modules/01_OBJECT_REGISTRY
+        ↓
 03_VALIDATION_TESTS_EXTENSIONS
 ```
 
@@ -399,17 +445,20 @@ Le document `04_RESSOURCES_ET_BOITE_A_OUTILS` alimente surtout la spécification
 
 Le document `09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES` est un appendice de vérification : il peut rétroagir vers `01` et `02` si une fiche révèle une incohérence ou un manque.
 
+Les documents `docs/modules/` développent progressivement les modules prioritaires de `02` lorsque les fiches et audits montrent que leur rôle est assez clair.
+
 ## Prochaine synchronisation documentaire
 
-À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles.
+À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles. Le premier module détaillé est `Object Registry`.
 
 Ordre recommandé maintenant :
 
 ```text
-1. Développer quelques fiches modèles supplémentaires si nécessaire.
-2. Auditer les fiches : repérer ce qui manque dans 01 ou 02.
-3. Revenir dans 02 pour détailler les modules un par un.
-4. Revenir dans 03 pour définir les validations par module.
+1. Continuer les fiches objets nécessaires : Sub, Polytexture, Halo, Didgeridoo.
+2. Auditer si Object Registry couvre bien ces objets très différents.
+3. Revenir dans 02 si le modèle général doit être corrigé.
+4. Développer ensuite Trajectory Engine comme deuxième module détaillé.
+5. Revenir dans 03 pour définir les validations par module.
 ```
 
 ## Règle de mise à jour
