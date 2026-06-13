@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v2.3  
+Version : v2.4  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -135,13 +135,21 @@ Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_
 ## G. Préparation des sources, samples et assets
 
 ```text
+/docs/assets/00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.md
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
 /docs/assets/04_SAMPLE_NEEDS_INITIAL.md
 ```
 
-Rôle : accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
+Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
+
+`00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX` demande :
+
+```text
+quels besoins esthétiques, fonctions, phénomènes, trajectoires et scènes existent déjà dans le projet,
+avant toute décision de sample, d’asset ou d’engine ?
+```
 
 `01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL` demande :
 
@@ -302,6 +310,7 @@ ne pas construire de corpus massif non justifié ;
 accepter qu’une banque ciblée devienne grande si les besoins réels l’exigent ;
 faire du sound design une écologie d’objets et de relations, pas une banque décorative ;
 commencer la base par instruments / sources candidates et source_needs, pas par fichiers audio ;
+avant de constituer un corpus, extraire les besoins via la matrice esthétique / phénoménale ;
 avant de constituer un corpus, exécuter le protocole pré-live des besoins de samples ;
 évaluer l’existant et le pouvoir de traitement live avant d’augmenter la quantité de samples ;
 évaluer la génération / modélisation comme alternative réelle mais sans supposer qu’elle remplace les instruments complexes ;
@@ -315,6 +324,16 @@ prévoir des recherches d’outils à des seuils précis.
 # 8. Terminologie
 
 Pour éviter les confusions, on distingue :
+
+## Besoins esthétiques / phénoménaux
+
+Désignent les fonctions, phénomènes, ambitions, trajectoires, scènes, tensions, risques et contraintes déjà explicités par le style Vesperare.
+
+Question :
+
+```text
+quels besoins existent déjà dans le projet avant toute décision de source ou de sample ?
+```
 
 ## Instruments / sources candidates
 
@@ -392,6 +411,7 @@ README.md
 /docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
 /docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
 /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
+/docs/assets/00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.md
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
@@ -404,10 +424,11 @@ README.md
 # 10. Prochaine étape recommandée
 
 ```text
-1. Vérifier l’existant réel de Yohan : samples, prises, instruments, objets, packs éventuels.
-2. Tester conceptuellement ce que peu de samples peuvent produire par traitement live.
-3. Passer par 03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.
-4. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
-5. Créer les premières fiches source_need prioritaires.
-6. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
+1. Relire / réviser 04_SAMPLE_NEEDS_INITIAL à travers 00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.
+2. Vérifier l’existant réel de Yohan : samples, prises, instruments, objets, packs éventuels.
+3. Tester conceptuellement ce que peu de samples peuvent produire par traitement live.
+4. Passer par 03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.
+5. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
+6. Créer les premières fiches source_need prioritaires.
+7. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
 ```
