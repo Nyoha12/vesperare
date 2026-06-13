@@ -1,6 +1,6 @@
 # 09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES
 
-Version : v0.2  
+Version : v0.3  
 Statut : appendice de modélisation conceptuelle, sans prototypage.
 
 ## Objet
@@ -295,7 +295,514 @@ La voix est compatible si elle reste modulable entre présence humaine, matière
 
 ---
 
-# 3. Fiche trajectoire — Pré-drop naturalisé
+# 3. Fiche objet sonore — Sub
+
+## Famille matérielle
+
+```text
+grave corporel ;
+masse basse ;
+centre physique ;
+fondation ressentie ;
+source de pression ;
+objet harmonique possible ;
+objet microtonal possible.
+```
+
+## Fonctions possibles
+
+```text
+fondation corporelle ;
+stabilisation ;
+pression contrôlée ;
+masse de drop ;
+trace corporelle dans une suspension ;
+tension retenue ;
+résolution grave ;
+liaison entre corps et harmonie ;
+centre spectral.
+```
+
+## Rôles possibles
+
+```text
+fondation principale ;
+sub retenu ;
+trace corporelle ;
+masse de résolution ;
+grave suspendu ;
+centre harmonique ;
+pression latente ;
+grave microtonal ;
+contrepoids à halo ou beauté autonome.
+```
+
+## Trajectoires compatibles
+
+```text
+pré-drop naturalisé ;
+sub retenu → résolution ;
+suspension avec trace corporelle ;
+retour au corps ;
+tension microtonale → stabilisation ;
+peak corporel non agressif ;
+champ harmonique → fondation ;
+retrait du corps → réincorporation.
+```
+
+## Dimensions affectées
+
+```text
+corps ;
+sub ;
+grave ;
+pression ;
+pitch_center ;
+spectral_root ;
+forme ;
+impact ;
+confort ;
+mono / centre.
+```
+
+## Dépendances
+
+```text
+dépend du Pitch / Harmonic Field Manager si le sub doit s’accorder ou se tendre microtonalement ;
+dépend du Spectral & Comfort Governor pour éviter excès de pression ou instabilité ;
+dépend du Conflict / Protection Manager pour préserver centre, mono et lisibilité ;
+dépend du Scene Conductor pour savoir si le corps doit être présent, retiré ou latent ;
+dépend du Halo / Space Controller pour éviter que l’espace dissolve la fondation.
+```
+
+## Automatisations possibles
+
+```text
+retenir le sub avant une résolution ;
+stabiliser le centre grave ;
+introduire une microtension contrôlée ;
+réduire la largeur stéréo ;
+réincorporer progressivement le corps ;
+retirer le sub sans perdre totalement la trace corporelle ;
+renforcer une résolution par gong, voix ou impact.
+```
+
+## Contrôles associés
+
+```text
+Sub central ;
+Sub retenu ;
+Trace corporelle ;
+Pression grave ;
+Stabiliser sub ;
+Tension grave ;
+Résolution sub ;
+Retour au corps ;
+Relation sub / gong ;
+Relation sub / harmonie.
+```
+
+## Garde-fous
+
+```text
+stabiliser hauteur ou centre spectral ;
+préserver mono / centre ;
+éviter boue bas-médium ;
+limiter pression excessive ;
+éviter sub spectaculaire sans fonction ;
+préserver lisibilité de l’impact ;
+protéger les instruments live graves.
+```
+
+## Congruence Vesperare
+
+Le sub est indispensable parce qu’il porte le lien techno le plus corporel. Mais il doit pouvoir être plus qu’une basse : masse, centre spectral, tension, résolution, trace, ou relation harmonique avec gong, didgeridoo, voix et halos.
+
+---
+
+# 4. Fiche objet sonore — Polytexture
+
+## Famille matérielle
+
+```text
+objet composite ;
+tissage percussif ;
+densité articulée ;
+interlocking ;
+harmonie de timbres ;
+contrepoint rythmique ;
+surface énergétique.
+```
+
+## Fonctions possibles
+
+```text
+complexité lisible ;
+propulsion ;
+brillance rythmique ;
+densité articulée ;
+énergie sans kick dominant ;
+préparation de résolution ;
+réponse à un instrument live ;
+variation hypnotique ;
+relief de scène.
+```
+
+## Rôles possibles
+
+```text
+polytexture porteuse ;
+densité de fond ;
+contrepoint ;
+brillance active ;
+pré-drop fragmenté ;
+réalignement rythmique ;
+raréfaction ;
+réponse au live ;
+maintien d’énergie.
+```
+
+## Trajectoires compatibles
+
+```text
+densification ;
+raréfaction ;
+pré-drop syncopé ;
+réalignement ;
+expansion rythmique ;
+retour au corps ;
+hypnose active ;
+complexité → lisibilité ;
+polytexture → peak corporel.
+```
+
+## Dimensions affectées
+
+```text
+rythme ;
+densité ;
+accent ;
+interlocking ;
+brillance ;
+mid_load ;
+lisibilité ;
+complexité ;
+propulsion ;
+relation au live.
+```
+
+## Dépendances
+
+```text
+dépend de l’Object Registry comme objet composite avec sous-objets ;
+dépend du Trajectory Engine pour densifier ou raréfier sans confusion ;
+dépend du Spectral Governor pour contrôler mid_load et aigus ;
+dépend du Conflict Manager si elle masque voix, gong ou live input ;
+dépend du Contextual Control Router pour afficher densité, accent, lisibilité ou retrait selon scène.
+```
+
+## Automatisations possibles
+
+```text
+augmenter densité sans augmenter confusion ;
+réduire certaines couches pour laisser place à un gong ou une voix ;
+changer la hiérarchie d’accents ;
+fragmenter avant une résolution ;
+réaligner après une tension syncopée ;
+répondre à un instrument live ;
+contrôler la charge médium.
+```
+
+## Contrôles associés
+
+```text
+Densité polytexture ;
+Lisibilité ;
+Accents ;
+Interlocking ;
+Brillance ;
+Raréfier ;
+Réaligner ;
+Réponse live ;
+Réduire médiums ;
+Complexité.
+```
+
+## Garde-fous
+
+```text
+éviter virtuosité décorative ;
+préserver cadre techno ;
+contrôler mid_load ;
+éviter couches équivalentes ;
+préserver hiérarchie d’accents ;
+laisser place à voix, gong ou live ;
+empêcher importation stylistique non voulue.
+```
+
+## Congruence Vesperare
+
+La polytexture est compatible si elle reste une densité articulée au service du corps, de l’hypnose et de la forme. Elle ne doit pas devenir démonstration percussive autonome ou couleur world/tribale plaquée.
+
+---
+
+# 5. Fiche objet sonore — Halo
+
+## Famille matérielle
+
+```text
+espace ;
+résonance ;
+queue ;
+champ spectral ;
+profondeur ;
+post-résonance ;
+suspension ;
+liant entre objets.
+```
+
+## Fonctions possibles
+
+```text
+ouvrir l’espace ;
+créer profondeur ;
+suspendre ;
+prolonger un événement ;
+porter une beauté autonome ;
+créer un champ harmonique ;
+préparer un peak non brutal ;
+installer une nuit / scène ;
+relier gong, voix, sub ou field recording.
+```
+
+## Rôles possibles
+
+```text
+espace principal ;
+halo de post-impact ;
+champ harmonique ;
+respiration ;
+trace ;
+beauté autonome ;
+suspension ;
+expansion ;
+liaison ;
+masque à surveiller.
+```
+
+## Trajectoires compatibles
+
+```text
+suspension ;
+expansion ;
+post-drop ;
+beauté autonome ;
+peak spatial ;
+fermeture de scène ;
+halo → retour au corps ;
+halo → réduction ;
+halo harmonique → stabilisation.
+```
+
+## Dimensions affectées
+
+```text
+espace ;
+halo ;
+queue ;
+stéréo ;
+front_back_relief ;
+harmonie ;
+partiels ;
+confort ;
+lisibilité ;
+forme.
+```
+
+## Dépendances
+
+```text
+dépend du Halo / Space / Resonance Controller ;
+dépend du Pitch / Harmonic Field Manager si le halo est accordé ou partiel ;
+dépend du Spectral Governor pour éviter fatigue et masquage ;
+dépend du Conflict Manager si le halo masque impact, voix ou polytexture ;
+dépend du Scene Conductor pour savoir si l’espace doit ouvrir, tenir ou se refermer.
+```
+
+## Automatisations possibles
+
+```text
+ouvrir lentement l’espace ;
+réduire le halo avant un retour au corps ;
+prolonger un gong en post-résonance ;
+créer un champ harmonique suspendu ;
+fermer la largeur pour réinstaller le centre ;
+limiter les queues si la densité augmente ;
+laisser respirer une beauté autonome.
+```
+
+## Contrôles associés
+
+```text
+Halo ;
+Profondeur ;
+Largeur ;
+Post-résonance ;
+Réduire halo ;
+Ouvrir espace ;
+Fermer espace ;
+Halo harmonique ;
+Distance ;
+Retour proximité.
+```
+
+## Garde-fous
+
+```text
+éviter ambientisation ;
+protéger impact ;
+protéger voix ;
+contrôler fatigue aiguë ;
+éviter espace décoratif ;
+limiter queue excessive ;
+préserver proximité quand nécessaire.
+```
+
+## Congruence Vesperare
+
+Le halo est essentiel mais dangereux : il donne nuit, profondeur, mystère, suspension et beauté, mais peut dissoudre le corps. Il doit donc être fortement contextualisé par scène, rôle et trajectoire.
+
+---
+
+# 6. Fiche objet sonore — Didgeridoo
+
+## Famille matérielle
+
+```text
+instrument acoustique ;
+drone corporel ;
+fondamentale grave ;
+formants ;
+souffle ;
+pulsation interne ;
+source live possible ;
+masse organique.
+```
+
+## Fonctions possibles
+
+```text
+fondation organique ;
+sub vivant ;
+pression grave ;
+formants en mouvement ;
+ligne vivante ;
+torsion résonante ;
+lien corps / souffle ;
+trace corporelle ;
+objet live central ;
+champ harmonique naturel.
+```
+
+## Rôles possibles
+
+```text
+grave organique ;
+sub texturé ;
+source de formants ;
+drône corporel ;
+ligne de matière ;
+tension formantique ;
+réponse live ;
+masse respirante ;
+préparation ou stabilisation de scène.
+```
+
+## Trajectoires compatibles
+
+```text
+torsion résonante ;
+suspension avec trace corporelle ;
+retour au corps ;
+sub vivant → stabilisation ;
+formants → ouverture ;
+ligne vivante → hypnose ;
+pré-drop grave ;
+drone → expansion ;
+objet live → influence système.
+```
+
+## Dimensions affectées
+
+```text
+grave ;
+corps ;
+formants ;
+souffle ;
+rythmicité interne ;
+pression ;
+pitch ressenti ;
+harmonie ;
+texture ;
+live input.
+```
+
+## Dépendances
+
+```text
+dépend du Live Object Interpreter si joué live ;
+dépend du Pitch / Harmonic Field Manager pour fondamentale, formants et centre spectral ;
+dépend du Spectral Governor pour contrôler bas-médium et pression ;
+dépend du Scene Conductor pour savoir s’il est fondation, trace ou objet central ;
+dépend du Conflict Manager s’il entre en conflit avec sub, voix ou gong.
+```
+
+## Automatisations possibles
+
+```text
+extraire ou suivre une fondamentale ressentie ;
+relier formants à une trajectoire de torsion ;
+réduire d’autres graves pour laisser place au didgeridoo ;
+transformer souffle en halo ou texture ;
+utiliser les pulsations internes comme influence rythmique ;
+stabiliser ou déstabiliser le sub autour de lui ;
+ouvrir un champ harmonique depuis ses partiels.
+```
+
+## Contrôles associés
+
+```text
+Didgeridoo central ;
+Fondamentale ;
+Formants ;
+Souffle ;
+Pression organique ;
+Sub vivant ;
+Torsion ;
+Trace corporelle ;
+Influence live ;
+Stabiliser grave.
+```
+
+## Garde-fous
+
+```text
+éviter boue bas-médium ;
+préserver clarté du sub ;
+ne pas rigidifier l’instrument en rôle fixe ;
+laisser place à la voix ;
+contrôler pression continue ;
+préserver agency du musicien live ;
+limiter analyse trop déterministe.
+```
+
+## Congruence Vesperare
+
+Le didgeridoo est très compatible parce qu’il unit corps, souffle, grave, formants, naturalisation et live. Il impose cependant une attention forte à l’équilibre grave, à la liberté du jeu et à la distinction entre analyse du signal et décision musicale.
+
+---
+
+# 7. Fiche trajectoire — Pré-drop naturalisé
 
 ## Esprit musical
 
@@ -425,7 +932,7 @@ sub trop instable.
 
 ---
 
-# 4. Fiche trajectoire — Suspension / expansion
+# 8. Fiche trajectoire — Suspension / expansion
 
 ## Esprit musical
 
@@ -539,7 +1046,7 @@ retour trop prévisible.
 
 ---
 
-# 5. Fiche scène — Suspension avant résolution
+# 9. Fiche scène — Suspension avant résolution
 
 ## État principal
 
@@ -652,7 +1159,7 @@ La scène est cohérente si elle permet de sentir une attente et une ouverture s
 
 ---
 
-# 6. Fiche groupement de paramètres — Tension / Résolution
+# 10. Fiche groupement de paramètres — Tension / Résolution
 
 ## Niveau
 
@@ -760,7 +1267,7 @@ Réduire densité.
 
 ---
 
-# 7. Audit initial des fiches
+# 11. Audit initial des fiches
 
 ## Ce que les fiches valident
 
@@ -791,6 +1298,32 @@ données de protection : ce qu’il faut limiter, surveiller ou empêcher.
 ```
 
 Elles montrent aussi que l’Object Registry ne doit pas seulement lister des sons. Il doit organiser des objets capables de changer de rôle selon le contexte.
+
+## Ce que les nouvelles fiches ajoutent à l’audit
+
+Les fiches Sub, Polytexture, Halo et Didgeridoo montrent que l’Object Registry doit aussi gérer des profils très différents :
+
+```text
+Sub : objet corporel central, à protéger fortement, lié au pitch et au centre spectral ;
+Polytexture : objet composite, rythmique, multi-couches, avec hiérarchie d’accents ;
+Halo : objet spatial et spectral, souvent dangereux pour le corps et la lisibilité ;
+Didgeridoo : objet instrumental/live, formantique, grave, respirant et non réductible à une basse.
+```
+
+Conséquence : l’Object Registry ne peut pas être seulement une table générique. Il doit permettre des profils spécialisés selon les familles d’objets.
+
+## Besoin supplémentaire pour l’Object Registry
+
+Le module devra probablement prévoir des familles de champs optionnels :
+
+```text
+profil corporel : body_anchor_capacity, sub_relation, impact_dependency ;
+profil spatial : halo_behavior, space_behavior, tail_behavior ;
+profil rythmique : density_behavior, accent_hierarchy, interlock_capacity ;
+profil harmonique : pitch_center, partial_profile, formant_profile, microtonal_behavior ;
+profil live : performer_agency, analysis_confidence, live_reactivity, role_suggestion_limit ;
+profil de protection : protected_dimensions, emergency_actions, conflict_sensitivity.
+```
 
 ## Conséquence pour `02_SPECIFICATION_MAX_FOR_LIVE`
 
