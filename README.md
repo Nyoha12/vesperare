@@ -81,9 +81,10 @@ Fiches modèles permettant de vérifier concrètement la grille objets / rôles 
 /docs/modules/05_CONTEXTUAL_CONTROL_ROUTER.md
 /docs/modules/06_CONDUCTOR_ROUTER_INTERFACE.md
 /docs/modules/07_CONFLICT_PROTECTION_MANAGER.md
+/docs/modules/08_CONFLICT_CONDUCTOR_ROUTER_INTERFACE.md
 ```
 
-Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les documents actuels détaillent Object Registry, Trajectory Engine, leur contrat d’interaction, Scene / Performance Conductor, Contextual Control Router, l’audit Conductor ↔ Router, puis Conflict / Protection Manager.
+Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les documents actuels détaillent Object Registry, Trajectory Engine, leur contrat d’interaction, Scene / Performance Conductor, Contextual Control Router, l’audit Conductor ↔ Router, Conflict / Protection Manager, puis l’audit Conflict / Protection ↔ Conductor / Router.
 
 ### Validation, outils et mémoire
 
@@ -125,4 +126,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de réaliser un audit léger `Conflict / Protection ↔ Conductor / Router`, puis de détailler `Pitch / Harmonic Field Manager`.
+Le prochain travail recommandé est de détailler `Pitch / Harmonic Field Manager`, en gardant les contraintes du Conflict / Protection Manager : stabilité du sub, lisibilité des partiels, tension microtonale réversible, relation aux formants et possibilité de résolution.
