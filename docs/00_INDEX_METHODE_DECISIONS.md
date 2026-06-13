@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.8  
+Version : v1.9  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -35,7 +35,7 @@ Le projet suit l’ordre général suivant :
 5. Définir les modules et leurs responsabilités.
 6. Auditer les interfaces entre modules.
 7. Identifier les besoins de sources, instruments, samples, engines et assets.
-8. Établir les fiches de données et validations abstraites.
+8. Établir les inventaires, fiches de données et validations abstraites.
 9. Seulement ensuite : prototyper et tester.
 ```
 
@@ -132,23 +132,17 @@ Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il 
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, auditer leurs interfaces avant prototypage, puis préparer les données nécessaires aux instruments, sources, samples, engines et assets.
 
-Ces documents doivent préciser :
+## G. Préparation des sources et assets
 
 ```text
-rôle du module ;
-modèle de données ;
-entrées ;
-sorties ;
-dépendances ;
-relations avec les autres modules ;
-contrats d’interface ;
-risques ;
-garde-fous ;
-formes possibles dans Max for Live / Ableton ;
-liens éventuels vers assets, sources et corpus ciblés.
+/docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 ```
 
-## G. Validation, outils et mémoire
+Rôle : accueillir les premiers instruments, sources, matières, objets, lieux ou familles sonores candidates avant de les transformer en `source_need`, asset, pool ou engine.
+
+Ce document ne constitue pas une banque de sons. Il sert à décrire les affordances, fonctions possibles, phénomènes possibles, risques et stratégies de source.
+
+## H. Validation, outils et mémoire
 
 ```text
 03_VALIDATION_TESTS_EXTENSIONS.md
@@ -183,7 +177,9 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 9. Création de protocoles de données si la décision affecte sources / instruments / assets / engines
    ↓
-10. Propagation vers validation/tests seulement si le système futur est assez clair
+10. Création d’inventaires et fiches de données préparatoires
+   ↓
+11. Propagation vers validation/tests seulement si le système futur est assez clair
 ```
 
 Principe :
@@ -386,50 +382,13 @@ Un asset ne doit pas entrer dans la base performative sans source_need.
 
 Désignent des sources ou groupes de sources dotés d’une matière, d’une fonction possible et de comportements transformables.
 
-Exemples :
-
-```text
-gong ;
-voix ;
-sub ;
-polytexture ;
-halo ;
-clochettes ;
-didgeridoo ;
-field recording ;
-impact-fondation.
-```
-
 ## Rôles musicaux
 
 Désignent la fonction momentanée qu’un objet sonore assume dans une scène ou une trajectoire.
 
-Exemple : un gong peut être :
-
-```text
-impact ;
-halo ;
-rugissement ;
-champ harmonique ;
-masse de résolution ;
-beauté autonome.
-```
-
 ## Trajectoires
 
 Désignent des transformations organisées de priorités musicales, appliquées à des objets, rôles et dimensions.
-
-Exemples :
-
-```text
-pré-drop naturalisé ;
-suspension ;
-expansion ;
-torsion ;
-réincorporation du corps ;
-densification polytexturale ;
-résolution microtonale.
-```
 
 ## Contrôles
 
@@ -450,14 +409,6 @@ La techno est l’influence stylistique principale et doit rester perceptible pa
 ## Naturalisation
 
 Naturaliser une fonction techno ne change pas forcément sa fonction. Cela change son support sonore.
-
-Exemple :
-
-```text
-fonction : micro-pulsation aiguë
-support techno habituel : hi-hat électronique
-support possible : insecte, oiseau, clochette, cymbalette, frottement, grain, petit métal
-```
 
 ## Polytexture percussive
 
@@ -527,6 +478,7 @@ README.md
 /docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
 /docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
 /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
+/docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -561,6 +513,8 @@ docs/modules/15 audit cohérence sources / samples / engines
         ↓
 docs/modules/16 Source Needs / Asset Database Protocol
         ↓
+docs/assets/01 Instrument Source Candidates Initial
+        ↓
 03_VALIDATION_TESTS_EXTENSIONS
 ```
 
@@ -568,7 +522,7 @@ Le document `04_RESSOURCES_ET_BOITE_A_OUTILS` alimente surtout la spécification
 
 Le document `09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES` est un appendice de vérification : il peut rétroagir vers `01` et `02` si une fiche révèle une incohérence ou un manque.
 
-Le document `10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES` est une contrainte transversale : il doit influencer `01`, `02`, les modules, le protocole d’assets et les recherches d’outils au bon moment.
+Le document `10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES` est une contrainte transversale : il doit influencer `01`, `02`, les modules, le protocole d’assets, l’inventaire de sources et les recherches d’outils au bon moment.
 
 Les documents `docs/modules/` développent progressivement les modules prioritaires de `02` lorsque les fiches et audits montrent que leur rôle est assez clair.
 
@@ -583,13 +537,14 @@ Les documents `docs/modules/` développent progressivement les modules prioritai
 10 est synchronisé avec la logique instruments / sources / corpus ciblés ;
 03 est synchronisé avec les validations de données et protocoles d’assets ;
 16 devient la référence pour préparer instruments, sources, samples, assets, pools et politiques de sélection ;
+01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL devient l’inventaire ouvert à enrichir avec les propositions de Yohan ;
 Output / Mix est repoussé après premières fiches source_need / instrument candidates.
 ```
 
 Prochaine étape recommandée :
 
 ```text
-créer INSTRUMENT_SOURCE_CANDIDATES_INITIAL ;
+enrichir INSTRUMENT_SOURCE_CANDIDATES_INITIAL avec la liste spontanée de Yohan ;
 créer les premières fiches source_need prioritaires ;
 puis seulement ensuite reprendre Output / Mix / Performance Layer.
 ```
