@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.5  
+Version : v1.6  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -105,6 +105,7 @@ Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il 
 /docs/modules/02_TRAJECTORY_ENGINE.md
 /docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
 /docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
+/docs/modules/05_CONTEXTUAL_CONTROL_ROUTER.md
 ```
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, et auditer leurs interfaces avant prototypage.
@@ -124,7 +125,7 @@ garde-fous ;
 formes possibles dans Max for Live / Ableton.
 ```
 
-Les premiers documents détaillent `Object Registry`, `Trajectory Engine`, leur contrat d’interaction, puis `Scene / Performance Conductor`.
+Les premiers documents détaillent `Object Registry`, `Trajectory Engine`, leur contrat d’interaction, `Scene / Performance Conductor`, puis `Contextual Control Router`.
 
 ### H. Validation, outils et mémoire
 
@@ -506,6 +507,7 @@ README.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
 /docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
 /docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
+/docs/modules/05_CONTEXTUAL_CONTROL_ROUTER.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -536,6 +538,8 @@ docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE
         ↓
 docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR
         ↓
+docs/modules/05_CONTEXTUAL_CONTROL_ROUTER
+        ↓
 03_VALIDATION_TESTS_EXTENSIONS
 ```
 
@@ -549,15 +553,14 @@ Les documents `docs/modules/` développent progressivement les modules prioritai
 
 ## Prochaine synchronisation documentaire
 
-À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Les modules Object Registry, Trajectory Engine, Registry ↔ Trajectory Interface et Scene / Performance Conductor sont détaillés. Le document `10` inscrit les contraintes différées de sound design, mix/master et recherche d’outils.
+À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Les modules Object Registry, Trajectory Engine, Registry ↔ Trajectory Interface, Scene / Performance Conductor et Contextual Control Router sont détaillés. Le document `10` inscrit les contraintes différées de sound design, mix/master et recherche d’outils.
 
 Ordre recommandé maintenant :
 
 ```text
-1. Développer Contextual Control Router.
-2. Vérifier l’interface Conductor ↔ Control Router.
-3. Revenir dans 03 pour définir les validations par module.
-4. Prévoir ensuite un audit de cohérence notation / catégories / responsabilités.
+1. Auditer l’interface Conductor ↔ Control Router.
+2. Revenir dans 03 pour définir les validations par module.
+3. Prévoir ensuite un audit de cohérence notation / catégories / responsabilités.
 ```
 
 ## Règle de mise à jour
