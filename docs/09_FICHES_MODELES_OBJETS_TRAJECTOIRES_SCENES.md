@@ -1,6 +1,6 @@
 # 09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES
 
-Version : v0.1  
+Version : v0.2  
 Statut : appendice de modélisation conceptuelle, sans prototypage.
 
 ## Objet
@@ -322,7 +322,7 @@ ou bifurquer.
 ```text
 armement : un événement de résolution devient possible ;
 préparation : retrait du sub ou de l’impact, fragmentation, tension ;
-engagement : les objets convergent vers un seuil ;
+engagement : les objets commencent à converger vers un seuil ;
 seuil : résolution possible mais pas obligatoire ;
 résolution : drop, retour au corps, cri, gong, sub ou réalignement ;
 post-trace : halo, queue, résonance, retour au flux ;
@@ -760,7 +760,9 @@ Réduire densité.
 
 ---
 
-# 7. Ce que ces fiches vérifient
+# 7. Audit initial des fiches
+
+## Ce que les fiches valident
 
 Ces fiches montrent que le modèle est capable de représenter :
 
@@ -775,6 +777,35 @@ les risques et garde-fous associés.
 ```
 
 Elles confirment que l’architecture est congruente avec l’esprit du projet : les influences sont déconstruites en phénomènes, les phénomènes sont portés par des objets, les objets jouent des rôles, les trajectoires distribuent les transformations, et les contrôles doivent rester contextuels.
+
+## Ce que les fiches révèlent comme besoin
+
+Les fiches montrent que l’Object Registry devra distinguer plusieurs types d’informations :
+
+```text
+données déclarées : ce que le compositeur sait ou décide sur un objet ;
+données analysées : ce que le système peut extraire d’un signal ou fichier ;
+données contextuelles : ce que l’objet devient dans une scène ou trajectoire ;
+données dynamiques : ce qui change en performance ;
+données de protection : ce qu’il faut limiter, surveiller ou empêcher.
+```
+
+Elles montrent aussi que l’Object Registry ne doit pas seulement lister des sons. Il doit organiser des objets capables de changer de rôle selon le contexte.
+
+## Conséquence pour `02_SPECIFICATION_MAX_FOR_LIVE`
+
+Le module Object Registry doit être développé en priorité, car il conditionne :
+
+```text
+Trajectory Engine ;
+Timbre & Material Mapper ;
+Contextual Control Router ;
+Conflict / Protection Manager ;
+Pitch / Harmonic Field Manager ;
+Live Object Interpreter.
+```
+
+Le premier approfondissement de `02` doit donc porter sur la structure interne de l’Object Registry.
 
 ## Limites actuelles
 
