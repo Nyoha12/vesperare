@@ -1,6 +1,6 @@
 # 08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS
 
-Version : v0.1  
+Version : v0.2  
 Statut : document de conception transversal pour performance, scènes, trajectoires et objets sonores.
 
 ## Objet
@@ -30,6 +30,134 @@ Formule directrice :
 ```text
 Le compositeur programme l’esprit, les possibles, les relations et les trajectoires ;
 le système rend ces possibles vivants en performance.
+```
+
+## Ancrage stylistique et objectif musical
+
+Ce modèle de scènes, trajectoires et objets n’est pas une abstraction technique indépendante. Il sert directement l’objectif de Vesperare : inventer un style personnel à partir de fonctions techno réincarnées dans des matières naturelles, acoustiques, vocales, percussives, instrumentales, microtonales ou naturalisées.
+
+Les trajectoires, scènes et objets doivent donc toujours être reliés aux analyses stylistiques précédentes.
+
+### Techno
+
+La techno fournit le socle fonctionnel : corps, impact, pression, hypnose, répétition, tension longue, efficacité performative.
+
+Dans le modèle de performance :
+
+```text
+les états vérifient la présence ou l’absence du corps ;
+les scènes organisent la stabilité ou le retrait de la fondation ;
+les trajectoires décident comment le corps est maintenu, suspendu, réincorporé ou transformé ;
+les objets sonores assument des fonctions techno sans devoir sonner techno standard.
+```
+
+La couche performance doit donc protéger la fonction corporelle du projet, même lorsque l’espace, l’harmonie, la microtonalité ou les matières autonomes prennent de l’importance.
+
+### Dubstep
+
+Le dubstep apporte surtout l’art de la syncope tendue, de l’attente, du drop rare, de la résolution rythmique, du sub comme masse, des voix criées et des rugissements de gongs.
+
+Dans le modèle de performance :
+
+```text
+une trajectoire pré-drop n’est pas un effet de style ;
+elle est une combinaison d’opérations : retirer, fragmenter, retenir, tendre, préparer, réaligner ;
+les objets impliqués peuvent être sub, gong, voix, impact-fondation, polytexture ou halo ;
+le drop doit rester rare, programmable, déclenchable, retardable ou annulable ;
+la résolution peut être rythmique, corporelle, spectrale, harmonique ou microtonale.
+```
+
+La logique dubstep est donc déconstruite en composants utilisables sans devenir identité dubstep plaquée.
+
+### Jazz
+
+Le jazz apporte les champs de tension harmonique, les couleurs d’accords, les voicings et la finesse rythmique.
+
+Dans le modèle de performance :
+
+```text
+les trajectoires peuvent transformer des champs harmoniques ;
+les objets peuvent porter des rôles de couleur, tension, voicing distribué ou micro-instabilité ;
+les scènes peuvent programmer des relations fines entre rythme, harmonie, partiels et corps ;
+les contrôles contextuels doivent permettre la finesse sans réduire cela à du humanize aléatoire.
+```
+
+La logique jazz doit enrichir les relations, placements, couleurs et tensions, sans importer un style jazz reconnaissable par défaut.
+
+### Trance
+
+La trance apporte suspension, ouverture, expansion, build-up, peak sans brutalité, brillance maîtrisée, halos larges et respiration de matière.
+
+Dans le modèle de performance :
+
+```text
+une trajectoire d’expansion doit indiquer quels objets s’ouvrent ;
+une suspension doit préciser ce qui est retiré et ce qui reste corporel ;
+un peak peut être spatial, harmonique, matériel ou corporel, pas seulement spectaculaire ;
+les objets doivent traduire l’ouverture selon leur nature : gong, voix, halo, sub, clochettes, polytexture.
+```
+
+La logique trance est conservée comme science de l’ouverture progressive et du peak non brutal, mais naturalisée et intégrée aux objets du projet.
+
+### Acid
+
+L’acid apporte ligne vivante, torsion, résonance contrôlée et hypnose par variation de timbre, mais sans modèle TB-303 structurant.
+
+Dans le modèle de performance :
+
+```text
+une trajectoire de torsion doit toujours être traduite comme phénomène acoustique ou naturalisable ;
+les objets impliqués peuvent être voix, gong, didgeridoo, bol, reverb, filtre, résonance ou matière de sub ;
+slide, squelch, acidité ou ligne hybride ne sont acceptés que s’ils deviennent des phénomènes cohérents avec les objets et le style ;
+le jeu de filtre appartient à l’organisation globale des contrôles live, pas à un module acid isolé.
+```
+
+La logique acid devient donc une manière de faire muter des objets et résonances, pas une citation stylistique.
+
+### Polytexture percussive
+
+La facette Keita / polytexture apporte interlocking, densité articulée, richesse percussive, harmonie de timbres, complexité lisible et précision du geste.
+
+Dans le modèle de performance :
+
+```text
+les trajectoires de densification ne doivent pas créer une masse confuse ;
+les objets percussifs doivent garder des rôles distincts ;
+les scènes doivent pouvoir augmenter complexité et énergie sans perdre lisibilité ;
+les contrôles doivent permettre articulation, accentuation, brillance et interaction entre couches.
+```
+
+### Microtonalité, harmoniques et partiels
+
+Le document 07 établit que le pitch de Vesperare ne doit pas être réduit aux notes MIDI.
+
+Dans le modèle de performance :
+
+```text
+les trajectoires peuvent agir sur des partiels, formants, centres spectraux et champs microtonaux ;
+les objets peuvent porter des tensions ou résolutions harmoniques ;
+les scènes peuvent programmer des microtensions, stabilisations, battements, halos ou centres graves ;
+les drops, peaks, suspensions et beautés autonomes peuvent avoir une dimension harmonique ou microtonale.
+```
+
+### Objectif global
+
+La couche performance sert donc à éviter trois risques :
+
+```text
+collage d’influences ;
+accumulation de modules indépendants ;
+autonomie générative hors style.
+```
+
+Elle doit au contraire permettre :
+
+```text
+une intégration profonde des influences ;
+une programmation fine des relations ;
+une autonomie située ;
+une interface qui présente les bons contrôles au bon moment ;
+une performance complète orientée par l’esprit du projet.
 ```
 
 ---
@@ -76,6 +204,34 @@ objet simple : gong, voix, tambour, cloche ;
 objet composite : sub + gong, voix + reverb, halo de bols, polytexture de percussions.
 ```
 
+## Rôle musical d’un objet
+
+Un même objet peut assumer plusieurs rôles selon la scène ou la trajectoire.
+
+Exemple : un gong peut être :
+
+```text
+impact ;
+halo ;
+rugissement ;
+champ harmonique ;
+beauté autonome ;
+préparation de drop ;
+masse grave ;
+source de partiels.
+```
+
+Il ne suffit donc pas de dire qu’un objet est actif. Il faut savoir quel rôle il joue.
+
+Formule :
+
+```text
+objet sonore = matière / source / entité ;
+rôle musical = fonction momentanée de cet objet dans la scène.
+```
+
+Les trajectoires ne doivent pas seulement agir sur les objets, mais sur les objets dans un rôle donné.
+
 ## État
 
 Un état est un régime de cohérence musical actuel.
@@ -116,6 +272,7 @@ Une scène peut définir :
 ```text
 quel état ou famille d’états est actif ;
 quels objets sonores sont disponibles ;
+quels rôles ces objets peuvent assumer ;
 quels comportements sont autorisés ;
 quelles trajectoires peuvent être lancées ;
 quels événements rares sont armés ;
@@ -155,6 +312,32 @@ la probabilité des grands événements.
 ```
 
 Une trajectoire n’est pas forcément linéaire. Elle peut être locale, globale, superposée, tressée, transférée ou interrompue.
+
+## Dimensions d’application
+
+Une trajectoire doit préciser sur quelle dimension elle agit.
+
+Dimensions possibles :
+
+```text
+rythme ;
+impact ;
+sub ;
+densité ;
+spectre ;
+harmoniques ;
+microtonalité ;
+espace ;
+halo ;
+intelligibilité ;
+présence ;
+forme ;
+relation au live ;
+autonomie ;
+lisibilité.
+```
+
+Deux trajectoires peuvent coexister sur un même objet si elles agissent sur des dimensions compatibles ou si leur conflit est arbitré.
 
 ## Implication
 
@@ -234,6 +417,33 @@ expansion non brutale = éclaircir + ouvrir + étendre + stabiliser + rayonner.
 
 Cette décomposition permet d’anticiper, recombiner et optimiser un maximum de possibilités.
 
+## Phases internes d’une trajectoire
+
+Une trajectoire peut comporter plusieurs phases.
+
+```text
+armement ;
+préparation ;
+engagement ;
+seuil ;
+résolution ou bifurcation ;
+post-trace / post-résonance ;
+désarmement.
+```
+
+Exemple : pré-drop.
+
+```text
+armement : le système sait qu’un drop est possible ;
+préparation : sub retenu, tensions, syncope ;
+engagement : les objets commencent à converger ;
+seuil : moment où la résolution devient possible ;
+résolution : drop, retour, ou fausse résolution ;
+post-trace : queue, halo, résonance, retour au flux.
+```
+
+Les contrôles contextuels doivent dépendre de la phase de trajectoire, pas seulement du nom de la trajectoire.
+
 ---
 
 # 3. Trajectoires globales et locales
@@ -273,11 +483,11 @@ des trajectoires armées mais non déclenchées.
 
 ---
 
-# 4. Matrice objets × trajectoires
+# 4. Matrice objets × rôles × dimensions × trajectoires
 
-Une scène peut être représentée comme une matrice entre objets et trajectoires.
+Une scène peut être représentée comme une matrice entre objets et trajectoires, mais cette matrice doit intégrer les rôles et dimensions.
 
-Exemple conceptuel :
+Exemple conceptuel simple :
 
 ```text
                     Suspension   Expansion   Densification   Pré-drop
@@ -290,7 +500,41 @@ Halo                   fort         fort           faible       faible
 Clochettes             faible       moyen          fort         non
 ```
 
-Cette matrice permet de dire qu’une scène n’est pas seulement “une suspension”, mais par exemple :
+Mais la représentation complète doit préciser :
+
+```text
+objet ;
+rôle actuel ;
+trajectoire active ;
+dimension affectée ;
+degré d’implication ;
+priorité ;
+protection.
+```
+
+Exemple :
+
+```text
+Gong
+rôle : masse de résolution
+trajectoire : pré-drop
+dimension : spectrale + formelle
+implication : forte
+protection : queue contrôlée, éviter boue spectrale.
+```
+
+Autre exemple :
+
+```text
+Gong
+rôle : halo harmonique
+trajectoire : expansion
+dimension : spatiale + partiels
+implication : moyenne
+protection : ne pas masquer voix / sub.
+```
+
+Cette logique permet de dire qu’une scène n’est pas seulement “une suspension”, mais par exemple :
 
 ```text
 suspension du corps ;
@@ -487,6 +731,7 @@ Elle peut contenir :
 ```text
 état principal ;
 objets actifs ;
+rôles des objets ;
 trajectoire globale ;
 trajectoires locales ;
 relations entre objets ;
@@ -534,7 +779,9 @@ Les contrôles proposés doivent dépendre de :
 ```text
 la scène programmée ;
 les trajectoires actives ;
+les phases de trajectoires ;
 les objets sonores prioritaires ;
+les rôles actuels de ces objets ;
 les événements armés ;
 le niveau d’autonomie autorisé ;
 les garde-fous nécessaires.
@@ -543,7 +790,7 @@ les garde-fous nécessaires.
 Formule :
 
 ```text
-contexte = scène + trajectoires + objets prioritaires.
+contexte = scène + trajectoires + phases + objets prioritaires + rôles.
 ```
 
 Exemple :
@@ -552,6 +799,7 @@ Exemple :
 Scène : pré-drop
 Trajectoire active : tension syncopée
 Objet central : voix
+Rôle : matière de résolution / cri armé
 
 Contrôles proposés :
 fragmentation vocale ;
@@ -568,6 +816,7 @@ Même scène avec objet central différent :
 Scène : pré-drop
 Trajectoire active : tension syncopée
 Objet central : gong
+Rôle : masse de résolution / rugissement armé
 
 Contrôles proposés :
 rugissement gong ;
@@ -598,7 +847,7 @@ stop / gel / reprise.
 
 ### Contrôles contextuels
 
-Présentés selon la scène, les trajectoires et les objets prioritaires.
+Présentés selon la scène, les trajectoires, les phases, les objets prioritaires et les rôles.
 
 ### Contrôles profonds
 
@@ -630,6 +879,7 @@ Bonne autonomie :
 ```text
 le système connaît l’état actif ;
 il connaît les objets disponibles ;
+il connaît les rôles actuels des objets ;
 il connaît les trajectoires autorisées ;
 il connaît les tensions en cours ;
 il sait quels événements sont armés ;
@@ -639,6 +889,16 @@ il peut varier dans un champ de cohérence.
 ```
 
 L’autonomie doit donc être un comportement situé dans une scène, une trajectoire, une matière et une logique stylistique.
+
+## Niveaux d’autonomie
+
+```text
+micro-autonomie : variations fines, accents, mutations, détails ;
+méso-autonomie : évolution d’une trajectoire locale, densification, retrait, ouverture ;
+macro-autonomie : propositions de bifurcation, transition ou scène suivante.
+```
+
+La micro- et méso-autonomie peuvent être relativement riches si les garde-fous sont bons. La macro-autonomie doit rester beaucoup plus surveillée.
 
 ---
 
@@ -664,6 +924,19 @@ annulation ;
 protection de l’objet.
 ```
 
+## Types de conflits
+
+```text
+conflit de direction : une trajectoire veut ouvrir, une autre veut fermer ;
+conflit de ressource : deux objets occupent le même espace spectral ;
+conflit de fonction : un objet doit être fondation et instabilité en même temps ;
+conflit de lisibilité : trop de trajectoires simultanées rendent la scène illisible ;
+conflit de corps : la sophistication détruit l’impact ou le sub ;
+conflit de beauté : la matière devient fascinante mais coupe la forme.
+```
+
+Le système ne doit pas seulement empêcher les conflits. Certains conflits peuvent être musicalement féconds s’ils sont contrôlés.
+
 Exemples de protections :
 
 ```text
@@ -681,11 +954,11 @@ Cette couche pourrait impliquer plusieurs modules ou sous-systèmes Max for Live
 
 ## Object Registry
 
-Liste les objets sonores disponibles, leurs fonctions, leurs capacités, leurs limites, leurs relations possibles.
+Liste les objets sonores disponibles, leurs fonctions, leurs rôles possibles, leurs capacités, leurs limites, leurs relations possibles.
 
 ## Trajectory Engine
 
-Gère les trajectoires globales et locales, leurs opérations, leurs courbes, leurs objets impliqués et leurs conditions.
+Gère les trajectoires globales et locales, leurs opérations, leurs phases, leurs courbes, leurs objets impliqués, leurs dimensions et leurs conditions.
 
 ## Scene / Performance Conductor
 
@@ -699,7 +972,9 @@ Présente les bons contrôles au bon moment selon :
 scène ;
 état ;
 trajectoires ;
+phases ;
 objets prioritaires ;
+rôles ;
 urgence ;
 garde-fous ;
 phase de performance.
@@ -716,15 +991,18 @@ phase de performance.
 ```text
 1. Les trajectoires doivent être déconstruites en opérations recombinables.
 2. Les trajectoires doivent toujours préciser les objets sonores impliqués.
-3. Un même objet peut participer à plusieurs trajectoires.
-4. Plusieurs trajectoires peuvent coexister dans une même scène.
-5. Les opérations doivent être traduites selon la nature de chaque objet.
-6. Les scènes doivent programmer des relations, pas seulement des objets actifs.
-7. Tout doit pouvoir être programmable, mais l’interface doit hiérarchiser les contrôles selon le contexte.
-8. L’autonomie du système doit être située, cohérente et contrôlable.
-9. Les trajectoires archétypales servent à comprendre l’esprit du projet, mais doivent rester déconstruites et recombinables.
+3. Les objets sonores doivent être distingués de leurs rôles musicaux momentanés.
+4. Un même objet peut participer à plusieurs trajectoires.
+5. Plusieurs trajectoires peuvent coexister dans une même scène.
+6. Les trajectoires doivent préciser les dimensions qu’elles affectent.
+7. Les opérations doivent être traduites selon la nature et le rôle de chaque objet.
+8. Les scènes doivent programmer des relations, pas seulement des objets actifs.
+9. Tout doit pouvoir être programmable, mais l’interface doit hiérarchiser les contrôles selon le contexte.
+10. L’autonomie du système doit être située, cohérente et contrôlable.
+11. Les trajectoires archétypales servent à comprendre l’esprit du projet, mais doivent rester déconstruites et recombinables.
+12. Les abstractions de performance doivent toujours rester reliées aux analyses stylistiques : techno, dubstep, jazz, trance, acid, polytexture, microtonalité et naturalisation.
 ```
 
 ## Formule directrice
 
-Une trajectoire n’est jamais seulement une courbe globale : c’est une transformation distribuée entre des objets sonores, chacun impliqué à un degré différent et selon sa propre nature.
+Une trajectoire n’est jamais seulement une courbe globale : c’est une transformation distribuée entre des objets sonores, chacun impliqué à un degré différent, dans un rôle spécifique, selon sa propre nature et dans une logique stylistique cohérente avec Vesperare.
