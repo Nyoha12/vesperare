@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v0.6  
+Version : v0.7  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -154,6 +154,18 @@ La facette Keita Ogawa / polytexture percussive est une facette esthétique opé
 
 Elle ne doit pas devenir une importation de style latino, cubain, tribal, folklorique ou world music.
 
+### Influences supplémentaires
+
+Dubstep, jazz, trance et acid sont étudiés comme sources d’éléments intégrables à Vesperare, et non comme styles à importer en bloc.
+
+Ils sont organisés dans `06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md`.
+
+### Pitch, harmoniques et microtonalité
+
+La microtonalité, les partiels, les formants, les hauteurs ressenties et les centres spectraux constituent un nœud transversal du projet.
+
+Ils sont organisés dans `07_PITCH_HARMONIQUES_MICROTONALITE.md`.
+
 ### Instruments live
 
 Les instruments live ne doivent pas être classés rigidement. Didgeridoo, gongs, tambours, voix ou autres instruments peuvent être des phénomènes multidimensionnels. Le système doit analyser ou recevoir leurs caractéristiques et permettre de configurer leur impact.
@@ -168,6 +180,8 @@ README.md
 /docs/03_VALIDATION_TESTS_EXTENSIONS.md
 /docs/04_RESSOURCES_ET_BOITE_A_OUTILS.md
 /docs/05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
+/docs/06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
+/docs/07_PITCH_HARMONIQUES_MICROTONALITE.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -175,6 +189,10 @@ README.md
 
 ```text
 05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO
+        ↓
+06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE
+        ↓
+07_PITCH_HARMONIQUES_MICROTONALITE
         ↓
 01_CAHIER_DES_PHENOMENES_SONORES
         ↓
