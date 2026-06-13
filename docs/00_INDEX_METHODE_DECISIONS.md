@@ -1,11 +1,13 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v0.8  
+Version : v0.9  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
 
 Ce document garde les décisions structurantes du projet Vesperare : méthode, terminologie, ordre de travail, statut des documents, règles de mise à jour et grandes orientations validées.
+
+Il sert aussi à organiser le workflow documentaire : quels documents définissent l’esprit, lesquels développent les couches transversales, lesquels servent de pont vers la technique, et dans quel ordre les mettre à jour.
 
 ## Formulation actuelle du projet
 
@@ -30,6 +32,94 @@ Le projet suit l’ordre suivant :
 6. Établir les interactions entre paramètres
 7. Définir les contrôles live
 8. Seulement ensuite : prototyper et tester
+```
+
+## Organisation documentaire actuelle
+
+Les documents sont organisés par fonction dans le projet, et non seulement par ordre numérique.
+
+### A. Documents directeurs
+
+```text
+README.md
+00_INDEX_METHODE_DECISIONS.md
+```
+
+Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire et le workflow.
+
+### B. Documents de style et d’influences
+
+```text
+05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
+06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
+```
+
+Rôle : définir l’esprit musical, les fonctions retenues de la techno, puis les éléments extraits d’autres styles sans les importer comme blocs stylistiques.
+
+### C. Documents conceptuels transversaux
+
+```text
+07_PITCH_HARMONIQUES_MICROTONALITE.md
+08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
+```
+
+Rôle : organiser les grands nœuds qui traversent tous les phénomènes et toute la technique : pitch, partiels, microtonalité, objets sonores, scènes, trajectoires, contrôles contextuels et autonomie située.
+
+### D. Document phénoménologique de transfert
+
+```text
+01_CAHIER_DES_PHENOMENES_SONORES.md
+```
+
+Rôle : convertir les décisions stylistiques et transversales en phénomènes sonores manipulables : définitions, supports, risques, variables, rôles possibles, trajectoires possibles.
+
+Ce document doit être relu après les documents `05–08`, car il sert de pont entre esthétique et technique.
+
+### E. Document de spécification technique
+
+```text
+02_SPECIFICATION_MAX_FOR_LIVE.md
+```
+
+Rôle : traduire les phénomènes, objets, rôles, trajectoires, contrôles et garde-fous en architecture Max for Live / Ableton Live.
+
+Ce document ne doit pas être mis à jour seulement par ajout de modules : il doit rester cohérent avec le système esthétique complet.
+
+### F. Validation, outils et mémoire
+
+```text
+03_VALIDATION_TESTS_EXTENSIONS.md
+04_RESSOURCES_ET_BOITE_A_OUTILS.md
+/checkpoints/checkpoint_maitre_v0_1.md
+```
+
+Rôle : préparer les futures validations, maintenir la boîte à outils, garder des états de synthèse du projet.
+
+## Workflow documentaire actuel
+
+Le workflow ne doit pas être une simple progression linéaire. Il doit fonctionner par propagation contrôlée.
+
+```text
+1. Décision esthétique ou conceptuelle
+   ↓
+2. Inscription dans le document source approprié
+   ↓
+3. Vérification de congruence avec les documents directeurs
+   ↓
+4. Propagation vers le cahier des phénomènes si la décision affecte les sons
+   ↓
+5. Propagation vers la spécification technique si la décision affecte l’architecture
+   ↓
+6. Propagation vers validation/tests seulement si un module futur est assez clair
+```
+
+Principe :
+
+```text
+ne pas transformer immédiatement chaque idée en module ;
+ne pas transformer immédiatement chaque phénomène en prototype ;
+ne pas multiplier les documents sans nécessité ;
+propager seulement ce qui est assez stable.
 ```
 
 ## Règle anti-prototype prématuré
@@ -81,6 +171,71 @@ créer du halo ;
 articuler ;
 ouvrir l’espace ;
 créer de la tension.
+```
+
+### Phénomènes sonores
+
+Désignent la manière dont une fonction devient perceptible dans la matière sonore.
+
+Exemples :
+
+```text
+impact-fondation ;
+pression spectrale corporelle ;
+contour sculpté ;
+brillance rythmique naturalisée ;
+polytexture percussive raffinée ;
+espace musical occupé ;
+beauté autonome.
+```
+
+### Objets sonores
+
+Désignent des sources ou groupes de sources dotés d’une matière, d’une fonction possible et de comportements transformables.
+
+Exemples :
+
+```text
+gong ;
+voix ;
+sub ;
+polytexture ;
+halo ;
+clochettes ;
+didgeridoo ;
+field recording ;
+impact-fondation.
+```
+
+### Rôles musicaux
+
+Désignent la fonction momentanée qu’un objet sonore assume dans une scène ou une trajectoire.
+
+Exemple : un gong peut être :
+
+```text
+impact ;
+halo ;
+rugissement ;
+champ harmonique ;
+masse de résolution ;
+beauté autonome.
+```
+
+### Trajectoires
+
+Désignent des transformations organisées de priorités musicales, appliquées à des objets, rôles et dimensions.
+
+Exemples :
+
+```text
+pré-drop naturalisé ;
+suspension ;
+expansion ;
+torsion ;
+réincorporation du corps ;
+densification polytexturale ;
+résolution microtonale.
 ```
 
 ### Variables internes
@@ -168,7 +323,7 @@ Ils sont organisés dans `07_PITCH_HARMONIQUES_MICROTONALITE.md`.
 
 ### Performance, scènes, trajectoires et objets
 
-La performance doit être pensée comme un réseau programmable d’états, scènes, trajectoires, objets sonores, implications, contrôles contextuels et autonomies situées.
+La performance doit être pensée comme un réseau programmable d’états, scènes, trajectoires, objets sonores, rôles, implications, contrôles contextuels et autonomies situées.
 
 Ce niveau est organisé dans `08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md`.
 
@@ -211,6 +366,34 @@ README.md
 ```
 
 Le document `04_RESSOURCES_ET_BOITE_A_OUTILS` alimente surtout la spécification technique.
+
+## Prochaine synchronisation documentaire
+
+À ce stade, les documents `05–08` sont assez mûrs pour servir de base à une synchronisation descendante.
+
+Ordre recommandé :
+
+```text
+1. Mettre à jour 01_CAHIER_DES_PHENOMENES_SONORES
+   - intégrer objets sonores ;
+   - intégrer rôles musicaux ;
+   - intégrer trajectoires possibles ;
+   - intégrer dimensions affectées ;
+   - intégrer liens pitch / partiels / microtonalité.
+
+2. Refonte de 02_SPECIFICATION_MAX_FOR_LIVE
+   - intégrer Object Registry ;
+   - intégrer Trajectory Engine ;
+   - intégrer Scene / Performance Conductor ;
+   - intégrer Contextual Control Router ;
+   - intégrer Pitch / Harmonic Field Manager ;
+   - intégrer Conflict / Protection Manager.
+
+3. Mettre à jour 03_VALIDATION_TESTS_EXTENSIONS
+   - définir validations conceptuelles ;
+   - définir futurs prototypes réutilisables ;
+   - éviter tests prématurés ou jetables.
+```
 
 ## Règle de mise à jour
 
