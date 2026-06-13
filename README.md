@@ -57,6 +57,14 @@ Organisation du pitch, des partiels, de la microtonalité, des objets sonores, d
 
 Conversion des décisions esthétiques en phénomènes sonores, puis en architecture Max for Live / Ableton Live.
 
+### Appendice de modélisation
+
+```text
+09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
+```
+
+Fiches modèles permettant de vérifier concrètement la grille objets / rôles / trajectoires / scènes / paramètres, sans prototypage.
+
 ### Validation, outils et mémoire
 
 ```text
@@ -82,7 +90,9 @@ Préparation des futures validations, ressources techniques, outils et points d�
   ↓
 02 spécification Max for Live
   ↓
+09 fiches modèles
+  ↓
 03 validation / tests
 ```
 
-Le prochain travail recommandé est la synchronisation de `01_CAHIER_DES_PHENOMENES_SONORES.md`, puis la refonte de `02_SPECIFICATION_MAX_FOR_LIVE.md`.
+Le prochain travail recommandé est d’auditer les fiches modèles pour repérer ce qui manque encore dans `01` ou `02`, puis de détailler les modules de `02_SPECIFICATION_MAX_FOR_LIVE.md` un par un.
