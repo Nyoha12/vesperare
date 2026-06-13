@@ -16,6 +16,8 @@ Principes retenus :
 - polytexture percussive comme facette esthétique opératoire ;
 - microtonalité, harmoniques, partiels et centres spectraux comme nœud transversal ;
 - scènes, trajectoires et objets sonores comme couche supérieure de performance programmable ;
+- sound design comme organisation d’objets, de comportements, de relations et de milieux sonores ;
+- mix / master comme contrainte future intégrée, subtile et professionnelle ;
 - système live configurable, non réducteur, orienté performance complète ;
 - Max for Live comme cœur temps réel ;
 - Ableton Extensions SDK comme outil satellite pour préparation, génération de fichiers/clips/scènes, documentation et accélération de tests futurs.
@@ -44,9 +46,10 @@ Définition du style personnel, des fonctions techno retenues et des éléments 
 ```text
 07_PITCH_HARMONIQUES_MICROTONALITE.md
 08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
+10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md
 ```
 
-Organisation du pitch, des partiels, de la microtonalité, des objets sonores, des rôles, des scènes, des trajectoires et des contrôles contextuels.
+Organisation du pitch, des partiels, de la microtonalité, des objets sonores, des rôles, des scènes, des trajectoires, des contrôles contextuels, du sound design, du mix/master et des recherches d’outils futures.
 
 ### Pont vers la technique
 
@@ -97,6 +100,8 @@ Préparation des futures validations, ressources techniques, outils et points d�
   ↓
 08 performance / scènes / trajectoires / objets
   ↓
+10 sound design / mix / outils — contraintes transversales
+  ↓
 01 phénomènes sonores
   ↓
 02 spécification Max for Live
@@ -108,4 +113,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de développer `Contextual Control Router`, puisque le Conductor formalise maintenant ce qui est autorisé, armé, interdit ou prioritaire dans la performance.
+Le prochain travail recommandé est de développer `Contextual Control Router`, en tenant compte des contraintes transversales de sound design, mix/master et recherche d’outils inscrites dans `10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md`.
