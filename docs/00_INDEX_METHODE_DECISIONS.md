@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v2.8  
+Version : v2.9  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -144,9 +144,11 @@ Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_
 /docs/assets/06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS.md
 /docs/assets/07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS.md
 /docs/assets/source_needs/SOURCE_NEED_LIVE_JAW_HARPS_FORMANT_MICROPULSE.md
+/docs/assets/source_needs/SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS.md
+/docs/assets/source_needs/SOURCE_NEED_SUB_PRESSURE_ENGINE.md
 ```
 
-Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, intégrer les données fixes de live de Yohan, analyser les besoins depuis zéro sample, créer les premières fiches `source_need` pour les sources live garanties, puis relier les besoins validés à `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
+Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, intégrer les données fixes de live de Yohan, analyser les besoins depuis zéro sample, créer les premières fiches `source_need` pour les sources live garanties et l’engine sub / pression, puis relier les besoins validés à `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
 
 `00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX` demande :
 
@@ -209,6 +211,18 @@ et lesquels peuvent justifier un minimum de samples ?
 
 ```text
 le besoin musical porté par les guimbardes live : micro-pulse, formants, torsion, brillance rythmique, voix-sans-voix et polytexture.
+```
+
+`SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS` décrit :
+
+```text
+le besoin musical porté par le didgeridoo live : pression grave, souffle, formants, torsion, corps et retour au corps.
+```
+
+`SOURCE_NEED_SUB_PRESSURE_ENGINE` décrit :
+
+```text
+le besoin musical d’un engine sub / pression grave : stabilité, centre, corps, retour au corps et relation aux sources live.
 ```
 
 Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
@@ -455,6 +469,8 @@ README.md
 /docs/assets/06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS.md
 /docs/assets/07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS.md
 /docs/assets/source_needs/SOURCE_NEED_LIVE_JAW_HARPS_FORMANT_MICROPULSE.md
+/docs/assets/source_needs/SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS.md
+/docs/assets/source_needs/SOURCE_NEED_SUB_PRESSURE_ENGINE.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -463,7 +479,8 @@ README.md
 # 10. Prochaine étape recommandée
 
 ```text
-1. Créer SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS.
-2. Ensuite seulement : analyser les source_needs minimaux pour sub / pression, gong absent, tambour absent, voix éventuelle et field recordings éventuels.
-3. Puis reprendre Output / Mix / Performance Layer.
+1. Créer SOURCE_NEED_OPTIONAL_GONG_ABSENCE_STRATEGY.
+2. Créer SOURCE_NEED_OPTIONAL_FRAME_DRUM_ABSENCE_STRATEGY.
+3. Ensuite seulement : analyser les besoins minimaux de voix et field recordings éventuels.
+4. Puis reprendre Output / Mix / Performance Layer.
 ```
