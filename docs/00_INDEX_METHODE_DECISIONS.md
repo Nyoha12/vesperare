@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v2.4  
+Version : v2.5  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -140,9 +140,10 @@ Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
 /docs/assets/04_SAMPLE_NEEDS_INITIAL.md
+/docs/assets/05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.md
 ```
 
-Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
+Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, vérifier l’existant réel et le pouvoir de traitement live avec peu de samples, puis relier les besoins validés à `source_need`, `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
 
 `00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX` demande :
 
@@ -174,6 +175,12 @@ comment transformer les sample needs validés en source_need, assets, pools et d
 
 ```text
 une première table d’audit prudente : besoins → existant → traitement live → génération réaliste → minimum de samples.
+```
+
+`05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT` demande :
+
+```text
+qu’est-ce qui existe déjà réellement, et jusqu’où peut-on aller avec 1, 3 ou 5 bons samples traités en live ?
 ```
 
 Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
@@ -416,6 +423,7 @@ README.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
 /docs/assets/04_SAMPLE_NEEDS_INITIAL.md
+/docs/assets/05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -424,11 +432,10 @@ README.md
 # 10. Prochaine étape recommandée
 
 ```text
-1. Relire / réviser 04_SAMPLE_NEEDS_INITIAL à travers 00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.
-2. Vérifier l’existant réel de Yohan : samples, prises, instruments, objets, packs éventuels.
-3. Tester conceptuellement ce que peu de samples peuvent produire par traitement live.
-4. Passer par 03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.
-5. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
-6. Créer les premières fiches source_need prioritaires.
-7. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
+1. Renseigner 05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.
+2. Confirmer ou invalider les besoins de 04_SAMPLE_NEEDS_INITIAL.
+3. Passer par 03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.
+4. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
+5. Créer les premières fiches source_need prioritaires.
+6. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
 ```
