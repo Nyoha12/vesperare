@@ -16,6 +16,7 @@ Le projet vise l’invention d’un genre musical personnel dont la techno const
   05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
   06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
   07_PITCH_HARMONIQUES_MICROTONALITE.md
+  08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
 /checkpoints/
   checkpoint_maitre_v0_1.md
 ```
@@ -31,6 +32,7 @@ Principes retenus :
 - naturalisation des supports sonores sans perte des fonctions techno ;
 - polytexture percussive comme facette esthétique opératoire ;
 - microtonalité, harmoniques, partiels et centres spectraux comme nœud transversal ;
+- scènes, trajectoires et objets sonores comme couche supérieure de performance programmable ;
 - système live configurable, non réducteur, orienté performance complète ;
 - Max for Live comme cœur temps réel ;
 - Ableton Extensions SDK comme outil satellite pour préparation, génération de fichiers/clips/scènes, documentation et accélération de tests futurs.
