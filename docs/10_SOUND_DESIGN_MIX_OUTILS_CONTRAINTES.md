@@ -1,6 +1,6 @@
 # 10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES
 
-Version : v0.1  
+Version : v0.2  
 Statut : document transversal de contraintes différées, sans prototypage.
 
 ## Objet
@@ -11,6 +11,17 @@ Ce document rassemble trois familles d’éléments à intégrer plus tard dans 
 1. méthodes et sources de sound design ;
 2. couche mix / master subtile, professionnelle et intégrée ;
 3. moments de recherche d’outils pour ajuster le plan aux possibilités réelles.
+```
+
+Il intègre désormais les décisions récentes sur :
+
+```text
+instruments / sources candidates ;
+samples et corpus ciblés ;
+base d’assets ;
+source_needs ;
+engines ;
+sélection manuelle / assistée / automatique contrainte.
 ```
 
 Ce document ne remplace pas les modules existants. Il sert à éviter que l’architecture avance dans une direction qui rendrait ces éléments difficiles à intégrer ensuite.
@@ -93,7 +104,7 @@ renforcer ou régénérer certains partiels pour qu’un instrument reste identi
 
 ---
 
-# 3. Sources réelles, synthèse et hybridation
+# 3. Sources réelles, synthèse, instruments candidats et hybridation
 
 Décision actuelle : aucune source ne doit être exclue par principe.
 
@@ -127,12 +138,24 @@ hybridation plutôt que modélisation complète ;
 bibliothèques de samples seulement si elles servent un processus précis.
 ```
 
+Nouvelle précision : avant de décider un sample ou un engine, on peut passer par une étape d’inventaire :
+
+```text
+fonction / esthétique / inspiration / intuition / lacune
+→ instrument_source_candidate
+→ affordances sonores
+→ source_need
+→ asset / pool / engine.
+```
+
+Cette étape permet d’accueillir les instruments ou sources proposés spontanément sans les forcer immédiatement dans un rôle fixe.
+
 Exemples :
 
 ```text
-shruti box : probablement gérable par samples si nécessaire ;
-didgeridoo : toujours présent en live ;
-gongs / tambours sur cadre : quelques prises possibles, mais pas toujours disponibles en live ;
+shruti box / harmonium : candidat possible pour bourdon, souffle, halo harmonique, suspension ;
+didgeridoo : live prioritaire, références possibles, renforts discrets ;
+gongs / tambours sur cadre : quelques prises possibles, surtout si qualité réelle nécessaire ;
 sources acoustiques ponctuelles : intégrables selon contexte, sans construire une bibliothèque infinie.
 ```
 
@@ -140,9 +163,17 @@ sources acoustiques ponctuelles : intégrables selon contexte, sans construire u
 
 # 4. Corpus personnel Vesperare
 
-Décision actuelle : ne pas construire une grande bibliothèque par principe.
+Décision ancienne corrigée : ne pas construire une grande bibliothèque **par principe**.
 
-Un corpus personnel peut être utile, mais seulement si une nécessité apparaît.
+Décision actuelle :
+
+```text
+pas de banque non justifiée ;
+une banque ciblée peut devenir grande si les besoins réels l’exigent ;
+la base doit commencer par les instruments / sources candidates et les besoins de source, pas par les fichiers audio.
+```
+
+Un corpus personnel peut être utile, voire nécessaire, si une nécessité apparaît.
 
 ## Corpus minimal possible
 
@@ -154,7 +185,8 @@ quelques voix / souffles / fragments ;
 quelques textures de lieu ;
 quelques résonances ;
 quelques sources d’eau / pluie / matières naturelles si utiles ;
-quelques prises de didgeridoo hors live si nécessaire.
+quelques prises de didgeridoo hors live si nécessaire ;
+quelques instruments candidats proposés spontanément, s’ils trouvent des affordances claires.
 ```
 
 ## Rôle du corpus
@@ -167,7 +199,33 @@ créer des traces reconnaissables ;
 fournir des impulsions / grains / queues ;
 servir de référence d’analyse ;
 servir de source pour convolution, granulation ou resynthèse ;
-fournir des objets tests pour Object Registry et Sound Engines.
+fournir des objets tests pour Object Registry et Sound Engines ;
+répondre à un source_need clairement identifié ;
+préserver la qualité acoustique quand la génération live ne suit pas.
+```
+
+## Corpus ciblé potentiellement large
+
+Un corpus ciblé peut devenir large si :
+
+```text
+la famille sonore porte plusieurs rôles centraux ;
+la qualité acoustique réelle est très variable ;
+le moteur temps réel est moins beau ou moins stable ;
+les variations doivent rester sensibles mais contrôlées ;
+la sélection assistée ou manuelle demande plusieurs options fortes ;
+les assets doivent couvrir plusieurs registres, attaques, queues, partiels ou états.
+```
+
+Cela reste interdit si le corpus :
+
+```text
+remplit une banque sans rôle ;
+favorise la collecte sans objectif ;
+transforme la source naturelle en décor ;
+fige le système trop tôt ;
+remplace inutilement le live ;
+empêche les trajectoires ou protections.
 ```
 
 ---
@@ -212,7 +270,7 @@ longueur de queues ;
 répartition grave / médium / aigu.
 ```
 
-Cette méthode renforce l’Object Registry : un objet peut recevoir des données analysées, mais ces données ne doivent pas l’emporter sur les décisions déclarées du compositeur.
+Cette méthode renforce l’Object Registry et le protocole d’assets : un objet peut recevoir des données analysées, mais ces données ne doivent pas l’emporter sur les décisions déclarées du compositeur.
 
 ## Génératif / procédural
 
@@ -259,332 +317,40 @@ transitions.
 
 Pas si elles deviennent un décor naturaliste plaqué.
 
-## Stacking / couches différenciées
+---
+
+# 6. Lien avec le protocole Source Needs / Asset Database
+
+Le document `docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md` devient la référence pour transformer ces contraintes en système concret de préparation.
+
+Il doit recevoir ou produire :
 
 ```text
-copies décalées ;
-pitch shifts subtils ;
-variations de traitement ;
-empilement contrôlé ;
-gain compensé ;
-densification sans CPU excessif.
+instrument_source_candidate ;
+source_need ;
+material_asset ;
+material_pool ;
+selection_policy ;
+quality_evaluation.
 ```
 
-Méthode potentiellement utile pour :
+La présente contrainte transversale dit **pourquoi** il faut penser samples, sources et outils avec prudence.
 
-```text
-halo dense ;
-polytexture naturelle ;
-flux aqueux ;
-biophonie de fond ;
-queues résonantes ;
-spatialisation de masses ;
-préparation offline de matériaux légers pour le live.
-```
+Le protocole `16` dit **comment** préparer les données.
 
 ---
 
-# 6. Relation au live
+# 7. Ce qui reste différé
 
-Décision actuelle : le didgeridoo est un objet live stable du projet.
-
-D’autres instruments peuvent être ajoutés ponctuellement : gongs, tambours sur cadre, voix, objets acoustiques, etc.
-
-Principe :
+Sont toujours différés :
 
 ```text
-le système doit pouvoir accueillir un instrument live sans le réduire à un rôle fixe ;
-le live doit garder une priorité humaine ;
-l’analyse doit proposer, pas imposer ;
-la présence live peut influencer scènes, trajectoires, mix, espace et protections ;
-les instruments live peuvent être absents selon les situations, sauf didgeridoo prévu comme central.
+recherche de plugins ;
+choix définitif de moteurs ;
+construction audio massive ;
+implémentation Max for Live ;
+système de suggestion d’instruments en live ;
+Output / Mix / Performance Layer.
 ```
 
-Conséquence technique future : Live Object Interpreter, Object Registry, Conductor et Control Router devront gérer :
-
-```text
-instrument présent / absent ;
-instrument central / secondaire ;
-rôle déclaré ;
-rôle proposé ;
-confiance d’analyse ;
-protection humaine ;
-latence ;
-masquage ;
-priorité d’interface.
-```
-
----
-
-# 7. Samples préparés vs process live
-
-Décision actuelle : les samples préparés doivent avoir une utilité spécifique.
-
-Ils ne sont pas le cœur du projet.
-
-Utilisations justifiées :
-
-```text
-sources difficiles à recréer en live ;
-matériaux de base pour hybridation ;
-queues ou résonances spécifiques ;
-objets tests ;
-matériaux allégés pour préserver le CPU ;
-stacking préparé ;
-textures longues impossibles à générer proprement en temps réel.
-```
-
-Utilisations moins justifiées :
-
-```text
-banque énorme à maintenir ;
-samples comme solution par défaut ;
-collection décorative ;
-préparation interminable ;
-sons finis qui empêchent la performance de transformer la matière.
-```
-
----
-
-# 8. Interface des méthodes techniques
-
-Décision actuelle : les méthodes techniques ne doivent pas toutes apparaître directement dans l’interface live.
-
-Par défaut, l’interface devrait afficher des fonctions musicales :
-
-```text
-Halo ;
-Rugissement ;
-Torsion ;
-Trace ;
-Partiels ;
-Corps ;
-Distance ;
-Densité ;
-Lisibilité ;
-Retour ;
-Stabiliser ;
-Réduire halo ;
-Protéger voix.
-```
-
-Les méthodes techniques peuvent rester dans un niveau profond :
-
-```text
-granulation ;
-convolution ;
-MIDI echo ;
-ring modulation ;
-feedback ;
-resynthesis ;
-physical modelling ;
-spectral freeze ;
-LFO / random / remap.
-```
-
-Exception : certaines méthodes peuvent devenir jouables si elles ont une valeur performative claire.
-
-Exemple :
-
-```text
-Torsion formantique ;
-Feedback contrôlé ;
-Distance ;
-Convolution scène ;
-Densité MIDI ;
-Stacking / épaississement.
-```
-
----
-
-# 9. Mix / master intégré
-
-Décision actuelle : prévoir une couche mix / master ultra subtile, professionnelle, viable dans des situations différentes, mais ne pas encore la concevoir en détail.
-
-Elle doit être intégrée à l’architecture, pas collée à la fin.
-
-Modules concernés :
-
-```text
-Spectral & Comfort Governor ;
-Conflict / Protection Manager ;
-Output / Mix / Performance Layer ;
-Scene / Performance Conductor ;
-Contextual Control Router ;
-Live Object Interpreter ;
-Object Registry.
-```
-
-Fonctions probables :
-
-```text
-traduction entre systèmes de diffusion ;
-protection sub ;
-contrôle bas-médium ;
-contrôle fatigue aiguë ;
-préservation dynamique ;
-compatibilité club ;
-compatibilité hors-club ;
-non-blocage de l’ingénieur son ;
-mode autonome quand pas d’ingénieur son ;
-contrôle de loudness sans écrasement ;
-préservation des transitoires ;
-préservation de l’espace ;
-limitation intelligente des risques.
-```
-
-Principe :
-
-```text
-transparent par défaut ;
-coloration subtile seulement si musicalement voulue ;
-priorité à la traduction, à la stabilité et au confort ;
-jamais compenser une mauvaise architecture sonore par du mastering lourd.
-```
-
-Cas à prévoir :
-
-```text
-club avec ingénieur son ;
-club sans ingénieur son attentif ;
-salle non-club ;
-petit système ;
-gros système ;
-monitoring incertain ;
-répétition / studio ;
-installation ;
-stream / enregistrement.
-```
-
----
-
-# 10. Recherche d’outils
-
-Décision actuelle : faire des recherches d’outils au bon moment, sans laisser les outils piloter l’esthétique.
-
-Moments adaptés :
-
-```text
-après architecture globale suffisante ;
-avant premiers prototypes ;
-avant choix Max for Live / plugins / Ableton / SDK / scripts ;
-avant module mix-master ;
-avant Live Object Interpreter ;
-avant Sound Engines ;
-avant Output / Mix / Performance Layer.
-```
-
-Questions de recherche futures :
-
-```text
-quels outils Max for Live existent déjà ?
-quels outils doivent être créés ?
-quels plugins sont plus fiables que Max pour certaines fonctions ?
-quels traitements doivent être offline ?
-quels traitements peuvent être live ?
-quelles analyses sont réalistes en temps réel ?
-quels outils risquent de rigidifier le système ?
-quels outils peuvent rester remplaçables ?
-```
-
-Principe :
-
-```text
-les outils doivent servir les modules ;
-les modules doivent servir les fonctions musicales ;
-les fonctions musicales doivent servir l’esprit Vesperare.
-```
-
----
-
-# 11. Conséquences immédiates sur les modules à venir
-
-## Contextual Control Router
-
-Le Router devra prévoir plus tard des contrôles liés à :
-
-```text
-sound design contextuel ;
-distance ;
-source recognition ;
-source abstraction ;
-protection mix ;
-stabilisation master ;
-urgence spectrale ;
-mode club / hors-club ;
-mode ingénieur son / autonome ;
-présence live ;
-traitement profond.
-```
-
-Mais il ne doit pas tout afficher.
-
-## Timbre & Material Mapper
-
-Ce module deviendra central pour :
-
-```text
-choisir la matière adaptée à une fonction ;
-transformer une source sans perdre sa trace ;
-organiser hybridation ;
-gérer reconnaissance / abstraction ;
-relier source, phénomène et rôle.
-```
-
-## Sound Engines
-
-Ils devront pouvoir être :
-
-```text
-sample-based ;
-procedural ;
-hybrides ;
-live-input based ;
-génératifs ;
-préparés offline ;
-allégés pour performance.
-```
-
-## Mix / Master Intelligence Layer
-
-À développer plus tard, après plus de clarté sur :
-
-```text
-Output / Mix / Performance Layer ;
-Spectral & Comfort Governor ;
-Conflict / Protection Manager ;
-conditions de performance ;
-choix d’outils ;
-interfaces avec ingénieur son.
-```
-
----
-
-# 12. Points à vérifier plus tard
-
-```text
-1. Quels procédés de sound design deviennent vraiment nécessaires ?
-2. Faut-il un corpus minimal de samples ? Si oui, lequel ?
-3. Quelle part doit être générée live ?
-4. Quelle part doit être préparée offline ?
-5. Comment préserver la reconnaissance de source sans rigidifier les objets ?
-6. Comment faire fonctionner le mix-master sans bloquer un ingénieur son ?
-7. Comment adapter le système aux contextes club / hors-club ?
-8. Quels outils existants peuvent réduire le travail sans enfermer l’esthétique ?
-9. Quels modules doivent absolument rester faits maison ?
-10. Comment éviter que le sound design naturaliste devienne décoratif ?
-```
-
----
-
-# 13. Décision actuelle
-
-On ne suspend pas le développement des modules actuels.
-
-On inscrit ces éléments comme contraintes obligatoires à garder en mémoire, puis on continue avec :
-
-```text
-Contextual Control Router
-```
-
-Le Router devra déjà être conçu de façon à pouvoir accueillir plus tard des contrôles liés au sound design, au mix-master, aux outils externes et aux contextes de diffusion.
+La suggestion d’instruments en live est un sujet d’interface / Router futur. Elle pourra consulter l’inventaire d’instruments et sources, mais elle ne doit pas être confondue avec la préparation des assets.
