@@ -97,13 +97,14 @@ Développement progressif des modules de l’architecture technique et audits d�
 ### Préparation des sources et assets
 
 ```text
+/docs/assets/00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.md
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
 /docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
 /docs/assets/04_SAMPLE_NEEDS_INITIAL.md
 ```
 
-Inventaire initial ouvert des instruments, sources, matières, objets, lieux ou familles sonores candidates ; protocole séparé pour décider quels genres de samples et quels samples concrets doivent être constitués avant le live selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale ; pont vers `source_need`, `material_asset`, `material_pool` et politiques de sélection ; puis première table d’audit `SAMPLE_NEEDS_INITIAL`. Ces documents ne constituent ni une banque audio, ni un plan d’enregistrement, ni un système de suggestion live.
+Matrice amont des besoins esthétiques et phénoménaux extraits des documents de style / phénomènes / performance / timbre ; inventaire initial ouvert des instruments, sources, matières, objets, lieux ou familles sonores candidates ; protocole séparé pour décider quels genres de samples et quels samples concrets doivent être constitués avant le live selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale ; pont vers `source_need`, `material_asset`, `material_pool` et politiques de sélection ; puis première table d’audit `SAMPLE_NEEDS_INITIAL`. Ces documents ne constituent ni une banque audio, ni un plan d’enregistrement, ni un système de suggestion live.
 
 ### Validation, outils et mémoire
 
@@ -147,4 +148,4 @@ docs/assets préparation des sources / assets
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de vérifier l’existant réel de Yohan, puis de transformer les besoins confirmés de `docs/assets/04_SAMPLE_NEEDS_INITIAL.md` via `docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md`, d’enrichir `docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md` avec les propositions spontanées de Yohan, et de créer les premières fiches `source_need` prioritaires avant `Output / Mix / Performance Layer`.
+Le prochain travail recommandé est de relire `docs/assets/04_SAMPLE_NEEDS_INITIAL.md` à travers `docs/assets/00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.md`, puis de vérifier l’existant réel de Yohan, de transformer les besoins confirmés via `docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md`, d’enrichir `docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md` avec les propositions spontanées de Yohan, et de créer les premières fiches `source_need` prioritaires avant `Output / Mix / Performance Layer`.
