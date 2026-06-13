@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.2  
+Version : v1.3  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -95,14 +95,15 @@ Rôle : tester concrètement les grilles de `02` par des fiches modèles : objet
 
 Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il sert à vérifier que les abstractions sont utilisables, cohérentes et non trop générales.
 
-### G. Spécifications détaillées de modules
+### G. Spécifications détaillées et audits de modules
 
 ```text
 /docs/modules/01_OBJECT_REGISTRY.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
+/docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
 ```
 
-Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, un par un, sans prototyper.
+Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, et auditer leurs interfaces avant prototypage.
 
 Ces documents doivent préciser :
 
@@ -113,12 +114,13 @@ entrées ;
 sorties ;
 dépendances ;
 relations avec les autres modules ;
+contrats d’interface ;
 risques ;
 garde-fous ;
 formes possibles dans Max for Live / Ableton.
 ```
 
-Les deux premiers modules détaillés sont `01_OBJECT_REGISTRY` et `02_TRAJECTORY_ENGINE`.
+Les premiers documents détaillent `Object Registry`, `Trajectory Engine` et leur contrat d’interaction.
 
 ### H. Validation, outils et mémoire
 
@@ -149,7 +151,9 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 7. Développement d’une spécification détaillée de module si le module devient prioritaire
    ↓
-8. Propagation vers validation/tests seulement si un module futur est assez clair
+8. Audit d’interface si plusieurs modules commencent à dépendre fortement l’un de l’autre
+   ↓
+9. Propagation vers validation/tests seulement si un module futur est assez clair
 ```
 
 Principe :
@@ -161,7 +165,8 @@ ne pas multiplier les documents sans nécessité ;
 propager seulement ce qui est assez stable ;
 utiliser les fiches modèles pour vérifier les abstractions avant prototypage ;
 détailler les modules seulement quand leur rôle dans l’architecture est clair ;
-ne jamais transformer les catégories en cases exclusives.
+ne jamais transformer les catégories en cases exclusives ;
+auditer les interfaces avant que les modules ne divergent.
 ```
 
 ## Règle anti-prototype prématuré
@@ -347,6 +352,18 @@ Contextual Control Router.
 
 Ces documents ne sont pas des prototypes. Ils précisent les données, dépendances, interactions, risques et garde-fous avant toute implémentation.
 
+### Audits d’interface
+
+Désignent des documents qui vérifient qu’au moins deux modules communiquent sans contradiction de notation, dépendance ou responsabilité.
+
+Exemples :
+
+```text
+Object Registry ↔ Trajectory Engine ;
+Trajectory Engine ↔ Scene / Performance Conductor ;
+Trajectory Engine ↔ Contextual Control Router.
+```
+
 ### Variables internes
 
 Servent au fonctionnement du patch Max for Live.
@@ -456,6 +473,7 @@ README.md
 /docs/09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
 /docs/modules/01_OBJECT_REGISTRY.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
+/docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -480,6 +498,8 @@ docs/modules/01_OBJECT_REGISTRY
         ↓
 docs/modules/02_TRAJECTORY_ENGINE
         ↓
+docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE
+        ↓
 03_VALIDATION_TESTS_EXTENSIONS
 ```
 
@@ -491,14 +511,14 @@ Les documents `docs/modules/` développent progressivement les modules prioritai
 
 ## Prochaine synchronisation documentaire
 
-À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles. Les deux premiers modules détaillés sont `Object Registry` et `Trajectory Engine`.
+À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles. Les deux premiers modules détaillés sont `Object Registry` et `Trajectory Engine`, et leur interface a été auditée.
 
 Ordre recommandé maintenant :
 
 ```text
-1. Auditer la compatibilité Object Registry ↔ Trajectory Engine.
-2. Vérifier que les catégories restent des facettes activables, non des classes fermées.
-3. Développer ensuite Scene / Performance Conductor ou Contextual Control Router.
+1. Décider entre Scene / Performance Conductor et Contextual Control Router comme prochain module.
+2. Si la priorité est “qui autorise quoi” : développer Scene / Performance Conductor.
+3. Si la priorité est “qu’est-ce qui devient jouable” : développer Contextual Control Router.
 4. Revenir dans 03 pour définir les validations par module.
 ```
 
