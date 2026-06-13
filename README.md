@@ -89,9 +89,10 @@ Fiches modèles permettant de vérifier concrètement la grille objets / rôles 
 /docs/modules/13_SOUND_ENGINES_INSTRUMENTS.md
 /docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
 /docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
+/docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
 ```
 
-Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les documents actuels détaillent Object Registry, Trajectory Engine, leurs audits d’interaction, Scene / Performance Conductor, Contextual Control Router, Conflict / Protection Manager, Pitch / Harmonic Field Manager, Timbre & Material Mapper, Sound Engines / Instruments et leurs audits associés.
+Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les documents actuels détaillent Object Registry, Trajectory Engine, leurs audits d’interaction, Scene / Performance Conductor, Contextual Control Router, Conflict / Protection Manager, Pitch / Harmonic Field Manager, Timbre & Material Mapper, Sound Engines / Instruments, Source Needs / Asset Database Protocol et leurs audits associés.
 
 ### Validation, outils et mémoire
 
@@ -133,4 +134,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de détailler `Source Needs / Asset Database Protocol`, avant `Output / Mix / Performance Layer`, afin de transformer les décisions sur samples, génération live, corpus ciblés, pools et sélection en système concret de préparation de base de données.
+Le prochain travail recommandé est de créer les premières fiches `source_need` prioritaires — gongs, voix, didgeridoo, sub, eau / pluie, field recordings, polytexture micro-impacts — avant `Output / Mix / Performance Layer`.
