@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.1  
+Version : v1.2  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -99,6 +99,7 @@ Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il 
 
 ```text
 /docs/modules/01_OBJECT_REGISTRY.md
+/docs/modules/02_TRAJECTORY_ENGINE.md
 ```
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, un par un, sans prototyper.
@@ -117,7 +118,7 @@ garde-fous ;
 formes possibles dans Max for Live / Ableton.
 ```
 
-Le premier module détaillé est `01_OBJECT_REGISTRY`, car les fiches modèles ont montré qu’il conditionne Trajectory Engine, Timbre Mapper, Pitch Manager, Control Router, Conflict Manager et Live Object Interpreter.
+Les deux premiers modules détaillés sont `01_OBJECT_REGISTRY` et `02_TRAJECTORY_ENGINE`.
 
 ### H. Validation, outils et mémoire
 
@@ -159,7 +160,8 @@ ne pas transformer immédiatement chaque phénomène en prototype ;
 ne pas multiplier les documents sans nécessité ;
 propager seulement ce qui est assez stable ;
 utiliser les fiches modèles pour vérifier les abstractions avant prototypage ;
-détailler les modules seulement quand leur rôle dans l’architecture est clair.
+détailler les modules seulement quand leur rôle dans l’architecture est clair ;
+ne jamais transformer les catégories en cases exclusives.
 ```
 
 ## Règle anti-prototype prématuré
@@ -174,6 +176,43 @@ réutilisable ou transformable ;
 documenté ;
 conçu pour répondre à une question précise ;
 compatible avec l’architecture globale.
+```
+
+## Règle anti-classement limitant
+
+Les catégories du projet sont des outils de lecture, pas des prisons conceptuelles.
+
+Un objet, une trajectoire, une scène ou un groupement de paramètres peut appartenir à plusieurs familles à la fois.
+
+Exemples :
+
+```text
+Didgeridoo = grave + formants + souffle + live + corps ;
+Gong = impact + halo + partiels + beauté autonome + résolution ;
+Sub = corps + pitch_center + pression + résolution ;
+Pré-drop = rythmique + corporel + spectral + harmonique ;
+Halo = espace + queue + harmonie + risque d’ambientisation.
+```
+
+Donc les documents et futurs modules doivent privilégier :
+
+```text
+profils activables ;
+tags multiples ;
+rôles contextuels ;
+trajectoires composables ;
+relations dynamiques ;
+garde-fous selon contexte.
+```
+
+plutôt que :
+
+```text
+classement exclusif ;
+mode fermé ;
+preset stylistique ;
+catégorie unique ;
+rôle permanent imposé.
 ```
 
 ## Terminologie
@@ -416,6 +455,7 @@ README.md
 /docs/08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
 /docs/09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
 /docs/modules/01_OBJECT_REGISTRY.md
+/docs/modules/02_TRAJECTORY_ENGINE.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -438,6 +478,8 @@ README.md
         ↓
 docs/modules/01_OBJECT_REGISTRY
         ↓
+docs/modules/02_TRAJECTORY_ENGINE
+        ↓
 03_VALIDATION_TESTS_EXTENSIONS
 ```
 
@@ -449,16 +491,15 @@ Les documents `docs/modules/` développent progressivement les modules prioritai
 
 ## Prochaine synchronisation documentaire
 
-À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles. Le premier module détaillé est `Object Registry`.
+À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles. Les deux premiers modules détaillés sont `Object Registry` et `Trajectory Engine`.
 
 Ordre recommandé maintenant :
 
 ```text
-1. Continuer les fiches objets nécessaires : Sub, Polytexture, Halo, Didgeridoo.
-2. Auditer si Object Registry couvre bien ces objets très différents.
-3. Revenir dans 02 si le modèle général doit être corrigé.
-4. Développer ensuite Trajectory Engine comme deuxième module détaillé.
-5. Revenir dans 03 pour définir les validations par module.
+1. Auditer la compatibilité Object Registry ↔ Trajectory Engine.
+2. Vérifier que les catégories restent des facettes activables, non des classes fermées.
+3. Développer ensuite Scene / Performance Conductor ou Contextual Control Router.
+4. Revenir dans 03 pour définir les validations par module.
 ```
 
 ## Règle de mise à jour
