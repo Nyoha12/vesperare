@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.9  
+Version : v2.0  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -35,7 +35,7 @@ Le projet suit l’ordre général suivant :
 5. Définir les modules et leurs responsabilités.
 6. Auditer les interfaces entre modules.
 7. Identifier les besoins de sources, instruments, samples, engines et assets.
-8. Établir les inventaires, fiches de données et validations abstraites.
+8. Établir les protocoles, inventaires, fiches de données et validations abstraites.
 9. Seulement ensuite : prototyper et tester.
 ```
 
@@ -132,15 +132,28 @@ Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il 
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, auditer leurs interfaces avant prototypage, puis préparer les données nécessaires aux instruments, sources, samples, engines et assets.
 
-## G. Préparation des sources et assets
+## G. Préparation des sources, samples et assets
 
 ```text
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
+/docs/assets/02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL.md
 ```
 
-Rôle : accueillir les premiers instruments, sources, matières, objets, lieux ou familles sonores candidates avant de les transformer en `source_need`, asset, pool ou engine.
+Rôle : accueillir les instruments / sources candidates, puis exécuter un protocole séparé pour décider quels genres de samples, prises, corpus ou références audio doivent réellement être préparés.
 
-Ce document ne constitue pas une banque de sons. Il sert à décrire les affordances, fonctions possibles, phénomènes possibles, risques et stratégies de source.
+`01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL` demande :
+
+```text
+quels instruments, sources, objets, lieux ou matières pourraient être intéressants ?
+```
+
+`02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL` demande :
+
+```text
+quels genres de samples faut-il vraiment constituer pour réaliser les ambitions, fonctions, phénomènes, esthétiques et contraintes du projet ?
+```
+
+Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
 
 ## H. Validation, outils et mémoire
 
@@ -214,7 +227,7 @@ compatible avec l’architecture globale ;
 compatible avec les besoins de sources / assets quand ils sont impliqués.
 ```
 
-Les inventaires d’instruments, matrices de source_needs, fiches d’assets, pools et politiques de sélection ne sont pas des prototypes. Ce sont des validations de données et de structure.
+Les inventaires d’instruments, protocoles de sample needs, matrices de source_needs, fiches d’assets, pools et politiques de sélection ne sont pas des prototypes. Ce sont des validations de données et de structure.
 
 ---
 
@@ -274,6 +287,7 @@ ne pas construire de corpus massif non justifié ;
 accepter qu’une banque ciblée devienne grande si les besoins réels l’exigent ;
 faire du sound design une écologie d’objets et de relations, pas une banque décorative ;
 commencer la base par instruments / sources candidates et source_needs, pas par fichiers audio ;
+avant de constituer un corpus, exécuter le protocole de découverte des besoins en samples ;
 prévoir une couche mix/master subtile, professionnelle et intégrée ;
 ne pas laisser les outils guider l’esthétique trop tôt ;
 prévoir des recherches d’outils à des seuils précis.
@@ -285,86 +299,27 @@ prévoir des recherches d’outils à des seuils précis.
 
 Pour éviter les confusions, on distingue :
 
-## Axes de conception
-
-Servent à réfléchir au système.
-
-Exemples :
-
-```text
-techno ↔ hors-techno ;
-machine ↔ organique ;
-réel ↔ synthétique ;
-dense ↔ lisible ;
-sec ↔ résonant ;
-corporel ↔ spectral ;
-contrôlé ↔ sauvage.
-```
-
-## Fonctions musicales
-
-Désignent ce qu’un élément fait musicalement.
-
-Exemples :
-
-```text
-ancrer ;
-frapper ;
-porter le corps ;
-propulser ;
-créer du halo ;
-articuler ;
-ouvrir l’espace ;
-créer de la tension.
-```
-
-## Phénomènes sonores
-
-Désignent la manière dont une fonction devient perceptible dans la matière sonore.
-
-Exemples :
-
-```text
-impact-fondation ;
-pression spectrale corporelle ;
-contour sculpté ;
-brillance rythmique naturalisée ;
-polytexture percussive raffinée ;
-espace musical occupé ;
-beauté autonome.
-```
-
 ## Instruments / sources candidates
 
 Désignent des instruments, sources, objets, lieux, gestes ou matières qui peuvent être envisagés avant d’être transformés en source_need ou asset.
 
-Ils peuvent venir de :
+Question :
 
 ```text
-fonctions ;
-esthétique ;
-inspirations ;
-intuition personnelle ;
-instruments disponibles ;
-lacunes du système ;
-qualités sonores désirables.
+quels instruments, sources, objets, lieux ou matières pourraient être intéressants ?
 ```
 
-Ils doivent être évalués par affordances :
+## Sample needs
+
+Désignent des genres de samples, prises, références audio ou corpus qui semblent nécessaires pour réaliser une fonction, un phénomène, une ambition esthétique ou une contrainte technique.
+
+Question :
 
 ```text
-attaque ;
-queue ;
-partiels ;
-formants ;
-souffle ;
-corps ;
-brillance ;
-instabilité ;
-reconnaissance ;
-risques ;
-potentiel live / sample / génération / hybride.
+quels genres de samples faut-il vraiment constituer ?
 ```
+
+Un sample need n’est pas encore un fichier audio. C’est un manque fonctionnel / esthétique / technique à documenter.
 
 ## Source needs
 
@@ -378,73 +333,15 @@ Désignent les matériaux concrets : sample, prise live préparée, source offli
 
 Un asset ne doit pas entrer dans la base performative sans source_need.
 
-## Objets sonores
+## Contrôles live / suggestion live
 
-Désignent des sources ou groupes de sources dotés d’une matière, d’une fonction possible et de comportements transformables.
+La décision de proposer au musicien un instrument, un matériau ou une configuration pendant la performance est un sujet séparé, qui relèvera plus tard du Router / interface live.
 
-## Rôles musicaux
-
-Désignent la fonction momentanée qu’un objet sonore assume dans une scène ou une trajectoire.
-
-## Trajectoires
-
-Désignent des transformations organisées de priorités musicales, appliquées à des objets, rôles et dimensions.
-
-## Contrôles
-
-Désignent des intentions performatives jouables.
-
-## Paramètres
-
-Désignent des variables techniques ou musicales internes, pas nécessairement exposées.
+Elle ne doit pas être confondue avec les protocoles de préparation des samples.
 
 ---
 
-# 9. Décisions stylistiques majeures
-
-## Techno
-
-La techno est l’influence stylistique principale et doit rester perceptible par ses fonctions : pulsation, impact, répétition, pression corporelle, hypnose, tension longue, efficacité de diffusion et forme performative.
-
-## Naturalisation
-
-Naturaliser une fonction techno ne change pas forcément sa fonction. Cela change son support sonore.
-
-## Polytexture percussive
-
-La facette Keita Ogawa / polytexture percussive est une facette esthétique opératoire : elle apporte interlocking, groove composite, richesse percussive, harmonie de timbres, complexité lisible et densité articulée.
-
-Elle ne doit pas devenir une importation de style latino, cubain, tribal, folklorique ou world music.
-
-## Influences supplémentaires
-
-Dubstep, jazz, trance et acid sont étudiés comme sources d’éléments intégrables à Vesperare, et non comme styles à importer en bloc.
-
-## Pitch, harmoniques et microtonalité
-
-La microtonalité, les partiels, les formants, les hauteurs ressenties et les centres spectraux constituent un nœud transversal du projet.
-
-## Performance, scènes, trajectoires et objets
-
-La performance doit être pensée comme un réseau programmable d’états, scènes, trajectoires, objets sonores, rôles, implications, contrôles contextuels et autonomies situées.
-
-## Sound design, mix/master, sources et outils
-
-Le sound design doit être pensé comme écologie d’objets et de relations : sources, comportements, densité, espace, masquage, hybridation, reconnaissance, abstraction.
-
-La couche mix/master doit être intégrée plus tard comme contrainte subtile, professionnelle, adaptable aux contextes club / hors-club / ingénieur son / autonomie.
-
-Les recherches d’outils doivent intervenir à des seuils précis, sans guider l’esthétique trop tôt.
-
-## Instruments live et sources candidates
-
-Les instruments live ne doivent pas être classés rigidement. Didgeridoo, gongs, tambours, voix ou autres instruments peuvent être des phénomènes multidimensionnels.
-
-Les nouveaux instruments ou sources candidates peuvent être proposés spontanément par le compositeur. Ils doivent ensuite être évalués par affordances, fonctions possibles, stratégies de source, risques et compatibilité avec le système.
-
----
-
-# 10. Documents actifs
+# 9. Documents actifs
 
 ```text
 README.md
@@ -479,72 +376,18 @@ README.md
 /docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
 /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
+/docs/assets/02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
 ---
 
-# 11. Flux conceptuel actuel
+# 10. Prochaine étape recommandée
 
 ```text
-05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO
-        ↓
-06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE
-        ↓
-07_PITCH_HARMONIQUES_MICROTONALITE
-        ↓
-08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS
-        ↓
-10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES
-        ↓
-01_CAHIER_DES_PHENOMENES_SONORES
-        ↓
-01A_SYNCHRONISATION_PHENOMENES_MODULES
-        ↓
-02_SPECIFICATION_MAX_FOR_LIVE
-        ↓
-02A_SYNCHRONISATION_ARCHITECTURE_MODULES
-        ↓
-09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES
-        ↓
-docs/modules/01–14 modules et audits d’interface
-        ↓
-docs/modules/15 audit cohérence sources / samples / engines
-        ↓
-docs/modules/16 Source Needs / Asset Database Protocol
-        ↓
-docs/assets/01 Instrument Source Candidates Initial
-        ↓
-03_VALIDATION_TESTS_EXTENSIONS
-```
-
-Le document `04_RESSOURCES_ET_BOITE_A_OUTILS` alimente surtout la spécification technique et les recherches futures.
-
-Le document `09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES` est un appendice de vérification : il peut rétroagir vers `01` et `02` si une fiche révèle une incohérence ou un manque.
-
-Le document `10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES` est une contrainte transversale : il doit influencer `01`, `02`, les modules, le protocole d’assets, l’inventaire de sources et les recherches d’outils au bon moment.
-
-Les documents `docs/modules/` développent progressivement les modules prioritaires de `02` lorsque les fiches et audits montrent que leur rôle est assez clair.
-
----
-
-# 12. Prochaine synchronisation documentaire
-
-À ce stade :
-
-```text
-01 et 02 sont maintenus par addenda 01A / 02A ;
-10 est synchronisé avec la logique instruments / sources / corpus ciblés ;
-03 est synchronisé avec les validations de données et protocoles d’assets ;
-16 devient la référence pour préparer instruments, sources, samples, assets, pools et politiques de sélection ;
-01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL devient l’inventaire ouvert à enrichir avec les propositions de Yohan ;
-Output / Mix est repoussé après premières fiches source_need / instrument candidates.
-```
-
-Prochaine étape recommandée :
-
-```text
-enrichir INSTRUMENT_SOURCE_CANDIDATES_INITIAL avec la liste spontanée de Yohan ;
-créer les premières fiches source_need prioritaires ;
-puis seulement ensuite reprendre Output / Mix / Performance Layer.
+1. Exécuter 02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL une première fois.
+2. Produire SAMPLE_NEEDS_INITIAL.
+3. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
+4. Créer les premières fiches source_need prioritaires.
+5. Puis seulement ensuite reprendre Output / Mix / Performance Layer.
 ```
