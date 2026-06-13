@@ -87,6 +87,7 @@ Fiches modèles permettant de vérifier concrètement la grille objets / rôles 
 /docs/modules/11_TIMBRE_MATERIAL_MAPPER.md
 /docs/modules/12_TIMBRE_REGISTRY_CONFLICT_PITCH_INTERFACE.md
 /docs/modules/13_SOUND_ENGINES_INSTRUMENTS.md
+/docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
 ```
 
 Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les documents actuels détaillent Object Registry, Trajectory Engine, leurs audits d’interaction, Scene / Performance Conductor, Contextual Control Router, Conflict / Protection Manager, Pitch / Harmonic Field Manager, Timbre & Material Mapper, Sound Engines / Instruments et leurs audits associés.
@@ -131,4 +132,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de réaliser un audit léger `Sound Engines ↔ Mapper / Conflict / Router`, puis de détailler `Output / Mix / Performance Layer`.
+Le prochain travail recommandé est de détailler `Output / Mix / Performance Layer`, en intégrant les informations des Sound Engines, du Conflict Manager et du Spectral & Comfort Governor.
