@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v2.0  
+Version : v2.1  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -136,10 +136,10 @@ Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_
 
 ```text
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
-/docs/assets/02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL.md
+/docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 ```
 
-Rôle : accueillir les instruments / sources candidates, puis exécuter un protocole séparé pour décider quels genres de samples, prises, corpus ou références audio doivent réellement être préparés.
+Rôle : accueillir les instruments / sources candidates, puis exécuter un protocole séparé pour décider quels genres de samples et quels samples concrets doivent être constitués avant le live selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale.
 
 `01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL` demande :
 
@@ -147,10 +147,10 @@ Rôle : accueillir les instruments / sources candidates, puis exécuter un proto
 quels instruments, sources, objets, lieux ou matières pourraient être intéressants ?
 ```
 
-`02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL` demande :
+`02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL` demande :
 
 ```text
-quels genres de samples faut-il vraiment constituer pour réaliser les ambitions, fonctions, phénomènes, esthétiques et contraintes du projet ?
+quels genres de samples et quels samples concrets faut-il vraiment constituer avant le live ?
 ```
 
 Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
@@ -309,17 +309,17 @@ Question :
 quels instruments, sources, objets, lieux ou matières pourraient être intéressants ?
 ```
 
-## Sample needs
+## Sample needs pré-live
 
-Désignent des genres de samples, prises, références audio ou corpus qui semblent nécessaires pour réaliser une fonction, un phénomène, une ambition esthétique ou une contrainte technique.
+Désignent des genres de samples, prises, références audio ou corpus qui semblent nécessaires à constituer avant le live pour réaliser une fonction, un phénomène, une ambition esthétique ou une contrainte technique.
 
 Question :
 
 ```text
-quels genres de samples faut-il vraiment constituer ?
+quels genres de samples et quels samples concrets faut-il vraiment constituer avant le live ?
 ```
 
-Un sample need n’est pas encore un fichier audio. C’est un manque fonctionnel / esthétique / technique à documenter.
+Un sample need pré-live n’est pas encore un fichier audio. C’est un manque fonctionnel / esthétique / technique à documenter.
 
 ## Source needs
 
@@ -376,7 +376,7 @@ README.md
 /docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
 /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
-/docs/assets/02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL.md
+/docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -385,7 +385,7 @@ README.md
 # 10. Prochaine étape recommandée
 
 ```text
-1. Exécuter 02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL une première fois.
+1. Exécuter 02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL une première fois.
 2. Produire SAMPLE_NEEDS_INITIAL.
 3. Enrichir l’inventaire d’instruments / sources candidates avec les propositions de Yohan.
 4. Créer les premières fiches source_need prioritaires.
