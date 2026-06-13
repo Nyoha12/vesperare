@@ -98,10 +98,10 @@ Développement progressif des modules de l’architecture technique et audits d�
 
 ```text
 /docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
-/docs/assets/02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL.md
+/docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
 ```
 
-Inventaire initial ouvert des instruments, sources, matières, objets, lieux ou familles sonores candidates, puis protocole séparé pour décider quels genres de samples / corpus / prises / références audio doivent réellement être préparés. Ces documents ne constituent ni une banque audio, ni un plan d’enregistrement, ni un système de suggestion live.
+Inventaire initial ouvert des instruments, sources, matières, objets, lieux ou familles sonores candidates, puis protocole séparé pour décider quels genres de samples et quels samples concrets doivent être constitués avant le live selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale. Ces documents ne constituent ni une banque audio, ni un plan d’enregistrement, ni un système de suggestion live.
 
 ### Validation, outils et mémoire
 
@@ -145,4 +145,4 @@ docs/assets préparation des sources / assets
 03 validation / tests
 ```
 
-Le prochain travail recommandé est d’exécuter `docs/assets/02_SAMPLE_NEEDS_DISCOVERY_PROTOCOL.md` pour produire une première table `SAMPLE_NEEDS_INITIAL`, puis d’enrichir `docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md` avec les propositions spontanées de Yohan et de créer les premières fiches `source_need` prioritaires avant `Output / Mix / Performance Layer`.
+Le prochain travail recommandé est d’exécuter `docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md` pour produire une première table `SAMPLE_NEEDS_INITIAL`, puis d’enrichir `docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md` avec les propositions spontanées de Yohan et de créer les premières fiches `source_need` prioritaires avant `Output / Mix / Performance Layer`.
