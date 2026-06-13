@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v1.3  
+Version : v1.4  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
@@ -101,6 +101,7 @@ Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il 
 /docs/modules/01_OBJECT_REGISTRY.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
 /docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
+/docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
 ```
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, et auditer leurs interfaces avant prototypage.
@@ -120,7 +121,7 @@ garde-fous ;
 formes possibles dans Max for Live / Ableton.
 ```
 
-Les premiers documents détaillent `Object Registry`, `Trajectory Engine` et leur contrat d’interaction.
+Les premiers documents détaillent `Object Registry`, `Trajectory Engine`, leur contrat d’interaction, puis `Scene / Performance Conductor`.
 
 ### H. Validation, outils et mémoire
 
@@ -474,6 +475,7 @@ README.md
 /docs/modules/01_OBJECT_REGISTRY.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
 /docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
+/docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
 /checkpoints/checkpoint_maitre_v0_1.md
 ```
 
@@ -500,6 +502,8 @@ docs/modules/02_TRAJECTORY_ENGINE
         ↓
 docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE
         ↓
+docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR
+        ↓
 03_VALIDATION_TESTS_EXTENSIONS
 ```
 
@@ -511,15 +515,15 @@ Les documents `docs/modules/` développent progressivement les modules prioritai
 
 ## Prochaine synchronisation documentaire
 
-À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Le document `09` commence la vérification concrète des grilles par fiches modèles. Les deux premiers modules détaillés sont `Object Registry` et `Trajectory Engine`, et leur interface a été auditée.
+À ce stade, les documents `01–03` ont été synchronisés avec les documents `05–08`. Les modules Object Registry, Trajectory Engine, Registry ↔ Trajectory Interface et Scene / Performance Conductor sont détaillés.
 
 Ordre recommandé maintenant :
 
 ```text
-1. Décider entre Scene / Performance Conductor et Contextual Control Router comme prochain module.
-2. Si la priorité est “qui autorise quoi” : développer Scene / Performance Conductor.
-3. Si la priorité est “qu’est-ce qui devient jouable” : développer Contextual Control Router.
-4. Revenir dans 03 pour définir les validations par module.
+1. Développer Contextual Control Router.
+2. Vérifier l’interface Conductor ↔ Control Router.
+3. Revenir dans 03 pour définir les validations par module.
+4. Prévoir ensuite un audit de cohérence notation / catégories / responsabilités.
 ```
 
 ## Règle de mise à jour
