@@ -71,9 +71,10 @@ Fiches modèles permettant de vérifier concrètement la grille objets / rôles 
 /docs/modules/01_OBJECT_REGISTRY.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
 /docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
+/docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
 ```
 
-Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les premiers documents détaillent Object Registry, Trajectory Engine et leur contrat d’interaction.
+Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les premiers documents détaillent Object Registry, Trajectory Engine, leur contrat d’interaction, puis Scene / Performance Conductor.
 
 ### Validation, outils et mémoire
 
@@ -107,4 +108,4 @@ docs/modules spécifications détaillées / audits d’interface
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de décider quel module détailler ensuite : `Scene / Performance Conductor` si l’on veut formaliser qui autorise les trajectoires, ou `Contextual Control Router` si l’on veut formaliser ce qui devient jouable à l’interface.
+Le prochain travail recommandé est de développer `Contextual Control Router`, puisque le Conductor formalise maintenant ce qui est autorisé, armé, interdit ou prioritaire dans la performance.
