@@ -1,6 +1,6 @@
 # SOURCE_NEED_OPTIONAL_GONG_PRESENCE_ABSENCE_STRATEGY
 
-Version : v0.1  
+Version : v0.2  
 Statut : fiche `source_need` conditionnelle. Sans sample confirmé, sans asset, sans prototypage.
 
 ## Objet
@@ -20,6 +20,18 @@ possibilités réelles :
 - didgeridoo + guimbardes + gong + tambour.
 ```
 
+Décision corrigée :
+
+```text
+l’absence de gong ne doit pas être acceptée comme simple absence ;
+si une fonction de gong est nécessaire dans une scène, elle doit être compensée ;
+la compensation peut être :
+- génération / résonateur / synthèse modale ;
+- traitement des sources live fixes ;
+- sample minimal de gong/métal ;
+- combinaison hybride.
+```
+
 Elle ne dit pas :
 
 ```text
@@ -27,15 +39,15 @@ il faut une banque de gongs ;
 il faut toujours un sample de gong ;
 le gong doit être présent dans chaque scène ;
 le gong doit remplacer les fonctions du tambour ;
-le sub doit remplacer le gong.
+le sub doit remplacer le gong seul.
 ```
 
 Elle sert à décider :
 
 ```text
 quelles fonctions le gong live couvre quand il est présent ;
-quelles fonctions restent manquantes quand il est absent ;
-si ces fonctions doivent être couvertes par scène alternative, résonateur, génération, traitement live, sample minimal ou rien ;
+quelles fonctions doivent être compensées quand il est absent ;
+si ces fonctions doivent être couvertes par résonateur, génération, traitement live, sample minimal ou hybride ;
 comment le gong interagit avec didgeridoo, guimbardes, sub et tambour.
 ```
 
@@ -52,12 +64,13 @@ phenomenon_tags: [gong, masse métallique, partiels inharmoniques, halo fonction
 role_target: stratégie conditionnelle pour présence ou absence du gong live
 object_candidates: [Gong live, Métal résonant, Halo métallique, Masse de résolution, Résonateur de substitution, Sample minimal conditionnel]
 scene_affinities: [pré-drop, résolution, beauté autonome, tension longue, suspension, retour au corps]
-trajectory_affinities: [préparation → résolution, tension → masse, impact → halo, silence/absence → substitution, gong → post-résonance]
-centrality_level: haute quand présent ; variable quand absent
+trajectory_affinities: [préparation → résolution, tension → masse, impact → halo, absence → compensation, gong → post-résonance]
+centrality_level: haute quand présent ; haute comme compensation si fonction indispensable
 quality_requirement: très haute si la fonction de résolution métallique est centrale
 source_recognition_requirement: moyenne à haute quand gong live exposé ; faible à moyenne si substitution abstraite
 abstraction_allowed: moyenne à forte si le rôle est halo/partiels ; faible si le rôle est gong central exposé
-live_requirement: optionnelle, jamais garantie
+gong_live_requirement: optionnelle, jamais garantie
+gong_function_requirement: obligatoire si scène validée autour de masse / résolution / halo métallique
 generation_viability: moyenne pour renfort / halo / résonance ; faible pour gong central réaliste exposé
 sample_viability: forte seulement si gong absent et fonction de gong indispensable
 hybrid_viability: très forte
@@ -65,7 +78,7 @@ offline_preparation_viability: forte pour profils de queues, références, réso
 selection_mode_default: manuel / scène / assisté ; pas automatique par défaut
 risk_profile: [gong décoratif, dramatisme trop évident, queue incontrôlée, boue bas-médium, conflit sub, cliché rituel, surdensité avec tambour]
 protected_dimensions: [partiels, queue, sub, impact, halo, lisibilité formelle, confort bas-médium]
-router_controls_expected: [Gong présent, Sub relation, Queue, Partiels, Halo, Résolution, Résonance substitute, Réduire bas-médium, Couper queue]
+router_controls_expected: [Gong présent, Gong absent compensé, Sub relation, Queue, Partiels, Halo, Résolution, Résonance substitute, Réduire bas-médium, Couper queue]
 priority_level: haute comme stratégie conditionnelle
 status: à préparer avant décision de samples de gong
 ```
@@ -126,14 +139,14 @@ Le gong doit rester un objet puissant mais situé.
 configuration_id: LIVE_BASE_ONLY
 présents: didgeridoo + guimbardes
 absents: gong + tambour
-fonctions manquantes liées au gong: masse métallique, partiels de gong, halo long, résolution métallique.
-options:
-- accepter l’absence et construire une scène sans gong ;
-- utiliser guimbardes + résonateurs comme trace métallique légère ;
-- utiliser sub + résonateur comme masse abstraite ;
-- utiliser un sample minimal de gong/métal seulement si la scène exige une résolution métallique réelle.
-priorité: ne pas forcer le gong absent à exister si la scène peut fonctionner autrement.
-sample_implication: conditionnelle, pas automatique.
+fonctions à compenser si requises par la scène: masse métallique, partiels de gong, halo long, résolution métallique.
+compensations possibles:
+- guimbardes + résonateurs comme trace métallique légère ;
+- sub + résonateur comme masse abstraite ;
+- synthèse modale / spectral freeze / convolution courte ;
+- sample minimal de gong/métal si la scène exige une résolution métallique réelle.
+priorité: compenser la fonction nécessaire sans inventer une banque de gongs.
+sample_implication: conditionnelle mais obligatoire si génération/résonateurs ne couvrent pas la fonction.
 ```
 
 ## 4.2 Configuration B — didgeridoo + guimbardes + gong
@@ -143,14 +156,14 @@ configuration_id: LIVE_WITH_GONG
 présents: didgeridoo + guimbardes + 1 gong parmi 5
 absent: tambour
 fonctions couvertes: masse métallique, partiels, halo, résolution, beauté autonome, tension longue.
-fonctions manquantes possibles: peau, impact sec, corps percussif acoustique.
+fonctions à compenser si requises par la scène: peau, impact sec, corps percussif acoustique.
 options:
 - exploiter le gong live comme source centrale ;
 - traiter la queue / les partiels ;
 - garder le sub en soutien ou retrait ;
 - ne pas utiliser de sample de gong.
 priorité: captation, traitement, contrôle de queue, protection bas-médium.
-sample_implication: aucun sample de gong nécessaire dans cette configuration.
+sample_implication: aucun sample de gong nécessaire dans cette configuration ; compensation éventuelle côté tambour si absence de peau requise.
 ```
 
 ## 4.3 Configuration C — didgeridoo + guimbardes + tambour
@@ -160,14 +173,14 @@ configuration_id: LIVE_WITH_FRAME_DRUM
 présents: didgeridoo + guimbardes + 1 tambour sur cadre parmi 3
 absent: gong
 fonctions couvertes: peau, corps acoustique, impact, souffle/formants, micro-pulse.
-fonctions manquantes liées au gong: masse métallique, halo de gong, partiels inharmoniques, résolution métallique.
-options:
-- construire une scène de corps sans résolution métallique ;
-- utiliser tambour + sub comme résolution corporelle ;
-- utiliser guimbardes/résonateurs comme métal léger ;
-- utiliser sample minimal de gong/métal seulement si la scène exige la masse métallique.
+fonctions à compenser si requises par la scène: masse métallique, halo de gong, partiels inharmoniques, résolution métallique.
+compensations possibles:
+- guimbardes/résonateurs comme métal léger ;
+- tambour + sub + résonateur comme résolution corporelle-hybride ;
+- synthèse modale / spectral freeze / convolution courte ;
+- sample minimal de gong/métal si la scène exige la masse métallique réelle.
 priorité: ne pas transformer le tambour en substitut de gong ; préserver son grain de peau.
-sample_implication: conditionnelle si besoin de gong central sans gong live.
+sample_implication: conditionnelle mais obligatoire si la fonction de gong central reste indispensable.
 ```
 
 ## 4.4 Configuration D — didgeridoo + guimbardes + gong + tambour
@@ -176,7 +189,7 @@ sample_implication: conditionnelle si besoin de gong central sans gong live.
 configuration_id: LIVE_WITH_GONG_AND_FRAME_DRUM
 présents: didgeridoo + guimbardes + 1 gong + 1 tambour
 fonctions couvertes: souffle/formants, micro-pulse, peau, impact, masse métallique, partiels, halo, résolution.
-fonctions manquantes liées au gong: aucune fonction de gong prioritaire.
+fonctions à compenser côté gong/tambour: aucune fonction prioritaire si les deux sources sont effectivement présentes et utilisables.
 risque principal: surcharge.
 options:
 - gong et tambour ne doivent pas toujours jouer le même rôle ;
@@ -189,20 +202,11 @@ sample_implication: aucun sample nécessaire pour couvrir gong ou tambour.
 
 ---
 
-# 5. Stratégies d’absence du gong
+# 5. Stratégies de compensation quand le gong est absent
 
-Quand le gong est absent, il existe quatre stratégies possibles.
+Quand le gong est absent mais que la fonction de gong est nécessaire, la compensation est obligatoire.
 
-## 5.1 Accepter l’absence
-
-```text
-usage: la scène n’a pas besoin de masse métallique réelle.
-solution: écrire/organiser une scène où le gong n’est pas requis.
-avantage: évite décor, évite sample inutile.
-risque: perte d’un marqueur formel si la scène était pensée autour d’une résolution métallique.
-```
-
-## 5.2 Substitution par relation live + résonateurs
+## 5.1 Compensation par relation live + résonateurs
 
 ```text
 usage: besoin de partiels / halo / métal léger, pas de gong exposé.
@@ -211,7 +215,7 @@ avantage: cohérent avec live fixe, pas de sample.
 risque: manque de masse réelle ; son trop synthétique si mal calibré.
 ```
 
-## 5.3 Substitution par engine / synthèse modale
+## 5.2 Compensation par engine / synthèse modale
 
 ```text
 usage: besoin de halo, queue, masse abstraite, partiels contrôlés.
@@ -220,7 +224,7 @@ avantage: contrôlable, adaptable, non dépendant du live.
 risque: gong faux, son générique, perte de beauté réelle.
 ```
 
-## 5.4 Sample minimal conditionnel
+## 5.3 Compensation par sample minimal conditionnel
 
 ```text
 usage: besoin de gong ou métal réel exposé alors qu’aucun gong live n’est présent.
@@ -230,12 +234,22 @@ risque: banque décorative, queue figée, gong plaqué.
 condition: seulement si le besoin formel ne peut pas être couvert autrement.
 ```
 
+## 5.4 Compensation hybride
+
+```text
+usage: besoin de masse réelle + contrôle live + sécurité mix.
+solution: attaque/queue ou sample minimal + résonateur + sub contrôlé + guimbardes comme micro-trace.
+avantage: combine réalité et contrôlabilité.
+risque: complexité, surcharge, masquage.
+condition: seulement pour scènes où la fonction de gong est structurelle.
+```
+
 ---
 
 # 6. Besoin de samples associé
 
 ```text
-sample_need_status: conditionnel.
+sample_need_status: conditionnel mais obligatoire si la fonction de gong réel manque et ne peut pas être générée correctement.
 reference_samples_allowed: oui, pour analyse / calibration.
 performative_sample_bank: non.
 minimum_if_confirmed: 1–3 samples de gong/métal très forts.
@@ -300,7 +314,7 @@ traitements possibles: rôle alterné, ducking croisé, distribution temporelle,
 asset_type: live_profile / reference_sample / conditional_sample / resonator_profile / processing_preset
 source_identity: gong live parmi 5 / métal résonant / résonateur substitut
 configuration_id: LIVE_BASE_ONLY / LIVE_WITH_GONG / LIVE_WITH_FRAME_DRUM / LIVE_WITH_GONG_AND_FRAME_DRUM
-gong_presence: absent / live / sampled / substituted
+gong_presence: absent_compensated / live / sampled / generated / hybrid
 frame_drum_presence: absent / live
 role: impact métallique / masse / halo / résolution / beauté autonome / trace métallique
 attack_profile: doux / net / massif / frotté / roulé
@@ -312,7 +326,7 @@ frame_drum_relation: alternance / conflit / soutien / absent
 fatigue_risk: faible / moyen / fort
 mid_load_risk: faible / moyen / fort
 preferred_roles: résolution / halo / masse / beauté / tension
-forbidden_roles: décor gong / remplissage systématique / banque automatique / remplacement du tambour
+forbidden_roles: décor gong / remplissage systématique / banque automatique / remplacement du tambour / absence non compensée si fonction requise
 ```
 
 ---
