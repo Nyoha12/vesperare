@@ -65,14 +65,15 @@ Conversion des décisions esthétiques en phénomènes sonores, puis en architec
 
 Fiches modèles permettant de vérifier concrètement la grille objets / rôles / trajectoires / scènes / paramètres, sans prototypage.
 
-### Spécifications détaillées de modules
+### Spécifications détaillées et audits de modules
 
 ```text
 /docs/modules/01_OBJECT_REGISTRY.md
 /docs/modules/02_TRAJECTORY_ENGINE.md
+/docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
 ```
 
-Développement progressif des modules de l’architecture technique. Les deux premiers modules détaillés sont Object Registry et Trajectory Engine.
+Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les premiers documents détaillent Object Registry, Trajectory Engine et leur contrat d’interaction.
 
 ### Validation, outils et mémoire
 
@@ -101,9 +102,9 @@ Préparation des futures validations, ressources techniques, outils et points d�
   ↓
 09 fiches modèles
   ↓
-docs/modules spécifications détaillées
+docs/modules spécifications détaillées / audits d’interface
   ↓
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de vérifier la compatibilité entre `Object Registry` et `Trajectory Engine`, puis de poursuivre avec Scene / Performance Conductor ou Contextual Control Router selon ce que révèle l’audit.
+Le prochain travail recommandé est de décider quel module détailler ensuite : `Scene / Performance Conductor` si l’on veut formaliser qui autorise les trajectoires, ou `Contextual Control Router` si l’on veut formaliser ce qui devient jouable à l’interface.
