@@ -69,9 +69,10 @@ Fiches modèles permettant de vérifier concrètement la grille objets / rôles 
 
 ```text
 /docs/modules/01_OBJECT_REGISTRY.md
+/docs/modules/02_TRAJECTORY_ENGINE.md
 ```
 
-Développement progressif des modules de l’architecture technique, en commençant par l’Object Registry.
+Développement progressif des modules de l’architecture technique. Les deux premiers modules détaillés sont Object Registry et Trajectory Engine.
 
 ### Validation, outils et mémoire
 
@@ -105,4 +106,4 @@ docs/modules spécifications détaillées
 03 validation / tests
 ```
 
-Le prochain travail recommandé est de continuer le développement détaillé des modules de `02_SPECIFICATION_MAX_FOR_LIVE.md`, en commençant par `docs/modules/01_OBJECT_REGISTRY.md`.
+Le prochain travail recommandé est de vérifier la compatibilité entre `Object Registry` et `Trajectory Engine`, puis de poursuivre avec Scene / Performance Conductor ou Contextual Control Router selon ce que révèle l’audit.
