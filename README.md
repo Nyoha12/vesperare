@@ -77,6 +77,7 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
 33_FICHE_PERFORMANCE_CORPS_VIVANT_POLYTEXTURE.md
 34_FICHE_PERFORMANCE_TENSION_ARMEE_PRE_DROP.md
+35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
 ```
 
 Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes et fiches de performance jouables. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
@@ -143,7 +144,8 @@ style / influences / techno organique
 → dramaturgies musicales des scènes-pivots
 → fiche de performance jouable : Corps vivant / polytexture
 → fiche de performance jouable : Tension armée / pré-drop
-→ reprise musicale ciblée
+→ fiche de performance jouable : Suspension / matière / retour
+→ journal de répétition et d’écoute
 ```
 
 ## Prochaine étape recommandée
@@ -153,6 +155,6 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est :
 
 ```text
-créer la fiche de performance jouable pour
-SCENE_PIVOT_SUSPENSION_MATIERE_RETOUR.
+créer un protocole de journal de répétition et d’écoute
+pour comparer les trois fiches jouables sans prototypage.
 ```
