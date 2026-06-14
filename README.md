@@ -75,9 +75,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
 31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md
 32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
+33_FICHE_PERFORMANCE_CORPS_VIVANT_POLYTEXTURE.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux et dramaturgies musicales concrètes. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes et première fiche de performance jouable. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -139,6 +140,7 @@ style / influences / techno organique
 → audit de congruence scènes-pivots / modules
 → synchronisation modules centraux
 → dramaturgies musicales des scènes-pivots
+→ fiche de performance jouable : Corps vivant / polytexture
 → reprise musicale ciblée
 ```
 
@@ -149,7 +151,6 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est :
 
 ```text
-extraire une première fiche de performance jouable,
-sans outil ni patch,
-pour la scène Corps vivant / polytexture.
+créer la fiche de performance jouable pour
+SCENE_PIVOT_TENSION_ARMEE_PRE_DROP.
 ```
