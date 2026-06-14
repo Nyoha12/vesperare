@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v0.1  
+Version : v0.2  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -21,6 +21,8 @@ https://api.github.com/repos/Nyoha12/vesperare/git/trees/main?recursive=1
 
 Limite : cette trace est une carte de chemins, pas une preuve que tous les fichiers ont été intégralement relus.
 
+Dernière mise à jour manuelle : après création de `docs/26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md` et de ce fichier.
+
 ---
 
 # 1. Racine
@@ -36,6 +38,7 @@ checkpoints/checkpoint_maitre_v0_1.md
 
 ```text
 docs/00_INDEX_METHODE_DECISIONS.md
+docs/REPO_TREE_SNAPSHOT.md
 docs/01_CAHIER_DES_PHENOMENES_SONORES.md
 docs/01A_SYNCHRONISATION_PHENOMENES_MODULES.md
 docs/02_SPECIFICATION_MAX_FOR_LIVE.md
