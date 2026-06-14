@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v3.4  
+Version : v3.5  
 Statut : document directeur de méthode, décisions et cartographie documentaire.
 
 ## Objet
@@ -47,7 +47,8 @@ Ordre général :
 7. Identifier les besoins de sources, instruments, samples, engines et assets.
 8. Établir protocoles, inventaires, fiches de données, scènes tests et portes de décision.
 9. Définir les exigences de contrôle live et de visualisation.
-10. Seulement ensuite : prototyper et tester.
+10. Définir les scènes comme champs ouverts orientés.
+11. Seulement ensuite : prototyper et tester.
 ```
 
 Principe :
@@ -93,7 +94,7 @@ Rôle : définir l’esprit musical, les fonctions retenues de la techno, puis l
 
 Rôle : organiser les grands nœuds qui traversent les phénomènes et la technique : pitch, partiels, objets sonores, scènes, trajectoires, contrôles contextuels, sound design, contraintes de mix/master, responsabilités et cohérence terminologique.
 
-## D. Cadre opératoire techno organique et interface de contrôle
+## D. Cadre opératoire techno organique, contrôle live et scènes ouvertes
 
 ```text
 12_TECHNO_ORGANIQUE_CADRE_OPERATOIRE.md
@@ -107,9 +108,10 @@ Rôle : organiser les grands nœuds qui traversent les phénomènes et la techni
 20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 ```
 
-Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, et cadre de performance — sans encore créer de prototype.
+Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle, visualisation et scènes ouvertes — sans encore créer de prototype.
 
 Lecture de cette série :
 
@@ -124,10 +126,11 @@ Lecture de cette série :
 19: couches de performance et états ;
 20: infrastructure temporelle ;
 21: décisions temporelles ;
-22: visualisation contextuelle.
+22: visualisation contextuelle ;
+23: scènes comme champs ouverts de performance.
 ```
 
-Décision : cette série doit maintenant être consolidée avant de générer de nouveaux concepts.
+Décision : la branche est maintenant intégrée ; la suite doit être un axe ciblé, pas une nouvelle cascade conceptuelle.
 
 ## E. Documents phénoménologiques et techniques de transfert
 
@@ -197,7 +200,8 @@ material_asset_schema ≠ asset réel ;
 scene_use_case ≠ prototype ;
 function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
-engine_sketch ≠ implémentation.
+engine_sketch ≠ implémentation ;
+loop / repeat / freeze ≠ asset par défaut.
 ```
 
 Sous-dossiers :
@@ -250,9 +254,11 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 11. Création de matrices de contrôle ou visualisation si le système de performance en a besoin
    ↓
-12. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+12. Clarification des scènes ouvertes si les contrôles doivent être replacés dans la forme
    ↓
-13. Propagation vers validation/tests seulement si le système futur est assez clair
+13. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+   ↓
+14. Propagation vers validation/tests seulement si le système futur est assez clair
 ```
 
 Principe :
@@ -286,7 +292,7 @@ compatible avec l’architecture globale ;
 compatible avec les besoins de sources / assets quand ils sont impliqués.
 ```
 
-Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle et exigences de visualisation ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
+Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle, exigences de visualisation et fiches de champs de scène ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
 
 ---
 
@@ -305,14 +311,15 @@ Sub = corps + pitch_center + pression + résolution ;
 Pré-drop = rythmique + corporel + spectral + harmonique ;
 Halo = espace + queue + harmonie + risque d’ambientisation ;
 Freeze = temps + matière + risque anti-ambient + sortie obligatoire ;
-Loop live = trace + double + risque de remplacement + fonction de scène.
+Loop live = trace + double + risque de remplacement + fonction de scène ;
+Scène ouverte = fonction centrale + bifurcations + protections + sorties.
 ```
 
 ---
 
 # 7. Décision actuelle
 
-La branche `12–22` a stabilisé une couche de décisions sur :
+La branche `12–23` a stabilisé une couche de décisions sur :
 
 ```text
 techno organique comme cadre opératoire ;
@@ -321,7 +328,8 @@ exigences système/interface ;
 contrôles live ;
 couches de performance ;
 infrastructure temporelle ;
-visualisation contextuelle.
+visualisation contextuelle ;
+scènes comme champs ouverts.
 ```
 
 Décision : ne pas ajouter de nouveau concept immédiatement.
@@ -329,8 +337,7 @@ Décision : ne pas ajouter de nouveau concept immédiatement.
 Prochaine étape recommandée :
 
 ```text
-1. relire la documentation map ;
-2. décider si elle doit être mise à jour ;
-3. relire le protocole /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md seulement si les nouvelles décisions changent source_need / asset ;
-4. reprendre ensuite un axe musical ou technique ciblé.
+1. choisir 2 ou 3 scènes-pivots ;
+2. les remplir avec la fiche de champ de scène ;
+3. vérifier ensuite si cela doit se propager vers Scene / Performance Conductor, Contextual Control Router ou assets.
 ```
