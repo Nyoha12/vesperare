@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v3.5  
+Version : v3.6  
 Statut : document directeur de méthode, décisions et cartographie documentaire.
 
 ## Objet
@@ -48,7 +48,8 @@ Ordre général :
 8. Établir protocoles, inventaires, fiches de données, scènes tests et portes de décision.
 9. Définir les exigences de contrôle live et de visualisation.
 10. Définir les scènes comme champs ouverts orientés.
-11. Seulement ensuite : prototyper et tester.
+11. Vérifier quelques scènes-pivots avant d’ouvrir davantage.
+12. Seulement ensuite : prototyper et tester.
 ```
 
 Principe :
@@ -109,9 +110,10 @@ Rôle : organiser les grands nœuds qui traversent les phénomènes et la techni
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
 23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
+24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
 ```
 
-Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle, visualisation et scènes ouvertes — sans encore créer de prototype.
+Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle, visualisation, scènes ouvertes et premières scènes-pivots — sans encore créer de prototype.
 
 Lecture de cette série :
 
@@ -127,10 +129,11 @@ Lecture de cette série :
 20: infrastructure temporelle ;
 21: décisions temporelles ;
 22: visualisation contextuelle ;
-23: scènes comme champs ouverts de performance.
+23: scènes comme champs ouverts de performance ;
+24: première série de scènes-pivots ouvertes.
 ```
 
-Décision : la branche est maintenant intégrée ; la suite doit être un axe ciblé, pas une nouvelle cascade conceptuelle.
+Décision : la branche est intégrée ; la suite doit relier les scènes-pivots aux modules, pas créer encore plus de scènes.
 
 ## E. Documents phénoménologiques et techniques de transfert
 
@@ -256,9 +259,11 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 12. Clarification des scènes ouvertes si les contrôles doivent être replacés dans la forme
    ↓
-13. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+13. Création de quelques scènes-pivots pour vérifier les relations
    ↓
-14. Propagation vers validation/tests seulement si le système futur est assez clair
+14. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+   ↓
+15. Propagation vers validation/tests seulement si le système futur est assez clair
 ```
 
 Principe :
@@ -319,7 +324,7 @@ Scène ouverte = fonction centrale + bifurcations + protections + sorties.
 
 # 7. Décision actuelle
 
-La branche `12–23` a stabilisé une couche de décisions sur :
+La branche `12–24` a stabilisé une couche de décisions sur :
 
 ```text
 techno organique comme cadre opératoire ;
@@ -329,15 +334,19 @@ contrôles live ;
 couches de performance ;
 infrastructure temporelle ;
 visualisation contextuelle ;
-scènes comme champs ouverts.
+scènes comme champs ouverts ;
+trois scènes-pivots ouvertes.
 ```
 
-Décision : ne pas ajouter de nouveau concept immédiatement.
+Décision : ne pas créer plus de scènes maintenant.
 
 Prochaine étape recommandée :
 
 ```text
-1. choisir 2 ou 3 scènes-pivots ;
-2. les remplir avec la fiche de champ de scène ;
-3. vérifier ensuite si cela doit se propager vers Scene / Performance Conductor, Contextual Control Router ou assets.
+relier les trois scènes-pivots aux modules futurs :
+Scene / Performance Conductor ;
+Contextual Control Router ;
+Conflict / Protection Manager ;
+Temporal Infrastructure ;
+Object Registry.
 ```
