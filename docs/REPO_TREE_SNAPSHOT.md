@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v0.6  
+Version : v0.7  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -21,7 +21,7 @@ https://api.github.com/repos/Nyoha12/vesperare/git/trees/main?recursive=1
 
 Limite : cette trace est une carte de chemins, pas une preuve que tous les fichiers ont été intégralement relus.
 
-Dernière mise à jour manuelle : après création de `docs/30_OBJECT_REGISTRY_SYNC_ADDENDUM.md`.
+Dernière mise à jour manuelle : après création de `docs/31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md`.
 
 ---
 
@@ -78,6 +78,7 @@ docs/27_SCENE_PERFORMANCE_CONDUCTOR_SYNC_ADDENDUM.md
 docs/28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
 docs/29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
 docs/30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
+docs/31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md
 ```
 
 ---
