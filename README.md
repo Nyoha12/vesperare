@@ -72,6 +72,7 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 27_SCENE_PERFORMANCE_CONDUCTOR_SYNC_ADDENDUM.md
 28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
 29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
+30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
 ```
 
 Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits et synchronisation des premiers modules affectés. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
@@ -137,6 +138,7 @@ style / influences / techno organique
 → synchronisation Scene / Performance Conductor
 → synchronisation Contextual Control Router
 → synchronisation Conflict / Protection Manager
+→ synchronisation Object Registry
 → consolidation documentaire
 → reprise musicale ou technique ciblée
 ```
@@ -148,7 +150,7 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est de décider entre :
 
 ```text
-A. synchroniser Object Registry / Trajectory Engine ;
+A. synchroniser Trajectory Engine ;
 B. revenir à une passe musicale sur les scènes-pivots ;
 C. préparer une première question de prototype ciblée, seulement si son module et sa fonction sont clairs.
 ```
