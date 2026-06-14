@@ -40,13 +40,13 @@ Méthode, décisions, vocabulaire, organisation documentaire, workflow et trace 
 06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
 07_PITCH_HARMONIQUES_MICROTONALITE.md
 08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
+09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
 10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md
 11_AUDIT_COHERENCE_NOTATION_CATEGORIES_RESPONSABILITES.md
 01_CAHIER_DES_PHENOMENES_SONORES.md
 01A_SYNCHRONISATION_PHENOMENES_MODULES.md
 02_SPECIFICATION_MAX_FOR_LIVE.md
 02A_SYNCHRONISATION_ARCHITECTURE_MODULES.md
-09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
 ```
 
 Ces documents définissent les bases : style, phénomènes sonores, scènes, trajectoires, objets, contraintes de timbre/mix et architecture Max for Live future.
@@ -71,9 +71,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md
 27_SCENE_PERFORMANCE_CONDUCTOR_SYNC_ADDENDUM.md
 28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
+29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audit de congruence et synchronisation des premiers modules affectés. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits et synchronisation des premiers modules affectés. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -135,6 +136,7 @@ style / influences / techno organique
 → audit de congruence scènes-pivots / modules
 → synchronisation Scene / Performance Conductor
 → synchronisation Contextual Control Router
+→ synchronisation Conflict / Protection Manager
 → consolidation documentaire
 → reprise musicale ou technique ciblée
 ```
@@ -146,7 +148,7 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est de décider entre :
 
 ```text
-A. synchroniser Conflict / Protection Manager ;
+A. synchroniser Object Registry / Trajectory Engine ;
 B. revenir à une passe musicale sur les scènes-pivots ;
 C. préparer une première question de prototype ciblée, seulement si son module et sa fonction sont clairs.
 ```
