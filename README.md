@@ -65,9 +65,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
 23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
+24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle et scènes ouvertes. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes et premières scènes-pivots. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -124,6 +125,7 @@ style / influences / techno organique
 → infrastructure temporelle
 → visualisation contextuelle
 → scènes comme champs ouverts
+→ scènes-pivots ouvertes
 → consolidation documentaire
 → reprise musicale ou technique ciblée
 ```
@@ -132,11 +134,12 @@ style / influences / techno organique
 
 La prochaine étape n’est pas de créer un nouveau concept, un engine profile, un sample, un asset concret ou un prototype.
 
-La prochaine étape est de choisir un axe ciblé :
+La prochaine étape est de relier les trois scènes-pivots aux modules futurs :
 
 ```text
-A. remplir 2 ou 3 scènes-pivots avec la fiche de champ de scène ;
-B. relier les scènes ouvertes aux modules Scene / Performance Conductor et Contextual Control Router ;
-C. revenir aux scènes globales / trajectoires ;
-D. revenir aux sources et assets seulement si une scène précise l’exige.
+Scene / Performance Conductor ;
+Contextual Control Router ;
+Conflict / Protection Manager ;
+Temporal Infrastructure ;
+Object Registry.
 ```
