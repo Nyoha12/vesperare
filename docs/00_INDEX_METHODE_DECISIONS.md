@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v3.7  
+Version : v3.8  
 Statut : document directeur de méthode, décisions et cartographie documentaire.
 
 ## Objet
@@ -50,7 +50,8 @@ Ordre général :
 10. Définir les scènes comme champs ouverts orientés.
 11. Vérifier quelques scènes-pivots avant d’ouvrir davantage.
 12. Relier les scènes-pivots aux responsabilités de modules futurs.
-13. Seulement ensuite : prototyper et tester.
+13. Auditer la congruence scènes-pivots / modules existants.
+14. Seulement ensuite : prototyper et tester.
 ```
 
 Principe :
@@ -60,7 +61,8 @@ penser avant de prototyper ;
 propager les décisions stables ;
 ne pas confondre idée, besoin, source, asset, module, test, prototype ou outil ;
 garder les catégories comme facettes ;
-mettre à jour les cartes quand une branche documentaire devient trop profonde.
+mettre à jour les cartes quand une branche documentaire devient trop profonde ;
+tenir à jour la trace d’arborescence si des documents sont créés, déplacés ou supprimés.
 ```
 
 ---
@@ -72,9 +74,10 @@ mettre à jour les cartes quand une branche documentaire devient trop profonde.
 ```text
 README.md
 00_INDEX_METHODE_DECISIONS.md
+REPO_TREE_SNAPSHOT.md
 ```
 
-Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire et le workflow.
+Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow et la trace d’arborescence.
 
 ## B. Style et influences
 
@@ -113,9 +116,10 @@ Rôle : organiser les grands nœuds qui traversent les phénomènes et la techni
 23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
 25_SCENES_PIVOTS_TO_MODULE_RESPONSIBILITIES_MAP.md
+26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md
 ```
 
-Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle, visualisation, scènes ouvertes, scènes-pivots et responsabilités de modules futurs — sans encore créer de prototype.
+Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle, visualisation, scènes ouvertes, scènes-pivots, responsabilités de modules futurs et audit de congruence — sans encore créer de prototype.
 
 Lecture de cette série :
 
@@ -133,10 +137,11 @@ Lecture de cette série :
 22: visualisation contextuelle ;
 23: scènes comme champs ouverts de performance ;
 24: première série de scènes-pivots ouvertes ;
-25: liaison scènes-pivots / responsabilités de modules futurs.
+25: liaison scènes-pivots / responsabilités de modules futurs ;
+26: audit de congruence scènes-pivots / modules existants.
 ```
 
-Décision : la branche est intégrée ; la suite doit auditer la congruence avec les spécifications modules existantes avant toute nouvelle spécification.
+Décision : la branche est intégrée ; la suite doit synchroniser prudemment les modules affectés au lieu de créer une nouvelle couche.
 
 ## E. Documents phénoménologiques et techniques de transfert
 
@@ -266,9 +271,11 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 14. Liaison scènes-pivots / modules futurs
    ↓
-15. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+15. Audit de congruence scènes-pivots / modules existants
    ↓
-16. Propagation vers validation/tests seulement si le système futur est assez clair
+16. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+   ↓
+17. Propagation vers validation/tests seulement si le système futur est assez clair
 ```
 
 Principe :
@@ -282,7 +289,8 @@ utiliser les fiches modèles et tests fonctionnels pour vérifier les abstractio
 détailler les modules seulement quand leur rôle dans l’architecture est clair ;
 ne jamais transformer les catégories en cases exclusives ;
 auditer les interfaces avant divergence ;
-mettre à jour les documents anciens quand les décisions récentes déplacent le workflow.
+mettre à jour les documents anciens quand les décisions récentes déplacent le workflow ;
+mettre à jour REPO_TREE_SNAPSHOT quand un document est créé, supprimé ou déplacé.
 ```
 
 ---
@@ -302,7 +310,7 @@ compatible avec l’architecture globale ;
 compatible avec les besoins de sources / assets quand ils sont impliqués.
 ```
 
-Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle, exigences de visualisation et fiches de champs de scène ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
+Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle, exigences de visualisation, fiches de champs de scène, cartes d’arborescence et audits de congruence ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
 
 ---
 
@@ -329,7 +337,7 @@ Scène ouverte = fonction centrale + bifurcations + protections + sorties.
 
 # 7. Décision actuelle
 
-La branche `12–25` a stabilisé une couche de décisions sur :
+La branche `12–26` a stabilisé une couche de décisions sur :
 
 ```text
 techno organique comme cadre opératoire ;
@@ -341,7 +349,8 @@ infrastructure temporelle ;
 visualisation contextuelle ;
 scènes comme champs ouverts ;
 trois scènes-pivots ouvertes ;
-liaison scènes-pivots / modules futurs.
+liaison scènes-pivots / modules futurs ;
+audit de congruence scènes-pivots / modules existants.
 ```
 
 Décision : ne pas créer de nouveau module, patch ou prototype.
@@ -349,6 +358,6 @@ Décision : ne pas créer de nouveau module, patch ou prototype.
 Prochaine étape recommandée :
 
 ```text
-créer un audit de congruence entre les scènes-pivots et les spécifications modules existantes,
-avant toute nouvelle spécification ou prototype.
+créer des addenda de synchronisation ciblés pour les modules les plus affectés,
+en commençant par Scene / Performance Conductor et Contextual Control Router.
 ```
