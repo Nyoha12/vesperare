@@ -1,7 +1,7 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v3.3  
-Statut : document directeur de méthode et de décisions.
+Version : v3.4  
+Statut : document directeur de méthode, décisions et cartographie documentaire.
 
 ## Objet
 
@@ -15,9 +15,19 @@ Il sert aussi à organiser le workflow documentaire : quels documents définisse
 
 Vesperare est un projet de recherche-création visant à concevoir un système de composition et de performance live dans Ableton Live / Max for Live, composé de plusieurs dispositifs configurables.
 
-L’objectif est d’inventer un genre musical personnel dont la techno est l’influence stylistique principale, mais dont les fonctions peuvent être portées par des matières sonores naturelles, acoustiques, instrumentales, percussives, vocales, naturalisées, hybrides ou synthétisées comme phénomènes physiques.
+Le genre musical personnel visé est localement nommé **techno organique**. La techno constitue l’influence stylistique principale : corps, impact, hypnose, pression, répétition, tension et forme longue.
 
-Le projet ne cherche pas simplement à “faire de la techno avec des sons naturels”. Il cherche à conserver les forces techno — corps, impact, hypnose, pression, tension, forme longue — en les réincarnant dans des matières sonores réelles, organiques, acoustiques, vocales, instrumentales ou hybrides.
+Le projet ne cherche pas simplement à faire de la techno avec des sons naturels. Il cherche à conserver les fonctions techno en les réincarnant dans des matières sonores réelles, organiques, acoustiques, vocales, instrumentales, hybrides ou synthétisées comme phénomènes physiques.
+
+Sources live centrales :
+
+```text
+didgeridoo toujours live ;
+guimbardes toujours live ;
+gong optionnel ;
+tambour optionnel ;
+zéro sample initial.
+```
 
 ---
 
@@ -36,7 +46,8 @@ Ordre général :
 6. Auditer les interfaces entre modules.
 7. Identifier les besoins de sources, instruments, samples, engines et assets.
 8. Établir protocoles, inventaires, fiches de données, scènes tests et portes de décision.
-9. Seulement ensuite : prototyper et tester.
+9. Définir les exigences de contrôle live et de visualisation.
+10. Seulement ensuite : prototyper et tester.
 ```
 
 Principe :
@@ -71,7 +82,7 @@ Rôle : présenter le projet, garder les décisions structurantes, organiser la 
 
 Rôle : définir l’esprit musical, les fonctions retenues de la techno, puis les éléments extraits d’autres styles sans les importer comme blocs stylistiques.
 
-## C. Documents conceptuels transversaux
+## C. Documents conceptuels transversaux historiques
 
 ```text
 07_PITCH_HARMONIQUES_MICROTONALITE.md
@@ -80,30 +91,57 @@ Rôle : définir l’esprit musical, les fonctions retenues de la techno, puis l
 11_AUDIT_COHERENCE_NOTATION_CATEGORIES_RESPONSABILITES.md
 ```
 
-Rôle : organiser les grands nœuds qui traversent tous les phénomènes et toute la technique : pitch, partiels, microtonalité, objets sonores, scènes, trajectoires, contrôles contextuels, sound design, contraintes de mix/master, recherche future d’outils, responsabilités et cohérence terminologique.
+Rôle : organiser les grands nœuds qui traversent les phénomènes et la technique : pitch, partiels, objets sonores, scènes, trajectoires, contrôles contextuels, sound design, contraintes de mix/master, responsabilités et cohérence terminologique.
 
-## D. Documents phénoménologiques et techniques de transfert
+## D. Cadre opératoire techno organique et interface de contrôle
+
+```text
+12_TECHNO_ORGANIQUE_CADRE_OPERATOIRE.md
+13_CONCEPTS_OPERATOIRES_TECHNO_ORGANIQUE_DEPENDANCES.md
+14_CONCEPT_CORE_TO_INTERFACE_SYSTEM_REQUIREMENTS.md
+15_LIVE_CONTROL_REQUIREMENTS_MATRIX.md
+16_LIVE_CONTROL_MATRIX_PERFORMABILITY_AUDIT.md
+17_LIVE_CONTROL_REQUIREMENTS_MATRIX_REDUCED.md
+18_LIVE_CONTROL_DECISION_QUESTIONS_BEFORE_LAYERS.md
+19_LIVE_CONTROL_LAYERS_AND_PERFORMANCE_STATES.md
+20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
+21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
+22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+```
+
+Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, et cadre de performance — sans encore créer de prototype.
+
+Lecture de cette série :
+
+```text
+12: cadrage opératoire du nom local techno organique ;
+13: dépendances entre concepts opératoires ;
+14: exigences système / interface ;
+15: matrice de contrôles live abstraits ;
+16: audit de performabilité ;
+17: matrice réduite ;
+18: décisions avant couches ;
+19: couches de performance et états ;
+20: infrastructure temporelle ;
+21: décisions temporelles ;
+22: visualisation contextuelle.
+```
+
+Décision : cette série doit maintenant être consolidée avant de générer de nouveaux concepts.
+
+## E. Documents phénoménologiques et techniques de transfert
 
 ```text
 01_CAHIER_DES_PHENOMENES_SONORES.md
 01A_SYNCHRONISATION_PHENOMENES_MODULES.md
 02_SPECIFICATION_MAX_FOR_LIVE.md
 02A_SYNCHRONISATION_ARCHITECTURE_MODULES.md
+09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
 ```
 
 Rôle : convertir les décisions stylistiques et transversales en phénomènes sonores manipulables, puis en architecture Max for Live / Ableton Live.
 
 Les fichiers `01A` et `02A` sont des addenda de synchronisation prudente : ils mettent à jour la lecture de `01` et `02` sans remplacer leurs contenus détaillés.
-
-## E. Appendice de modélisation conceptuelle
-
-```text
-09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
-```
-
-Rôle : tester concrètement les grilles de `02` par des fiches modèles : objets sonores, trajectoires, scènes et groupements de paramètres.
-
-Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il sert à vérifier que les abstractions sont utilisables, cohérentes et non trop générales.
 
 ## F. Spécifications détaillées et audits de modules
 
@@ -134,7 +172,7 @@ Source Needs / Asset Database Protocol.
 /docs/assets/
 ```
 
-`00_ASSETS_INDEX.md` est désormais la carte locale du dossier `docs/assets`.
+`00_ASSETS_INDEX.md` est la carte locale du dossier `docs/assets`.
 
 Le dossier `docs/assets` ne contient pas encore d’assets audio finaux. Il contient :
 
@@ -162,7 +200,7 @@ decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation.
 ```
 
-Sous-dossiers récents :
+Sous-dossiers :
 
 ```text
 /docs/assets/source_needs/
@@ -171,33 +209,6 @@ Sous-dossiers récents :
 /docs/assets/function_tests/
 /docs/assets/decision_gates/
 /docs/assets/engine_sketches/
-```
-
-Workflow actuel des assets :
-
-```text
-besoins du style
-→ sources réellement disponibles
-→ fonctions couvertes / non couvertes
-→ compensations conditionnelles
-→ manques restants
-→ instruments candidats ciblés
-→ source_needs prioritaires
-→ comparaison
-→ scène candidate
-→ test fonctionnel
-→ décision gate
-→ croquis de paramètres
-→ audit de cohérence
-→ index local assets
-```
-
-Décision actuelle pour ce dossier :
-
-```text
-ne pas continuer vers un engine_profile, sample, asset concret, achat, enregistrement ou prototype ;
-mettre d’abord à jour les cartes et le protocole source_need / asset database ;
-reprendre ensuite le travail musical depuis une carte stabilisée.
 ```
 
 ## H. Validation, outils et mémoire
@@ -237,9 +248,11 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 10. Création de matrices, source_needs, schemas, scene_use_cases, function_tests, decision_gates ou engine_sketches selon le niveau de maturité
    ↓
-11. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+11. Création de matrices de contrôle ou visualisation si le système de performance en a besoin
    ↓
-12. Propagation vers validation/tests seulement si le système futur est assez clair
+12. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+   ↓
+13. Propagation vers validation/tests seulement si le système futur est assez clair
 ```
 
 Principe :
@@ -273,7 +286,7 @@ compatible avec l’architecture globale ;
 compatible avec les besoins de sources / assets quand ils sont impliqués.
 ```
 
-Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision et croquis d’engine ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
+Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle et exigences de visualisation ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
 
 ---
 
@@ -281,7 +294,7 @@ Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas 
 
 Les catégories du projet sont des outils de lecture, pas des prisons conceptuelles.
 
-Un objet, une trajectoire, une scène, un instrument candidat ou un groupement de paramètres peut appartenir à plusieurs facettes à la fois.
+Un objet, une trajectoire, une scène, un instrument candidat, une source ou un contrôle peut appartenir à plusieurs facettes à la fois.
 
 Exemples :
 
@@ -290,31 +303,34 @@ Didgeridoo = grave + formants + souffle + live + corps ;
 Gong = impact + halo + partiels + beauté autonome + résolution ;
 Sub = corps + pitch_center + pression + résolution ;
 Pré-drop = rythmique + corporel + spectral + harmonique ;
-Halo = espace + queue + harmonie + risque d’ambientisation.
+Halo = espace + queue + harmonie + risque d’ambientisation ;
+Freeze = temps + matière + risque anti-ambient + sortie obligatoire ;
+Loop live = trace + double + risque de remplacement + fonction de scène.
 ```
 
 ---
 
-# 7. Prochaine étape recommandée
+# 7. Décision actuelle
 
-Prochaine étape immédiate :
-
-```text
-relire puis mettre à jour /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
-```
-
-Objectif : aligner le protocole `source_need` / `material_asset` avec le workflow réel actuel :
+La branche `12–22` a stabilisé une couche de décisions sur :
 
 ```text
-source_need ;
-material_asset_schema ;
-scene_use_case ;
-function_test ;
-decision_gate ;
-engine_sketch ;
-conditional_sample ;
-reference_only ;
-real_source_needed.
+techno organique comme cadre opératoire ;
+concepts opératoires ;
+exigences système/interface ;
+contrôles live ;
+couches de performance ;
+infrastructure temporelle ;
+visualisation contextuelle.
 ```
 
-Ensuite seulement : reprendre le travail musical depuis une carte stabilisée.
+Décision : ne pas ajouter de nouveau concept immédiatement.
+
+Prochaine étape recommandée :
+
+```text
+1. relire la documentation map ;
+2. décider si elle doit être mise à jour ;
+3. relire le protocole /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md seulement si les nouvelles décisions changent source_need / asset ;
+4. reprendre ensuite un axe musical ou technique ciblé.
+```
