@@ -73,9 +73,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
 29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
 30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
+31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits et synchronisation des premiers modules affectés. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits et synchronisation des modules centraux. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -139,18 +140,17 @@ style / influences / techno organique
 → synchronisation Contextual Control Router
 → synchronisation Conflict / Protection Manager
 → synchronisation Object Registry
-→ consolidation documentaire
-→ reprise musicale ou technique ciblée
+→ synchronisation Trajectory Engine
+→ reprise musicale sur les scènes-pivots
 ```
 
 ## Prochaine étape recommandée
 
 La prochaine étape n’est pas de créer un nouveau concept, un engine profile, un sample, un asset concret ou un prototype.
 
-La prochaine étape est de décider entre :
+La prochaine étape est :
 
 ```text
-A. synchroniser Trajectory Engine ;
-B. revenir à une passe musicale sur les scènes-pivots ;
-C. préparer une première question de prototype ciblée, seulement si son module et sa fonction sont clairs.
+revenir à une passe musicale sur les trois scènes-pivots,
+maintenant que les modules centraux de contrôle et d’arbitrage sont synchronisés.
 ```
