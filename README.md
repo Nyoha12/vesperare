@@ -74,9 +74,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
 30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
 31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md
+32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits et synchronisation des modules centraux. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux et dramaturgies musicales concrètes. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -136,12 +137,9 @@ style / influences / techno organique
 → scènes-pivots ouvertes
 → liaison scènes-pivots / modules futurs
 → audit de congruence scènes-pivots / modules
-→ synchronisation Scene / Performance Conductor
-→ synchronisation Contextual Control Router
-→ synchronisation Conflict / Protection Manager
-→ synchronisation Object Registry
-→ synchronisation Trajectory Engine
-→ reprise musicale sur les scènes-pivots
+→ synchronisation modules centraux
+→ dramaturgies musicales des scènes-pivots
+→ reprise musicale ciblée
 ```
 
 ## Prochaine étape recommandée
@@ -151,6 +149,7 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est :
 
 ```text
-revenir à une passe musicale sur les trois scènes-pivots,
-maintenant que les modules centraux de contrôle et d’arbitrage sont synchronisés.
+extraire une première fiche de performance jouable,
+sans outil ni patch,
+pour la scène Corps vivant / polytexture.
 ```
