@@ -66,9 +66,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
 23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
+25_SCENES_PIVOTS_TO_MODULE_RESPONSIBILITIES_MAP.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes et premières scènes-pivots. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, premières scènes-pivots et responsabilités de modules futurs. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -126,6 +127,7 @@ style / influences / techno organique
 → visualisation contextuelle
 → scènes comme champs ouverts
 → scènes-pivots ouvertes
+→ liaison scènes-pivots / modules futurs
 → consolidation documentaire
 → reprise musicale ou technique ciblée
 ```
@@ -134,12 +136,9 @@ style / influences / techno organique
 
 La prochaine étape n’est pas de créer un nouveau concept, un engine profile, un sample, un asset concret ou un prototype.
 
-La prochaine étape est de relier les trois scènes-pivots aux modules futurs :
+La prochaine étape est :
 
 ```text
-Scene / Performance Conductor ;
-Contextual Control Router ;
-Conflict / Protection Manager ;
-Temporal Infrastructure ;
-Object Registry.
+créer un audit de congruence entre les scènes-pivots et les spécifications modules existantes,
+avant toute nouvelle spécification ou prototype.
 ```
