@@ -1,13 +1,13 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v3.2  
+Version : v3.3  
 Statut : document directeur de méthode et de décisions.
 
 ## Objet
 
 Ce document garde les décisions structurantes du projet Vesperare : méthode, terminologie, ordre de travail, statut des documents, règles de mise à jour et grandes orientations validées.
 
-Il sert aussi à organiser le workflow documentaire : quels documents définissent l’esprit, lesquels développent les couches transversales, lesquels servent de pont vers la technique, et dans quel ordre les mettre à jour.
+Il sert aussi à organiser le workflow documentaire : quels documents définissent l’esprit, lesquels développent les couches transversales, lesquels servent de pont vers la technique, lesquels préparent les sources / assets, et quand interrompre une branche pour réintégrer la carte globale.
 
 ---
 
@@ -25,7 +25,7 @@ Le projet ne cherche pas simplement à “faire de la techno avec des sons natur
 
 Décision majeure : conception approfondie avant prototypage.
 
-Le projet suit l’ordre général suivant :
+Ordre général :
 
 ```text
 1. Clarifier l’ambition musicale globale.
@@ -35,7 +35,7 @@ Le projet suit l’ordre général suivant :
 5. Définir les modules et leurs responsabilités.
 6. Auditer les interfaces entre modules.
 7. Identifier les besoins de sources, instruments, samples, engines et assets.
-8. Établir les protocoles, inventaires, fiches de données et validations abstraites.
+8. Établir protocoles, inventaires, fiches de données, scènes tests et portes de décision.
 9. Seulement ensuite : prototyper et tester.
 ```
 
@@ -44,16 +44,14 @@ Principe :
 ```text
 penser avant de prototyper ;
 propager les décisions stables ;
-ne pas confondre idée, module, asset, prototype ou outil ;
+ne pas confondre idée, besoin, source, asset, module, test, prototype ou outil ;
 garder les catégories comme facettes ;
-mettre à jour les documents anciens quand les modules récents stabilisent une décision.
+mettre à jour les cartes quand une branche documentaire devient trop profonde.
 ```
 
 ---
 
 # 3. Organisation documentaire actuelle
-
-Les documents sont organisés par fonction dans le projet, et non seulement par ordre numérique.
 
 ## A. Documents directeurs
 
@@ -64,7 +62,7 @@ README.md
 
 Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire et le workflow.
 
-## B. Documents de style et d’influences
+## B. Style et influences
 
 ```text
 05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
@@ -83,8 +81,6 @@ Rôle : définir l’esprit musical, les fonctions retenues de la techno, puis l
 ```
 
 Rôle : organiser les grands nœuds qui traversent tous les phénomènes et toute la technique : pitch, partiels, microtonalité, objets sonores, scènes, trajectoires, contrôles contextuels, sound design, contraintes de mix/master, recherche future d’outils, responsabilités et cohérence terminologique.
-
-Le document `10` est une contrainte transversale différée : il ne remplace pas les modules, mais empêche l’architecture de devenir incompatible avec les futures méthodes de sound design, la couche mix/master, les recherches d’outils, les corpus ciblés et la préparation des assets.
 
 ## D. Documents phénoménologiques et techniques de transfert
 
@@ -112,141 +108,97 @@ Ce document ne constitue pas une nouvelle couche théorique ni un prototype. Il 
 ## F. Spécifications détaillées et audits de modules
 
 ```text
-/docs/modules/01_OBJECT_REGISTRY.md
-/docs/modules/02_TRAJECTORY_ENGINE.md
-/docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
-/docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
-/docs/modules/05_CONTEXTUAL_CONTROL_ROUTER.md
-/docs/modules/06_CONDUCTOR_ROUTER_INTERFACE.md
-/docs/modules/07_CONFLICT_PROTECTION_MANAGER.md
-/docs/modules/08_CONFLICT_CONDUCTOR_ROUTER_INTERFACE.md
-/docs/modules/09_PITCH_HARMONIC_FIELD_MANAGER.md
-/docs/modules/10_PITCH_CONFLICT_INTERFACE.md
-/docs/modules/11_TIMBRE_MATERIAL_MAPPER.md
-/docs/modules/12_TIMBRE_REGISTRY_CONFLICT_PITCH_INTERFACE.md
-/docs/modules/13_SOUND_ENGINES_INSTRUMENTS.md
-/docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
-/docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
-/docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
+/docs/modules/
 ```
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, auditer leurs interfaces avant prototypage, puis préparer les données nécessaires aux instruments, sources, samples, engines et assets.
 
+Dossier concerné notamment par :
+
+```text
+Object Registry ;
+Trajectory Engine ;
+Scene / Performance Conductor ;
+Contextual Control Router ;
+Conflict / Protection Manager ;
+Pitch / Harmonic Field Manager ;
+Timbre & Material Mapper ;
+Sound Engines / Instruments ;
+Source Needs / Asset Database Protocol.
+```
+
 ## G. Préparation des sources, samples et assets
 
 ```text
-/docs/assets/00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.md
-/docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
-/docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
-/docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
-/docs/assets/04_SAMPLE_NEEDS_INITIAL.md
-/docs/assets/05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.md
-/docs/assets/06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS.md
-/docs/assets/07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS.md
-/docs/assets/source_needs/SOURCE_NEED_LIVE_JAW_HARPS_FORMANT_MICROPULSE.md
-/docs/assets/source_needs/SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS.md
-/docs/assets/source_needs/SOURCE_NEED_SUB_PRESSURE_ENGINE.md
-/docs/assets/source_needs/SOURCE_NEED_OPTIONAL_GONG_PRESENCE_ABSENCE_STRATEGY.md
-/docs/assets/source_needs/SOURCE_NEED_OPTIONAL_FRAME_DRUM_PRESENCE_ABSENCE_STRATEGY.md
-/docs/assets/source_needs/SOURCE_NEED_MINIMAL_VOICE_IF_NOT_LIVE.md
+/docs/assets/00_ASSETS_INDEX.md
+/docs/assets/
 ```
 
-Rôle : extraire les besoins esthétiques et phénoménaux depuis les documents de style / phénomènes / performance / timbre, accueillir les instruments / sources candidates, décider quels genres de samples et quels samples concrets doivent être constitués avant le live, produire une première table d’audit, intégrer les données fixes de live de Yohan, analyser les besoins depuis zéro sample, créer les premières fiches `source_need` pour les sources live garanties, l’engine sub / pression, les stratégies conditionnelles gong/tambour et la voix conditionnelle, puis relier les besoins validés à `material_asset`, `material_pool`, `selection_policy` et `quality_evaluation`.
+`00_ASSETS_INDEX.md` est désormais la carte locale du dossier `docs/assets`.
 
-`00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX` demande :
+Le dossier `docs/assets` ne contient pas encore d’assets audio finaux. Il contient :
 
 ```text
-quels besoins esthétiques, fonctions, phénomènes, trajectoires et scènes existent déjà dans le projet,
-avant toute décision de sample, d’asset ou d’engine ?
+besoins ;
+hypothèses ;
+protocoles ;
+source_needs ;
+schémas de material_asset ;
+cas de scène ;
+tests fonctionnels ;
+portes de décision ;
+croquis de paramètres ;
+audits de cohérence.
 ```
 
-`01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL` demande :
+Règles de lecture :
 
 ```text
-quels instruments, sources, objets, lieux ou matières pourraient être intéressants ?
+source_need ≠ material_asset ;
+material_asset_schema ≠ asset réel ;
+scene_use_case ≠ prototype ;
+function_test ≠ module ;
+decision_gate ≠ décision déjà prise ;
+engine_sketch ≠ implémentation.
 ```
 
-`02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL` demande :
+Sous-dossiers récents :
 
 ```text
-quels genres de samples et quels samples concrets faut-il vraiment constituer avant le live,
-selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale ?
+/docs/assets/source_needs/
+/docs/assets/material_assets/
+/docs/assets/scene_use_cases/
+/docs/assets/function_tests/
+/docs/assets/decision_gates/
+/docs/assets/engine_sketches/
 ```
 
-`03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE` demande :
+Workflow actuel des assets :
 
 ```text
-comment transformer les sample needs validés en source_need, assets, pools et décisions de préparation ?
+besoins du style
+→ sources réellement disponibles
+→ fonctions couvertes / non couvertes
+→ compensations conditionnelles
+→ manques restants
+→ instruments candidats ciblés
+→ source_needs prioritaires
+→ comparaison
+→ scène candidate
+→ test fonctionnel
+→ décision gate
+→ croquis de paramètres
+→ audit de cohérence
+→ index local assets
 ```
 
-`04_SAMPLE_NEEDS_INITIAL` fournit :
+Décision actuelle pour ce dossier :
 
 ```text
-une première table d’audit prudente : besoins → existant → traitement live → génération réaliste → minimum de samples.
+ne pas continuer vers un engine_profile, sample, asset concret, achat, enregistrement ou prototype ;
+mettre d’abord à jour les cartes et le protocole source_need / asset database ;
+reprendre ensuite le travail musical depuis une carte stabilisée.
 ```
-
-`05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT` fixe désormais :
-
-```text
-didgeridoo et guimbardes toujours live ;
-gong et tambour sur cadre parfois live ;
-zéro sample initial ;
-accès possible à des samples seulement si besoin réel ;
-génération / simulation à analyser besoin par besoin.
-```
-
-`06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS` fournit :
-
-```text
-les propositions spontanées de Yohan comme sources candidates et des besoins potentiels maximaux générés à partir d’elles, sans validation.
-```
-
-`07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS` demande :
-
-```text
-quels besoins initiaux sont couverts par le live fixe,
-lesquels sont seulement couverts par live occasionnel,
-lesquels doivent être analysés côté génération / simulation,
-et lesquels peuvent justifier un minimum de samples ?
-```
-
-`SOURCE_NEED_LIVE_JAW_HARPS_FORMANT_MICROPULSE` décrit :
-
-```text
-le besoin musical porté par les guimbardes live : micro-pulse, formants, torsion, brillance rythmique, voix-sans-voix et polytexture.
-```
-
-`SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS` décrit :
-
-```text
-le besoin musical porté par le didgeridoo live : pression grave, souffle, formants, torsion, corps et retour au corps.
-```
-
-`SOURCE_NEED_SUB_PRESSURE_ENGINE` décrit :
-
-```text
-le besoin musical d’un engine sub / pression grave : stabilité, centre, corps, retour au corps et relation aux sources live.
-```
-
-`SOURCE_NEED_OPTIONAL_GONG_PRESENCE_ABSENCE_STRATEGY` décrit :
-
-```text
-la stratégie conditionnelle selon présence ou absence du gong live, en tenant compte du didgeridoo, des guimbardes, du sub et du tambour éventuel.
-```
-
-`SOURCE_NEED_OPTIONAL_FRAME_DRUM_PRESENCE_ABSENCE_STRATEGY` décrit :
-
-```text
-la stratégie conditionnelle selon présence ou absence du tambour sur cadre live, en tenant compte du didgeridoo, des guimbardes, du sub et du gong éventuel.
-```
-
-`SOURCE_NEED_MINIMAL_VOICE_IF_NOT_LIVE` décrit :
-
-```text
-le besoin vocal minimal conditionnel si la voix n’est pas jouée live mais qu’une fonction de signal, souffle, cri, parole fragmentée ou matière humaine est requise.
-```
-
-Ces documents ne constituent pas une banque de sons. Ils ne définissent pas non plus le futur système de suggestion live au musicien.
 
 ## H. Validation, outils et mémoire
 
@@ -283,9 +235,11 @@ Le workflow ne doit pas être une simple progression linéaire. Il doit fonction
    ↓
 9. Création de protocoles de données si la décision affecte sources / instruments / assets / engines
    ↓
-10. Création d’inventaires et fiches de données préparatoires
+10. Création de matrices, source_needs, schemas, scene_use_cases, function_tests, decision_gates ou engine_sketches selon le niveau de maturité
    ↓
-11. Propagation vers validation/tests seulement si le système futur est assez clair
+11. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
+   ↓
+12. Propagation vers validation/tests seulement si le système futur est assez clair
 ```
 
 Principe :
@@ -293,14 +247,13 @@ Principe :
 ```text
 ne pas transformer immédiatement chaque idée en module ;
 ne pas transformer immédiatement chaque phénomène en prototype ;
-ne pas multiplier les documents sans nécessité ;
+ne pas multiplier les documents sans carte ;
 propager seulement ce qui est assez stable ;
-utiliser les fiches modèles pour vérifier les abstractions avant prototypage ;
+utiliser les fiches modèles et tests fonctionnels pour vérifier les abstractions avant prototypage ;
 détailler les modules seulement quand leur rôle dans l’architecture est clair ;
 ne jamais transformer les catégories en cases exclusives ;
-auditer les interfaces avant que les modules ne divergent ;
-intégrer les contraintes sound design / mix / outils sans les développer trop tôt ;
-mettre à jour les documents anciens quand des modules récents déplacent le workflow.
+auditer les interfaces avant divergence ;
+mettre à jour les documents anciens quand les décisions récentes déplacent le workflow.
 ```
 
 ---
@@ -320,7 +273,7 @@ compatible avec l’architecture globale ;
 compatible avec les besoins de sources / assets quand ils sont impliqués.
 ```
 
-Les inventaires d’instruments, protocoles de sample needs, matrices de source_needs, fiches d’assets, pools et politiques de sélection ne sont pas des prototypes. Ce sont des validations de données et de structure.
+Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision et croquis d’engine ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
 
 ---
 
@@ -328,7 +281,7 @@ Les inventaires d’instruments, protocoles de sample needs, matrices de source_
 
 Les catégories du projet sont des outils de lecture, pas des prisons conceptuelles.
 
-Un objet, une trajectoire, une scène, un instrument candidat ou un groupement de paramètres peut appartenir à plusieurs familles à la fois.
+Un objet, une trajectoire, une scène, un instrument candidat ou un groupement de paramètres peut appartenir à plusieurs facettes à la fois.
 
 Exemples :
 
@@ -337,173 +290,31 @@ Didgeridoo = grave + formants + souffle + live + corps ;
 Gong = impact + halo + partiels + beauté autonome + résolution ;
 Sub = corps + pitch_center + pression + résolution ;
 Pré-drop = rythmique + corporel + spectral + harmonique ;
-Halo = espace + queue + harmonie + risque d’ambientisation ;
-Tambour sur cadre = peau + corps + impact + risque de dérive rituelle plaquée ;
-Shruti / harmonium = bourdon + souffle + battements + halo harmonique + risque décoratif.
-```
-
-Donc les documents et futurs modules doivent privilégier :
-
-```text
-profils activables ;
-tags multiples ;
-rôles contextuels ;
-trajectoires composables ;
-relations dynamiques ;
-garde-fous selon contexte ;
-affordances sonores plutôt que classes fermées.
-```
-
-plutôt que :
-
-```text
-classement exclusif ;
-mode fermé ;
-preset stylistique ;
-catégorie unique ;
-rôle permanent imposé.
+Halo = espace + queue + harmonie + risque d’ambientisation.
 ```
 
 ---
 
-# 7. Règle sound design / mix / outils / assets
+# 7. Prochaine étape recommandée
 
-Les méthodes de sound design, la couche mix/master, les recherches d’outils et les corpus d’assets doivent être intégrés comme contraintes d’architecture, mais développés au bon moment.
-
-Principes :
+Prochaine étape immédiate :
 
 ```text
-préserver la reconnaissance de source quand elle sert la musique ;
-accepter l’abstraction quand la fonction l’exige ;
-permettre sources réelles, samples, live, synthèse, resynthèse et hybridation ;
-ne pas construire de corpus massif non justifié ;
-accepter qu’une banque ciblée devienne grande si les besoins réels l’exigent ;
-faire du sound design une écologie d’objets et de relations, pas une banque décorative ;
-commencer la base par instruments / sources candidates et source_needs, pas par fichiers audio ;
-avant de constituer un corpus, extraire les besoins via la matrice esthétique / phénoménale ;
-avant de constituer un corpus, exécuter le protocole pré-live des besoins de samples ;
-évaluer l’existant et le pouvoir de traitement live avant d’augmenter la quantité de samples ;
-évaluer la génération / modélisation comme alternative réelle mais sans supposer qu’elle remplace les instruments complexes ;
-prévoir une couche mix/master subtile, professionnelle et intégrée ;
-ne pas laisser les outils guider l’esthétique trop tôt ;
-prévoir des recherches d’outils à des seuils précis.
+relire puis mettre à jour /docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
 ```
 
----
-
-# 8. Terminologie
-
-Pour éviter les confusions, on distingue :
-
-## Besoins esthétiques / phénoménaux
-
-Désignent les fonctions, phénomènes, ambitions, trajectoires, scènes, tensions, risques et contraintes déjà explicités par le style Vesperare.
-
-Question :
+Objectif : aligner le protocole `source_need` / `material_asset` avec le workflow réel actuel :
 
 ```text
-quels besoins existent déjà dans le projet avant toute décision de source ou de sample ?
+source_need ;
+material_asset_schema ;
+scene_use_case ;
+function_test ;
+decision_gate ;
+engine_sketch ;
+conditional_sample ;
+reference_only ;
+real_source_needed.
 ```
 
-## Instruments / sources candidates
-
-Désignent des instruments, sources, objets, lieux, gestes ou matières qui peuvent être envisagés avant d’être transformés en source_need ou asset.
-
-Question :
-
-```text
-quels instruments, sources, objets, lieux ou matières pourraient être intéressants ?
-```
-
-## Sample needs pré-live
-
-Désignent des genres de samples, prises, références audio ou corpus qui semblent nécessaires à constituer avant le live pour réaliser une fonction, un phénomène, une ambition esthétique ou une contrainte technique.
-
-Question :
-
-```text
-quels genres de samples et quels samples concrets faut-il vraiment constituer avant le live ?
-```
-
-Un sample need pré-live n’est pas encore un fichier audio. C’est un manque fonctionnel / esthétique / technique à documenter, en tenant compte de l’existant, du traitement live possible et des limites réalistes de la génération / simulation.
-
-## Source needs
-
-Désignent des besoins de sources reliés à une fonction, un phénomène, un rôle, une scène, une trajectoire ou une affordance.
-
-Ils précèdent les assets.
-
-## Material assets
-
-Désignent les matériaux concrets : sample, prise live préparée, source offline, variante d’objet, preset paramétrique, engine ou préparation.
-
-Un asset ne doit pas entrer dans la base performative sans source_need.
-
-## Contrôles live / suggestion live
-
-La décision de proposer au musicien un instrument, un matériau ou une configuration pendant la performance est un sujet séparé, qui relèvera plus tard du Router / interface live.
-
-Elle ne doit pas être confondue avec les protocoles de préparation des samples.
-
----
-
-# 9. Documents actifs
-
-```text
-README.md
-/docs/00_INDEX_METHODE_DECISIONS.md
-/docs/01_CAHIER_DES_PHENOMENES_SONORES.md
-/docs/01A_SYNCHRONISATION_PHENOMENES_MODULES.md
-/docs/02_SPECIFICATION_MAX_FOR_LIVE.md
-/docs/02A_SYNCHRONISATION_ARCHITECTURE_MODULES.md
-/docs/03_VALIDATION_TESTS_EXTENSIONS.md
-/docs/04_RESSOURCES_ET_BOITE_A_OUTILS.md
-/docs/05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
-/docs/06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
-/docs/07_PITCH_HARMONIQUES_MICROTONALITE.md
-/docs/08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
-/docs/09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
-/docs/10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md
-/docs/11_AUDIT_COHERENCE_NOTATION_CATEGORIES_RESPONSABILITES.md
-/docs/modules/01_OBJECT_REGISTRY.md
-/docs/modules/02_TRAJECTORY_ENGINE.md
-/docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
-/docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
-/docs/modules/05_CONTEXTUAL_CONTROL_ROUTER.md
-/docs/modules/06_CONDUCTOR_ROUTER_INTERFACE.md
-/docs/modules/07_CONFLICT_PROTECTION_MANAGER.md
-/docs/modules/08_CONFLICT_CONDUCTOR_ROUTER_INTERFACE.md
-/docs/modules/09_PITCH_HARMONIC_FIELD_MANAGER.md
-/docs/modules/10_PITCH_CONFLICT_INTERFACE.md
-/docs/modules/11_TIMBRE_MATERIAL_MAPPER.md
-/docs/modules/12_TIMBRE_REGISTRY_CONFLICT_PITCH_INTERFACE.md
-/docs/modules/13_SOUND_ENGINES_INSTRUMENTS.md
-/docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
-/docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
-/docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
-/docs/assets/00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.md
-/docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
-/docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
-/docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
-/docs/assets/04_SAMPLE_NEEDS_INITIAL.md
-/docs/assets/05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.md
-/docs/assets/06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS.md
-/docs/assets/07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS.md
-/docs/assets/source_needs/SOURCE_NEED_LIVE_JAW_HARPS_FORMANT_MICROPULSE.md
-/docs/assets/source_needs/SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS.md
-/docs/assets/source_needs/SOURCE_NEED_SUB_PRESSURE_ENGINE.md
-/docs/assets/source_needs/SOURCE_NEED_OPTIONAL_GONG_PRESENCE_ABSENCE_STRATEGY.md
-/docs/assets/source_needs/SOURCE_NEED_OPTIONAL_FRAME_DRUM_PRESENCE_ABSENCE_STRATEGY.md
-/docs/assets/source_needs/SOURCE_NEED_MINIMAL_VOICE_IF_NOT_LIVE.md
-/checkpoints/checkpoint_maitre_v0_1.md
-```
-
----
-
-# 10. Prochaine étape recommandée
-
-```text
-1. Analyser les besoins minimaux de field recordings.
-2. Puis préparer les premiers schémas de material_asset pour les sources live fixes.
-3. Ensuite reprendre Output / Mix / Performance Layer.
-```
+Ensuite seulement : reprendre le travail musical depuis une carte stabilisée.
