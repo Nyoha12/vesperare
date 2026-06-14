@@ -17,6 +17,7 @@ Principes retenus :
 - gong et tambour comme sources live optionnelles non neutres ;
 - microtonalité, harmoniques, partiels et centres spectraux comme nœud transversal ;
 - scènes, trajectoires, objets sonores et états de performance comme couche supérieure ;
+- scènes conçues comme champs ouverts orientés : ouvrir sans diluer, structurer sans fermer ;
 - contrôle live pensé par fonctions musicales, états, protections, arbitrages et visualisations contextuelles ;
 - Max for Live comme cœur temps réel futur ;
 - Ableton Extensions SDK comme outil satellite de préparation et documentation.
@@ -49,7 +50,7 @@ Méthode, décisions, vocabulaire, organisation documentaire et workflow.
 
 Ces documents définissent les bases : style, phénomènes sonores, scènes, trajectoires, objets, contraintes de timbre/mix et architecture Max for Live future.
 
-### Cadre opératoire techno organique et interface de contrôle
+### Cadre opératoire techno organique, contrôle live et scènes ouvertes
 
 ```text
 12_TECHNO_ORGANIQUE_CADRE_OPERATOIRE.md
@@ -63,9 +64,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle et visualisation contextuelle. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle et scènes ouvertes. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -121,6 +123,7 @@ style / influences / techno organique
 → couches de performance
 → infrastructure temporelle
 → visualisation contextuelle
+→ scènes comme champs ouverts
 → consolidation documentaire
 → reprise musicale ou technique ciblée
 ```
@@ -129,14 +132,11 @@ style / influences / techno organique
 
 La prochaine étape n’est pas de créer un nouveau concept, un engine profile, un sample, un asset concret ou un prototype.
 
-La prochaine étape est :
+La prochaine étape est de choisir un axe ciblé :
 
 ```text
-1. mettre à jour docs/00_INDEX_METHODE_DECISIONS.md ;
-2. relire la documentation map ;
-3. décider ensuite si l’on reprend :
-   - la visualisation contextuelle en détail ;
-   - les scènes globales / trajectoires ;
-   - les sources et assets ;
-   - ou une première spécification technique ciblée.
+A. remplir 2 ou 3 scènes-pivots avec la fiche de champ de scène ;
+B. relier les scènes ouvertes aux modules Scene / Performance Conductor et Contextual Control Router ;
+C. revenir aux scènes globales / trajectoires ;
+D. revenir aux sources et assets seulement si une scène précise l’exige.
 ```
