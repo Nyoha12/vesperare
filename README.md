@@ -70,9 +70,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 25_SCENES_PIVOTS_TO_MODULE_RESPONSIBILITIES_MAP.md
 26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md
 27_SCENE_PERFORMANCE_CONDUCTOR_SYNC_ADDENDUM.md
+28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, premières scènes-pivots, responsabilités de modules futurs, audit de congruence et synchronisation du Scene / Performance Conductor. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audit de congruence et synchronisation des premiers modules affectés. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -133,6 +134,7 @@ style / influences / techno organique
 → liaison scènes-pivots / modules futurs
 → audit de congruence scènes-pivots / modules
 → synchronisation Scene / Performance Conductor
+→ synchronisation Contextual Control Router
 → consolidation documentaire
 → reprise musicale ou technique ciblée
 ```
@@ -141,9 +143,10 @@ style / influences / techno organique
 
 La prochaine étape n’est pas de créer un nouveau concept, un engine profile, un sample, un asset concret ou un prototype.
 
-La prochaine étape est :
+La prochaine étape est de décider entre :
 
 ```text
-créer l’addendum de synchronisation équivalent
-pour Contextual Control Router.
+A. synchroniser Conflict / Protection Manager ;
+B. revenir à une passe musicale sur les scènes-pivots ;
+C. préparer une première question de prototype ciblée, seulement si son module et sa fonction sont clairs.
 ```
