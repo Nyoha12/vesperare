@@ -1,11 +1,11 @@
 # 16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL
 
-Version : v0.3  
+Version : v0.4  
 Statut : protocole structurel de préparation de base de données, sans prototypage.
 
 ## Objet
 
-Ce document définit comment transformer les décisions esthétiques, les instruments candidats, les sources réelles de Yohan, les besoins de samples, les possibilités d’engine et les scènes en données préparatoires cohérentes.
+Ce document définit comment transformer les décisions esthétiques, les instruments candidats, les sources réelles de Yohan, les besoins de samples, les possibilités d’engine, les scènes, les contrôles live et les objets temporels en données préparatoires cohérentes.
 
 Il ne crée pas encore :
 
@@ -14,10 +14,13 @@ une banque audio ;
 un asset final ;
 un module Max for Live ;
 un système de suggestion live ;
-un prototype esthétique.
+un prototype esthétique ;
+un looper ;
+un système de freeze ;
+un moteur de repeat.
 ```
 
-Il définit plutôt l’ordre de passage entre :
+Il définit l’ordre de passage entre :
 
 ```text
 instrument_source_candidate ;
@@ -27,6 +30,7 @@ scene_use_case ;
 function_test ;
 decision_gate ;
 engine_sketch ;
+temporal_object ;
 material_asset ;
 material_pool ;
 selection_policy ;
@@ -47,12 +51,11 @@ un cas de scène ;
 un test de fonction ;
 une porte de décision ;
 un croquis d’engine ;
+un objet temporel temporaire ;
 un vrai asset ;
 un prototype ;
 un sample.
 ```
-
-Le protocole 16 sert à éviter ces passages prématurés.
 
 Règle centrale :
 
@@ -62,7 +65,9 @@ material_asset_schema ≠ asset réel ;
 scene_use_case ≠ prototype ;
 function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
-engine_sketch ≠ implémentation.
+engine_sketch ≠ implémentation ;
+temporal_object ≠ material_asset ;
+loop / repeat / freeze ≠ banque audio.
 ```
 
 ---
@@ -77,6 +82,7 @@ tambour sur cadre: parfois live ;
 samples initiaux: zéro ;
 samples futurs: seulement si un besoin réel les justifie ;
 génération / résonateurs / engines: à tester besoin par besoin ;
+loops / repeats / freezes: objets temporels, pas assets par défaut ;
 prototypes: interdits tant que le rôle final n’est pas clair.
 ```
 
@@ -86,7 +92,8 @@ Conséquence :
 on commence par l’existant et les fonctions ;
 on ne cherche pas directement des instruments supplémentaires ;
 on ne constitue pas de banque de samples ;
-on ne crée pas d’assets individuels sans rôle validé.
+on ne crée pas d’assets individuels sans rôle validé ;
+on ne transforme pas une capture live temporaire en asset réutilisable sans validation.
 ```
 
 ---
@@ -97,16 +104,17 @@ La chaîne complète est désormais :
 
 ```text
 besoin esthétique / phénomène / lacune / intuition
-→ instrument_source_candidate
+→ instrument_source_candidate si source non validée
 → affordances sonores
 → fonctions possibles
-→ source_need
-→ material_asset_schema si le besoin doit être documenté
+→ source_need si manque réel
+→ material_asset_schema si besoin de description future
 → scene_use_case si le besoin dépend d’une scène
 → function_test si la fonction doit être vérifiée
 → decision_gate pour interpréter le test
 → engine_sketch si un engine/résonateur est à cadrer
-→ material_asset seulement si le rôle est validé
+→ temporal_object si loop/repeat/freeze est temporaire
+→ material_asset seulement si le rôle est validé et réutilisable
 → material_pool si plusieurs assets sont autorisés
 → selection_policy si un choix live ou assisté est possible
 → quality_evaluation avant intégration performative
@@ -116,27 +124,11 @@ Cette chaîne n’est pas toujours entièrement parcourue. Elle sert de garde-fo
 
 ---
 
-# 4. Types de documents et statuts
+# 4. Types et statuts principaux
 
-## 4.1 `instrument_source_candidate`
+## 4.1 instrument_source_candidate
 
 Rôle : accueillir une source possible avant validation.
-
-Exemples :
-
-```text
-shruti ;
-harmonium ;
-orgue ;
-cordes frottées ;
-cloches ;
-vibraphone ;
-cuivres ;
-anches ;
-field recordings ;
-objets frappés ;
-éléments naturels procéduraux.
-```
 
 Statuts possibles :
 
@@ -148,7 +140,7 @@ rejected ;
 deferred.
 ```
 
-## 4.2 `source_need`
+## 4.2 source_need
 
 Rôle : décrire un besoin musical avant de parler de fichiers.
 
@@ -175,17 +167,9 @@ deferred ;
 rejected.
 ```
 
-## 4.3 `material_asset_schema`
+## 4.3 material_asset_schema
 
 Rôle : définir comment décrire un futur asset sans créer l’asset.
-
-Exemples récents :
-
-```text
-MATERIAL_ASSET_SCHEMA_LIVE_JAW_HARPS ;
-MATERIAL_ASSET_SCHEMA_LIVE_DIDGERIDOO ;
-MATERIAL_ASSET_SCHEMA_HARMONIC_DRONE_FIELDS.
-```
 
 Règle :
 
@@ -196,33 +180,21 @@ il ne crée pas une banque ;
 il ne remplace pas un test de scène.
 ```
 
-## 4.4 `scene_use_case`
+## 4.4 scene_use_case
 
 Rôle : tester si une fonction est réellement nécessaire dans une scène.
-
-Exemple :
-
-```text
-SCENE_USE_CASE_HARMONIC_DRONE_SUSPENSION
-```
 
 Règle :
 
 ```text
 un cas de scène peut rejeter une source_need localement ;
 il peut aussi confirmer qu’un test fonctionnel est nécessaire ;
-il ne valide pas encore sample, source ou module.
+il ne valide pas encore sample, source, asset ou module.
 ```
 
-## 4.5 `function_test`
+## 4.5 function_test
 
 Rôle : vérifier une fonction musicale minimale, sans chercher encore le son final.
-
-Exemple :
-
-```text
-FUNCTION_TEST_HARMONIC_DRONE_SUSPENSION_ENGINE
-```
 
 Un test fonctionnel doit observer :
 
@@ -235,15 +207,9 @@ ce qu’elle rend plus lisible ;
 si elle prépare un retrait ou un retour au corps.
 ```
 
-## 4.6 `decision_gate`
+## 4.6 decision_gate
 
 Rôle : interpréter les résultats d’un test avant tout passage à l’action.
-
-Exemple :
-
-```text
-DECISION_GATE_HARMONIC_DRONE_AFTER_FUNCTION_TEST
-```
 
 Sorties possibles :
 
@@ -253,18 +219,13 @@ deferred ;
 valid_as_engine ;
 real_source_needed ;
 sample_minimal_allowed ;
-material_asset_allowed.
+material_asset_allowed ;
+temporal_object_only.
 ```
 
-## 4.7 `engine_sketch`
+## 4.7 engine_sketch
 
 Rôle : cadrer les paramètres d’un engine ou résonateur sans l’implémenter.
-
-Exemple :
-
-```text
-HARMONIC_DRONE_ENGINE_PARAMETER_SKETCH
-```
 
 Règle :
 
@@ -274,11 +235,57 @@ il ne déclenche pas automatiquement Max for Live ;
 il sert à définir les contrôles minimaux et protections.
 ```
 
+## 4.8 temporal_object
+
+Rôle : représenter un objet temporel temporaire issu d’une capture, répétition ou suspension.
+
+Exemples :
+
+```text
+LOOP_OBJECT ;
+REPEAT_EVENT ;
+TEMPORAL_FREEZE ;
+FREEZE_RELEASE.
+```
+
+Règle :
+
+```text
+un temporal_object sert la scène ;
+il peut être temporaire ;
+il ne devient material_asset que s’il est réutilisable, validé, documenté et autorisé.
+```
+
+Statuts possibles :
+
+```text
+temporary ;
+preview ;
+active ;
+released ;
+rejected ;
+committed_for_scene ;
+material_asset_candidate.
+```
+
+## 4.9 material_asset
+
+Rôle : asset réel ou entrée future de base de données, seulement après validation.
+
+Condition :
+
+```text
+fonction validée ;
+source ou capture validée ;
+risques documentés ;
+usage interdit / autorisé défini ;
+qualité évaluée ;
+sélection possible cadrée.
+```
+
 ---
 
-# 5. Tables de données principales
-
-Le système de données repose sur ces tables conceptuelles :
+# 5. Tables de données conceptuelles
 
 ```text
 INSTRUMENT_SOURCE_CANDIDATE ;
@@ -288,165 +295,65 @@ SCENE_USE_CASE ;
 FUNCTION_TEST ;
 DECISION_GATE ;
 ENGINE_SKETCH ;
+TEMPORAL_OBJECT ;
 MATERIAL_ASSET ;
 MATERIAL_POOL ;
 SELECTION_POLICY ;
 QUALITY_EVALUATION.
 ```
 
-Les tables `MATERIAL_ASSET`, `MATERIAL_POOL`, `SELECTION_POLICY` et `QUALITY_EVALUATION` restent futures tant que les besoins ne sont pas validés.
+Les tables `TEMPORAL_OBJECT`, `MATERIAL_ASSET`, `MATERIAL_POOL`, `SELECTION_POLICY` et `QUALITY_EVALUATION` restent futures tant que les besoins ne sont pas validés.
 
 ---
 
-# 6. Champs minimaux par table
+# 6. Champs minimaux ajoutés ou révisés
 
-## 6.1 INSTRUMENT_SOURCE_CANDIDATE
+## SOURCE_NEED
+
+Champs à prévoir en plus ou à surveiller :
 
 ```text
-candidate_id
-candidate_name
-source_kind
-sonic_affordances
-possible_functions
-possible_phenomena
-possible_roles
-aesthetic_links
-live_potential
-sample_potential
-generation_potential
-hybrid_potential
-risk_profile
-priority_guess
-status
+live_priority_relation ;
+source_configuration_dependency ;
+temporal_capture_allowed ;
+loop_risk ;
+repeat_risk ;
+freeze_risk ;
+anti_ambient_relation ;
+return_to_body_relation.
 ```
 
-## 6.2 SOURCE_NEED
+## MATERIAL_ASSET_SCHEMA
+
+Champs à prévoir si l’asset peut venir d’une capture temporelle :
 
 ```text
-source_need_id
-source_need_origin
-linked_candidates
-function_tags
-phenomenon_tags
-role_target
-object_candidates
-scene_affinities
-trajectory_affinities
-centrality_level
-quality_requirement
-live_requirement
-generation_viability
-sample_viability
-hybrid_viability
-selection_mode_default
-risk_profile
-protected_dimensions
-router_controls_expected
-priority_level
-status
+temporal_origin ;
+capture_context ;
+loopability ;
+freezeability ;
+repeatability ;
+release_requirements ;
+forbidden_reuse_modes.
 ```
 
-## 6.3 MATERIAL_ASSET_SCHEMA
+## TEMPORAL_OBJECT
+
+Champs minimaux :
 
 ```text
-schema_id
-linked_source_need
-asset_type_expected
-source_family
-identity_fields
-sonic_dimensions_to_document
-role_fields
-risk_fields
-protection_fields
-control_fields
-validation_requirements
-status
-```
-
-## 6.4 SCENE_USE_CASE
-
-```text
-scene_id
-linked_source_need
-function_in_scene
-base_without_source
-missing_function
-entry_condition
-withdrawal_condition
-return_to_body_relation
-risk_profile
-validation_criteria
-rejection_criteria
-status
-```
-
-## 6.5 FUNCTION_TEST
-
-```text
-test_id
-linked_scene
-linked_source_need
-function_to_test
-base_condition
-variants_to_test
-observations_required
-success_criteria
-failure_criteria
-next_decisions
-status
-```
-
-## 6.6 DECISION_GATE
-
-```text
-gate_id
-linked_function_test
-required_inputs
-possible_outputs
-rejection_conditions
-deferral_conditions
-engine_sufficient_conditions
-real_source_conditions
-sample_minimal_conditions
-material_asset_conditions
-matrix_update_rules
-status
-```
-
-## 6.7 ENGINE_SKETCH
-
-```text
-engine_sketch_id
-linked_function_test
-linked_decision_gate
-parameters
-inputs
-outputs
-safety_checks
-failure_conditions
-success_conditions
-implementation_status
-```
-
-## 6.8 MATERIAL_ASSET
-
-```text
-asset_id
-asset_type
-source_identity
-source_need_links
-schema_links
-scene_links
-material_tags
-possible_roles
-forbidden_roles
-recognition_level
-abstraction_potential
-quality_status
-selection_mode_allowed
-provenance
-required_protections
-status
+temporal_object_id ;
+temporal_type ;
+source ;
+function_role ;
+scene_context ;
+length_or_duration ;
+quantization_mode ;
+live_priority_relation ;
+body_relation ;
+release_mode ;
+risk_profile ;
+status.
 ```
 
 ---
@@ -475,16 +382,6 @@ sample_rejected ;
 sample_deferred.
 ```
 
-Exemples de limites actuelles :
-
-```text
-harmonic drone: 1–3 drones/accords seulement si confirmé ;
-cordes frottées: 3–5 gestes si friction réelle indispensable ;
-métaux accordés: 3–5 sons si signaux harmoniques confirmés ;
-field recordings: 1–5 lieux ou prises si lieu réel exposé confirmé ;
-voix: fragments minimaux si fonction vocale réelle confirmée.
-```
-
 ---
 
 # 8. Politique de sélection live
@@ -511,11 +408,43 @@ M4_AUTO_SELECTION_FORBIDDEN: sub principal, impact critique, voix signal, résol
 
 ---
 
-# 9. Politique de qualité
+# 9. Politique temporelle
+
+## 9.1 Loops
+
+```text
+loop sur live fixe: autorisée comme trace temporaire ;
+loop comme remplacement du live: interdite ;
+loop committed: seulement si fonction de scène validée ;
+loop réutilisable: doit devenir material_asset_candidate puis passer par validation.
+```
+
+## 9.2 Repeats
+
+```text
+repeat rythmique: quantifiable ;
+repeat de matière: semi-libre ;
+repeat fragile/vocal/live expressif: manuel ou déconseillé ;
+repeat décoratif: à rejeter ou limiter.
+```
+
+## 9.3 Freeze
+
+```text
+freeze source-based: autorisé prudemment ;
+freeze layer-based: autorisé si sortie claire ;
+freeze state-based: différé ;
+freeze sur didgeridoo/guimbardes: autorisé sous garde-fou ;
+freeze sans release: interdit.
+```
+
+---
+
+# 10. Politique de qualité
 
 La qualité ne se mesure pas seulement à la beauté du son.
 
-Un matériau doit être évalué selon :
+Un matériau ou objet temporel doit être évalué selon :
 
 ```text
 role_fit ;
@@ -529,7 +458,9 @@ latency_safety ;
 cpu_safety ;
 mix_translation_potential ;
 conflict_risk_level ;
-performer_trust.
+performer_trust ;
+return_to_body_support ;
+anti_ambient_safety.
 ```
 
 Refus ou limitation si :
@@ -541,14 +472,15 @@ il empêche le retour au corps ;
 il devient décoratif ;
 il impose un style trop identifiable ;
 il remplace un live input prioritaire ;
-il ne peut pas être contrôlé ou protégé.
+il ne peut pas être contrôlé ou protégé ;
+il reste figé sans stratégie de sortie.
 ```
 
 ---
 
-# 10. Workflow actuel recommandé
+# 11. Workflow recommandé
 
-Pour chaque nouvelle idée de source ou instrument :
+Pour chaque nouvelle idée de source, instrument, sample, engine ou objet temporel :
 
 ```text
 1. vérifier si elle répond à un besoin restant ;
@@ -559,24 +491,34 @@ Pour chaque nouvelle idée de source ou instrument :
 6. créer un function_test si la fonction doit être prouvée ;
 7. créer une decision_gate avant toute source/sample/asset ;
 8. créer un engine_sketch seulement si un engine est plausible ;
-9. créer un material_asset seulement après validation ;
-10. créer un material_pool seulement si plusieurs assets sont autorisés ;
-11. créer une selection_policy seulement si une sélection live est nécessaire.
+9. créer un temporal_object si loop/repeat/freeze reste temporaire ;
+10. créer un material_asset seulement après validation ;
+11. créer un material_pool seulement si plusieurs assets sont autorisés ;
+12. créer une selection_policy seulement si une sélection live est nécessaire.
 ```
 
 ---
 
-# 11. Prochaine étape après ce protocole
+# 12. Décision actuelle
 
-Ce protocole est maintenant aligné avec la carte locale des assets.
+Ce protocole est maintenant aligné avec :
+
+```text
+assets index ;
+README ;
+00_INDEX_METHODE_DECISIONS ;
+documents de contrôle live ;
+infrastructure temporelle ;
+visualisation contextuelle.
+```
 
 Prochaine étape recommandée :
 
 ```text
-reprendre le travail musical depuis docs/assets/00_ASSETS_INDEX.md ;
-choisir entre :
-A. revenir aux autres priorités hautes ;
-B. revenir aux scènes globales ;
-C. créer des fiches material_asset individuelles didgeridoo / guimbardes ;
-D. continuer harmonic drone seulement si nécessaire.
+ne pas créer de nouveau document conceptuel immédiatement ;
+reprendre un axe ciblé :
+A. scènes globales / trajectoires ;
+B. lien contrôle live ↔ modules existants ;
+C. sources / assets prioritaires ;
+D. première question de prototype seulement si liée à un module final clair.
 ```
