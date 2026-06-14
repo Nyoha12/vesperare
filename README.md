@@ -2,7 +2,7 @@
 
 Projet de recherche-création pour la conception d’un système de composition et de performance live dans Ableton Live / Max for Live.
 
-Le projet vise l’invention d’un genre musical personnel dont la techno constitue l’influence stylistique principale, mais dont les fonctions peuvent être portées par des sons naturels, acoustiques, instrumentaux, vocaux, percussifs, naturalisés ou synthétisés comme phénomènes physiques.
+Le projet vise l’invention d’un genre musical personnel dont la techno constitue l’influence stylistique principale. Les fonctions techno — corps, impact, pression, répétition, hypnose, tension et forme longue — peuvent être portées par des sons naturels, acoustiques, instrumentaux, vocaux, percussifs, naturalisés ou synthétisés comme phénomènes physiques.
 
 ## État actuel
 
@@ -13,14 +13,10 @@ Principes retenus :
 - conception détaillée avant prototypes ;
 - techno comme influence stylistique principale ;
 - naturalisation des supports sonores sans perte des fonctions techno ;
-- polytexture percussive comme facette esthétique opératoire ;
 - microtonalité, harmoniques, partiels et centres spectraux comme nœud transversal ;
-- scènes, trajectoires et objets sonores comme couche supérieure de performance programmable ;
-- sound design comme organisation d’objets, de comportements, de relations et de milieux sonores ;
-- mix / master comme contrainte future intégrée, subtile et professionnelle ;
-- système live configurable, non réducteur, orienté performance complète ;
-- Max for Live comme cœur temps réel ;
-- Ableton Extensions SDK comme outil satellite pour préparation, génération de fichiers/clips/scènes, documentation et accélération de tests futurs.
+- scènes, trajectoires et objets sonores comme couche supérieure de performance ;
+- Max for Live comme cœur temps réel futur ;
+- Ableton Extensions SDK comme outil satellite de préparation et documentation.
 
 ## Carte documentaire
 
@@ -32,129 +28,105 @@ Principes retenus :
 
 Méthode, décisions, vocabulaire, organisation documentaire et workflow.
 
-### Style et influences
+### Style, phénomènes et architecture
 
 ```text
 05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
 06_CARTOGRAPHIE_INFLUENCES_STYLE_VESPERARE.md
-```
-
-Définition du style personnel, des fonctions techno retenues et des éléments extraits d’autres styles sans importation en bloc.
-
-### Nœuds transversaux
-
-```text
 07_PITCH_HARMONIQUES_MICROTONALITE.md
 08_PERFORMANCE_SCENES_TRAJECTOIRES_OBJETS.md
 10_SOUND_DESIGN_MIX_OUTILS_CONTRAINTES.md
 11_AUDIT_COHERENCE_NOTATION_CATEGORIES_RESPONSABILITES.md
-```
-
-Organisation du pitch, des partiels, de la microtonalité, des objets sonores, des rôles, des scènes, des trajectoires, des contrôles contextuels, du sound design, du mix/master, des recherches d’outils futures et de la cohérence globale de notation / catégories / responsabilités.
-
-### Pont vers la technique
-
-```text
 01_CAHIER_DES_PHENOMENES_SONORES.md
 01A_SYNCHRONISATION_PHENOMENES_MODULES.md
 02_SPECIFICATION_MAX_FOR_LIVE.md
 02A_SYNCHRONISATION_ARCHITECTURE_MODULES.md
-```
-
-Conversion des décisions esthétiques en phénomènes sonores, puis en architecture Max for Live / Ableton Live. Les fichiers `01A` et `02A` sont des addenda de synchronisation prudente : ils mettent à jour la lecture de `01` et `02` sans remplacer leurs contenus détaillés.
-
-### Appendice de modélisation
-
-```text
 09_FICHES_MODELES_OBJETS_TRAJECTOIRES_SCENES.md
 ```
 
-Fiches modèles permettant de vérifier concrètement la grille objets / rôles / trajectoires / scènes / paramètres, sans prototypage.
+Ces documents définissent le style, les phénomènes sonores, les scènes, trajectoires, objets, contraintes de timbre/mix et l’architecture Max for Live future.
 
-### Spécifications détaillées et audits de modules
-
-```text
-/docs/modules/01_OBJECT_REGISTRY.md
-/docs/modules/02_TRAJECTORY_ENGINE.md
-/docs/modules/03_REGISTRY_TRAJECTORY_INTERFACE.md
-/docs/modules/04_SCENE_PERFORMANCE_CONDUCTOR.md
-/docs/modules/05_CONTEXTUAL_CONTROL_ROUTER.md
-/docs/modules/06_CONDUCTOR_ROUTER_INTERFACE.md
-/docs/modules/07_CONFLICT_PROTECTION_MANAGER.md
-/docs/modules/08_CONFLICT_CONDUCTOR_ROUTER_INTERFACE.md
-/docs/modules/09_PITCH_HARMONIC_FIELD_MANAGER.md
-/docs/modules/10_PITCH_CONFLICT_INTERFACE.md
-/docs/modules/11_TIMBRE_MATERIAL_MAPPER.md
-/docs/modules/12_TIMBRE_REGISTRY_CONFLICT_PITCH_INTERFACE.md
-/docs/modules/13_SOUND_ENGINES_INSTRUMENTS.md
-/docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
-/docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
-/docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
-```
-
-Développement progressif des modules de l’architecture technique et audits d’interface entre modules. Les documents actuels détaillent Object Registry, Trajectory Engine, leurs audits d’interaction, Scene / Performance Conductor, Contextual Control Router, Conflict / Protection Manager, Pitch / Harmonic Field Manager, Timbre & Material Mapper, Sound Engines / Instruments, Source Needs / Asset Database Protocol et leurs audits associés.
-
-### Préparation des sources et assets
+### Modules
 
 ```text
-/docs/assets/00_AESTHETIC_PHENOMENAL_NEEDS_MATRIX.md
-/docs/assets/01_INSTRUMENT_SOURCE_CANDIDATES_INITIAL.md
-/docs/assets/02_PRE_LIVE_SAMPLE_CORPUS_NEEDS_PROTOCOL.md
-/docs/assets/03_SAMPLE_NEEDS_TO_SOURCE_NEEDS_BRIDGE.md
-/docs/assets/04_SAMPLE_NEEDS_INITIAL.md
-/docs/assets/05_EXISTING_MATERIALS_AND_LIVE_TREATMENT_AUDIT.md
-/docs/assets/06_YOHAN_SOURCE_CANDIDATES_AND_POTENTIAL_NEEDS.md
-/docs/assets/07_INITIAL_REAL_NEEDS_NO_SAMPLES_ANALYSIS.md
-/docs/assets/source_needs/SOURCE_NEED_LIVE_JAW_HARPS_FORMANT_MICROPULSE.md
-/docs/assets/source_needs/SOURCE_NEED_LIVE_DIDGERIDOO_PRESSURE_FORMANTS.md
-/docs/assets/source_needs/SOURCE_NEED_SUB_PRESSURE_ENGINE.md
-/docs/assets/source_needs/SOURCE_NEED_OPTIONAL_GONG_PRESENCE_ABSENCE_STRATEGY.md
-/docs/assets/source_needs/SOURCE_NEED_OPTIONAL_FRAME_DRUM_PRESENCE_ABSENCE_STRATEGY.md
-/docs/assets/source_needs/SOURCE_NEED_MINIMAL_VOICE_IF_NOT_LIVE.md
+/docs/modules/
 ```
 
-Matrice amont des besoins esthétiques et phénoménaux extraits des documents de style / phénomènes / performance / timbre ; inventaire initial ouvert des instruments, sources, matières, objets, lieux ou familles sonores candidates ; protocole séparé pour décider quels genres de samples et quels samples concrets doivent être constitués avant le live selon les besoins, l’existant et les limites des engines / génération / simulation instrumentale ; pont vers `source_need`, `material_asset`, `material_pool` et politiques de sélection ; première table d’audit `SAMPLE_NEEDS_INITIAL` ; audit pratique corrigé par les données fixes de Yohan ; supplément consacré aux propositions spontanées de Yohan ; analyse des besoins réels initiaux en partant de zéro sample ; premières fiches `source_need` consacrées aux sources live fixes ; fiche `source_need` pour l’engine sub / pression grave ; stratégies conditionnelles de présence/absence du gong et du tambour sur cadre ; puis besoin vocal minimal conditionnel si la voix n’est pas live. Ces documents ne constituent ni une banque audio, ni un plan d’enregistrement, ni un système de suggestion live.
+Le dossier `docs/modules` contient les spécifications détaillées et audits d’interface : Object Registry, Trajectory Engine, Scene / Performance Conductor, Contextual Control Router, Conflict / Protection Manager, Pitch / Harmonic Field Manager, Timbre & Material Mapper, Sound Engines / Instruments, Source Needs / Asset Database Protocol et leurs interfaces.
 
-### Validation, outils et mémoire
+### Sources, besoins et assets
 
 ```text
-03_VALIDATION_TESTS_EXTENSIONS.md
-04_RESSOURCES_ET_BOITE_A_OUTILS.md
-/checkpoints/checkpoint_maitre_v0_1.md
+/docs/assets/00_ASSETS_INDEX.md
+/docs/assets/
 ```
 
-Préparation des futures validations, ressources techniques, outils et points d’état du projet.
+Le dossier `docs/assets` est désormais cartographié par `00_ASSETS_INDEX.md`.
+
+Il contient :
+
+```text
+matrices de besoins ;
+protocoles de décision ;
+audit de l’existant réel ;
+source_needs ;
+schémas de material_asset ;
+cas de scène ;
+tests fonctionnels ;
+portes de décision ;
+croquis de paramètres.
+```
+
+Règle centrale :
+
+```text
+source_need ≠ material_asset ;
+material_asset_schema ≠ asset réel ;
+scene_use_case ≠ prototype ;
+function_test ≠ module ;
+decision_gate ≠ décision déjà prise ;
+engine_sketch ≠ implémentation.
+```
+
+Le workflow actuel des assets est :
+
+```text
+besoins du style
+→ sources réellement disponibles
+→ fonctions couvertes / non couvertes
+→ compensations conditionnelles
+→ manques restants
+→ instruments candidats ciblés
+→ source_needs prioritaires
+→ comparaison
+→ scène candidate
+→ test fonctionnel
+→ décision gate
+→ croquis de paramètres
+→ audit de cohérence
+→ index local assets
+```
 
 ## Workflow actuel
 
 ```text
-05 style personnel techno
-  ↓
-06 influences supplémentaires
-  ↓
-07 pitch / harmoniques / microtonalité
-  ↓
-08 performance / scènes / trajectoires / objets
-  ↓
-10 sound design / mix / outils — contraintes transversales
-  ↓
-11 audit cohérence notation / catégories / responsabilités
-  ↓
-01 phénomènes sonores
-  ↓
-01A synchronisation phénomènes / modules
-  ↓
-02 spécification Max for Live
-  ↓
-02A synchronisation architecture / modules
-  ↓
-09 fiches modèles
-  ↓
-docs/modules spécifications détaillées / audits d’interface
-  ↓
-docs/assets préparation des sources / assets
-  ↓
-03 validation / tests
+style / influences
+→ pitch, performance, sound design, cohérence
+→ phénomènes sonores
+→ architecture Max for Live
+→ modules et audits
+→ préparation sources / assets
+→ validations futures
 ```
 
-Le prochain travail recommandé est d’analyser les besoins minimaux de field recordings, puis de préparer les premiers schémas de `material_asset` pour les sources live fixes.
+## Prochaine étape recommandée
+
+La prochaine étape n’est pas de créer un engine profile, un sample, un asset concret ou un prototype.
+
+La prochaine étape est :
+
+```text
+1. mettre à jour docs/00_INDEX_METHODE_DECISIONS.md ;
+2. relire puis mettre à jour docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md ;
+3. reprendre ensuite le travail musical à partir d’une carte stabilisée.
+```
