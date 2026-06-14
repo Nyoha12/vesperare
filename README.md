@@ -28,9 +28,10 @@ Principes retenus :
 
 ```text
 00_INDEX_METHODE_DECISIONS.md
+REPO_TREE_SNAPSHOT.md
 ```
 
-Méthode, décisions, vocabulaire, organisation documentaire et workflow.
+Méthode, décisions, vocabulaire, organisation documentaire, workflow et trace d’arborescence à tenir à jour.
 
 ### Style, phénomènes et architecture historique
 
@@ -67,9 +68,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
 25_SCENES_PIVOTS_TO_MODULE_RESPONSIBILITIES_MAP.md
+26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, premières scènes-pivots et responsabilités de modules futurs. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, premières scènes-pivots, responsabilités de modules futurs et audit de congruence avec les modules existants. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -128,6 +130,7 @@ style / influences / techno organique
 → scènes comme champs ouverts
 → scènes-pivots ouvertes
 → liaison scènes-pivots / modules futurs
+→ audit de congruence scènes-pivots / modules
 → consolidation documentaire
 → reprise musicale ou technique ciblée
 ```
@@ -139,6 +142,6 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est :
 
 ```text
-créer un audit de congruence entre les scènes-pivots et les spécifications modules existantes,
-avant toute nouvelle spécification ou prototype.
+créer des addenda de synchronisation ciblés pour les modules les plus affectés,
+en commençant par Scene / Performance Conductor et Contextual Control Router.
 ```
