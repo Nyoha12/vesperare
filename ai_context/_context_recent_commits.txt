@@ -1,0 +1,30 @@
+﻿2ab50ff Register recentering coherence audit in tree snapshot
+4c197ea Register recentering audit and next asset audit step in method index
+4285fee Register recentering coherence audit in README
+a635eaf Add coherence audit for recentring package
+c3ec28b Update method index after Router addendum decision
+9f40d31 Update README after Router addendum decision
+cbd6de5 Register router individual harmonization addendum in tree snapshot
+b65dc9e Add individual router addendum for amplitudes limits and override
+061e39e Register central modules harmonization guide in tree snapshot
+9ec1724 Register control and module harmonization documents in method index
+04ec53c Register control and module harmonization guides in README
+e96ace8 Add central modules harmonization guide for body controls limits and override
+9a68882 Register targeted harmonization addenda for controls and visualization
+58d9c03 Add visualization harmonization addendum for amplitudes limits and override
+f9e6839 Add targeted addendum for performance states harmonization
+287a146 Add targeted addendum for reduced live control matrix harmonization
+88002f7 Register control harmonization guide in tree snapshot
+da18d90 Add harmonization guide for control documents 15-22
+b0f6255 Register body and control consolidation documents in tree snapshot
+6054070 Register body and control consolidation documents in method index
+5e7dada Add body and control consolidation documents to README
+2f261c8 Add control amplitudes limits and override framework
+d404652 Add body as situated composite function
+6e10903 Reclassify first session plan as optional practical support
+c16a3aa Reclassify musical questions as optional support not mandatory test path
+bf5c16b Update repository tree snapshot after harmonization documents
+7cdb508 Update method index with harmonization and revised document statuses
+bded5af Update README with harmonization strategy and revised workflow
+9497dfa Refine strategy audit with nuanced body provenance and playable limits
+2557359 Add strategy audit for control limits and document harmonization
