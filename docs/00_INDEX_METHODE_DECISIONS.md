@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.2  
+Version : v4.3  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -31,10 +31,11 @@ Addenda ciblés de contrôle et visualisation :
 22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 ```
 
-Guide transversal modules :
+Guides / addenda modules :
 
 ```text
 modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
 ---
@@ -176,6 +177,8 @@ Documents de référence :
 17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
 19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
 22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
+modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
 ---
@@ -305,13 +308,22 @@ ils ne remplacent pas les modules initiaux ;
 ils ne sont pas une nouvelle architecture autonome.
 ```
 
-## G. Harmonisation transversale des modules centraux
+## G. Harmonisation des modules centraux
 
 ```text
 modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
 Rôle : relire les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override.
+
+Décision :
+
+```text
+modules/17 : guide transversal suffisant pour Conductor, Conflict, Registry, Trajectory, Pitch, Timbre, Source Needs ;
+modules/18 : addendum individuel nécessaire pour le Router, car il rend concrètement les limites et amplitudes jouables ;
+pas d’addendum individuel Conductor ou Conflict pour l’instant.
+```
 
 ## H. Supports musicaux pratiques
 
@@ -512,6 +524,8 @@ Les addenda `17A`, `19A`, `22A` harmonisent les contrôles, états et visualisat
 
 Le document `modules/17` harmonise transversalement les modules centraux.
 
+Le document `modules/18` complète individuellement le Router.
+
 Les addenda `27–31` restent utiles mais secondaires.
 
 Les documents `32–37` restent utiles comme supports pratiques et optionnels.
@@ -521,8 +535,9 @@ Les documents `38–39` sont corrigés en supports optionnels.
 Prochaine étape recommandée :
 
 ```text
-décider si les modules Router / Conductor / Conflict nécessitent chacun un addendum individuel,
-ou si le guide transversal des modules suffit pour l’instant.
+arrêter provisoirement la création d’addenda ;
+faire un audit de cohérence du paquet de recentrage ;
+puis décider si le prochain chantier doit porter sur assets/source_needs, données instrumentales ou validations conceptuelles.
 ```
 
 Ne pas encore créer :
