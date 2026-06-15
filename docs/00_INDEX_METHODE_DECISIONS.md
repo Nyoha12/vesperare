@@ -1,13 +1,21 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v3.8  
-Statut : document directeur de méthode, décisions et cartographie documentaire.
+Version : v4.0  
+Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
 
 Ce document garde les décisions structurantes du projet Vesperare : méthode, terminologie, ordre de travail, statut des documents, règles de mise à jour et grandes orientations validées.
 
-Il sert aussi à organiser le workflow documentaire : quels documents définissent l’esprit, lesquels développent les couches transversales, lesquels servent de pont vers la technique, lesquels préparent les sources / assets, et quand interrompre une branche pour réintégrer la carte globale.
+Il sert aussi à organiser le workflow documentaire : quels documents définissent l’esprit, lesquels développent les couches transversales, lesquels servent de pont vers la technique, lesquels préparent les sources / assets, lesquels sont seulement des supports pratiques, et quand interrompre une branche pour réintégrer la carte globale.
+
+Le document de recentrage stratégique actuel est :
+
+```text
+40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
+```
+
+Il doit être lu avec ce présent index.
 
 ---
 
@@ -31,43 +39,149 @@ zéro sample initial.
 
 ---
 
-# 2. Méthode générale
+# 2. Décision de recentrage actuelle
 
-Décision majeure : conception approfondie avant prototypage.
+La relecture du dépôt montre que les fondations sont globalement solides.
 
-Ordre général :
+Le problème principal n’est pas l’invention de concepts fragiles, mais :
 
 ```text
-1. Clarifier l’ambition musicale globale.
-2. Définir les fonctions techno situées dans le style recherché.
-3. Définir les phénomènes sonores du projet.
-4. Concevoir l’architecture Max for Live.
-5. Définir les modules et leurs responsabilités.
-6. Auditer les interfaces entre modules.
-7. Identifier les besoins de sources, instruments, samples, engines et assets.
-8. Établir protocoles, inventaires, fiches de données, scènes tests et portes de décision.
-9. Définir les exigences de contrôle live et de visualisation.
-10. Définir les scènes comme champs ouverts orientés.
-11. Vérifier quelques scènes-pivots avant d’ouvrir davantage.
-12. Relier les scènes-pivots aux responsabilités de modules futurs.
-13. Auditer la congruence scènes-pivots / modules existants.
-14. Seulement ensuite : prototyper et tester.
+l’agrégation de notions très riches en macro-concepts trop compacts ;
+la transformation de certaines hypothèses ou supports pratiques en étapes trop obligatoires ;
+la tendance des documents récents 38–39 à faire des essais musicaux documentés la suite quasi unique ;
+le manque de statuts explicites entre acquis stylistique, dérivé opératoire, donnée instrumentale, hypothèse conditionnelle et support pratique.
 ```
 
-Principe :
+Décision :
 
 ```text
-penser avant de prototyper ;
-propager les décisions stables ;
-ne pas confondre idée, besoin, source, asset, module, test, prototype ou outil ;
-garder les catégories comme facettes ;
-mettre à jour les cartes quand une branche documentaire devient trop profonde ;
-tenir à jour la trace d’arborescence si des documents sont créés, déplacés ou supprimés.
+ne pas réécrire brutalement le dépôt ;
+consolider les statuts ;
+protéger le socle analytique ;
+réouvrir les notions trop compactées ;
+requalifier les limites comme zones de bord jouables lorsque cela correspond à l’intention musicale ;
+rétrograder les supports pratiques pour qu’ils ne deviennent pas directeurs.
 ```
 
 ---
 
-# 3. Organisation documentaire actuelle
+# 3. Notion de corps : priorité de consolidation
+
+La notion de `corps` ne doit pas être lue comme une abstraction vague.
+
+Elle vient d’analyses stylistiques, de ressentis, de phénomènes musicaux précis et d’analyses extérieures ou comparatives déjà approuvées dans le projet.
+
+Elle doit rester ancrée dans :
+
+```text
+techno : danse, pression, impact, répétition, hypnose, corps collectif ;
+dubstep : attente, sub, tension, résolution différée, masse physique ;
+trance : suspension active, expansion, montée longue, peak non brutal ;
+acid : torsion, ligne vivante, mutation timbrale ;
+jazz : tension, couleur, placement, micro-relations ;
+style personnel : techno naturalisée, live, non-décor, beauté, pression, retour.
+```
+
+Le corps doit être déplié en sous-fonctions sans perdre ces ressentis d’origine :
+
+```text
+corps-pression ;
+corps-impact ;
+corps-pulsation ;
+corps-geste ;
+corps-ancrage ;
+corps-attente ;
+corps-hypnose ;
+corps-retour ;
+corps-limite.
+```
+
+Conséquence :
+
+```text
+ne plus demander globalement : “quelle source porte le corps ?”
+mais : “quelle sous-fonction du corps est portée par quelle source, dans quelle scène, avec quelle amplitude, quelle limite et quelle sortie ?”
+```
+
+---
+
+# 4. Contrôle : définition directrice
+
+Le contrôle live ne doit pas être réduit à un paramètre.
+
+Définition actuelle :
+
+```text
+contrôle = sélection + organisation + amplitude + contexte + risque + sortie + override.
+```
+
+Le système doit :
+
+```text
+sélectionner les paramètres musicalement pertinents ;
+organiser leur accès selon le contexte ;
+calibrer des amplitudes judicieuse ;
+permettre une efficacité maximale sur le style ;
+rendre les risques lisibles ;
+laisser flirter avec les limites ;
+permettre des dépassements assumés ;
+préserver des sorties ;
+laisser l’override humain prioritaire.
+```
+
+Les interdits, risques et garde-fous ne doivent pas devenir des murs esthétiques sauf lorsqu’ils protègent une confusion de statut ou une sécurité méthodologique.
+
+Ils doivent souvent être relus comme :
+
+```text
+zones de bord ;
+limites expressives ;
+zones de bascule ;
+risques à rendre visibles ;
+amplitudes dangereuses ;
+situations nécessitant sortie, retrait ou override.
+```
+
+---
+
+# 5. Niveaux de provenance
+
+Chaque notion centrale doit être située selon son statut.
+
+```text
+ACQUIS STYLISTIQUE
+Résultat issu des analyses techno, dubstep, trance, acid, jazz, style personnel.
+
+ANALYSE PHÉNOMÉNALE
+Description de sensations, fonctions, tensions, comportements perceptifs.
+
+ANALYSE EXTÉRIEURE APPROUVÉE
+Apport comparatif ou théorique accepté précédemment dans le projet.
+
+DONNÉE INSTRUMENTALE
+Information sur didgeridoo, guimbardes, gong, tambour, captation, spectre, jeu, disponibilité.
+
+DÉRIVÉ OPÉRATOIRE
+Conséquence pour scène, module, contrôle, trajectoire, protection.
+
+HYPOTHÈSE CONDITIONNELLE
+Piste de source, asset, engine, field recording, voix, harmonic drone, cordes, métaux.
+
+BROUILLON PRATIQUE
+Fiche de jeu, protocole de répétition, plan de session.
+```
+
+Règle :
+
+```text
+ne pas faire passer un dérivé opératoire pour un acquis stylistique ;
+ne pas faire passer une source conditionnelle pour une décision ;
+ne pas faire passer une fiche pratique pour une obligation méthodologique.
+```
+
+---
+
+# 6. Organisation documentaire actuelle
 
 ## A. Documents directeurs
 
@@ -75,9 +189,10 @@ tenir à jour la trace d’arborescence si des documents sont créés, déplacé
 README.md
 00_INDEX_METHODE_DECISIONS.md
 REPO_TREE_SNAPSHOT.md
+40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow et la trace d’arborescence.
+Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow, la trace d’arborescence et le recentrage stratégique.
 
 ## B. Style et influences
 
@@ -113,37 +228,100 @@ Rôle : organiser les grands nœuds qui traversent les phénomènes et la techni
 20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+```
+
+Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle et visualisation — sans encore créer de prototype.
+
+## E. Scènes ouvertes et pont vers les modules
+
+```text
 23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
 25_SCENES_PIVOTS_TO_MODULE_RESPONSIBILITIES_MAP.md
 26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md
 ```
 
-Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle, visualisation, scènes ouvertes, scènes-pivots, responsabilités de modules futurs et audit de congruence — sans encore créer de prototype.
+Rôle : poser les scènes comme champs ouverts, définir une première série de scènes-pivots, relier ces scènes aux modules et auditer la congruence.
 
-Lecture de cette série :
+## F. Addenda de synchronisation secondaires
 
 ```text
-12: cadrage opératoire du nom local techno organique ;
-13: dépendances entre concepts opératoires ;
-14: exigences système / interface ;
-15: matrice de contrôles live abstraits ;
-16: audit de performabilité ;
-17: matrice réduite ;
-18: décisions avant couches ;
-19: couches de performance et états ;
-20: infrastructure temporelle ;
-21: décisions temporelles ;
-22: visualisation contextuelle ;
-23: scènes comme champs ouverts de performance ;
-24: première série de scènes-pivots ouvertes ;
-25: liaison scènes-pivots / responsabilités de modules futurs ;
-26: audit de congruence scènes-pivots / modules existants.
+27_SCENE_PERFORMANCE_CONDUCTOR_SYNC_ADDENDUM.md
+28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
+29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
+30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
+31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md
 ```
 
-Décision : la branche est intégrée ; la suite doit synchroniser prudemment les modules affectés au lieu de créer une nouvelle couche.
+Rôle : synchroniser des modules existants avec les décisions 17–26.
 
-## E. Documents phénoménologiques et techniques de transfert
+Décision :
+
+```text
+ces documents sont utiles ;
+ils ne remplacent pas les modules initiaux ;
+ils ne sont pas une nouvelle architecture autonome.
+```
+
+## G. Supports musicaux pratiques
+
+```text
+32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
+33_FICHE_PERFORMANCE_CORPS_VIVANT_POLYTEXTURE.md
+34_FICHE_PERFORMANCE_TENSION_ARMEE_PRE_DROP.md
+35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
+```
+
+Rôle : supports de jeu, d’écoute et de réflexion dramaturgique.
+
+Décision :
+
+```text
+utiles ;
+non directeurs ;
+non obligatoires ;
+non bloquants pour l’analyse ;
+activables si une phase de jeu ou de répétition est engagée.
+```
+
+## H. Outils optionnels de répétition et d’écoute
+
+```text
+36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
+37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
+```
+
+Rôle : outils de documentation des prises réelles si elles existent.
+
+Décision :
+
+```text
+optionnels ;
+non obligatoires ;
+non bloquants ;
+à utiliser seulement si une répétition ou une écoute enregistrée est réellement engagée.
+```
+
+## I. Documents à corriger / rétrograder
+
+```text
+38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
+39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md
+```
+
+Rôle actuel : freiner le prototypage prématuré.
+
+Problème : formulation trop forte de l’idée que la suite doit passer par des essais musicaux documentés.
+
+Décision :
+
+```text
+à conserver comme supports optionnels ;
+à corriger pour retirer l’obligation méthodologique ;
+à ne pas lire comme suite unique du projet.
+```
+
+## J. Documents phénoménologiques et techniques de transfert
 
 ```text
 01_CAHIER_DES_PHENOMENES_SONORES.md
@@ -155,9 +333,7 @@ Décision : la branche est intégrée ; la suite doit synchroniser prudemment le
 
 Rôle : convertir les décisions stylistiques et transversales en phénomènes sonores manipulables, puis en architecture Max for Live / Ableton Live.
 
-Les fichiers `01A` et `02A` sont des addenda de synchronisation prudente : ils mettent à jour la lecture de `01` et `02` sans remplacer leurs contenus détaillés.
-
-## F. Spécifications détaillées et audits de modules
+## K. Spécifications détaillées et audits de modules
 
 ```text
 /docs/modules/
@@ -165,28 +341,12 @@ Les fichiers `01A` et `02A` sont des addenda de synchronisation prudente : ils m
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, auditer leurs interfaces avant prototypage, puis préparer les données nécessaires aux instruments, sources, samples, engines et assets.
 
-Dossier concerné notamment par :
-
-```text
-Object Registry ;
-Trajectory Engine ;
-Scene / Performance Conductor ;
-Contextual Control Router ;
-Conflict / Protection Manager ;
-Pitch / Harmonic Field Manager ;
-Timbre & Material Mapper ;
-Sound Engines / Instruments ;
-Source Needs / Asset Database Protocol.
-```
-
-## G. Préparation des sources, samples et assets
+## L. Préparation des sources, samples et assets
 
 ```text
 /docs/assets/00_ASSETS_INDEX.md
 /docs/assets/
 ```
-
-`00_ASSETS_INDEX.md` est la carte locale du dossier `docs/assets`.
 
 Le dossier `docs/assets` ne contient pas encore d’assets audio finaux. Il contient :
 
@@ -215,18 +375,7 @@ engine_sketch ≠ implémentation ;
 loop / repeat / freeze ≠ asset par défaut.
 ```
 
-Sous-dossiers :
-
-```text
-/docs/assets/source_needs/
-/docs/assets/material_assets/
-/docs/assets/scene_use_cases/
-/docs/assets/function_tests/
-/docs/assets/decision_gates/
-/docs/assets/engine_sketches/
-```
-
-## H. Validation, outils et mémoire
+## M. Validation, outils et mémoire
 
 ```text
 03_VALIDATION_TESTS_EXTENSIONS.md
@@ -238,64 +387,41 @@ Rôle : préparer les futures validations, maintenir la boîte à outils, garder
 
 ---
 
-# 4. Workflow documentaire actuel
+# 7. Workflow documentaire actuel corrigé
 
-Le workflow ne doit pas être une simple progression linéaire. Il doit fonctionner par propagation contrôlée.
+Le workflow ne doit plus être une simple progression linéaire allant vers les sessions de jeu.
+
+Il doit fonctionner par propagation contrôlée et par voies parallèles possibles.
 
 ```text
-1. Décision esthétique ou conceptuelle
-   ↓
-2. Inscription dans le document source approprié
-   ↓
-3. Vérification de congruence avec les documents directeurs
-   ↓
-4. Propagation vers le cahier des phénomènes si la décision affecte les sons
-   ↓
-5. Propagation vers la spécification technique si la décision affecte l’architecture
-   ↓
-6. Vérification par fiches modèles si l’abstraction devient trop générale
-   ↓
-7. Développement d’une spécification détaillée de module si le module devient prioritaire
-   ↓
-8. Audit d’interface si plusieurs modules commencent à dépendre fortement l’un de l’autre
-   ↓
-9. Création de protocoles de données si la décision affecte sources / instruments / assets / engines
-   ↓
-10. Création de matrices, source_needs, schemas, scene_use_cases, function_tests, decision_gates ou engine_sketches selon le niveau de maturité
-   ↓
-11. Création de matrices de contrôle ou visualisation si le système de performance en a besoin
-   ↓
-12. Clarification des scènes ouvertes si les contrôles doivent être replacés dans la forme
-   ↓
-13. Création de quelques scènes-pivots pour vérifier les relations
-   ↓
-14. Liaison scènes-pivots / modules futurs
-   ↓
-15. Audit de congruence scènes-pivots / modules existants
-   ↓
-16. Pause d’intégration si une branche devient trop profonde ou si les index deviennent obsolètes
-   ↓
-17. Propagation vers validation/tests seulement si le système futur est assez clair
+1. Préserver les analyses stylistiques et phénoménales.
+2. Situer chaque concept selon son niveau de provenance.
+3. Décompacter les notions trop larges, notamment corps.
+4. Traduire seulement les fonctions suffisamment claires en exigences de contrôle.
+5. Penser les contrôles comme amplitudes, risques, limites et sorties.
+6. Préserver les sources live fixes.
+7. Garder les sources conditionnelles comme conditionnelles.
+8. Harmoniser les statuts documentaires.
+9. Corriger les documents pratiques lorsqu’ils deviennent trop directifs.
+10. Ne passer à une question technique ou performative que si le niveau concerné le justifie.
 ```
 
-Principe :
+Voies possibles ensuite :
 
 ```text
-ne pas transformer immédiatement chaque idée en module ;
-ne pas transformer immédiatement chaque phénomène en prototype ;
-ne pas multiplier les documents sans carte ;
-propager seulement ce qui est assez stable ;
-utiliser les fiches modèles et tests fonctionnels pour vérifier les abstractions avant prototypage ;
-détailler les modules seulement quand leur rôle dans l’architecture est clair ;
-ne jamais transformer les catégories en cases exclusives ;
-auditer les interfaces avant divergence ;
-mettre à jour les documents anciens quand les décisions récentes déplacent le workflow ;
-mettre à jour REPO_TREE_SNAPSHOT quand un document est créé, supprimé ou déplacé.
+analyse documentaire ;
+consolidation des concepts ;
+audit des sources et instruments ;
+préparation de données acoustiques ciblées ;
+révision des contrôles et amplitudes ;
+phase de répétition optionnelle ;
+question technique ciblée ;
+prototypage ultérieur seulement si une fonction est suffisamment stabilisée.
 ```
 
 ---
 
-# 5. Règle anti-prototype prématuré
+# 8. Règle anti-prototype prématuré
 
 Aucun prototype ne doit être lancé tant que son rôle dans l’architecture finale n’est pas clair.
 
@@ -307,14 +433,15 @@ réutilisable ou transformable ;
 documenté ;
 conçu pour répondre à une question précise ;
 compatible avec l’architecture globale ;
-compatible avec les besoins de sources / assets quand ils sont impliqués.
+compatible avec les besoins de sources / assets quand ils sont impliqués ;
+respectueux de l’override humain et de la priorité live.
 ```
 
-Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle, exigences de visualisation, fiches de champs de scène, cartes d’arborescence et audits de congruence ne sont pas des prototypes. Ce sont des validations de données, de structure et de fonction.
+Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle, exigences de visualisation, fiches de champs de scène, cartes d’arborescence et audits de congruence ne sont pas des prototypes.
 
 ---
 
-# 6. Règle anti-classement limitant
+# 9. Règle anti-classement limitant
 
 Les catégories du projet sont des outils de lecture, pas des prisons conceptuelles.
 
@@ -323,10 +450,10 @@ Un objet, une trajectoire, une scène, un instrument candidat, une source ou un 
 Exemples :
 
 ```text
-Didgeridoo = grave + formants + souffle + live + corps ;
+Didgeridoo = grave + formants + souffle + live + corps-geste + corps-pression ;
 Gong = impact + halo + partiels + beauté autonome + résolution ;
-Sub = corps + pitch_center + pression + résolution ;
-Pré-drop = rythmique + corporel + spectral + harmonique ;
+Sub = corps-pression + pitch_center + pression + résolution ;
+Pré-drop = rythmique + corporel + spectral + harmonique + attente ;
 Halo = espace + queue + harmonie + risque d’ambientisation ;
 Freeze = temps + matière + risque anti-ambient + sortie obligatoire ;
 Loop live = trace + double + risque de remplacement + fonction de scène ;
@@ -335,29 +462,34 @@ Scène ouverte = fonction centrale + bifurcations + protections + sorties.
 
 ---
 
-# 7. Décision actuelle
+# 10. Décision actuelle
 
-La branche `12–26` a stabilisé une couche de décisions sur :
+La branche `12–26` reste intégrée et valide.
 
-```text
-techno organique comme cadre opératoire ;
-concepts opératoires ;
-exigences système/interface ;
-contrôles live ;
-couches de performance ;
-infrastructure temporelle ;
-visualisation contextuelle ;
-scènes comme champs ouverts ;
-trois scènes-pivots ouvertes ;
-liaison scènes-pivots / modules futurs ;
-audit de congruence scènes-pivots / modules existants.
-```
+Les addenda `27–31` restent utiles mais secondaires.
 
-Décision : ne pas créer de nouveau module, patch ou prototype.
+Les documents `32–37` restent utiles comme supports pratiques et optionnels.
+
+Les documents `38–39` doivent être corrigés / rétrogradés pour ne plus imposer les essais musicaux comme passage obligé.
 
 Prochaine étape recommandée :
 
 ```text
-créer des addenda de synchronisation ciblés pour les modules les plus affectés,
-en commençant par Scene / Performance Conductor et Contextual Control Router.
+mettre à jour REPO_TREE_SNAPSHOT ;
+corriger 38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md ;
+corriger 39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md ;
+puis envisager une fiche dédiée au corps comme fonction composée et située.
+```
+
+Ne pas encore créer :
+
+```text
+patch ;
+layout ;
+mapping ;
+prototype ;
+asset réel ;
+engine profile ;
+nouveau source_need ;
+nouvelle scène.
 ```
