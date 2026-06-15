@@ -1,11 +1,11 @@
 # 38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE
 
-Version : v0.1  
-Statut : synthèse des questions musicales à vérifier avant toute question de prototype. Sans patch, sans mapping, sans prototype, sans asset réel.
+Version : v0.2  
+Statut : support optionnel de clarification musicale avant toute question de prototype. Sans patch, sans mapping, sans prototype, sans asset réel.
 
 ## Objet
 
-Ce document synthétise les questions musicales issues de :
+Ce document synthétise des questions musicales issues de :
 
 ```text
 32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
@@ -14,26 +14,39 @@ Ce document synthétise les questions musicales issues de :
 35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
 36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
 37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
+40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Il sert à décider ce qui doit être vérifié par le jeu et l’écoute avant de formuler une demande technique.
+Il sert à éviter de formuler une demande technique ou un prototype à partir d’une fonction musicale trop floue.
 
-Il ne sert pas à concevoir un outil.
+Il ne dit pas que le projet doit obligatoirement passer maintenant par des essais réels.
 
-Il sert à éviter de prototyper une idée qui n’a pas encore d’existence musicale.
+Il peut être utilisé :
+
+```text
+par analyse documentaire ;
+par relecture des documents existants ;
+par réflexion conceptuelle ;
+par données instrumentales ;
+par écoute de références ;
+par répétition réelle si une phase de jeu est engagée ;
+par comparaison entre scénarios de système.
+```
 
 ---
 
 # 1. Principe central
 
-Avant tout prototype, il faut pouvoir répondre à :
+Avant tout prototype, il faut pouvoir distinguer :
 
 ```text
-quelle fonction musicale existe déjà ?
-quelle fonction musicale échoue encore ?
-quelle fonction musicale demande un support ?
-quelle fonction musicale doit rester strictement live ?
-quelle fonction musicale risque d’être abîmée par un outil ?
+quelle fonction musicale existe déjà comme acquis stylistique ;
+quelle fonction est un dérivé opératoire ;
+quelle fonction reste une hypothèse ;
+quelle fonction demande des données instrumentales ;
+quelle fonction demande éventuellement un essai performatif ;
+quelle fonction doit rester strictement live ;
+quelle fonction risque d’être abîmée par un outil.
 ```
 
 Un outil ne doit pas créer la musique à la place de la scène.
@@ -47,7 +60,9 @@ rendre lisible ;
 stabiliser ;
 relier ;
 prévenir une dérive ;
-soutenir une décision de jeu déjà existante.
+organiser une amplitude ;
+permettre de flirter avec une limite ;
+soutenir une décision de jeu déjà existante ou une fonction clairement définie.
 ```
 
 ---
@@ -56,20 +71,40 @@ soutenir une décision de jeu déjà existante.
 
 ## 2.1 Corps
 
+Le corps n’est pas une notion vague. Il vient des analyses stylistiques et phénoménales du projet.
+
+Questions à clarifier :
+
+```text
+De quel corps parle-t-on ?
+corps-pression ?
+corps-impact ?
+corps-pulsation ?
+corps-geste ?
+corps-ancrage ?
+corps-attente ?
+corps-hypnose ?
+corps-retour ?
+corps-limite ?
+```
+
+Questions musicales :
+
 ```text
 Le corps apparaît-il sans beat complet ?
 Le corps reste-t-il perceptible pendant les retraits ?
 Le corps peut-il revenir sans recette ?
-Quelle source porte le corps : didgeridoo, sub, guimbardes, tambour, autre ?
-Le corps est-il physique ou seulement symbolique ?
+Quelle source porte quelle sous-fonction : didgeridoo, sub, guimbardes, tambour, autre ?
+Le corps est-il physique, gestuel, perceptif, dramaturgique ou seulement symbolique ?
 ```
 
 Prototype interdit si :
 
 ```text
-le corps n’existe pas encore musicalement ;
+le mot corps reste trop global ;
 le retour au corps est toujours arbitraire ;
-le système imaginaire sert à compenser un manque de jeu.
+le système imaginaire sert à compenser une notion non clarifiée ;
+la sous-fonction concernée n’est pas identifiée.
 ```
 
 ## 2.2 Live
@@ -80,14 +115,16 @@ Les guimbardes agissent-elles comme source centrale ou comme ornement ?
 Le geste live est-il audible comme agency ?
 À quel moment une boucle ou une répétition commence-t-elle à remplacer le geste ?
 Quelles sources doivent rester intouchables ?
+Quelles limites peuvent être flirtées sans perdre l’autorité du live ?
 ```
 
 Prototype interdit si :
 
 ```text
 le live devient décor ;
-le loop est nécessaire seulement parce que le geste n’est pas encore clair ;
-l’analyse automatique risque d’imposer une forme au musicien.
+le loop est nécessaire seulement parce que le rôle du geste n’est pas encore clair ;
+l’analyse automatique risque d’imposer une forme au musicien ;
+le système réduit l’override humain.
 ```
 
 ## 2.3 Fonctions techno
@@ -97,6 +134,7 @@ Où sont la pression, l’impact, la répétition, l’hypnose et la tension ?
 Ces fonctions sont-elles portées par les sources ou seulement ajoutées autour ?
 La techno reste-t-elle présente comme fonction même quand le son se naturalise ?
 Le corps et l’hypnose tiennent-ils sans référence stylistique explicite ?
+Les limites du style sont-elles jouables ou seulement interdites ?
 ```
 
 Prototype interdit si :
@@ -104,7 +142,8 @@ Prototype interdit si :
 ```text
 la naturalisation efface les fonctions techno ;
 la scène devient texture sans pression ;
-la répétition devient effet plutôt qu’hypnose.
+la répétition devient effet plutôt qu’hypnose ;
+le système ne permet pas de pousser les amplitudes sans perdre le cadre.
 ```
 
 ## 2.4 Sorties
@@ -115,6 +154,7 @@ Le retour au corps est-il toujours possible ?
 La suspension sait-elle se fermer ?
 La tension peut-elle être annulée sans panne ?
 Une fausse résolution peut-elle devenir fertile ?
+Une sortie peut-elle être retardée, refusée ou déplacée ?
 ```
 
 Prototype interdit si :
@@ -130,13 +170,16 @@ le retour au corps est une formule et non une nécessité.
 
 # 3. Questions par scène-pivot
 
+Ces questions peuvent être vérifiées par analyse, comparaison documentaire, écoute ou jeu. Elles ne demandent pas obligatoirement une répétition réelle.
+
 ## 3.1 Corps vivant / polytexture
 
 Questions à vérifier :
 
 ```text
-Le corps tient-il avec didgeridoo + guimbardes seuls ?
-Le sub soutient-il ou vole-t-il le grave ?
+Quelle sous-fonction du corps est visée ?
+Le corps-geste tient-il avec didgeridoo + guimbardes seuls ?
+Le sub soutient-il le corps-pression ou vole-t-il le grave ?
 La polytexture est-elle lisible à bas volume ?
 Les guimbardes portent-elles une articulation rythmique réelle ?
 Le didgeridoo reste-t-il agent quand la densité augmente ?
@@ -153,7 +196,8 @@ corps présent avant beat complet ;
 polytexture fertile sans surcharge ;
 didgeridoo et guimbardes encore devant ;
 sub stabilisant mais non dominant ;
-plusieurs sorties crédibles.
+plusieurs sorties crédibles ;
+possibilité de pousser la densité jusqu’au bord sans perdre la lisibilité.
 ```
 
 Signes négatifs :
@@ -167,12 +211,12 @@ repeat décoratif ;
 absence de sortie.
 ```
 
-Question technique éventuelle, seulement si la scène tient :
+Question technique éventuelle, seulement si la fonction est claire :
 
 ```text
 comment soutenir une trace ou une micro-répétition sans remplacer le live ?
 comment surveiller le masquage didgeridoo / sub ?
-comment rendre visible le moment où la polytexture devient confuse ?
+comment rendre visible le moment où la polytexture entre en zone de bord ?
 ```
 
 ## 3.2 Tension armée / pré-drop
@@ -189,6 +233,7 @@ Le gong, s’il est présent, est-il armé plutôt qu’utilisé comme effet ?
 Le tambour peut-il résoudre sèchement sans devenir batterie ?
 Le repeat crée-t-il seuil ou démonstration ?
 Le sub pousse-t-il sans brouiller ?
+Quelle limite peut être flirtée : attente trop longue, drop trop évident, freeze trop stable, tension trop saturée ?
 ```
 
 Signes positifs :
@@ -199,7 +244,8 @@ seuils multiples ;
 résolution non automatique ;
 annulation crédible ;
 fausse résolution fertile ;
-post-trace mémorable.
+post-trace mémorable ;
+limite perceptible mais contrôlée.
 ```
 
 Signes négatifs :
@@ -214,12 +260,13 @@ tension qui ne change plus ;
 refus de résolution perçu comme panne.
 ```
 
-Question technique éventuelle, seulement si la scène tient :
+Question technique éventuelle, seulement si la fonction est claire :
 
 ```text
-comment visualiser ou rendre jouable le choix retarder / annuler / résoudre ?
+comment rendre jouable le choix retarder / annuler / résoudre ?
 comment éviter le drop automatique dans les contrôles ?
 comment protéger une fausse résolution sans la rendre mécanique ?
+comment afficher la zone de bord sans bloquer l’override ?
 ```
 
 ## 3.3 Suspension / matière / retour
@@ -228,6 +275,7 @@ Questions à vérifier :
 
 ```text
 Le corps reste-t-il latent pendant la suspension ?
+Quelle sous-fonction du corps reste active : trace, ancrage, attente, retour ?
 La matière exposée a-t-elle une fonction ou seulement une beauté ?
 Le halo sert-il la scène ou la remplace-t-il ?
 Un freeze très bref intensifie-t-il la matière ou la fige-t-il ?
@@ -236,6 +284,7 @@ La sortie est-elle préparée ?
 Le retour au corps peut-il être lent ?
 Une matière exposée peut-elle devenir seuil de pré-drop ?
 Le field recording, s’il existe, est-il nécessaire ?
+La limite ambient est-elle une zone féconde ou une perte de fonction ?
 ```
 
 Signes positifs :
@@ -246,7 +295,8 @@ corps latent ;
 matière fonctionnelle ;
 release claire ;
 sortie audible ;
-anti-ambient maîtrisé.
+anti-ambient maîtrisé ;
+possibilité de rester au bord sans tomber dans le décor.
 ```
 
 Signes négatifs :
@@ -261,12 +311,12 @@ retour brutal ;
 sources live disparues.
 ```
 
-Question technique éventuelle, seulement si la scène tient :
+Question technique éventuelle, seulement si la fonction est claire :
 
 ```text
 comment garantir une release visible/audible pour freeze ?
 comment protéger une trace corporelle pendant suspension ?
-comment empêcher un halo d’ambientiser la scène ?
+comment empêcher ou assumer un halo qui entre en zone ambient ?
 ```
 
 ---
@@ -281,6 +331,7 @@ Peut-il être présent comme menace sans être joué ?
 Quand devient-il spectaculaire trop tôt ?
 Sa queue ouvre-t-elle un champ ou dissout-elle la scène ?
 Que devient la scène s’il est absent ?
+Peut-il être joué au bord du rituel sans devenir décor rituel ?
 ```
 
 ## Tambour sur cadre
@@ -299,6 +350,7 @@ La voix est-elle signal, souffle, fragment ou présence ?
 À quel moment devient-elle gimmick ?
 Est-elle nécessaire ou simplement expressive ?
 Doit-elle rester rare ?
+Peut-elle approcher le pathos sans s’y abandonner ?
 ```
 
 ## Field recording
@@ -308,6 +360,7 @@ Est-il porteur de fonction ou décor ?
 Apporte-t-il un rapport au réel que les sources live ne peuvent pas porter ?
 Risque-t-il de transformer la scène en paysage ?
 Peut-il rester conditionnel ?
+Peut-il entrer en zone de bord sans faire basculer tout le projet dans l’ambient/documentaire ?
 ```
 
 ---
@@ -322,6 +375,7 @@ Quelle source est capturée ?
 Le live continue-t-il après capture ?
 Quelle est la sortie ?
 À quel moment le loop devient-il banque ?
+Peut-il frôler le remplacement sans réellement voler la fonction live ?
 ```
 
 ## Repeat
@@ -332,6 +386,7 @@ Est-il trop identifiable ?
 Rigidifie-t-il les guimbardes ?
 Peut-il être raréfié ?
 Peut-il s’arrêter sans casser la scène ?
+Quelle amplitude le rend expressif, puis démonstratif, puis dangereux ?
 ```
 
 ## Freeze
@@ -342,6 +397,8 @@ Combien de temps ?
 Quelle release ?
 Quelle trace de corps reste ?
 Le freeze intensifie-t-il ou immobilise-t-il ?
+Quand devient-il drone ?
+Peut-il être utilisé comme zone de bord assumée avec sortie claire ?
 ```
 
 ---
@@ -354,11 +411,13 @@ Une question technique devient légitime seulement si elle peut être formulée 
 Dans telle scène-pivot,
 pendant telle phase,
 avec telle source,
-pour préserver telle fonction,
+pour préserver ou pousser telle fonction,
 contre tel risque,
+dans telle amplitude,
 il faudrait peut-être un outil qui fasse telle chose,
 sans remplacer tel geste live,
-et avec telle sortie.
+avec telle sortie,
+et avec possibilité d’override.
 ```
 
 Exemple valide :
@@ -370,7 +429,8 @@ avec une guimbarde gelée brièvement,
 pour préserver une trace formantique sans ambientiser,
 il faudrait peut-être un contrôle de release freeze,
 sans remplacer le jeu de guimbarde,
-et avec retour au corps possible.
+avec retour au corps possible,
+et override si Yohan veut maintenir le risque plus longtemps.
 ```
 
 Exemple non valide :
@@ -386,16 +446,18 @@ faire un bon freeze.
 Ne pas prototyper tant que ces questions restent sans réponse :
 
 ```text
-1. Quelle scène-pivot est la plus solide musicalement ?
-2. Quelle fonction revient dans plusieurs prises ?
-3. Quelle source live doit être protégée ?
-4. Quelle sortie est la plus crédible ?
-5. Quelle dérive revient toujours ?
-6. Quelle fonction demande un soutien technique réel ?
-7. Quelle fonction peut rester entièrement performée ?
-8. Quel objet temporel est nécessaire, et pourquoi ?
-9. Quel risque l’outil pourrait aggraver ?
-10. Qu’est-ce qui ne doit surtout pas être automatisé ?
+1. Quelle fonction musicale ou stylistique est réellement visée ?
+2. De quel niveau de provenance vient-elle : analyse, phénomène, donnée instrumentale, hypothèse ?
+3. Quelle sous-fonction du corps est concernée, si le corps est invoqué ?
+4. Quelle source live doit être protégée ?
+5. Quelle sortie est la plus crédible ?
+6. Quelle dérive revient toujours ?
+7. Quelle fonction demande un soutien technique réel ?
+8. Quelle fonction peut rester entièrement performée ?
+9. Quel objet temporel est nécessaire, et pourquoi ?
+10. Quel risque l’outil pourrait aggraver ?
+11. Qu’est-ce qui ne doit surtout pas être automatisé ?
+12. Quelle limite peut être franchie sous override ?
 ```
 
 ---
@@ -405,11 +467,12 @@ Ne pas prototyper tant que ces questions restent sans réponse :
 Priorité 1 :
 
 ```text
-corps ;
+corps comme faisceau de sous-fonctions ;
 live agency ;
 sorties ;
-anti-ambient ;
-loop/repeat/freeze comme fonctions.
+contrôles comme amplitudes ;
+limites comme zones de bord ;
+loop/repeat/freeze comme fonctions, pas effets.
 ```
 
 Priorité 2 :
@@ -419,7 +482,8 @@ sub relation ;
 gong/tambour optionnels ;
 voix ;
 field recording ;
-visualisation future.
+visualisation future ;
+harmonic drone, cordes, métaux comme besoins conditionnels.
 ```
 
 Priorité 3 :
@@ -434,34 +498,33 @@ questions de prototype.
 Décision :
 
 ```text
-les priorités 3 restent fermées tant que les priorités 1 ne sont pas éprouvées.
+les priorités 3 restent fermées tant que les priorités 1 ne sont pas assez clarifiées.
 ```
 
 ---
 
 # 9. Décision actuelle
 
-Le projet doit maintenant passer par des essais musicaux documentés.
+Ce document ne rend pas les essais musicaux obligatoires.
 
-La bonne séquence est :
+Il peut nourrir plusieurs voies :
 
 ```text
-jouer ;
-enregistrer ;
-remplir la fiche courte ;
-réécouter ;
-remplir la fiche longue ;
-comparer trois prises ;
-formuler une question musicale ;
-seulement ensuite formuler une question technique si nécessaire.
+relecture documentaire ;
+consolidation du concept de corps ;
+analyse des amplitudes de contrôle ;
+audits de sources ;
+préparation de données instrumentales ciblées ;
+répétitions si une phase de jeu est réellement engagée ;
+questions techniques futures.
 ```
 
 Prochaine étape recommandée :
 
 ```text
-préparer une liste de premières sessions de test,
-avec ordre, durée et conditions minimales,
-pour les trois fiches jouables.
+corriger également 39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md
+pour le reclasser comme proposition de sessions optionnelles,
+non comme plan obligatoire.
 ```
 
 Ne pas encore créer :
