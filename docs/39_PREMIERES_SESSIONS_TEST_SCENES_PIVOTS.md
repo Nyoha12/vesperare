@@ -1,11 +1,11 @@
 # 39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS
 
-Version : v0.1  
-Statut : plan de premières sessions de test. Sans patch, sans mapping, sans prototype, sans asset réel.
+Version : v0.2  
+Statut : proposition optionnelle de premières sessions de test. Sans patch, sans mapping, sans prototype, sans asset réel.
 
 ## Objet
 
-Ce document propose un ordre de premières sessions de test pour les trois fiches jouables :
+Ce document propose un ordre possible de premières sessions de test pour les trois fiches jouables :
 
 ```text
 33_FICHE_PERFORMANCE_CORPS_VIVANT_POLYTEXTURE.md
@@ -13,21 +13,34 @@ Ce document propose un ordre de premières sessions de test pour les trois fiche
 35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
 ```
 
-Il applique :
+Il applique, si une phase de jeu est réellement engagée :
 
 ```text
 36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
 37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
 38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
+40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Le but est de produire des prises comparables, pas de construire un système.
+Ce document ne constitue pas une suite obligatoire du projet.
+
+Il ne dit pas :
+
+```text
+le projet doit maintenant être joué ;
+le travail documentaire doit s’arrêter ;
+les sessions réelles sont la seule validation possible ;
+les fiches 33–35 doivent être suivies comme prescriptions ;
+une absence de prise réelle bloque l’analyse.
+```
+
+Il sert uniquement à proposer un cadre si Yohan veut produire des prises comparables.
 
 ---
 
-# 1. Règles générales de test
+# 1. Règles générales de test optionnel
 
-Chaque session doit rester simple.
+Chaque session, si elle a lieu, doit rester simple.
 
 ```text
 une question dominante ;
@@ -49,9 +62,16 @@ installer une logique de prototype ;
 conclure après une seule prise.
 ```
 
+Correction importante :
+
+```text
+une session peut clarifier une incertitude performative ;
+elle ne doit pas être utilisée pour résoudre une notion conceptuelle encore mal découpée.
+```
+
 ---
 
-# 2. Matériel minimal recommandé
+# 2. Matériel minimal recommandé si session réelle
 
 Minimum :
 
@@ -59,7 +79,7 @@ Minimum :
 didgeridoo live ;
 plusieurs guimbardes ;
 outil simple d’enregistrement ;
-fiche de session copiée depuis 37.
+fiche de session copiée depuis 37, seulement si utile.
 ```
 
 Optionnel :
@@ -78,9 +98,11 @@ Règle :
 commencer par les sources live fixes avant d’ajouter les sources optionnelles.
 ```
 
+Mais ce matériel minimal n’est requis que si une phase de prise réelle est décidée.
+
 ---
 
-# 3. Bloc de sessions A — Corps vivant / polytexture
+# 3. Bloc optionnel A — Corps vivant / polytexture
 
 ## Session A1 — Corps sans sub
 
@@ -96,7 +118,7 @@ Configuration :
 didgeridoo + guimbardes seulement.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 4 à 6 minutes.
@@ -105,23 +127,26 @@ Durée :
 Question dominante :
 
 ```text
-le corps peut-il tenir sans sub explicite ?
+quelle sous-fonction du corps tient sans sub explicite ?
 ```
 
 À écouter :
 
 ```text
-corps avant beat complet ;
+corps-geste ;
+corps-pulsation ;
+corps-pression éventuel ;
 agency du didgeridoo ;
 articulation des guimbardes ;
 pression sans support synthétique ;
 sortie possible.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
-identifier ce que les sources live portent déjà seules.
+identifier ce que les sources live portent déjà seules,
+sans conclure que le corps entier est validé ou invalidé.
 ```
 
 ## Session A2 — Corps avec sub discret
@@ -132,7 +157,7 @@ Configuration :
 didgeridoo + guimbardes + sub discret.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 5 à 7 minutes.
@@ -141,7 +166,7 @@ Durée :
 Question dominante :
 
 ```text
-le sub soutient-il le corps ou vole-t-il le grave ?
+le sub soutient-il le corps-pression ou vole-t-il le grave ?
 ```
 
 À écouter :
@@ -151,13 +176,15 @@ relation didgeridoo / sub ;
 low-mid safety ;
 masquage ;
 pression physique ;
-retour au corps.
+retour au corps ;
+zone où le sub devient dangereux mais potentiellement plus puissant.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
-savoir si le sub est nécessaire au départ ou seulement plus tard.
+savoir si le sub est nécessaire au départ,
+ou seulement comme amplitude expressive / bord / retour.
 ```
 
 ## Session A3 — Polytexture avec source optionnelle
@@ -177,7 +204,7 @@ ou sub ;
 ou voix très discrète si validée.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 2 ou 3 prises de 6 à 8 minutes.
@@ -195,19 +222,20 @@ la source optionnelle enrichit-elle la scène sans brouiller la hiérarchie ?
 lisibilité polytexturale ;
 source live centrale ;
 risque décoratif ;
+zone de bord de densité ;
 seuils ;
 sorties vers tension ou suspension.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
-repérer quelle source optionnelle mérite un vrai rôle.
+repérer quelle source optionnelle mérite peut-être un vrai rôle.
 ```
 
 ---
 
-# 4. Bloc de sessions B — Tension armée / pré-drop
+# 4. Bloc optionnel B — Tension armée / pré-drop
 
 ## Session B1 — Tension sans résolution
 
@@ -223,7 +251,7 @@ Configuration :
 didgeridoo + guimbardes + retrait partiel du corps.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 4 à 7 minutes.
@@ -232,20 +260,22 @@ Durée :
 Question dominante :
 
 ```text
-la tension peut-elle tenir sans résolution ?
+la tension peut-elle tenir sans résolution,
+et quelle sous-fonction du corps reste active dans cette attente ?
 ```
 
 À écouter :
 
 ```text
 qualité du retrait ;
+corps-attente ;
 corps latent ;
 tension changeante ;
 absence de panne ;
 sortie non donnée mais perceptible.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
 savoir si le pré-drop peut être dramaturgique sans drop.
@@ -269,7 +299,7 @@ silence court ;
 repeat court.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 5 à 8 minutes.
@@ -288,10 +318,11 @@ moment où la résolution est attendue ;
 qualité du refus ;
 post-trace ;
 bifurcation possible ;
-frustration fertile ou gratuite.
+frustration fertile ou gratuite ;
+zone où le drop devient trop évident.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
 identifier le type de fausse résolution le plus fort.
@@ -305,7 +336,7 @@ Configuration :
 didgeridoo + guimbardes + tambour ou sub ou gong selon disponibilité.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 2 ou 3 prises de 5 à 8 minutes.
@@ -324,10 +355,11 @@ impact ;
 post-trace ;
 retour au corps ;
 résolution trop attendue ;
-source qui résout le mieux.
+source qui résout le mieux ;
+amplitude de résolution : sèche / forte / dangereuse / override.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
 savoir quelle résolution reste personnelle et non générique.
@@ -335,7 +367,7 @@ savoir quelle résolution reste personnelle et non générique.
 
 ---
 
-# 5. Bloc de sessions C — Suspension / matière / retour
+# 5. Bloc optionnel C — Suspension / matière / retour
 
 ## Session C1 — Suspension sans halo
 
@@ -351,7 +383,7 @@ Configuration :
 didgeridoo trace + guimbardes espacées.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 4 à 7 minutes.
@@ -370,10 +402,11 @@ trace corporelle ;
 silence actif ;
 guimbardes comme détail vivant ;
 risque de vide ;
-sortie audible.
+sortie audible ;
+limite entre suspension active et pause décorative.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
 savoir si la suspension dépend vraiment de l’espace ou non.
@@ -396,7 +429,7 @@ gong partiel si présent ;
 voix souffle ou fragment si validée.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 5 à 8 minutes.
@@ -415,10 +448,11 @@ beauté utile ou décorative ;
 trace de source ;
 tension ;
 corps latent ;
-sortie.
+sortie ;
+zone où la beauté coupe la forme.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
 identifier quelles matières méritent exposition.
@@ -432,7 +466,7 @@ Configuration :
 suspension + retour progressif du corps.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 6 à 10 minutes.
@@ -451,10 +485,11 @@ préparation du retour ;
 trace qui subsiste ;
 sub latent ;
 guimbardes qui réarticulent ;
-didgeridoo qui redevient sol.
+didgeridoo qui redevient sol ;
+corps-retour comme nécessité plutôt que recette.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
 savoir comment sortir de la suspension sans recette.
@@ -462,9 +497,9 @@ savoir comment sortir de la suspension sans recette.
 
 ---
 
-# 6. Session D — Transitions entre scènes-pivots
+# 6. Session optionnelle D — Transitions entre scènes-pivots
 
-À faire seulement après les blocs A, B et C.
+À faire seulement si les blocs A, B et C sont réellement travaillés.
 
 Configuration :
 
@@ -472,7 +507,7 @@ Configuration :
 didgeridoo + guimbardes + une seule source optionnelle au maximum.
 ```
 
-Durée :
+Durée indicative :
 
 ```text
 3 prises de 8 à 12 minutes.
@@ -500,10 +535,11 @@ moment du passage ;
 trace conservée ;
 fonction perdue ou transformée ;
 retour au corps ;
-source qui assure la continuité.
+source qui assure la continuité ;
+limite franchie ou évitée.
 ```
 
-Décision attendue :
+Décision possible :
 
 ```text
 identifier les transitions les plus fertiles.
@@ -511,9 +547,9 @@ identifier les transitions les plus fertiles.
 
 ---
 
-# 7. Ordre recommandé minimal
+# 7. Ordre recommandé si cette voie est choisie
 
-Ordre court sur une première période :
+Ordre court possible sur une première période :
 
 ```text
 1. A1 — Corps sans sub ;
@@ -538,24 +574,28 @@ vérifier tension sans drop ;
 seulement ensuite tester transitions.
 ```
 
+Cet ordre est une proposition pratique, pas une obligation.
+
 ---
 
 # 8. Comparaison après chaque bloc
 
-Après chaque bloc A, B ou C, remplir :
+Après chaque bloc A, B ou C, si des prises existent, remplir :
 
 ```text
 fonction la plus solide :
 fonction la plus fragile :
+sous-fonction du corps concernée :
 source la plus utile :
 source problématique :
 risque récurrent :
+zone de bord rencontrée :
 sortie la plus forte :
 ce qui ne demande aucun outil :
 ce qui pourrait demander un outil plus tard :
 ```
 
-Après le bloc D, remplir :
+Après le bloc D, si réalisé, remplir :
 
 ```text
 transition la plus fertile :
@@ -563,6 +603,8 @@ transition trop brutale :
 transition trop attendue :
 trace qui fonctionne le mieux :
 source qui assure le mieux la continuité :
+limite franchie consciemment :
+limite subie involontairement :
 ```
 
 ---
@@ -572,37 +614,61 @@ source qui assure le mieux la continuité :
 Une question technique peut être formulée seulement si :
 
 ```text
-une fonction musicale revient dans au moins trois prises ;
-elle reste claire après réécoute ;
-elle est difficile à tenir manuellement ;
+une fonction musicale est clairement définie ;
+son niveau de provenance est compris ;
+la sous-fonction du corps ou de tension concernée est nommée ;
 elle ne remplace pas le live ;
 elle a une sortie ;
-le risque principal est identifié.
+son amplitude souhaitée est identifiable ;
+le risque principal est identifié ;
+le système peut aider sans prendre la décision à la place de Yohan.
 ```
 
-Sinon :
+Si ces conditions ne sont pas réunies :
 
 ```text
-continuer à jouer ;
+continuer l’analyse ;
 réduire les sources ;
 clarifier la fonction ;
-refaire une prise plus simple.
+revenir aux documents directeurs ;
+reformuler la question musicale ;
+utiliser une prise réelle seulement si cela aide vraiment.
 ```
 
 ---
 
 # 10. Décision actuelle
 
-Ce plan donne une première série de tests musicaux.
+Ce plan donne une proposition de tests musicaux.
 
-Il permet de commencer sans attendre un outil.
+Il permet de commencer sans attendre un outil **si** une phase de jeu est engagée.
 
-Prochaine étape recommandée :
+Il ne bloque pas :
 
 ```text
-après une ou plusieurs sessions réelles,
-remplir le modèle 37,
+l’analyse documentaire ;
+la consolidation des concepts ;
+la cartographie des sources ;
+la réflexion sur les amplitudes de contrôle ;
+la clarification des limites jouables ;
+la préparation de données instrumentales ciblées.
+```
+
+Prochaine étape possible si des sessions réelles ont lieu :
+
+```text
+remplir le modèle 37 ;
 puis créer une synthèse d’écoute à partir des prises.
+```
+
+Autres prochaines étapes possibles sans sessions réelles :
+
+```text
+consolider la fiche corps ;
+consolider la grammaire des amplitudes ;
+réviser les documents de contrôle selon 40 ;
+auditer les données instrumentales manquantes ;
+mettre à jour les index.
 ```
 
 Ne pas encore créer :
