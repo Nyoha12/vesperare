@@ -22,7 +22,8 @@ scènes-pivots ;
 addenda de synchronisation ;
 supports pratiques de jeu et d’écoute ;
 audits de cohérence ;
-données instrumentales manquantes prioritaires.
+données instrumentales manquantes prioritaires ;
+correspondance AcousticArchive / Vesperare.
 ```
 
 Le recentrage stratégique est documenté dans :
@@ -55,6 +56,7 @@ Le dossier assets a aussi été audité :
 ```text
 docs/assets/14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 docs/assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+docs/assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
 ```
 
 Ces documents servent à harmoniser les statuts, les priorités et les corrections à appliquer aux autres fichiers. Ils ne remplacent pas les analyses stylistiques ni les modules déjà existants.
@@ -229,6 +231,7 @@ Documents récents de cette branche :
 ```text
 14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
 ```
 
 Règle centrale :
@@ -242,7 +245,8 @@ decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation ;
 temporal_object ≠ sample ;
 loop/repeat/freeze ≠ banque ;
-donnée instrumentale manquante ≠ obligation de collecte immédiate.
+donnée instrumentale manquante ≠ obligation de collecte immédiate ;
+descripteur acoustique ≠ fonction musicale automatique.
 ```
 
 ## Hiérarchie de statut
@@ -261,7 +265,7 @@ NIVEAU 4 — PONT
 Scènes ouvertes, scènes-pivots, mapping scènes → modules, audit de congruence.
 
 NIVEAU 5 — ASSETS / SOURCE_NEEDS PRÉPARATOIRES
-14, 15 et dossier docs/assets.
+14, 15, 16 et dossier docs/assets.
 
 NIVEAU 6 — ADDENDA DE SYNCHRONISATION
 Synchronisations ciblées 27–31.
@@ -293,6 +297,7 @@ maintenir les sources conditionnelles comme conditionnelles ;
 corriger 38–39 ;
 auditer assets/source_needs ;
 identifier les données instrumentales manquantes ;
+préparer l’interprétation des sorties AcousticArchive ;
 mettre à jour l’index et le snapshot ;
 puis décider entre plusieurs voies possibles.
 ```
@@ -303,7 +308,7 @@ Voies possibles ensuite :
 analyse documentaire ;
 consolidation des concepts ;
 audits des sources et instruments ;
-fiches instrumentales courtes ;
+fiches instrumentales courtes à partir de données réelles ;
 préparation de données acoustiques ciblées ;
 révision des contrôles et amplitudes ;
 phase de répétition optionnelle ;
@@ -315,14 +320,15 @@ prototypage ultérieur seulement si une fonction est suffisamment stabilisée.
 
 La prochaine étape n’est pas de créer un patch, un layout, un mapping, un prototype, un engine profile, un asset concret ou une banque de samples.
 
-Les audits `14–15` sont maintenant posés.
+Les audits `14–16` sont maintenant posés.
 
 La prochaine étape recommandée est :
 
 ```text
-créer éventuellement des fiches instrumentales courtes pour didgeridoo, guimbardes, gongs et tambours sur cadre,
-uniquement comme support de connaissance instrumentale,
-sans session obligatoire et sans asset réel.
+attendre les premières données AcousticArchive réelles ;
+puis créer des fiches instrumentales courtes uniquement à partir de ces données,
+en priorité pour didgeridoo et guimbardes,
+puis gongs et tambours sur cadre.
 ```
 
-Ne pas créer de nouvel addendum de recentrage sans besoin net.
+Ne pas créer de fiche instrumentale vide ni de seuil fictif.
