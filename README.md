@@ -29,11 +29,21 @@ Le recentrage stratégique est documenté dans :
 docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Deux fiches de consolidation précisent les points les plus sensibles :
+Les fiches de consolidation précisent les points sensibles :
 
 ```text
 docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+docs/43_HARMONISATION_CONTROLES_15_22.md
+```
+
+Des addenda ciblés complètent ensuite certains documents sans les remplacer :
+
+```text
+docs/17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
+docs/19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
+docs/22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
+docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
 ```
 
 Ces documents servent à harmoniser les statuts, les priorités et les corrections à appliquer aux autres fichiers. Ils ne remplacent pas les analyses stylistiques ni les modules déjà existants.
@@ -80,6 +90,7 @@ REPO_TREE_SNAPSHOT.md
 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+43_HARMONISATION_CONTROLES_15_22.md
 ```
 
 Méthode, décisions, vocabulaire, organisation documentaire, workflow, trace d’arborescence, recentrage stratégique et consolidation des notions sensibles.
@@ -111,14 +122,17 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 15_LIVE_CONTROL_REQUIREMENTS_MATRIX.md
 16_LIVE_CONTROL_MATRIX_PERFORMABILITY_AUDIT.md
 17_LIVE_CONTROL_REQUIREMENTS_MATRIX_REDUCED.md
+17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
 18_LIVE_CONTROL_DECISION_QUESTIONS_BEFORE_LAYERS.md
 19_LIVE_CONTROL_LAYERS_AND_PERFORMANCE_STATES.md
+19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
 20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 ```
 
-Ces documents traduisent les analyses en exigences de contrôle, couches de performance, infrastructure temporelle et visualisation contextuelle.
+Ces documents traduisent les analyses en exigences de contrôle, couches de performance, infrastructure temporelle et visualisation contextuelle. Les addenda `17A`, `19A` et `22A` ajoutent la lecture par corps composé, amplitudes, zones de bord, sorties et override.
 
 ### Scènes ouvertes, scènes-pivots et pont vers les modules
 
@@ -180,6 +194,14 @@ Ces documents freinent correctement le prototypage, mais doivent être lus comme
 
 Le dossier `docs/modules` contient les spécifications détaillées et audits d’interface : Object Registry, Trajectory Engine, Scene / Performance Conductor, Contextual Control Router, Conflict / Protection Manager, Pitch / Harmonic Field Manager, Timbre & Material Mapper, Sound Engines / Instruments, Source Needs / Asset Database Protocol et leurs interfaces.
 
+Addendum transversal actuel :
+
+```text
+/docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+```
+
+Il relit les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override.
+
 ### Sources, besoins et assets
 
 ```text
@@ -225,21 +247,24 @@ NIVEAU 1 — DIRECTEUR
 Analyses stylistiques, cahier des phénomènes, cadres opératoires, exigences système, modules centraux.
 
 NIVEAU 2 — CONSOLIDATION TRANSVERSALE
-40, 41, 42.
+40, 41, 42, 43.
 
-NIVEAU 3 — PONT
+NIVEAU 3 — ADDENDA CIBLÉS DE CONTRÔLE
+17A, 19A, 22A.
+
+NIVEAU 4 — PONT
 Scènes ouvertes, scènes-pivots, mapping scènes → modules, audit de congruence.
 
-NIVEAU 4 — ADDENDA
+NIVEAU 5 — ADDENDA DE SYNCHRONISATION
 Synchronisations ciblées 27–31.
 
-NIVEAU 5 — SUPPORTS PRATIQUES
+NIVEAU 6 — SUPPORTS PRATIQUES
 Dramaturgies et fiches jouables 32–35.
 
-NIVEAU 6 — OUTILS OPTIONNELS
+NIVEAU 7 — OUTILS OPTIONNELS
 Journal et modèle de session 36–37.
 
-NIVEAU 7 — SUPPORTS OPTIONNELS CORRIGÉS
+NIVEAU 8 — SUPPORTS OPTIONNELS CORRIGÉS
 38–39.
 ```
 
@@ -267,7 +292,7 @@ Voies possibles ensuite :
 ```text
 analyse documentaire ;
 consolidation des concepts ;
-audit des sources et instruments ;
+audits des sources et instruments ;
 préparation de données acoustiques ciblées ;
 révision des contrôles et amplitudes ;
 phase de répétition optionnelle ;
@@ -282,7 +307,7 @@ La prochaine étape n’est pas de créer un patch, un layout, un mapping, un pr
 La prochaine étape est :
 
 ```text
-relire 15–19 et 22 à la lumière de 41–42 ;
-harmoniser les formulations des contrôles, amplitudes, limites et override ;
-puis relire les modules Router / Conductor / Conflict / Registry / Trajectory pour vérifier l’intégration.
+à partir du guide transversal des modules,
+décider si les modules Router / Conductor / Conflict nécessitent chacun un addendum individuel,
+ou si le guide transversal suffit pour l’instant.
 ```
