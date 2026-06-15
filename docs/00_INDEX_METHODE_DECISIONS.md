@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.3  
+Version : v4.4  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -21,6 +21,7 @@ Documents de consolidation associés :
 41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 43_HARMONISATION_CONTROLES_15_22.md
+44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
 ```
 
 Addenda ciblés de contrôle et visualisation :
@@ -82,6 +83,20 @@ protéger le socle analytique ;
 réouvrir les notions trop compactées ;
 requalifier les limites comme zones de bord jouables lorsque cela correspond à l’intention musicale ;
 rétrograder les supports pratiques pour qu’ils ne deviennent pas directeurs.
+```
+
+Le paquet de recentrage a été audité dans :
+
+```text
+44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
+```
+
+Décision issue de cet audit :
+
+```text
+le paquet de recentrage est cohérent ;
+ne plus produire d’addenda de recentrage sans besoin net ;
+passer ensuite à l’audit assets/source_needs puis aux données instrumentales réellement manquantes.
 ```
 
 ---
@@ -232,6 +247,7 @@ REPO_TREE_SNAPSHOT.md
 41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 43_HARMONISATION_CONTROLES_15_22.md
+44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
 ```
 
 Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow, la trace d’arborescence et le recentrage stratégique.
@@ -518,7 +534,7 @@ Scène ouverte = fonction centrale + bifurcations + protections + sorties.
 
 La branche `12–26` reste intégrée et valide.
 
-Les documents `40–43` consolident le recentrage sans remplacer le socle.
+Les documents `40–44` consolident et auditent le recentrage sans remplacer le socle.
 
 Les addenda `17A`, `19A`, `22A` harmonisent les contrôles, états et visualisation sans réécrire les documents originaux.
 
@@ -536,8 +552,8 @@ Prochaine étape recommandée :
 
 ```text
 arrêter provisoirement la création d’addenda ;
-faire un audit de cohérence du paquet de recentrage ;
-puis décider si le prochain chantier doit porter sur assets/source_needs, données instrumentales ou validations conceptuelles.
+passer à l’audit assets/source_needs avec la grille corps / amplitude / limite / sortie / override ;
+puis identifier les données instrumentales réellement manquantes.
 ```
 
 Ne pas encore créer :
