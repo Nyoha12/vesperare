@@ -29,12 +29,13 @@ Le recentrage stratégique est documenté dans :
 docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Les fiches de consolidation précisent les points sensibles :
+Les fiches de consolidation et l’audit de cohérence précisent les points sensibles :
 
 ```text
 docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 docs/43_HARMONISATION_CONTROLES_15_22.md
+docs/44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
 ```
 
 Des addenda ciblés complètent ensuite certains documents sans les remplacer :
@@ -92,6 +93,7 @@ REPO_TREE_SNAPSHOT.md
 41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 43_HARMONISATION_CONTROLES_15_22.md
+44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
 ```
 
 Méthode, décisions, vocabulaire, organisation documentaire, workflow, trace d’arborescence, recentrage stratégique et consolidation des notions sensibles.
@@ -248,8 +250,8 @@ loop/repeat/freeze ≠ banque.
 NIVEAU 1 — DIRECTEUR
 Analyses stylistiques, cahier des phénomènes, cadres opératoires, exigences système, modules centraux.
 
-NIVEAU 2 — CONSOLIDATION TRANSVERSALE
-40, 41, 42, 43.
+NIVEAU 2 — CONSOLIDATION TRANSVERSALE ET AUDIT
+40, 41, 42, 43, 44.
 
 NIVEAU 3 — ADDENDA CIBLÉS DE CONTRÔLE
 17A, 19A, 22A, modules/17, modules/18.
@@ -306,9 +308,13 @@ prototypage ultérieur seulement si une fonction est suffisamment stabilisée.
 
 La prochaine étape n’est pas de créer un patch, un layout, un mapping, un prototype, un engine profile, un asset concret ou une banque de samples.
 
-La prochaine étape est :
+Le paquet de recentrage est maintenant audité et stabilisé.
+
+La prochaine étape recommandée est :
 
 ```text
-vérifier si 00_INDEX_METHODE_DECISIONS.md et REPO_TREE_SNAPSHOT.md sont alignés avec cette décision Router ;
-puis arrêter la prolifération documentaire et passer à un audit de cohérence du paquet de recentrage.
+audit assets/source_needs avec la grille corps / amplitude / limite / sortie / override ;
+puis audit des données instrumentales réellement manquantes.
 ```
+
+Ne pas créer de nouvel addendum de recentrage sans besoin net.
