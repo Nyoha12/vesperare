@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v1.6  
+Version : v1.7  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -21,7 +21,12 @@ https://api.github.com/repos/Nyoha12/vesperare/git/trees/main?recursive=1
 
 Limite : cette trace est une carte de chemins, pas une preuve que tous les fichiers ont été intégralement relus.
 
-Dernière mise à jour manuelle : après création et révision de `docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md`, puis mise à jour du README et de `00_INDEX_METHODE_DECISIONS.md`.
+Dernière mise à jour manuelle : après création de :
+
+```text
+docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
+docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+```
 
 ---
 
@@ -42,6 +47,8 @@ checkpoints/checkpoint_maitre_v0_1.md
 docs/00_INDEX_METHODE_DECISIONS.md
 docs/REPO_TREE_SNAPSHOT.md
 docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
+docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
+docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 ```
 
 ## 2.2 Socle phénoménal, stylistique, technique et transversal
@@ -119,7 +126,7 @@ Statut à retenir après recentrage :
 ```text
 32–35 : supports pratiques non directeurs ;
 36–37 : outils optionnels de répétition/écoute ;
-38–39 : supports à corriger/rétrograder, car ils ne doivent pas rendre les essais réels obligatoires.
+38–39 : supports optionnels corrigés, non obligatoires.
 ```
 
 ---
