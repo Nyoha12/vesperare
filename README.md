@@ -6,34 +6,76 @@ Le projet vise l’invention d’un genre musical personnel, localement nommé *
 
 ## État actuel
 
-La phase actuelle est une phase de conception approfondie avant prototypage.
+La phase actuelle est une phase de **conception, consolidation et harmonisation avant prototypage**.
 
-Principes retenus :
+Le dépôt contient déjà :
 
-- conception détaillée avant prototypes ;
-- techno comme influence stylistique principale ;
-- naturalisation des supports sonores sans perte des fonctions techno ;
-- didgeridoo et guimbardes comme sources live fixes centrales ;
-- gong et tambour comme sources live optionnelles non neutres ;
-- microtonalité, harmoniques, partiels et centres spectraux comme nœud transversal ;
-- scènes, trajectoires, objets sonores et états de performance comme couche supérieure ;
-- scènes conçues comme champs ouverts orientés : ouvrir sans diluer, structurer sans fermer ;
-- contrôle live pensé par fonctions musicales, états, protections, arbitrages et visualisations contextuelles ;
-- Max for Live comme cœur temps réel futur ;
-- Ableton Extensions SDK comme outil satellite de préparation et documentation.
+```text
+analyses stylistiques ;
+cahier des phénomènes sonores ;
+concepts opératoires ;
+spécifications de modules ;
+source_needs ;
+schémas de material_assets ;
+scènes ouvertes ;
+scènes-pivots ;
+addenda de synchronisation ;
+supports pratiques de jeu et d’écoute.
+```
+
+Le recentrage stratégique est documenté dans :
+
+```text
+docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
+```
+
+Ce document est désormais la référence pour harmoniser les statuts, les priorités et les corrections à appliquer aux autres fichiers.
+
+## Principes retenus
+
+```text
+techno comme influence stylistique principale ;
+naturalisation des supports sonores sans perte des fonctions techno ;
+corps comme faisceau de phénomènes stylistiques, perceptifs, instrumentaux et sensibles ;
+didgeridoo et guimbardes comme sources live fixes centrales ;
+gong et tambour comme sources live optionnelles non neutres ;
+zéro sample initial ;
+samples seulement si un besoin réel et documenté le justifie ;
+microtonalité, harmoniques, partiels et centres spectraux comme nœud transversal ;
+scènes, trajectoires, objets sonores et états de performance comme couche supérieure ;
+scènes conçues comme champs ouverts orientés : ouvrir sans diluer, structurer sans fermer ;
+contrôle live pensé par fonctions musicales, états, amplitudes, protections, arbitrages, limites et visualisations contextuelles ;
+Max for Live comme cœur temps réel futur ;
+Ableton Extensions SDK comme outil satellite de préparation et documentation.
+```
+
+## Principe central de contrôle
+
+Dans Vesperare, un contrôle n’est pas un simple paramètre technique.
+
+```text
+contrôle = sélection + organisation + amplitude + contexte + risque + sortie + override.
+```
+
+Le système doit donner à Yohan une capacité efficace de variation sur les dimensions stylistiquement pertinentes de sa musique.
+
+Il doit aussi permettre de flirter intelligemment avec les limites : ambientisation, surcharge, cliché, perte du corps, drop automatique, freeze-drone, loop qui remplace le live, etc.
+
+Ces limites ne sont pas toujours des interdits absolus. Elles doivent être pensées comme zones de bord : visibles, mesurées, contextualisées, avec possibilité de retrait, retour, bifurcation ou override humain.
 
 ## Carte documentaire
 
-### Documents directeurs
+### Documents directeurs de navigation
 
 ```text
 00_INDEX_METHODE_DECISIONS.md
 REPO_TREE_SNAPSHOT.md
+40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Méthode, décisions, vocabulaire, organisation documentaire, workflow et trace d’arborescence à tenir à jour.
+Méthode, décisions, vocabulaire, organisation documentaire, workflow, trace d’arborescence et recentrage stratégique.
 
-### Style, phénomènes et architecture historique
+### Socle stylistique, phénoménal et architectural
 
 ```text
 05_CARTOGRAPHIE_STYLE_PERSONNEL_TECHNO.md
@@ -51,7 +93,7 @@ Méthode, décisions, vocabulaire, organisation documentaire, workflow et trace 
 
 Ces documents définissent les bases : style, phénomènes sonores, scènes, trajectoires, objets, contraintes de timbre/mix et architecture Max for Live future.
 
-### Cadre opératoire techno organique, contrôle live et scènes ouvertes
+### Cadre opératoire, contrôle live, temporalité, visualisation
 
 ```text
 12_TECHNO_ORGANIQUE_CADRE_OPERATOIRE.md
@@ -65,26 +107,61 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+```
+
+Ces documents traduisent les analyses en exigences de contrôle, couches de performance, infrastructure temporelle et visualisation contextuelle.
+
+### Scènes ouvertes, scènes-pivots et pont vers les modules
+
+```text
 23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
 25_SCENES_PIVOTS_TO_MODULE_RESPONSIBILITIES_MAP.md
 26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md
+```
+
+Ces documents constituent un pont valide entre les analyses musicales et la distribution des responsabilités futures.
+
+### Addenda de synchronisation secondaires
+
+```text
 27_SCENE_PERFORMANCE_CONDUCTOR_SYNC_ADDENDUM.md
 28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
 29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
 30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
 31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md
+```
+
+Ces addenda ne remplacent pas les modules initiaux. Ils synchronisent les modules avec les décisions apparues après les scènes-pivots, les objets temporels, la visualisation, la priorité live et les guards.
+
+### Supports musicaux pratiques
+
+```text
 32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
 33_FICHE_PERFORMANCE_CORPS_VIVANT_POLYTEXTURE.md
 34_FICHE_PERFORMANCE_TENSION_ARMEE_PRE_DROP.md
 35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
+```
+
+Ces fichiers sont utiles comme supports de jeu, d’écoute ou de réflexion dramaturgique. Ils ne sont pas des documents directeurs, ne sont pas obligatoires et ne bloquent pas la poursuite de l’analyse.
+
+### Outils optionnels de répétition et d’écoute
+
+```text
 36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
 37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
+```
+
+Ces fichiers sont activables si une phase de répétition ou d’écoute enregistrée est engagée. Ils ne constituent pas un passage obligé.
+
+### Documents à corriger / rétrograder
+
+```text
 38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
 39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes, fiches de performance jouables, protocole de journal de répétition/écoute, questions musicales à vérifier avant prototype et plan de premières sessions de test. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents freinent correctement le prototypage, mais formulent trop fortement l’idée que le projet doit passer maintenant par des essais musicaux documentés. Ils doivent être relus comme supports optionnels, non comme méthode obligatoire.
 
 ### Modules
 
@@ -127,41 +204,74 @@ material_asset_schema ≠ asset réel ;
 scene_use_case ≠ prototype ;
 function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
-engine_sketch ≠ implémentation.
+engine_sketch ≠ implémentation ;
+temporal_object ≠ sample ;
+loop/repeat/freeze ≠ banque.
 ```
 
-## Workflow actuel
+## Hiérarchie de statut
 
 ```text
-style / influences / techno organique
-→ concepts opératoires
-→ exigences système et interface
-→ noyau de contrôle live
-→ couches de performance
-→ infrastructure temporelle
-→ visualisation contextuelle
-→ scènes comme champs ouverts
-→ scènes-pivots ouvertes
-→ liaison scènes-pivots / modules futurs
-→ audit de congruence scènes-pivots / modules
-→ synchronisation modules centraux
-→ dramaturgies musicales des scènes-pivots
-→ fiches de performance jouables
-→ journal de répétition et d’écoute
-→ modèle de fiche de session
-→ questions musicales à vérifier avant prototype
-→ plan de premières sessions de test
-→ jeu / enregistrement / écoute / synthèse
+NIVEAU 1 — DIRECTEUR
+Analyses stylistiques, cahier des phénomènes, cadres opératoires, exigences système, modules centraux.
+
+NIVEAU 2 — PONT
+Scènes ouvertes, scènes-pivots, mapping scènes → modules, audit de congruence.
+
+NIVEAU 3 — ADDENDA
+Synchronisations ciblées 27–31.
+
+NIVEAU 4 — SUPPORTS PRATIQUES
+Dramaturgies et fiches jouables 32–35.
+
+NIVEAU 5 — OUTILS OPTIONNELS
+Journal et modèle de session 36–37.
+
+NIVEAU 6 — À CORRIGER / RÉTROGRADER
+38–39.
+```
+
+## Workflow actuel corrigé
+
+Le workflow ne doit plus être lu comme une ligne obligatoire allant vers les sessions de jeu.
+
+Le workflow actuel est :
+
+```text
+relire et préserver les analyses ;
+consolider la provenance des concepts ;
+décompacter les notions trop larges, notamment corps ;
+harmoniser les statuts documentaires ;
+requalifier les interdits en zones de bord jouables lorsque c’est musicalement juste ;
+préserver les sources live fixes ;
+maintenir les sources conditionnelles comme conditionnelles ;
+corriger 38–39 ;
+mettre à jour l’index et le snapshot ;
+puis décider entre plusieurs voies possibles.
+```
+
+Voies possibles ensuite :
+
+```text
+analyse documentaire ;
+consolidation des concepts ;
+audit des sources et instruments ;
+préparation de données acoustiques ciblées ;
+révision des contrôles et amplitudes ;
+phase de répétition optionnelle ;
+question technique ciblée ;
+prototypage ultérieur seulement si une fonction est suffisamment stabilisée.
 ```
 
 ## Prochaine étape recommandée
 
-La prochaine étape n’est pas de créer un nouveau concept, un engine profile, un sample, un asset concret ou un prototype.
+La prochaine étape n’est pas de créer un patch, un layout, un mapping, un prototype, un engine profile, un asset concret ou une banque de samples.
 
 La prochaine étape est :
 
 ```text
-jouer les premières sessions,
-remplir le modèle 37,
-puis créer une synthèse d’écoute à partir des prises réelles.
+mettre à jour 00_INDEX_METHODE_DECISIONS.md ;
+mettre à jour REPO_TREE_SNAPSHOT.md ;
+corriger 38–39 pour les reclasser comme supports optionnels ;
+ajouter ensuite, si nécessaire, une fiche spécifique sur le corps comme fonction composée et située.
 ```
