@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v2.3  
+Version : v2.4  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -35,6 +35,7 @@ docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
 docs/modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 docs/assets/14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 docs/assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+docs/assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
 ```
 
 ---
@@ -205,6 +206,7 @@ docs/assets/12_HARMONIC_DRONE_SCENE_TRAJECTORY_NEEDS.md
 docs/assets/13_DOCUMENTATION_MAP_AND_COHERENCE_AUDIT.md
 docs/assets/14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 docs/assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+docs/assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
 ```
 
 ## `docs/assets/source_needs/`
