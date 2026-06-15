@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v1.5  
+Version : v1.6  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -21,7 +21,7 @@ https://api.github.com/repos/Nyoha12/vesperare/git/trees/main?recursive=1
 
 Limite : cette trace est une carte de chemins, pas une preuve que tous les fichiers ont été intégralement relus.
 
-Dernière mise à jour manuelle : après création de `docs/39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md`.
+Dernière mise à jour manuelle : après création et révision de `docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md`, puis mise à jour du README et de `00_INDEX_METHODE_DECISIONS.md`.
 
 ---
 
@@ -36,9 +36,17 @@ checkpoints/checkpoint_maitre_v0_1.md
 
 # 2. Documents racines `docs/`
 
+## 2.1 Documents de navigation, méthode et recentrage
+
 ```text
 docs/00_INDEX_METHODE_DECISIONS.md
 docs/REPO_TREE_SNAPSHOT.md
+docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
+```
+
+## 2.2 Socle phénoménal, stylistique, technique et transversal
+
+```text
 docs/01_CAHIER_DES_PHENOMENES_SONORES.md
 docs/01A_SYNCHRONISATION_PHENOMENES_MODULES.md
 docs/02_SPECIFICATION_MAX_FOR_LIVE.md
@@ -58,6 +66,8 @@ docs/11_AUDIT_COHERENCE_NOTATION_CATEGORIES_RESPONSABILITES.md
 
 # 3. Branche techno organique / contrôle live / scènes ouvertes
 
+## 3.1 Niveau directeur contrôle / temporalité / visualisation
+
 ```text
 docs/12_TECHNO_ORGANIQUE_CADRE_OPERATOIRE.md
 docs/13_CONCEPTS_OPERATOIRES_TECHNO_ORGANIQUE_DEPENDANCES.md
@@ -70,15 +80,30 @@ docs/19_LIVE_CONTROL_LAYERS_AND_PERFORMANCE_STATES.md
 docs/20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
 docs/21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 docs/22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+```
+
+## 3.2 Pont scènes ouvertes / scènes-pivots / modules
+
+```text
 docs/23_SCENES_COMME_CHAMPS_OUVERTS_DE_PERFORMANCE.md
 docs/24_SCENES_PIVOTS_CHAMPS_OUVERTS_PREMIERE_SERIE.md
 docs/25_SCENES_PIVOTS_TO_MODULE_RESPONSIBILITIES_MAP.md
 docs/26_SCENE_PIVOT_MODULE_CONGRUENCE_AUDIT.md
+```
+
+## 3.3 Addenda de synchronisation secondaires
+
+```text
 docs/27_SCENE_PERFORMANCE_CONDUCTOR_SYNC_ADDENDUM.md
 docs/28_CONTEXTUAL_CONTROL_ROUTER_SYNC_ADDENDUM.md
 docs/29_CONFLICT_PROTECTION_MANAGER_SYNC_ADDENDUM.md
 docs/30_OBJECT_REGISTRY_SYNC_ADDENDUM.md
 docs/31_TRAJECTORY_ENGINE_SYNC_ADDENDUM.md
+```
+
+## 3.4 Supports musicaux pratiques et optionnels
+
+```text
 docs/32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
 docs/33_FICHE_PERFORMANCE_CORPS_VIVANT_POLYTEXTURE.md
 docs/34_FICHE_PERFORMANCE_TENSION_ARMEE_PRE_DROP.md
@@ -87,6 +112,14 @@ docs/36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
 docs/37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
 docs/38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
 docs/39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md
+```
+
+Statut à retenir après recentrage :
+
+```text
+32–35 : supports pratiques non directeurs ;
+36–37 : outils optionnels de répétition/écoute ;
+38–39 : supports à corriger/rétrograder, car ils ne doivent pas rendre les essais réels obligatoires.
 ```
 
 ---
@@ -114,7 +147,7 @@ docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
 docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
 ```
 
-Fichiers modules relus directement dans cette session avant l’audit `26` :
+Fichiers modules relus directement pendant l’audit de recentrage :
 
 ```text
 docs/modules/01_OBJECT_REGISTRY.md
