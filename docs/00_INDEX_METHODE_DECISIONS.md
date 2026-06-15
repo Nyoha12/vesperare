@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.5  
+Version : v4.6  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -44,6 +44,7 @@ Audits assets récents :
 ```text
 assets/14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
 ```
 
 ---
@@ -436,7 +437,8 @@ tests fonctionnels ;
 portes de décision ;
 croquis de paramètres ;
 audits de cohérence ;
-données instrumentales manquantes.
+données instrumentales manquantes ;
+correspondances avec outils d’analyse acoustique.
 ```
 
 Documents récents de cette branche :
@@ -444,6 +446,7 @@ Documents récents de cette branche :
 ```text
 14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
 ```
 
 Règles de lecture :
@@ -456,7 +459,8 @@ function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation ;
 loop / repeat / freeze ≠ asset par défaut ;
-donnée instrumentale manquante ≠ collecte obligatoire.
+donnée instrumentale manquante ≠ collecte obligatoire ;
+descripteur acoustique ≠ fonction musicale automatique.
 ```
 
 ## N. Validation, outils et mémoire
@@ -488,7 +492,8 @@ Il doit fonctionner par propagation contrôlée et par voies parallèles possibl
 8. Harmoniser les statuts documentaires.
 9. Corriger les documents pratiques lorsqu’ils deviennent trop directifs.
 10. Auditer source_needs et données instrumentales avant toute collecte.
-11. Ne passer à une question technique ou performative que si le niveau concerné le justifie.
+11. Préparer l’interprétation des sorties AcousticArchive avant création de fiches instrumentales.
+12. Ne passer à une question technique ou performative que si le niveau concerné le justifie.
 ```
 
 Voies possibles ensuite :
@@ -497,7 +502,7 @@ Voies possibles ensuite :
 analyse documentaire ;
 consolidation des concepts ;
 audits des sources et instruments ;
-fiches instrumentales courtes ;
+fiches instrumentales courtes à partir de données réelles ;
 préparation de données acoustiques ciblées ;
 révision des contrôles et amplitudes ;
 phase de répétition optionnelle ;
@@ -560,7 +565,7 @@ Le document `modules/17` harmonise transversalement les modules centraux.
 
 Le document `modules/18` complète individuellement le Router.
 
-Les audits assets `14–15` reclassent les source_needs et données instrumentales sans créer d’asset réel.
+Les audits assets `14–16` reclassent les source_needs, données instrumentales et sorties AcousticArchive sans créer d’asset réel.
 
 Les addenda `27–31` restent utiles mais secondaires.
 
@@ -571,14 +576,11 @@ Les documents `38–39` sont corrigés en supports optionnels.
 Prochaine étape recommandée :
 
 ```text
-créer éventuellement des fiches instrumentales courtes pour :
-- didgeridoo ;
-- guimbardes ;
-- gongs ;
-- tambours sur cadre.
+attendre les premières données AcousticArchive réelles ;
+puis créer des fiches instrumentales courtes à partir de ces données,
+en priorité pour didgeridoo et guimbardes,
+puis gongs et tambours sur cadre.
 ```
-
-Ces fiches ne doivent pas être des assets ni des protocoles d’enregistrement. Elles doivent seulement organiser les connaissances utiles : registre, corps, amplitude, limites, sorties, relations.
 
 Ne pas encore créer :
 
@@ -591,5 +593,7 @@ asset réel ;
 engine profile ;
 nouveau source_need ;
 nouvelle scène ;
-collecte audio obligatoire.
+collecte audio obligatoire ;
+fiche instrumentale vide ;
+seuil fictif.
 ```
