@@ -6,7 +6,7 @@ Le projet vise l’invention d’un genre musical personnel, localement nommé *
 
 ## État actuel
 
-La phase actuelle est une phase de **conception, consolidation et harmonisation avant prototypage**.
+La phase actuelle est une phase de **conception, consolidation, harmonisation et audit préparatoire avant prototypage**.
 
 Le dépôt contient déjà :
 
@@ -20,7 +20,9 @@ schémas de material_assets ;
 scènes ouvertes ;
 scènes-pivots ;
 addenda de synchronisation ;
-supports pratiques de jeu et d’écoute.
+supports pratiques de jeu et d’écoute ;
+audits de cohérence ;
+données instrumentales manquantes prioritaires.
 ```
 
 Le recentrage stratégique est documenté dans :
@@ -46,6 +48,13 @@ docs/19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
 docs/22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
 docs/modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
+```
+
+Le dossier assets a aussi été audité :
+
+```text
+docs/assets/14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
+docs/assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
 ```
 
 Ces documents servent à harmoniser les statuts, les priorités et les corrections à appliquer aux autres fichiers. Ils ne remplacent pas les analyses stylistiques ni les modules déjà existants.
@@ -215,20 +224,11 @@ Le guide transversal `modules/17` relit les modules centraux avec la grille corp
 
 Le dossier `docs/assets` est cartographié par `00_ASSETS_INDEX.md`.
 
-Il contient :
+Documents récents de cette branche :
 
 ```text
-matrices de besoins ;
-protocoles de décision ;
-audit de l’existant réel ;
-source_needs ;
-schémas de material_asset ;
-cas de scène ;
-tests fonctionnels ;
-portes de décision ;
-croquis de paramètres ;
-audit de cohérence ;
-index local assets.
+14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
+15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
 ```
 
 Règle centrale :
@@ -241,7 +241,8 @@ function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation ;
 temporal_object ≠ sample ;
-loop/repeat/freeze ≠ banque.
+loop/repeat/freeze ≠ banque ;
+donnée instrumentale manquante ≠ obligation de collecte immédiate.
 ```
 
 ## Hiérarchie de statut
@@ -259,16 +260,19 @@ NIVEAU 3 — ADDENDA CIBLÉS DE CONTRÔLE
 NIVEAU 4 — PONT
 Scènes ouvertes, scènes-pivots, mapping scènes → modules, audit de congruence.
 
-NIVEAU 5 — ADDENDA DE SYNCHRONISATION
+NIVEAU 5 — ASSETS / SOURCE_NEEDS PRÉPARATOIRES
+14, 15 et dossier docs/assets.
+
+NIVEAU 6 — ADDENDA DE SYNCHRONISATION
 Synchronisations ciblées 27–31.
 
-NIVEAU 6 — SUPPORTS PRATIQUES
+NIVEAU 7 — SUPPORTS PRATIQUES
 Dramaturgies et fiches jouables 32–35.
 
-NIVEAU 7 — OUTILS OPTIONNELS
+NIVEAU 8 — OUTILS OPTIONNELS
 Journal et modèle de session 36–37.
 
-NIVEAU 8 — SUPPORTS OPTIONNELS CORRIGÉS
+NIVEAU 9 — SUPPORTS OPTIONNELS CORRIGÉS
 38–39.
 ```
 
@@ -287,6 +291,8 @@ requalifier les interdits en zones de bord jouables lorsque c’est musicalement
 préserver les sources live fixes ;
 maintenir les sources conditionnelles comme conditionnelles ;
 corriger 38–39 ;
+auditer assets/source_needs ;
+identifier les données instrumentales manquantes ;
 mettre à jour l’index et le snapshot ;
 puis décider entre plusieurs voies possibles.
 ```
@@ -297,6 +303,7 @@ Voies possibles ensuite :
 analyse documentaire ;
 consolidation des concepts ;
 audits des sources et instruments ;
+fiches instrumentales courtes ;
 préparation de données acoustiques ciblées ;
 révision des contrôles et amplitudes ;
 phase de répétition optionnelle ;
@@ -308,13 +315,14 @@ prototypage ultérieur seulement si une fonction est suffisamment stabilisée.
 
 La prochaine étape n’est pas de créer un patch, un layout, un mapping, un prototype, un engine profile, un asset concret ou une banque de samples.
 
-Le paquet de recentrage est maintenant audité et stabilisé.
+Les audits `14–15` sont maintenant posés.
 
 La prochaine étape recommandée est :
 
 ```text
-audit assets/source_needs avec la grille corps / amplitude / limite / sortie / override ;
-puis audit des données instrumentales réellement manquantes.
+créer éventuellement des fiches instrumentales courtes pour didgeridoo, guimbardes, gongs et tambours sur cadre,
+uniquement comme support de connaissance instrumentale,
+sans session obligatoire et sans asset réel.
 ```
 
 Ne pas créer de nouvel addendum de recentrage sans besoin net.
