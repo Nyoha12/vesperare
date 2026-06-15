@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.0  
+Version : v4.1  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -15,7 +15,14 @@ Le document de recentrage stratégique actuel est :
 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Il doit être lu avec ce présent index.
+Deux documents de consolidation complètent ce recentrage :
+
+```text
+41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
+42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+```
+
+Ils doivent être lus avec ce présent index.
 
 ---
 
@@ -103,6 +110,12 @@ ne plus demander globalement : “quelle source porte le corps ?”
 mais : “quelle sous-fonction du corps est portée par quelle source, dans quelle scène, avec quelle amplitude, quelle limite et quelle sortie ?”
 ```
 
+Document de référence :
+
+```text
+41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
+```
+
 ---
 
 # 4. Contrôle : définition directrice
@@ -140,6 +153,12 @@ zones de bascule ;
 risques à rendre visibles ;
 amplitudes dangereuses ;
 situations nécessitant sortie, retrait ou override.
+```
+
+Document de référence :
+
+```text
+42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 ```
 
 ---
@@ -190,6 +209,8 @@ README.md
 00_INDEX_METHODE_DECISIONS.md
 REPO_TREE_SNAPSHOT.md
 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
+41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
+42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 ```
 
 Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow, la trace d’arborescence et le recentrage stratégique.
@@ -311,13 +332,12 @@ non bloquants ;
 
 Rôle actuel : freiner le prototypage prématuré.
 
-Problème : formulation trop forte de l’idée que la suite doit passer par des essais musicaux documentés.
+Problème corrigé en v0.2 : formulation trop forte de l’idée que la suite doit passer par des essais musicaux documentés.
 
 Décision :
 
 ```text
 à conserver comme supports optionnels ;
-à corriger pour retirer l’obligation méthodologique ;
 à ne pas lire comme suite unique du projet.
 ```
 
@@ -411,7 +431,7 @@ Voies possibles ensuite :
 ```text
 analyse documentaire ;
 consolidation des concepts ;
-audit des sources et instruments ;
+audits des sources et instruments ;
 préparation de données acoustiques ciblées ;
 révision des contrôles et amplitudes ;
 phase de répétition optionnelle ;
@@ -466,19 +486,20 @@ Scène ouverte = fonction centrale + bifurcations + protections + sorties.
 
 La branche `12–26` reste intégrée et valide.
 
+Les documents `40–42` consolident le recentrage sans remplacer le socle.
+
 Les addenda `27–31` restent utiles mais secondaires.
 
 Les documents `32–37` restent utiles comme supports pratiques et optionnels.
 
-Les documents `38–39` doivent être corrigés / rétrogradés pour ne plus imposer les essais musicaux comme passage obligé.
+Les documents `38–39` sont corrigés en supports optionnels.
 
 Prochaine étape recommandée :
 
 ```text
 mettre à jour REPO_TREE_SNAPSHOT ;
-corriger 38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md ;
-corriger 39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md ;
-puis envisager une fiche dédiée au corps comme fonction composée et située.
+relire 15–19 et 22 à la lumière de 41–42 ;
+harmoniser ensuite les formulations de contrôle, amplitude, limite et override dans les modules concernés.
 ```
 
 Ne pas encore créer :
