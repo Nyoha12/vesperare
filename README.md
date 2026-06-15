@@ -80,9 +80,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
 36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
 37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
+38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes, fiches de performance jouables et protocole de journal de répétition/écoute. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes, fiches de performance jouables, protocole de journal de répétition/écoute et synthèse des questions musicales à vérifier avant prototype. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -147,6 +148,7 @@ style / influences / techno organique
 → fiches de performance jouables
 → journal de répétition et d’écoute
 → modèle de fiche de session
+→ questions musicales à vérifier avant prototype
 → décision musicale avant prototype
 ```
 
@@ -157,6 +159,7 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est :
 
 ```text
-créer un document de synthèse des questions musicales à vérifier,
-avant toute question de prototype.
+préparer une liste de premières sessions de test,
+avec ordre, durée et conditions minimales,
+pour les trois fiches jouables.
 ```
