@@ -1,6 +1,6 @@
 # 00_ASSETS_INDEX
 
-Version : v0.4  
+Version : v0.5  
 Statut : index local des assets, sources, besoins et tests préparatoires. Sans nouveau besoin sonore, sans ajout de source, sans prototype.
 
 ## Objet
@@ -24,7 +24,8 @@ des tests fonctionnels ;
 des portes de décision ;
 des croquis d’engine ;
 des audits de cohérence ;
-des données instrumentales manquantes.
+des données instrumentales manquantes ;
+des correspondances avec les sorties d’outils d’analyse acoustique.
 ```
 
 Ce document ne couvre pas directement la branche `docs/12–22`, qui concerne le cadre opératoire, les contrôles live, l’infrastructure temporelle et la visualisation contextuelle. Cette branche est désormais cartographiée dans le README et dans `docs/00_INDEX_METHODE_DECISIONS.md`.
@@ -45,7 +46,8 @@ function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation ;
 loop / repeat / freeze ≠ asset par défaut ;
-donnée instrumentale manquante ≠ obligation de collecte immédiate.
+donnée instrumentale manquante ≠ obligation de collecte immédiate ;
+descripteur acoustique ≠ fonction musicale automatique.
 ```
 
 Après l’audit `14`, règle supplémentaire :
@@ -61,6 +63,13 @@ Après `15`, règle supplémentaire :
 ```text
 les données instrumentales manquantes servent à savoir quoi connaître,
 pas à déclencher une session d’enregistrement ni une banque d’assets.
+```
+
+Après `16`, règle supplémentaire :
+
+```text
+les sorties AcousticArchive servent à calibrer et interpréter,
+pas à décider automatiquement d’un asset, d’un sample, d’une scène ou d’un contrôle.
 ```
 
 ---
@@ -115,6 +124,9 @@ pas à déclencher une session d’enregistrement ni une banque d’assets.
 
 15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
 → données minimales à connaître sur didgeridoo, guimbardes, gongs et tambours sur cadre.
+
+16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
+→ correspondance entre sorties AcousticArchive et interprétation Vesperare.
 ```
 
 ---
@@ -191,6 +203,7 @@ besoins esthétiques / phénoménaux
 → audit de cohérence
 → audit source_needs corps/amplitudes/limites
 → données instrumentales manquantes prioritaires
+→ mapping AcousticArchive / Vesperare
 → index local assets
 ```
 
@@ -237,7 +250,20 @@ session d’enregistrement obligatoire.
 
 ---
 
-# 7. Statut de consolidation
+# 7. Décisions issues de 16
+
+```text
+1. AcousticArchive est pertinent comme outil de connaissance instrumentale ;
+2. les descripteurs acoustiques doivent être interprétés musicalement avant usage ;
+3. f0, partiels, centroid, HNR, attaque, decay, vélocité et formants ne sont pas des fonctions musicales en soi ;
+4. chaque donnée doit être reliée à source, fonction, corps, amplitude, limite, sortie et provenance ;
+5. les données fiables et les données de brouillon doivent être distinguées ;
+6. aucune fiche instrumentale vide ne doit être créée avant réception de données réelles.
+```
+
+---
+
+# 8. Statut de consolidation
 
 ```text
 create_assets_index: done
@@ -251,23 +277,21 @@ create_more_source_needs_now: no
 prototype_now: no
 audit_source_needs_recentrage: done
 missing_instrumental_data_priorities: done
+acousticarchive_mapping: done
 ```
 
 ---
 
-# 8. Où reprendre après intégration
+# 9. Où reprendre après intégration
 
-Option recommandée après `15` :
+Option recommandée après `16` :
 
 ```text
-A. créer éventuellement des fiches de données instrumentales courtes pour :
-   - didgeridoo ;
-   - guimbardes ;
-   - gongs ;
-   - tambours sur cadre.
+A. attendre les premières sorties réelles AcousticArchive ;
+B. créer ensuite des fiches instrumentales courtes seulement à partir de données réelles ;
+C. prioriser didgeridoo et guimbardes ;
+D. puis gongs et tambours sur cadre.
 ```
-
-Mais seulement si l’on veut documenter concrètement les instruments disponibles.
 
 À ne pas faire encore :
 
@@ -276,5 +300,6 @@ ouvrir harmonic drone ;
 ouvrir cordes/métaux ;
 créer des samples ;
 créer des assets réels ;
-créer un prototype.
+créer un prototype ;
+créer des fiches instrumentales vides.
 ```
