@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.1  
+Version : v4.2  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -15,14 +15,27 @@ Le document de recentrage stratégique actuel est :
 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Deux documents de consolidation complètent ce recentrage :
+Documents de consolidation associés :
 
 ```text
 41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+43_HARMONISATION_CONTROLES_15_22.md
 ```
 
-Ils doivent être lus avec ce présent index.
+Addenda ciblés de contrôle et visualisation :
+
+```text
+17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
+19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
+22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
+```
+
+Guide transversal modules :
+
+```text
+modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+```
 
 ---
 
@@ -155,10 +168,14 @@ amplitudes dangereuses ;
 situations nécessitant sortie, retrait ou override.
 ```
 
-Document de référence :
+Documents de référence :
 
 ```text
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+43_HARMONISATION_CONTROLES_15_22.md
+17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
+19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
+22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 ```
 
 ---
@@ -202,7 +219,7 @@ ne pas faire passer une fiche pratique pour une obligation méthodologique.
 
 # 6. Organisation documentaire actuelle
 
-## A. Documents directeurs
+## A. Documents directeurs et consolidation transversale
 
 ```text
 README.md
@@ -211,6 +228,7 @@ REPO_TREE_SNAPSHOT.md
 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+43_HARMONISATION_CONTROLES_15_22.md
 ```
 
 Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow, la trace d’arborescence et le recentrage stratégique.
@@ -244,11 +262,14 @@ Rôle : organiser les grands nœuds qui traversent les phénomènes et la techni
 15_LIVE_CONTROL_REQUIREMENTS_MATRIX.md
 16_LIVE_CONTROL_MATRIX_PERFORMABILITY_AUDIT.md
 17_LIVE_CONTROL_REQUIREMENTS_MATRIX_REDUCED.md
+17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
 18_LIVE_CONTROL_DECISION_QUESTIONS_BEFORE_LAYERS.md
 19_LIVE_CONTROL_LAYERS_AND_PERFORMANCE_STATES.md
+19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
 20_TEMPORAL_INFRASTRUCTURE_MEASURE_LOOP_REPEAT_FREEZE.md
 21_TEMPORAL_INFRASTRUCTURE_DECISION_QUESTIONS.md
 22_CONTEXTUAL_VISUALIZATION_REQUIREMENTS.md
+22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 ```
 
 Rôle : formaliser le contexte pratique du projet — système de génération / traitement sonore, interface de contrôle, cadre de performance, infrastructure temporelle et visualisation — sans encore créer de prototype.
@@ -284,7 +305,15 @@ ils ne remplacent pas les modules initiaux ;
 ils ne sont pas une nouvelle architecture autonome.
 ```
 
-## G. Supports musicaux pratiques
+## G. Harmonisation transversale des modules centraux
+
+```text
+modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+```
+
+Rôle : relire les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override.
+
+## H. Supports musicaux pratiques
 
 ```text
 32_SCENES_PIVOTS_DRAMATURGIES_MUSICALES.md
@@ -305,7 +334,7 @@ non bloquants pour l’analyse ;
 activables si une phase de jeu ou de répétition est engagée.
 ```
 
-## H. Outils optionnels de répétition et d’écoute
+## I. Outils optionnels de répétition et d’écoute
 
 ```text
 36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
@@ -323,25 +352,16 @@ non bloquants ;
 à utiliser seulement si une répétition ou une écoute enregistrée est réellement engagée.
 ```
 
-## I. Documents à corriger / rétrograder
+## J. Supports optionnels corrigés
 
 ```text
 38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
 39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md
 ```
 
-Rôle actuel : freiner le prototypage prématuré.
+Rôle : freiner le prototypage prématuré sans imposer une voie unique par sessions réelles.
 
-Problème corrigé en v0.2 : formulation trop forte de l’idée que la suite doit passer par des essais musicaux documentés.
-
-Décision :
-
-```text
-à conserver comme supports optionnels ;
-à ne pas lire comme suite unique du projet.
-```
-
-## J. Documents phénoménologiques et techniques de transfert
+## K. Documents phénoménologiques et techniques de transfert
 
 ```text
 01_CAHIER_DES_PHENOMENES_SONORES.md
@@ -353,7 +373,7 @@ Décision :
 
 Rôle : convertir les décisions stylistiques et transversales en phénomènes sonores manipulables, puis en architecture Max for Live / Ableton Live.
 
-## K. Spécifications détaillées et audits de modules
+## L. Spécifications détaillées et audits de modules
 
 ```text
 /docs/modules/
@@ -361,7 +381,7 @@ Rôle : convertir les décisions stylistiques et transversales en phénomènes s
 
 Rôle : développer progressivement les modules décrits dans `02_SPECIFICATION_MAX_FOR_LIVE`, auditer leurs interfaces avant prototypage, puis préparer les données nécessaires aux instruments, sources, samples, engines et assets.
 
-## L. Préparation des sources, samples et assets
+## M. Préparation des sources, samples et assets
 
 ```text
 /docs/assets/00_ASSETS_INDEX.md
@@ -395,7 +415,7 @@ engine_sketch ≠ implémentation ;
 loop / repeat / freeze ≠ asset par défaut.
 ```
 
-## M. Validation, outils et mémoire
+## N. Validation, outils et mémoire
 
 ```text
 03_VALIDATION_TESTS_EXTENSIONS.md
@@ -486,7 +506,11 @@ Scène ouverte = fonction centrale + bifurcations + protections + sorties.
 
 La branche `12–26` reste intégrée et valide.
 
-Les documents `40–42` consolident le recentrage sans remplacer le socle.
+Les documents `40–43` consolident le recentrage sans remplacer le socle.
+
+Les addenda `17A`, `19A`, `22A` harmonisent les contrôles, états et visualisation sans réécrire les documents originaux.
+
+Le document `modules/17` harmonise transversalement les modules centraux.
 
 Les addenda `27–31` restent utiles mais secondaires.
 
@@ -497,9 +521,8 @@ Les documents `38–39` sont corrigés en supports optionnels.
 Prochaine étape recommandée :
 
 ```text
-mettre à jour REPO_TREE_SNAPSHOT ;
-relire 15–19 et 22 à la lumière de 41–42 ;
-harmoniser ensuite les formulations de contrôle, amplitude, limite et override dans les modules concernés.
+décider si les modules Router / Conductor / Conflict nécessitent chacun un addendum individuel,
+ou si le guide transversal des modules suffit pour l’instant.
 ```
 
 Ne pas encore créer :
