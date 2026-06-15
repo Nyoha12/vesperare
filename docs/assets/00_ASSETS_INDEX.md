@@ -1,6 +1,6 @@
 # 00_ASSETS_INDEX
 
-Version : v0.2  
+Version : v0.3  
 Statut : index local des assets, sources, besoins et tests préparatoires. Sans nouveau besoin sonore, sans ajout de source, sans prototype.
 
 ## Objet
@@ -44,6 +44,14 @@ function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation ;
 loop / repeat / freeze ≠ asset par défaut.
+```
+
+Après l’audit `14`, règle supplémentaire :
+
+```text
+un source_need ouvert ne devient pas automatiquement un axe de recherche actif ;
+un besoin conditionnel ne devient pas une décision ;
+un axe prioritaire ancien doit être repondéré par corps / amplitude / limite / sortie / override.
 ```
 
 ---
@@ -92,6 +100,9 @@ loop / repeat / freeze ≠ asset par défaut.
 
 13_DOCUMENTATION_MAP_AND_COHERENCE_AUDIT.md
 → audit de cohérence documentaire après accumulation.
+
+14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
+→ audit des source_needs existants avec la grille corps / amplitude / limite / sortie / override.
 ```
 
 ---
@@ -147,7 +158,7 @@ HARMONIC_DRONE_ENGINE_PARAMETER_SKETCH.md
 
 ---
 
-# 4. Workflow assets actuel
+# 4. Workflow assets actuel corrigé
 
 ```text
 besoins esthétiques / phénoménaux
@@ -166,6 +177,7 @@ besoins esthétiques / phénoménaux
 → decision gate
 → croquis de paramètres
 → audit de cohérence
+→ audit source_needs corps/amplitudes/limites
 → index local assets
 ```
 
@@ -183,7 +195,22 @@ modules définitifs.
 
 ---
 
-# 5. Statut de consolidation
+# 5. Décisions issues de l’audit 14
+
+```text
+1. didgeridoo et guimbardes restent sources fixes live prioritaires ;
+2. sub / pressure engine reste engine central, pas sample ;
+3. gong et tambour restent optionnels avec compensations conditionnelles ;
+4. voix et field recordings restent conditionnels ;
+5. harmonic drone, cordes frottées et métaux accordés restent ouverts mais non automatiques ;
+6. aucun nouveau source_need ne doit être créé maintenant ;
+7. aucun asset réel ne doit être créé maintenant ;
+8. la prochaine étape est l’identification des données instrumentales manquantes prioritaires.
+```
+
+---
+
+# 6. Statut de consolidation
 
 ```text
 create_assets_index: done
@@ -195,24 +222,43 @@ continue_harmonic_drone_branch_now: no
 create_engine_profile_now: no
 create_more_source_needs_now: no
 prototype_now: no
+audit_source_needs_recentrage: done
 ```
 
 ---
 
-# 6. Où reprendre après intégration
+# 7. Où reprendre après intégration
 
-Options réalistes :
+Option recommandée après l’audit 14 :
 
 ```text
-A. revenir aux autres priorités hautes : cordes frottées et métaux accordés ;
-B. revenir aux scènes globales et trajectoires ;
-C. relier contrôle live / infrastructure temporelle / visualisation aux modules existants ;
-D. créer des fiches material_asset individuelles pour didgeridoo/guimbardes si besoin réel ;
-E. continuer harmonic drone seulement si une question précise l’exige.
+A. créer 15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
 ```
 
-Décision provisoire :
+Objectif : lister uniquement les données à relever sur :
 
 ```text
-ne pas reprendre l’axe harmonic drone ni créer de nouveau concept avant choix d’un axe ciblé.
+didgeridoo ;
+guimbardes ;
+gongs ;
+tambours sur cadre.
+```
+
+Sans imposer :
+
+```text
+session de jeu ;
+enregistrement complet ;
+collecte d’assets ;
+banque de samples ;
+prototype ;
+achat de sources.
+```
+
+Options reportées :
+
+```text
+B. reprendre harmonic drone seulement si une scène ou fonction le justifie ;
+C. ouvrir cordes/métaux seulement si un manque confirmé apparaît ;
+D. créer des assets réels seulement après données instrumentales et besoin validé.
 ```
