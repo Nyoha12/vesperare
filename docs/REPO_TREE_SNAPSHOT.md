@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v1.3  
+Version : v1.4  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -21,7 +21,7 @@ https://api.github.com/repos/Nyoha12/vesperare/git/trees/main?recursive=1
 
 Limite : cette trace est une carte de chemins, pas une preuve que tous les fichiers ont été intégralement relus.
 
-Dernière mise à jour manuelle : après création de `docs/37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md`.
+Dernière mise à jour manuelle : après création de `docs/38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md`.
 
 ---
 
@@ -85,6 +85,7 @@ docs/34_FICHE_PERFORMANCE_TENSION_ARMEE_PRE_DROP.md
 docs/35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
 docs/36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
 docs/37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
+docs/38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
 ```
 
 ---
