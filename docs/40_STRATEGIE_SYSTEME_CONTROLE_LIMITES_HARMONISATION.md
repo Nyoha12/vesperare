@@ -1,20 +1,22 @@
 # 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION
 
-Version : v0.1  
+Version : v0.2  
 Statut : document de recentrage stratégique et d’harmonisation. Sans patch, sans mapping, sans prototype, sans asset réel.
 
 ## Objet
 
-Ce document recentre la stratégie actuelle de Vesperare après relecture des documents existants.
+Ce document recentre la stratégie actuelle de Vesperare après relecture des documents existants et après clarification critique de plusieurs notions centrales.
 
 Il ne crée pas une nouvelle couche conceptuelle autonome.  
-Il sert à harmoniser les documents existants autour de quatre points devenus prioritaires :
+Il sert à harmoniser les documents existants autour de six points devenus prioritaires :
 
 ```text
 1. la provenance précise des concepts musicaux ;
-2. la notion de contrôle comme accès efficace au style ;
-3. les limites comme zones de bord jouables, pas comme interdits fermés ;
-4. la hiérarchie des documents : socle, pont, addendum, pratique, conditionnel.
+2. la notion de corps comme faisceau de phénomènes stylistiques, perceptifs et instrumentaux ;
+3. la notion de contrôle comme accès efficace aux dimensions stylistiques pertinentes ;
+4. les amplitudes comme plages de jeu, pas comme valeurs neutres ;
+5. les limites comme zones de bord jouables, pas comme interdits fermés ;
+6. la hiérarchie des documents : socle, pont, addendum, pratique, conditionnel.
 ```
 
 ---
@@ -49,48 +51,145 @@ les source_needs sont bien conditionnés ;
 mais certains documents récents ont trop transformé une possibilité de test en passage obligé.
 ```
 
+Correction générale :
+
+```text
+consolider les statuts ;
+réouvrir les concepts trop compactés ;
+préserver les analyses fines ;
+ne pas convertir trop vite une incertitude conceptuelle en test instrumental ;
+ne pas convertir trop vite une fiche pratique en méthode obligatoire.
+```
+
 ---
 
 # 2. Notion de corps : statut corrigé
 
 La notion de **corps** ne doit pas être considérée comme une abstraction vague.
 
-Elle vient de plusieurs analyses stylistiques et phénoménologiques :
+Elle ne doit pas non plus être réduite à une simple macro-fonction ou à une liste de paramètres.
+
+Elle vient d’un faisceau d’analyses stylistiques, phénoménologiques, perceptives, instrumentales et sensibles.
 
 ```text
-techno : danse, pression, impact, répétition, hypnose, corps collectif ;
-dubstep : attente, sub, tension, résolution différée ;
-trance : suspension, expansion, montée longue, peak non brutal ;
-acid : torsion, ligne vivante, mutation timbrale ;
-jazz : tension, couleur, placement, jeu de relations ;
-style personnel : techno naturalisée, corps, pression, beauté, live, non-décor.
+techno : danse, pression, impact, répétition, hypnose, continuité physique, corps collectif ;
+dubstep : attente, sub, masse, retenue, résolution différée, physicalité du manque ;
+trance : suspension active, expansion, montée longue, peak non brutal, continuité perceptive ;
+acid : torsion, ligne vivante, mutation timbrale, corps affecté par le filtre et la répétition ;
+jazz : tension, couleur, placement, respiration, micro-relations, écoute du seuil ;
+style personnel : techno naturalisée, sources live, pression, beauté, non-décor, retour au corps.
 ```
 
-Le mot `corps` doit donc être ré-ouvert en sous-fonctions.
+À cela s’ajoutent les analyses extérieures ou comparatives précédemment approuvées dans le projet, lorsqu’elles ont servi à préciser :
 
 ```text
-corps-pression : masse, grave, vibration, air déplacé ;
+le rapport entre grave et physicalité ;
+la différence entre pression et impact ;
+la tension corporelle produite par l’attente ;
+la suspension qui reste active ;
+la répétition comme transformation perceptive ;
+le danger de la texture décorative ;
+le lien entre corps, danse, écoute et seuil.
+```
+
+Ces apports extérieurs doivent être reliés explicitement aux documents où ils apparaissent lorsqu’ils sont retrouvés ou consolidés. Ils ne doivent pas être effacés par une définition trop abstraite du corps.
+
+## 2.1 Le corps comme faisceau, pas comme objet unique
+
+Le mot `corps` doit être ré-ouvert en sous-fonctions, mais ces sous-fonctions ne remplacent pas les ressentis d’origine.
+
+```text
+corps-pression : masse, grave, vibration, air déplacé, densité physique ;
 corps-impact : attaque, peau, coup, seuil, réincorporation ;
 corps-pulsation : danse possible, appui, périodicité, mesure sentie ;
 corps-geste : souffle, bouche, main, effort humain, live agency ;
 corps-ancrage : centre perceptif, stabilité, lisibilité du bas ;
+corps-attente : tension physique produite par une résolution retardée ;
+corps-hypnose : maintien d’un engagement corporel par répétition active ;
 corps-retour : capacité à revenir d’une suspension ou abstraction vers une prise physique ;
 corps-limite : garde-fou contre ambientisation, décor, pure texture ou perte de fonction.
 ```
 
-Conséquence :
+La consolidation ne doit donc pas dire :
 
 ```text
-Il ne faut plus poser la question :
-“est-ce que le didgeridoo + les guimbardes portent le corps ?”
+corps = sub ;
+corps = grave ;
+corps = impact ;
+corps = live ;
+corps = danse.
+```
+
+Elle doit dire :
+
+```text
+corps = relation dynamique entre pression, impact, pulsation, geste, ancrage, attente, hypnose, retour et limite.
+```
+
+## 2.2 Conséquence méthodologique
+
+Il ne faut plus poser la question générale :
+
+```text
+est-ce que le didgeridoo + les guimbardes portent le corps ?
+```
 
 Il faut poser :
-“quelle sous-fonction du corps est portée par quelle source, dans quelle scène, avec quelle limite ?”
+
+```text
+quelle sous-fonction du corps est portée par quelle source,
+dans quelle scène,
+avec quelle intensité,
+avec quelle amplitude,
+avec quel risque,
+et avec quelle possibilité de retour ou de dépassement ?
+```
+
+Exemples :
+
+```text
+corps-geste : didgeridoo + guimbardes probablement très forts ;
+corps-pression : didgeridoo fort, sub probablement nécessaire comme centre physique stable ;
+corps-impact : tambour, gong, transitoires ou engine d’impact probablement nécessaires ;
+corps-pulsation : guimbardes et repeats peuvent aider, mais risque de rigidification ;
+corps-retour : dépend des scènes, des sorties et des contrastes ;
+corps-limite : dépend de la capacité à éviter ou assumer ambientisation, décor, texture pure.
 ```
 
 ---
 
-# 3. Contrôle : définition stratégique corrigée
+# 3. Niveaux de provenance et de preuve
+
+Chaque notion centrale doit être située selon son niveau de provenance.
+
+```text
+ACQUIS STYLISTIQUE
+Résultat issu des analyses techno, dubstep, trance, acid, jazz, style personnel.
+
+ANALYSE PHÉNOMÉNALE
+Description de sensations, fonctions, tensions, comportements perceptifs.
+
+ANALYSE EXTÉRIEURE APPROUVÉE
+Apport comparatif ou théorique accepté précédemment dans le projet.
+
+DONNÉE INSTRUMENTALE
+Information sur didgeridoo, guimbardes, gong, tambour, captation, spectre, jeu, disponibilité.
+
+DÉRIVÉ OPÉRATOIRE
+Conséquence pour scène, module, contrôle, trajectoire, protection.
+
+HYPOTHÈSE CONDITIONNELLE
+Piste de source, asset, engine, field recording, voix, harmonic drone, cordes, métaux.
+
+BROUILLON PRATIQUE
+Fiche de jeu, protocole de répétition, plan de session.
+```
+
+Les documents doivent éviter de faire passer un dérivé opératoire ou un brouillon pratique pour un acquis stylistique.
+
+---
+
+# 4. Contrôle : définition stratégique corrigée
 
 Le système n’a pas pour rôle de produire une musique correcte à la place du musicien.
 
@@ -119,9 +218,71 @@ laisser l’override humain prioritaire.
 
 Le Router, le Conductor, le Conflict Manager et l’Object Registry doivent donc être harmonisés autour de cette idée.
 
+## 4.1 Contrôle et style
+
+Le système ne doit pas donner accès à tous les paramètres de manière brute.
+
+Il doit sélectionner et organiser les paramètres qui modifient réellement :
+
+```text
+corps ;
+pression ;
+impact ;
+hypnose ;
+répétition active ;
+tension longue ;
+suspension active ;
+retour au corps ;
+polytexture ;
+source live ;
+limite esthétique ;
+sortie formelle.
+```
+
+Le but est l’efficacité stylistique :
+
+```text
+moins de gestion ;
+plus de puissance musicale ;
+moins de paramètres inutiles ;
+plus d’accès aux zones sensibles ;
+moins de décor ;
+plus de décision.
+```
+
 ---
 
-# 4. Limites, risques et interdits : requalification
+# 5. Amplitudes : le contrôle comme plage de variation
+
+Un contrôle n’est pas seulement `on/off` ou `0–1`.
+
+Chaque contrôle important doit avoir des amplitudes musicales pensées.
+
+```text
+amplitude minimale : apparition discrète de la fonction ;
+amplitude efficace : zone où la fonction agit clairement ;
+amplitude expressive : zone où la fonction devient plus tendue ou plus forte ;
+amplitude de bord : zone où la fonction risque de basculer ;
+amplitude dangereuse : zone où une fonction centrale est menacée ;
+amplitude override : zone autorisée seulement si le musicien assume le dépassement.
+```
+
+Exemples :
+
+```text
+Pressure : discret → porteur → massif → écrasant → override.
+Polytexture density : articulée → dense → saturée → confuse → override.
+Halo : trace → espace → suspension → ambientisation → override.
+Repeat : articulation → hypnose → seuil → effet démonstratif → override.
+Freeze : exposition brève → suspension → drone → stase → override.
+Sub : soutien → centre → pression → masque → override.
+```
+
+Le système doit donc concevoir les contrôles comme des gestes à amplitude, non comme des interdictions binaires.
+
+---
+
+# 6. Limites, risques et interdits : requalification
 
 Les documents précédents utilisent souvent les mots :
 
@@ -195,7 +356,7 @@ la bascule produit plus d’impact au lieu de dissoudre la forme.
 
 ---
 
-# 5. Grammaire des zones de contrôle
+# 7. Grammaire des zones de contrôle
 
 Pour harmoniser les amplitudes, chaque contrôle important devrait pouvoir être pensé selon cinq zones.
 
@@ -234,11 +395,11 @@ meilleure intelligibilité des limites.
 
 ---
 
-# 6. Incertitudes : conceptuelles, instrumentales, performatives
+# 8. Incertitudes : conceptuelles, instrumentales, performatives
 
 Toutes les incertitudes ne demandent pas des tests instrumentaux réels.
 
-## 6.1 Incertitudes conceptuelles
+## 8.1 Incertitudes conceptuelles
 
 Elles demandent d’abord clarification documentaire.
 
@@ -248,9 +409,10 @@ quel type de retour au corps ?
 quand une suspension devient-elle décor ?
 quand un interdit devient-il une zone fertile ?
 quelle fonction techno est réellement préservée ?
+quelle part vient d’une analyse stylistique, d’un ressenti, d’une donnée instrumentale ou d’une hypothèse ?
 ```
 
-## 6.2 Incertitudes instrumentales
+## 8.2 Incertitudes instrumentales
 
 Elles demandent des données acoustiques, mesures ou captations ciblées.
 
@@ -267,7 +429,7 @@ dynamique de captation ;
 conflit bas-médium.
 ```
 
-## 6.3 Incertitudes performatives
+## 8.3 Incertitudes performatives
 
 Elles peuvent être explorées par répétition, mais ne doivent pas bloquer l’analyse.
 
@@ -289,9 +451,9 @@ Ne pas demander au jeu de résoudre ce qui doit d’abord être distingué conce
 
 ---
 
-# 7. Hiérarchie documentaire corrigée
+# 9. Hiérarchie documentaire corrigée
 
-## 7.1 Niveau directeur fort
+## 9.1 Niveau directeur fort
 
 ```text
 05, 06 : analyses stylistiques ;
@@ -304,7 +466,7 @@ source_needs live fixes et sub ;
 assets index / protocole assets.
 ```
 
-## 7.2 Pont conceptuel valide
+## 9.2 Pont conceptuel valide
 
 ```text
 23 : scènes comme champs ouverts ;
@@ -313,7 +475,7 @@ assets index / protocole assets.
 26 : audit de congruence.
 ```
 
-## 7.3 Addenda utiles mais secondaires
+## 9.3 Addenda utiles mais secondaires
 
 ```text
 27–31 : synchronisation ciblée des modules avec les décisions récentes.
@@ -321,7 +483,7 @@ assets index / protocole assets.
 
 Ils ne remplacent pas les modules initiaux.
 
-## 7.4 Supports musicaux pratiques
+## 9.4 Supports musicaux pratiques
 
 ```text
 32 : dramaturgies musicales ;
@@ -330,7 +492,7 @@ Ils ne remplacent pas les modules initiaux.
 
 Ils peuvent aider le travail musical, mais ne sont pas des documents directeurs.
 
-## 7.5 Outils optionnels de répétition
+## 9.5 Outils optionnels de répétition
 
 ```text
 36–37 : journal et modèle de session.
@@ -338,7 +500,7 @@ Ils peuvent aider le travail musical, mais ne sont pas des documents directeurs.
 
 Ils ne doivent pas devenir passage obligé.
 
-## 7.6 Documents à rétrograder / corriger
+## 9.6 Documents à rétrograder / corriger
 
 ```text
 38–39 : questions et premières sessions.
@@ -356,11 +518,26 @@ le travail analytique, documentaire, instrumental et systémique peut continuer 
 
 ---
 
-# 8. Harmonisation à appliquer aux autres documents
+# 10. Harmonisation à appliquer aux autres documents
 
-## 8.1 Remplacer les formulations trop fermées
+## 10.1 Ne pas appliquer brutalement
 
-À remplacer :
+Ce document n’autorise pas une réécriture totale du dépôt.
+
+Il doit servir à :
+
+```text
+corriger les statuts ;
+réduire les ambiguïtés ;
+protéger les analyses fines ;
+réouvrir les concepts trop compactés ;
+harmoniser les documents de navigation ;
+rétrograder les documents pratiques quand ils deviennent trop directifs.
+```
+
+## 10.2 Remplacer les formulations trop fermées
+
+À surveiller :
 
 ```text
 interdit ;
@@ -371,7 +548,7 @@ source non autorisée ;
 risque = erreur.
 ```
 
-Par formulations graduées :
+Par formulations graduées lorsque cela correspond mieux à l’intention musicale :
 
 ```text
 zone de bord ;
@@ -384,7 +561,17 @@ nécessite override ;
 à limiter si la fonction principale est menacée.
 ```
 
-## 8.2 Ajouter la notion d’amplitude
+Certains interdits peuvent rester stricts lorsqu’ils concernent une confusion de statut ou une sécurité méthodologique :
+
+```text
+sample bank non validée ;
+prototype sans fonction ;
+loop remplaçant live sans décision ;
+freeze sans release ;
+asset concret sans source_need ni décision.
+```
+
+## 10.3 Ajouter la notion d’amplitude
 
 Chaque contrôle important devrait distinguer :
 
@@ -396,7 +583,7 @@ amplitude dangereuse ;
 amplitude override.
 ```
 
-## 8.3 Ajouter la provenance des concepts
+## 10.4 Ajouter la provenance des concepts
 
 Les documents qui utilisent :
 
@@ -416,6 +603,8 @@ devraient rappeler s’ils parlent de :
 
 ```text
 acquis stylistique ;
+analyse phénoménale ;
+analyse extérieure approuvée ;
 dérivé opératoire ;
 fonction de scène ;
 contrôle live ;
@@ -425,7 +614,7 @@ protection ;
 zone de bord.
 ```
 
-## 8.4 Rétrograder les documents pratiques
+## 10.5 Rétrograder les documents pratiques
 
 Les documents 32–39 doivent indiquer clairement :
 
@@ -439,7 +628,7 @@ utilisable seulement si une phase de répétition est réellement engagée.
 
 ---
 
-# 9. Décision actuelle
+# 11. Décision actuelle
 
 La stratégie actuelle doit être harmonisée autour de cette formule :
 
@@ -457,7 +646,7 @@ mise à jour de README ;
 mise à jour de 00_INDEX_METHODE_DECISIONS ;
 rétrogradation explicite de 32–39 ;
 révision du vocabulaire des interdits ;
-ajout éventuel d’une fiche dédiée au corps comme fonction composée ;
+ajout éventuel d’une fiche dédiée au corps comme fonction composée et située ;
 ajout éventuel d’une fiche dédiée aux zones de limites jouables.
 ```
 
