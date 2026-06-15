@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v2.0  
+Version : v2.1  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -31,6 +31,7 @@ docs/17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
 docs/19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
 docs/22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+docs/modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
 ---
@@ -162,6 +163,7 @@ docs/modules/14_SOUND_ENGINE_MAPPER_CONFLICT_ROUTER_INTERFACE.md
 docs/modules/15_AUDIT_COHERENCE_SOURCES_SAMPLES_ENGINES_RECENTS.md
 docs/modules/16_SOURCE_NEEDS_ASSET_DATABASE_PROTOCOL.md
 docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+docs/modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
 Fichiers modules relus directement pendant l’audit de recentrage :
