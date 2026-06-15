@@ -78,9 +78,10 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 33_FICHE_PERFORMANCE_CORPS_VIVANT_POLYTEXTURE.md
 34_FICHE_PERFORMANCE_TENSION_ARMEE_PRE_DROP.md
 35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
+36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
 ```
 
-Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes et fiches de performance jouables. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
+Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes, fiches de performance jouables et protocole de journal de répétition/écoute. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
 
 ### Modules
 
@@ -142,10 +143,9 @@ style / influences / techno organique
 → audit de congruence scènes-pivots / modules
 → synchronisation modules centraux
 → dramaturgies musicales des scènes-pivots
-→ fiche de performance jouable : Corps vivant / polytexture
-→ fiche de performance jouable : Tension armée / pré-drop
-→ fiche de performance jouable : Suspension / matière / retour
+→ fiches de performance jouables
 → journal de répétition et d’écoute
+→ décision musicale avant prototype
 ```
 
 ## Prochaine étape recommandée
@@ -155,6 +155,6 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est :
 
 ```text
-créer un protocole de journal de répétition et d’écoute
-pour comparer les trois fiches jouables sans prototypage.
+créer un modèle de fiche de session remplissable,
+à copier après chaque répétition.
 ```
