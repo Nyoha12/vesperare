@@ -4,6 +4,8 @@ $ErrorActionPreference = "Stop"
 
 $required = @(
     "AGENTS.md",
+    "ai_method/README.md",
+    "ai_method/QUICKSTART.md",
     "ai_method/00_METHOD_OVERVIEW.md",
     "ai_method/01_SESSION_PROTOCOL.md",
     "ai_method/02_SPEC_VERIFIER_ENVIRONMENT.md",
