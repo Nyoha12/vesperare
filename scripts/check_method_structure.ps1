@@ -14,6 +14,7 @@ $required = @(
     "ai_method/07_GUARDRAILS_AND_PERMISSIONS.md",
     "ai_method/08_AUTOMATION_VS_AUGMENTATION.md",
     "ai_method/09_TEMPLATES.md",
+    "ai_method/10_STARTING_A_SESSION.md",
     "skills/project-intake/SKILL.md",
     "skills/write-spec/SKILL.md",
     "skills/verify-output/SKILL.md",
@@ -25,7 +26,10 @@ $required = @(
     "evals/checklists/SKILL_QUALITY_CHECKLIST.md",
     "evals/checklists/SOURCE_INGESTION_CHECKLIST.md",
     "evals/checklists/SESSION_END_CHECKLIST.md",
-    "evals/rubrics/AUTOMATION_RISK_RUBRIC.md"
+    "evals/rubrics/AUTOMATION_RISK_RUBRIC.md",
+    "scripts/check_branch_safety.ps1",
+    "scripts/new_session_log.ps1",
+    "scripts/method_status.ps1"
 )
 
 $missing = @()
