@@ -29,7 +29,14 @@ Le recentrage stratégique est documenté dans :
 docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Ce document est désormais la référence pour harmoniser les statuts, les priorités et les corrections à appliquer aux autres fichiers.
+Deux fiches de consolidation précisent les points les plus sensibles :
+
+```text
+docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
+docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
+```
+
+Ces documents servent à harmoniser les statuts, les priorités et les corrections à appliquer aux autres fichiers. Ils ne remplacent pas les analyses stylistiques ni les modules déjà existants.
 
 ## Principes retenus
 
@@ -65,15 +72,17 @@ Ces limites ne sont pas toujours des interdits absolus. Elles doivent être pens
 
 ## Carte documentaire
 
-### Documents directeurs de navigation
+### Documents directeurs de navigation et recentrage
 
 ```text
 00_INDEX_METHODE_DECISIONS.md
 REPO_TREE_SNAPSHOT.md
 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
+41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
+42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 ```
 
-Méthode, décisions, vocabulaire, organisation documentaire, workflow, trace d’arborescence et recentrage stratégique.
+Méthode, décisions, vocabulaire, organisation documentaire, workflow, trace d’arborescence, recentrage stratégique et consolidation des notions sensibles.
 
 ### Socle stylistique, phénoménal et architectural
 
@@ -154,14 +163,14 @@ Ces fichiers sont utiles comme supports de jeu, d’écoute ou de réflexion dra
 
 Ces fichiers sont activables si une phase de répétition ou d’écoute enregistrée est engagée. Ils ne constituent pas un passage obligé.
 
-### Documents à corriger / rétrograder
+### Documents optionnels corrigés / rétrogradés
 
 ```text
 38_QUESTIONS_MUSICALES_A_VERIFIER_AVANT_PROTOTYPE.md
 39_PREMIERES_SESSIONS_TEST_SCENES_PIVOTS.md
 ```
 
-Ces documents freinent correctement le prototypage, mais formulent trop fortement l’idée que le projet doit passer maintenant par des essais musicaux documentés. Ils doivent être relus comme supports optionnels, non comme méthode obligatoire.
+Ces documents freinent correctement le prototypage, mais doivent être lus comme supports optionnels, non comme méthode obligatoire.
 
 ### Modules
 
@@ -215,19 +224,22 @@ loop/repeat/freeze ≠ banque.
 NIVEAU 1 — DIRECTEUR
 Analyses stylistiques, cahier des phénomènes, cadres opératoires, exigences système, modules centraux.
 
-NIVEAU 2 — PONT
+NIVEAU 2 — CONSOLIDATION TRANSVERSALE
+40, 41, 42.
+
+NIVEAU 3 — PONT
 Scènes ouvertes, scènes-pivots, mapping scènes → modules, audit de congruence.
 
-NIVEAU 3 — ADDENDA
+NIVEAU 4 — ADDENDA
 Synchronisations ciblées 27–31.
 
-NIVEAU 4 — SUPPORTS PRATIQUES
+NIVEAU 5 — SUPPORTS PRATIQUES
 Dramaturgies et fiches jouables 32–35.
 
-NIVEAU 5 — OUTILS OPTIONNELS
+NIVEAU 6 — OUTILS OPTIONNELS
 Journal et modèle de session 36–37.
 
-NIVEAU 6 — À CORRIGER / RÉTROGRADER
+NIVEAU 7 — SUPPORTS OPTIONNELS CORRIGÉS
 38–39.
 ```
 
@@ -270,8 +282,7 @@ La prochaine étape n’est pas de créer un patch, un layout, un mapping, un pr
 La prochaine étape est :
 
 ```text
-mettre à jour 00_INDEX_METHODE_DECISIONS.md ;
-mettre à jour REPO_TREE_SNAPSHOT.md ;
-corriger 38–39 pour les reclasser comme supports optionnels ;
-ajouter ensuite, si nécessaire, une fiche spécifique sur le corps comme fonction composée et située.
+relire 15–19 et 22 à la lumière de 41–42 ;
+harmoniser les formulations des contrôles, amplitudes, limites et override ;
+puis relire les modules Router / Conductor / Conflict / Registry / Trajectory pour vérifier l’intégration.
 ```
