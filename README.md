@@ -44,6 +44,7 @@ docs/17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
 docs/19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
 docs/22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+docs/modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
 Ces documents servent à harmoniser les statuts, les priorités et les corrections à appliquer aux autres fichiers. Ils ne remplacent pas les analyses stylistiques ni les modules déjà existants.
@@ -194,13 +195,14 @@ Ces documents freinent correctement le prototypage, mais doivent être lus comme
 
 Le dossier `docs/modules` contient les spécifications détaillées et audits d’interface : Object Registry, Trajectory Engine, Scene / Performance Conductor, Contextual Control Router, Conflict / Protection Manager, Pitch / Harmonic Field Manager, Timbre & Material Mapper, Sound Engines / Instruments, Source Needs / Asset Database Protocol et leurs interfaces.
 
-Addendum transversal actuel :
+Addenda module actuels :
 
 ```text
 /docs/modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
+/docs/modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
-Il relit les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override.
+Le guide transversal `modules/17` relit les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override. L’addendum `modules/18` précise le Router, car c’est le module qui rend ces limites et amplitudes jouables.
 
 ### Sources, besoins et assets
 
@@ -250,7 +252,7 @@ NIVEAU 2 — CONSOLIDATION TRANSVERSALE
 40, 41, 42, 43.
 
 NIVEAU 3 — ADDENDA CIBLÉS DE CONTRÔLE
-17A, 19A, 22A.
+17A, 19A, 22A, modules/17, modules/18.
 
 NIVEAU 4 — PONT
 Scènes ouvertes, scènes-pivots, mapping scènes → modules, audit de congruence.
@@ -307,7 +309,6 @@ La prochaine étape n’est pas de créer un patch, un layout, un mapping, un pr
 La prochaine étape est :
 
 ```text
-à partir du guide transversal des modules,
-décider si les modules Router / Conductor / Conflict nécessitent chacun un addendum individuel,
-ou si le guide transversal suffit pour l’instant.
+vérifier si 00_INDEX_METHODE_DECISIONS.md et REPO_TREE_SNAPSHOT.md sont alignés avec cette décision Router ;
+puis arrêter la prolifération documentaire et passer à un audit de cohérence du paquet de recentrage.
 ```
