@@ -1,6 +1,6 @@
 # 00_ASSETS_INDEX
 
-Version : v0.3  
+Version : v0.4  
 Statut : index local des assets, sources, besoins et tests préparatoires. Sans nouveau besoin sonore, sans ajout de source, sans prototype.
 
 ## Objet
@@ -23,7 +23,8 @@ des cas de scène ;
 des tests fonctionnels ;
 des portes de décision ;
 des croquis d’engine ;
-des audits de cohérence.
+des audits de cohérence ;
+des données instrumentales manquantes.
 ```
 
 Ce document ne couvre pas directement la branche `docs/12–22`, qui concerne le cadre opératoire, les contrôles live, l’infrastructure temporelle et la visualisation contextuelle. Cette branche est désormais cartographiée dans le README et dans `docs/00_INDEX_METHODE_DECISIONS.md`.
@@ -43,7 +44,8 @@ scene_use_case ≠ prototype ;
 function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation ;
-loop / repeat / freeze ≠ asset par défaut.
+loop / repeat / freeze ≠ asset par défaut ;
+donnée instrumentale manquante ≠ obligation de collecte immédiate.
 ```
 
 Après l’audit `14`, règle supplémentaire :
@@ -52,6 +54,13 @@ Après l’audit `14`, règle supplémentaire :
 un source_need ouvert ne devient pas automatiquement un axe de recherche actif ;
 un besoin conditionnel ne devient pas une décision ;
 un axe prioritaire ancien doit être repondéré par corps / amplitude / limite / sortie / override.
+```
+
+Après `15`, règle supplémentaire :
+
+```text
+les données instrumentales manquantes servent à savoir quoi connaître,
+pas à déclencher une session d’enregistrement ni une banque d’assets.
 ```
 
 ---
@@ -103,6 +112,9 @@ un axe prioritaire ancien doit être repondéré par corps / amplitude / limite 
 
 14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 → audit des source_needs existants avec la grille corps / amplitude / limite / sortie / override.
+
+15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+→ données minimales à connaître sur didgeridoo, guimbardes, gongs et tambours sur cadre.
 ```
 
 ---
@@ -178,6 +190,7 @@ besoins esthétiques / phénoménaux
 → croquis de paramètres
 → audit de cohérence
 → audit source_needs corps/amplitudes/limites
+→ données instrumentales manquantes prioritaires
 → index local assets
 ```
 
@@ -190,7 +203,8 @@ banque de samples ;
 assets audio concrets ;
 prototypes Max for Live ;
 recherche d’achats ;
-modules définitifs.
+modules définitifs ;
+session d’enregistrement obligatoire.
 ```
 
 ---
@@ -210,7 +224,20 @@ modules définitifs.
 
 ---
 
-# 6. Statut de consolidation
+# 6. Décisions issues de 15
+
+```text
+1. les données prioritaires concernent d’abord didgeridoo et guimbardes ;
+2. puis gongs et tambours sur cadre comme sources optionnelles ;
+3. voix, field recordings, harmonic drone, cordes et métaux accordés restent reportés ;
+4. aucune collecte audio complète n’est exigée ;
+5. aucune création d’asset réel n’est exigée ;
+6. les fiches instrumentales futures doivent décrire fonctions, corps, amplitudes, limites, sorties et relations, pas devenir des bibliothèques.
+```
+
+---
+
+# 7. Statut de consolidation
 
 ```text
 create_assets_index: done
@@ -223,42 +250,31 @@ create_engine_profile_now: no
 create_more_source_needs_now: no
 prototype_now: no
 audit_source_needs_recentrage: done
+missing_instrumental_data_priorities: done
 ```
 
 ---
 
-# 7. Où reprendre après intégration
+# 8. Où reprendre après intégration
 
-Option recommandée après l’audit 14 :
+Option recommandée après `15` :
 
 ```text
-A. créer 15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
+A. créer éventuellement des fiches de données instrumentales courtes pour :
+   - didgeridoo ;
+   - guimbardes ;
+   - gongs ;
+   - tambours sur cadre.
 ```
 
-Objectif : lister uniquement les données à relever sur :
+Mais seulement si l’on veut documenter concrètement les instruments disponibles.
+
+À ne pas faire encore :
 
 ```text
-didgeridoo ;
-guimbardes ;
-gongs ;
-tambours sur cadre.
-```
-
-Sans imposer :
-
-```text
-session de jeu ;
-enregistrement complet ;
-collecte d’assets ;
-banque de samples ;
-prototype ;
-achat de sources.
-```
-
-Options reportées :
-
-```text
-B. reprendre harmonic drone seulement si une scène ou fonction le justifie ;
-C. ouvrir cordes/métaux seulement si un manque confirmé apparaît ;
-D. créer des assets réels seulement après données instrumentales et besoin validé.
+ouvrir harmonic drone ;
+ouvrir cordes/métaux ;
+créer des samples ;
+créer des assets réels ;
+créer un prototype.
 ```
