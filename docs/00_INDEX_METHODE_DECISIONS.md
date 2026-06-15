@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.4  
+Version : v4.5  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -37,6 +37,13 @@ Guides / addenda modules :
 ```text
 modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
 modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
+```
+
+Audits assets récents :
+
+```text
+assets/14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
+assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
 ```
 
 ---
@@ -428,7 +435,15 @@ cas de scène ;
 tests fonctionnels ;
 portes de décision ;
 croquis de paramètres ;
-audits de cohérence.
+audits de cohérence ;
+données instrumentales manquantes.
+```
+
+Documents récents de cette branche :
+
+```text
+14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
+15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md
 ```
 
 Règles de lecture :
@@ -440,7 +455,8 @@ scene_use_case ≠ prototype ;
 function_test ≠ module ;
 decision_gate ≠ décision déjà prise ;
 engine_sketch ≠ implémentation ;
-loop / repeat / freeze ≠ asset par défaut.
+loop / repeat / freeze ≠ asset par défaut ;
+donnée instrumentale manquante ≠ collecte obligatoire.
 ```
 
 ## N. Validation, outils et mémoire
@@ -471,7 +487,8 @@ Il doit fonctionner par propagation contrôlée et par voies parallèles possibl
 7. Garder les sources conditionnelles comme conditionnelles.
 8. Harmoniser les statuts documentaires.
 9. Corriger les documents pratiques lorsqu’ils deviennent trop directifs.
-10. Ne passer à une question technique ou performative que si le niveau concerné le justifie.
+10. Auditer source_needs et données instrumentales avant toute collecte.
+11. Ne passer à une question technique ou performative que si le niveau concerné le justifie.
 ```
 
 Voies possibles ensuite :
@@ -480,6 +497,7 @@ Voies possibles ensuite :
 analyse documentaire ;
 consolidation des concepts ;
 audits des sources et instruments ;
+fiches instrumentales courtes ;
 préparation de données acoustiques ciblées ;
 révision des contrôles et amplitudes ;
 phase de répétition optionnelle ;
@@ -542,6 +560,8 @@ Le document `modules/17` harmonise transversalement les modules centraux.
 
 Le document `modules/18` complète individuellement le Router.
 
+Les audits assets `14–15` reclassent les source_needs et données instrumentales sans créer d’asset réel.
+
 Les addenda `27–31` restent utiles mais secondaires.
 
 Les documents `32–37` restent utiles comme supports pratiques et optionnels.
@@ -551,10 +571,14 @@ Les documents `38–39` sont corrigés en supports optionnels.
 Prochaine étape recommandée :
 
 ```text
-arrêter provisoirement la création d’addenda ;
-passer à l’audit assets/source_needs avec la grille corps / amplitude / limite / sortie / override ;
-puis identifier les données instrumentales réellement manquantes.
+créer éventuellement des fiches instrumentales courtes pour :
+- didgeridoo ;
+- guimbardes ;
+- gongs ;
+- tambours sur cadre.
 ```
+
+Ces fiches ne doivent pas être des assets ni des protocoles d’enregistrement. Elles doivent seulement organiser les connaissances utiles : registre, corps, amplitude, limites, sorties, relations.
 
 Ne pas encore créer :
 
@@ -566,5 +590,6 @@ prototype ;
 asset réel ;
 engine profile ;
 nouveau source_need ;
-nouvelle scène.
+nouvelle scène ;
+collecte audio obligatoire.
 ```
