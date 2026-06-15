@@ -79,6 +79,7 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 34_FICHE_PERFORMANCE_TENSION_ARMEE_PRE_DROP.md
 35_FICHE_PERFORMANCE_SUSPENSION_MATIERE_RETOUR.md
 36_PROTOCOLE_JOURNAL_REPETITION_ECOUTE_SCENES_PIVOTS.md
+37_MODELE_FICHE_SESSION_REPETITION_ECOUTE.md
 ```
 
 Ces documents traduisent les concepts musicaux récents en exigences de système, contrôle live, couches de performance, infrastructure temporelle, visualisation contextuelle, scènes ouvertes, scènes-pivots, responsabilités de modules futurs, audits, synchronisations de modules centraux, dramaturgies musicales concrètes, fiches de performance jouables et protocole de journal de répétition/écoute. Ils ne définissent pas encore de layout, de mapping matériel, de patch Max for Live ou de prototype.
@@ -145,6 +146,7 @@ style / influences / techno organique
 → dramaturgies musicales des scènes-pivots
 → fiches de performance jouables
 → journal de répétition et d’écoute
+→ modèle de fiche de session
 → décision musicale avant prototype
 ```
 
@@ -155,6 +157,6 @@ La prochaine étape n’est pas de créer un nouveau concept, un engine profile,
 La prochaine étape est :
 
 ```text
-créer un modèle de fiche de session remplissable,
-à copier après chaque répétition.
+créer un document de synthèse des questions musicales à vérifier,
+avant toute question de prototype.
 ```
