@@ -1,6 +1,6 @@
 # REPO_TREE_SNAPSHOT
 
-Version : v2.1  
+Version : v2.2  
 Statut : trace d’arborescence exploitable pour éviter les déductions de chemins. À tenir à jour lors de créations / suppressions / déplacements de documents.
 
 ## Source de cette trace
@@ -27,6 +27,7 @@ Dernière mise à jour manuelle : après création de :
 docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 docs/43_HARMONISATION_CONTROLES_15_22.md
+docs/44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
 docs/17A_HARMONISATION_MACROS_CORPS_AMPLITUDES_LIMITES.md
 docs/19A_HARMONISATION_ETATS_CORPS_LIMITES_SORTIES.md
 docs/22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
@@ -56,6 +57,7 @@ docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 docs/43_HARMONISATION_CONTROLES_15_22.md
+docs/44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
 ```
 
 ## 2.2 Socle phénoménal, stylistique, technique et transversal
