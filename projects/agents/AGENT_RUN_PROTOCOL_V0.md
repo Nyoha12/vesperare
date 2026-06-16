@@ -31,12 +31,77 @@ un nouveau système documentaire autonome.
 
 ---
 
-# 2. Format obligatoire d'un run
+# 2. Choisir le bon niveau de run
+
+## Niveau 0 — Pas d'agent
+
+À utiliser si le document existant donne déjà le cadre ou si une simple mise à jour ciblée suffit.
+
+Sortie : aucune sortie agent, seulement une action minimale.
+
+## Niveau 1 — Agent unique
+
+À utiliser pour :
+
+```text
+extraction limitée ;
+revue simple ;
+tri de statuts ;
+comparaison de deux options ;
+vérification anti-glissement.
+```
+
+Sortie : un fichier court ou un commentaire structuré.
+
+## Niveau 2 — Multi-agents parallèles
+
+À utiliser quand plusieurs dimensions doivent rester indépendantes avant synthèse :
+
+```text
+méthode ;
+statut documentaire ;
+agency live ;
+contrôle / Router ;
+source / données instrumentales ;
+anti-prototype ;
+intégration main / méthode.
+```
+
+Chaque agent reçoit :
+
+```text
+le même problème ;
+un angle différent ;
+le même corpus autorisé ;
+le même format de sortie ;
+les mêmes interdictions.
+```
+
+La synthèse vient après.
+
+Aucun vote d'agents ne vaut preuve.
+
+## Niveau 3 — Interdit par défaut
+
+```text
+agent qui modifie main ;
+agent de prototype ;
+agent de patch ;
+agent de mapping ;
+agent de spec globale ;
+agent qui lit tout le repo ;
+agent qui décide pour Yohan.
+```
+
+---
+
+# 3. Format obligatoire d'un run
 
 Chaque run doit déclarer :
 
 ```text
 nom du run ;
+niveau : 0 / 1 / 2 ;
 question centrale ;
 corpus autorisé ;
 corpus interdit ;
@@ -48,7 +113,7 @@ décision humaine attendue.
 
 ---
 
-# 3. Corpus limité
+# 4. Corpus limité
 
 Un agent ne lit pas tout le repo.
 
@@ -69,7 +134,7 @@ docs/assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md
 
 ---
 
-# 4. Types de runs autorisés
+# 5. Types de runs autorisés
 
 ## Revue limitée
 
@@ -104,9 +169,13 @@ Comparer deux méthodes, deux versions ou deux vocabulaires, sans merger.
 
 Vérifier qu'une proposition ne glisse pas vers patch, mapping, asset, sample, spec ou prototype.
 
+## Revue de mise à jour existante
+
+Dire quel document existant devrait recevoir une information, au lieu de créer un nouveau fichier.
+
 ---
 
-# 5. Types de runs non autorisés par défaut
+# 6. Types de runs non autorisés par défaut
 
 ```text
 prototype ;
@@ -124,7 +193,7 @@ validation musicale à la place de Yohan.
 
 ---
 
-# 6. Format de sortie recommandé
+# 7. Format de sortie recommandé
 
 ```md
 # RUN_OUTPUT
@@ -141,12 +210,56 @@ validation musicale à la place de Yohan.
 
 ## Recommandation non décisoire
 
+## Document existant à mettre à jour, si applicable
+
 ## Décision humaine requise
 ```
 
 ---
 
-# 7. Règles de synthèse multi-agents
+# 8. Format multi-agents
+
+Pour un run de niveau 2, chaque agent doit produire :
+
+```md
+# AGENT_OUTPUT
+
+## Rôle
+
+## Conclusion courte
+
+## Faits observés
+
+## Risques selon ce rôle
+
+## Désaccords possibles avec d'autres rôles
+
+## Recommandation non décisoire
+
+## Confiance
+```
+
+La synthèse doit produire :
+
+```md
+# MULTI_AGENT_SYNTHESIS
+
+## Accords
+
+## Désaccords
+
+## Risques transversaux
+
+## Points qui demandent Yohan
+
+## Document existant à mettre à jour
+
+## Prochaine action minimale
+```
+
+---
+
+# 9. Règles de synthèse multi-agents
 
 Si plusieurs agents travaillent en parallèle :
 
@@ -155,23 +268,13 @@ Si plusieurs agents travaillent en parallèle :
 2. la synthèse préserve les désaccords ;
 3. aucune majorité d'agents ne vaut preuve ;
 4. les sorties sont classées comme supports de décision ;
-5. Yohan garde la décision finale.
-```
-
-Rôles utiles possibles :
-
-```text
-méthode / statut ;
-contrôle / Router ;
-agency live ;
-source / données instrumentales ;
-anti-prototype ;
-intégration main / méthode.
+5. Yohan garde la décision finale ;
+6. la synthèse cherche d'abord le bon document existant à mettre à jour.
 ```
 
 ---
 
-# 8. Conditions d'arrêt
+# 10. Conditions d'arrêt
 
 Un agent doit s'arrêter si :
 
@@ -182,12 +285,13 @@ le run exige un fichier interdit ;
 la sortie devient une décision artistique ;
 le run commence à proposer un patch, mapping ou prototype ;
 le run demande à Yohan de résoudre une question non instruite ;
-le run contredit docs/45 ou docs/00_INDEX sans le signaler.
+le run contredit docs/45 ou docs/00_INDEX sans le signaler ;
+le run propose un nouveau document sans vérifier les documents existants.
 ```
 
 ---
 
-# 9. Règle anti-doublon
+# 11. Règle anti-doublon
 
 Si une sortie recommande de créer un nouveau document, elle doit d'abord répondre :
 
@@ -196,3 +300,29 @@ quel document existant pourrait recevoir cette information ?
 ```
 
 Créer un document nouveau seulement si aucun document existant n'est approprié ou si une nouvelle phase réelle commence.
+
+---
+
+# 12. Règle de vitesse
+
+La vitesse vient de :
+
+```text
+corpus limité ;
+roles parallèles ;
+formats comparables ;
+synthèse courte ;
+réutilisation des documents existants ;
+absence de validation humaine prématurée ;
+arrêt immédiat en cas de glissement vers prototype.
+```
+
+La vitesse ne vient pas de :
+
+```text
+lire tout le repo ;
+créer plus de documents ;
+lancer des micro-tests trop tôt ;
+remplacer le jugement humain ;
+faire décider un agent seul.
+```
