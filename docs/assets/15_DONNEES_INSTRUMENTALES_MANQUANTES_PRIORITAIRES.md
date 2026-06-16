@@ -1,76 +1,216 @@
 # 15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES
 
-Version : v0.1  
-Statut : liste de données instrumentales à relever ou documenter. Sans protocole de session obligatoire, sans enregistrement complet, sans asset réel, sans prototype.
+Version : v0.2  
+Statut : liste de données instrumentales à relever ou documenter. Sans protocole de session obligatoire, sans enregistrement complet, sans asset réel, sans prototype, sans exigence d’explicitation exhaustive du jeu musicien.
 
 ## Objet
 
-Ce document liste les données instrumentales réellement manquantes après l’audit :
+Ce document liste les données instrumentales réellement utiles après l’audit :
 
 ```text
 14_AUDIT_SOURCE_NEEDS_CORPS_AMPLITUDES_LIMITES.md
 ```
 
-Il ne demande pas encore :
+Il ne demande pas :
 
 ```text
-une session de jeu ;
+une session de jeu obligatoire ;
 une banque d’enregistrements ;
 un corpus de samples ;
 un patch ;
 un prototype ;
 un achat ;
-une recherche d’assets.
+une recherche d’assets ;
+une explication exhaustive de l’art ou de la méthode de Yohan.
 ```
 
-Il sert à savoir ce qu’il faudrait connaître sur les sources déjà présentes ou optionnelles pour mieux concevoir les contrôles, les limites, les relations au sub, les scènes et les futures protections.
+Il sert à savoir ce qu’il serait utile de connaître sur les sources déjà présentes ou optionnelles pour mieux concevoir les contrôles, les limites, les relations au sub, les scènes et les futures protections.
 
-Sources concernées :
+Sources concernées en priorité :
 
 ```text
 didgeridoo ;
 guimbardes ;
 gongs ;
-tambours sur cadre.
+tambours sur cadre ;
+système bucco-vocal étendu seulement comme donnée transversale, sans exiger d’inventaire total.
 ```
 
 ---
 
-# 1. Principe
+# 1. Principe général
 
 Ne pas documenter un instrument comme une bibliothèque.
 
-Documenter ce dont Vesperare a besoin pour :
+Ne pas documenter le musicien comme une base de données.
+
+Documenter seulement ce dont Vesperare a besoin pour :
 
 ```text
 jouer le corps ;
-calibrer les amplitudes ;
-identifier les zones de bord ;
-préserver les sorties ;
-préparer les protections ;
+calibrer des amplitudes ;
+identifier des zones de bord ;
+préserver des sorties ;
+préparer des protections ;
 maintenir l’override humain ;
-ne pas transformer les sources live en samples figés.
+ne pas transformer les sources live en samples figés ;
+ne pas demander à Yohan de formaliser tout son art pour que le système existe.
 ```
 
-Chaque donnée instrumentale devrait pouvoir répondre à au moins une question :
+Chaque donnée instrumentale peut répondre à une ou plusieurs questions :
 
 ```text
-quelle fonction cette source porte-t-elle ?
-quelle sous-fonction du corps ?
-quelle amplitude est sûre ou expressive ?
+quelle fonction cette source peut porter ?
+quelle sous-fonction du corps peut apparaître ?
+quelle amplitude semble sûre ou expressive ?
 quelle limite apparaît ?
 quelle sortie est disponible ?
-quel conflit avec sub / didgeridoo / guimbardes / gong / tambour ?
+quel conflit possible avec sub / didgeridoo / guimbardes / gong / tambour ?
 quel risque esthétique ?
+```
+
+Mais aucune donnée n’a besoin de tout couvrir.
+
+---
+
+# 2. Principe de non-exhaustivité
+
+Les données instrumentales préparées par Yohan doivent être lues comme :
+
+```text
+données brutes ;
+indices ;
+exemples ;
+fenêtres sur des gestes ;
+repères techniques ;
+repères de prise ;
+observations situées ;
+traces de potentiels ;
+traces de limites.
+```
+
+Elles ne doivent pas être lues comme :
+
+```text
+taxonomie complète du jeu ;
+méthode musicale complète ;
+explication exhaustive des techniques ;
+manuel de performance ;
+preuve qu’un geste doit devenir contrôle ;
+preuve qu’un son doit devenir asset ;
+preuve qu’une source doit être utilisée partout.
+```
+
+Règle centrale :
+
+```text
+le système doit apprendre assez pour soutenir le jeu,
+pas exiger que le musicien traduise toute sa pratique en catégories.
+```
+
+Conséquence :
+
+```text
+un exemple de geste peut suffire à révéler une limite ;
+un fragment peut suffire à calibrer un risque ;
+une prise brute peut suffire à montrer une relation au sub ;
+une observation partielle peut suffire à guider un contrôle ;
+l’absence de description complète ne doit jamais bloquer le projet.
 ```
 
 ---
 
-# 2. Didgeridoo — données prioritaires
+# 3. Données brutes et gestes très variés
+
+Les modes de jeu de Yohan peuvent inclure des techniques très variées :
+
+```text
+souffle ;
+beatbox ;
+vocalisations ;
+techniques de langue ;
+attaques de bouche ;
+clics ;
+consonnes ;
+aspirations ;
+gorge ;
+pression buccale ;
+formants ;
+voix-sans-voix ;
+gestes hybrides didgeridoo / bouche / voix ;
+gestes hybrides guimbarde / bouche / langue ;
+techniques non nommées ou non stabilisées.
+```
+
+Ces gestes ne doivent pas obligatoirement être classés comme “voix”, “didgeridoo”, “guimbarde” ou “beatbox”.
+
+Ils peuvent être lus comme un **système bucco-vocal étendu**, capable de porter plusieurs fonctions :
+
+```text
+corps-geste ;
+corps-impact léger ;
+corps-pulsation ;
+corps-attente ;
+corps-hypnose ;
+voix-sans-voix ;
+signal humain ;
+attaque ;
+micro-pulse ;
+texture ;
+torsion ;
+trace ;
+rupture.
+```
+
+Règle :
+
+```text
+un geste virtuose ou rare ne devient pas automatiquement une fonction centrale.
+Il devient utile s’il éclaire une fonction, une amplitude, une limite, une sortie ou une relation avec une scène.
+```
+
+---
+
+# 4. Format souple pour données brutes
+
+Le format suivant est optionnel. Il ne doit pas devenir une obligation stricte.
+
+```text
+source / corps / instrument :
+geste ou mode de jeu :
+description libre :
+contexte de prise ou protocole ciblé :
+registre ressenti :
+attaque :
+sustain / durée :
+densité possible :
+corps ressenti :
+fonction possible :
+limite / risque :
+sortie possible :
+relations possibles :
+notes techniques :
+notes musicales :
+```
+
+Version minimale acceptable :
+
+```text
+source :
+geste :
+ce que ça fait :
+risque ou limite :
+```
+
+Cette version minimale suffit si le geste est trop complexe à formaliser.
+
+---
+
+# 5. Didgeridoo — données prioritaires
 
 Statut : source live fixe.
 
-## 2.1 Données de jeu
+## 5.1 Données de jeu
 
 ```text
 plages de jeu réelles ;
@@ -81,10 +221,11 @@ types d’attaque ;
 continuité possible ;
 pulsation possible ;
 durée confortable ;
-intensité faible / moyenne / forte.
+intensité faible / moyenne / forte ;
+gestes bucco-vocaux associés si pertinents, sans inventaire exhaustif.
 ```
 
-## 2.2 Données spectrales / formantiques
+## 5.2 Données spectrales / formantiques
 
 ```text
 formants principaux ;
@@ -96,7 +237,7 @@ registre où il concurrence le sub ;
 registre où il concurrence voix / guimbardes / gong.
 ```
 
-## 2.3 Données de corps
+## 5.3 Données de corps
 
 ```text
 corps-pression: quelles intensités donnent pression sans boue ?
@@ -107,7 +248,7 @@ corps-retour: quels gestes peuvent ramener le corps ?
 corps-limite: quand le didgeridoo devient drone statique, basse ou cliché ?
 ```
 
-## 2.4 Données de limites
+## 5.4 Données de limites
 
 ```text
 risque feedback ;
@@ -116,10 +257,11 @@ risque didgeridoo réduit à basse ;
 risque sub écrasant ;
 risque formants trop caricaturaux ;
 risque drone statique ;
-risque fatigue.
+risque fatigue ;
+risque que les techniques buccales soient mal classées ou surinterprétées.
 ```
 
-## 2.5 Sorties utiles
+## 5.5 Sorties utiles
 
 ```text
 réduire grave ;
@@ -128,18 +270,20 @@ passer en souffle ;
 retirer résonateur ;
 sidechain sub ;
 laisser trace ;
-retour au corps.
+retour au corps ;
+revenir au geste non traité ;
+passer d’un geste complexe à une fonction simple.
 ```
 
 ---
 
-# 3. Guimbardes — données prioritaires
+# 6. Guimbardes — données prioritaires
 
 Statut : sources live fixes, environ vingt instruments.
 
-## 3.1 Inventaire minimal à connaître
+## 6.1 Inventaire minimal à connaître
 
-Pour chaque guimbarde, relever idéalement :
+Pour chaque guimbarde, relever idéalement, mais sans obligation exhaustive :
 
 ```text
 identifiant simple ;
@@ -152,10 +296,11 @@ sustain ;
 fatigue aiguë ;
 facilité de jeu ;
 caractère formantique ;
-rôle préféré.
+rôle préféré ;
+interaction bouche / langue / respiration si elle change fortement le rôle.
 ```
 
-## 3.2 Rôles possibles
+## 6.2 Rôles possibles
 
 ```text
 micro-pulse ;
@@ -170,7 +315,7 @@ accent fin ;
 trace métallique.
 ```
 
-## 3.3 Données de limites
+## 6.3 Données de limites
 
 ```text
 quand la guimbarde devient gadget ;
@@ -179,10 +324,11 @@ quand les aigus fatiguent ;
 quand la nasalité masque le reste ;
 quand la répétition devient démonstrative ;
 quand elle perd son lien techno ;
-quand elle gêne la voix ou le didgeridoo.
+quand elle gêne la voix ou le didgeridoo ;
+quand une technique de bouche/langue devient plus importante que la fonction musicale.
 ```
 
-## 3.4 Données de sélection contextuelle
+## 6.4 Données de sélection contextuelle
 
 Il faut éviter d’avoir vingt instruments abstraits.
 
@@ -199,7 +345,9 @@ le reste non prioritaire tant que leur rôle n’est pas clair.
 
 Ce classement ne doit pas être figé.
 
-## 3.5 Sorties utiles
+Il ne doit pas empêcher un instrument de changer de rôle selon technique de bouche, langue, souffle, densité ou contexte.
+
+## 6.5 Sorties utiles
 
 ```text
 réduire aigu ;
@@ -213,11 +361,11 @@ retirer guimbarde du focus.
 
 ---
 
-# 4. Gongs — données prioritaires
+# 7. Gongs — données prioritaires
 
 Statut : sources live optionnelles, cinq gongs possibles.
 
-## 4.1 Inventaire minimal à connaître
+## 7.1 Inventaire minimal à connaître
 
 Pour chaque gong :
 
@@ -237,7 +385,7 @@ compatibilité tambour ;
 rôle préféré.
 ```
 
-## 4.2 Rôles possibles
+## 7.2 Rôles possibles
 
 ```text
 masse métallique ;
@@ -251,7 +399,7 @@ corps-retour ;
 corps-limite.
 ```
 
-## 4.3 Données de limites
+## 7.3 Données de limites
 
 ```text
 quand le gong devient décoratif ;
@@ -263,7 +411,7 @@ quand il crée une grandeur trop évidente ;
 quand il empêche le retour au corps.
 ```
 
-## 4.4 Présence / absence
+## 7.4 Présence / absence
 
 Pour chaque fonction de gong, demander :
 
@@ -276,7 +424,7 @@ compensation possible par sample minimal ?
 la scène peut-elle se passer de gong ?
 ```
 
-## 4.5 Sorties utiles
+## 7.5 Sorties utiles
 
 ```text
 couper queue ;
@@ -290,11 +438,11 @@ annuler résolution.
 
 ---
 
-# 5. Tambours sur cadre — données prioritaires
+# 8. Tambours sur cadre — données prioritaires
 
 Statut : sources live optionnelles, trois tambours possibles.
 
-## 5.1 Inventaire minimal à connaître
+## 8.1 Inventaire minimal à connaître
 
 Pour chaque tambour :
 
@@ -316,7 +464,7 @@ risque folklorique ;
 rôle préféré.
 ```
 
-## 5.2 Rôles possibles
+## 8.2 Rôles possibles
 
 ```text
 corps-impact ;
@@ -330,7 +478,7 @@ accent large ;
 polytexture corporelle.
 ```
 
-## 5.3 Données de limites
+## 8.3 Données de limites
 
 ```text
 quand le tambour devient kick standard ;
@@ -342,7 +490,7 @@ quand il surcharge avec le gong ;
 quand il impose une lecture rituelle trop directe.
 ```
 
-## 5.4 Présence / absence
+## 8.4 Présence / absence
 
 Pour chaque fonction de peau / impact :
 
@@ -355,7 +503,7 @@ compensation possible par sample minimal ?
 la scène peut-elle se passer de peau ?
 ```
 
-## 5.5 Sorties utiles
+## 8.5 Sorties utiles
 
 ```text
 réduire impact ;
@@ -369,12 +517,12 @@ retour au corps moins frontal.
 
 ---
 
-# 6. Données non prioritaires pour l’instant
+# 9. Données non prioritaires pour l’instant
 
 Ne pas relever maintenant, sauf besoin clair :
 
 ```text
-voix ;
+voix comme banque séparée ;
 field recordings ;
 shruti / harmonium / orgue ;
 cordes frottées ;
@@ -382,6 +530,13 @@ métaux accordés ;
 cloches ;
 vibraphone ;
 autres instruments candidats.
+```
+
+Nuance importante :
+
+```text
+les gestes bucco-vocaux de Yohan peuvent apparaître dans les données brutes liées au didgeridoo, aux guimbardes ou au corps live ;
+mais cela ne signifie pas qu’il faille ouvrir une banque vocale ni formaliser toute la voix comme source séparée.
 ```
 
 Raison :
@@ -394,16 +549,19 @@ le paquet de recentrage demande de préserver la priorité des sources live fixe
 
 ---
 
-# 7. Format minimal de fiche instrumentale future
+# 10. Format minimal de fiche instrumentale future
 
-Si des fiches instrumentales sont créées plus tard, elles devraient suivre ce squelette :
+Si des fiches instrumentales sont créées plus tard, elles devraient rester souples.
+
+Squelette possible :
 
 ```text
 instrument_id:
 statut: live_fixed / live_optional / conditional / open_need
 présence: toujours / parfois / non fixée / absente
-fonctions:
+fonctions possibles:
 body_subfunctions:
+gestes ou modes de jeu observés:
 amplitudes:
 zones_de_bord:
 risques:
@@ -417,18 +575,30 @@ relations:
 sample_implication:
 asset_implication:
 provenance_level:
-notes:
+notes libres:
 ```
+
+Version minimale acceptable :
+
+```text
+instrument/source :
+geste :
+effet ressenti :
+risque :
+```
+
+Ce format minimal peut suffire.
 
 ---
 
-# 8. Priorité de relevé
+# 11. Priorité de relevé
 
 Priorité 1 :
 
 ```text
 didgeridoo ;
-guimbardes.
+guimbardes ;
+système bucco-vocal étendu lorsqu’il apparaît dans ces pratiques.
 ```
 
 Pourquoi :
@@ -437,7 +607,8 @@ Pourquoi :
 sources toujours présentes ;
 forte centralité ;
 pas remplaçables ;
-fort impact sur Router, Conductor, Conflict, Pitch et Timbre.
+fort impact sur Router, Conductor, Conflict, Pitch et Timbre ;
+présence de techniques personnelles complexes qu’il faut pouvoir respecter sans les réduire.
 ```
 
 Priorité 2 :
@@ -459,7 +630,7 @@ leur surcharge peut créer des conflits.
 Priorité 3 reportée :
 
 ```text
-voix ;
+voix comme source séparée ;
 field recordings ;
 harmonic drone ;
 cordes ;
@@ -475,18 +646,22 @@ besoins encore conditionnels ou ouverts ;
 
 ---
 
-# 9. Décision finale
+# 12. Décision finale
 
-La prochaine étape n’est pas une collecte audio.
+La prochaine étape n’est pas une collecte audio exhaustive.
 
-La prochaine étape est une clarification instrumentale minimale :
+La prochaine étape est une clarification instrumentale minimale et partielle :
 
 ```text
-quels registres ;
-quelles fonctions ;
-quelles limites ;
-quelles sorties ;
-quelles relations avec sub / corps / live.
+quelques registres ;
+quelques fonctions ;
+quelques limites ;
+quelques sorties ;
+quelques relations avec sub / corps / live ;
+quelques gestes représentatifs ;
+quelques gestes de bord ou de danger.
 ```
 
 Aucun nouvel asset ne doit être créé à partir de ce document sans décision ultérieure.
+
+Aucune absence de donnée exhaustive ne doit bloquer le projet.
