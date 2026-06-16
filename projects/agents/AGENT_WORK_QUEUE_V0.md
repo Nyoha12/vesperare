@@ -4,7 +4,7 @@
 
 Queue de travail pour agents cadrés.
 
-But : éviter de continuer par micro-documents dispersés et éviter de demander à Yohan de répondre à des questions que le programme doit instruire.
+But : éviter de continuer par micro-documents dispersés, éviter de demander à Yohan de répondre à des questions que le programme doit instruire, et éviter que l’assistant choisisse le prochain contenu à la place de la méthode.
 
 ---
 
@@ -22,15 +22,52 @@ La focalisation sur MTC01 était prématurée.
 
 MTC01 reste en réserve, mais ne doit plus être la prochaine tâche.
 
-Raison : la question manque encore de matière musicale concrète.
+La proposition `MUSICAL_MATERIAL_INTAKE` est probablement meilleure, mais elle ne doit pas être imposée par l’assistant.
+
+La prochaine tâche doit d’abord demander :
+
+```text
+que ferait la méthode étudiée / synthétisée pour choisir le premier run ?
+```
 
 ---
 
 # 3. Queue actuelle
 
-## RUN-01 — Musical material intake
+## RUN-00 — Select first run
 
 Statut : prêt.
+
+Prompt :
+
+```text
+projects/agents/CODEX_AGENT_PROMPT_SELECT_FIRST_RUN.md
+```
+
+Objet :
+
+```text
+choisir le premier vrai run Codex/agent à partir de la méthode, du rôle, du corpus et des corrections récentes
+```
+
+Sortie attendue :
+
+```text
+projects/agents/outputs/SELECT_FIRST_RUN_OUTPUT.md
+```
+
+Décision possible après sortie :
+
+```text
+adopter le run recommandé ;
+réviser le prompt ;
+suspendre ;
+demander une seconde revue agent.
+```
+
+## RUN-01 — Musical material intake
+
+Statut : candidat, non prioritaire tant que RUN-00 n’a pas confirmé.
 
 Prompt :
 
@@ -50,18 +87,9 @@ Sortie attendue :
 projects/agents/outputs/MUSICAL_MATERIAL_INTAKE_OUTPUT.md
 ```
 
-Décision possible après sortie :
-
-```text
-choisir les vrais objets de conception ;
-identifier les matières manquantes ;
-choisir une question à instruire ;
-suspendre les micro-tests.
-```
-
 ## RUN-02 — Revue méthode / surcharge
 
-Statut : à faire seulement après RUN-01 si nécessaire.
+Statut : candidat.
 
 Objet :
 
@@ -79,13 +107,7 @@ projects/agents/outputs/METHOD_LOAD_REVIEW_OUTPUT.md
 
 Statut : suspendu.
 
-Condition : seulement après MUSICAL_MATERIAL_INTAKE_OUTPUT et seulement si une matière musicale concrète rend la question pertinente.
-
-Objet :
-
-```text
-MTC01 peut-il redevenir une question utile, ou doit-il rester suspendu ?
-```
+Condition : seulement après clarification des matières musicales concrètes et seulement si une matière musicale concrète rend la question pertinente.
 
 ## RUN-04 — Source_needs next batch gate
 
@@ -108,7 +130,8 @@ créer une spec globale ;
 lancer un prototype ;
 lancer un micro-test ;
 auditer tout le repo ;
-demander à Yohan de résoudre une question de recherche à la place du programme.
+demander à Yohan de résoudre une question de recherche à la place du programme ;
+faire décider l’assistant à la place de la méthode.
 ```
 
 ---
@@ -116,7 +139,7 @@ demander à Yohan de résoudre une question de recherche à la place du programm
 # 5. Prochaine action unique
 
 ```text
-RUN-01 — Musical material intake
+RUN-00 — Select first run
 ```
 
-Ne pas revenir à MTC01 avant cette sortie.
+Ne pas lancer Musical Material Intake, MTC01 ou Source Needs avant cette sortie.
