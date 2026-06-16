@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.6  
+Version : v4.7  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -9,15 +9,10 @@ Ce document garde les décisions structurantes du projet Vesperare : méthode, t
 
 Il sert aussi à organiser le workflow documentaire : quels documents définissent l’esprit, lesquels développent les couches transversales, lesquels servent de pont vers la technique, lesquels préparent les sources / assets, lesquels sont seulement des supports pratiques, et quand interrompre une branche pour réintégrer la carte globale.
 
-Le document de recentrage stratégique actuel est :
+Documents directeurs du recentrage actuel :
 
 ```text
 40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
-```
-
-Documents de consolidation associés :
-
-```text
 41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 43_HARMONISATION_CONTROLES_15_22.md
@@ -162,7 +157,7 @@ Le contrôle live ne doit pas être réduit à un paramètre.
 Définition actuelle :
 
 ```text
-contrôle = sélection + organisation + amplitude + contexte + risque + sortie + override.
+contrôle = sélection + organisation + amplitude + contexte + risque + sortie + automation située + override.
 ```
 
 Le système doit :
@@ -170,13 +165,23 @@ Le système doit :
 ```text
 sélectionner les paramètres musicalement pertinents ;
 organiser leur accès selon le contexte ;
-calibrer des amplitudes judicieuse ;
+calibrer des amplitudes judicieuses ;
 permettre une efficacité maximale sur le style ;
+automatiser certaines fonctions de coordination, suivi ou protection ;
+laisser les décisions expressives au réglage de Yohan quand elles relèvent du jeu ;
 rendre les risques lisibles ;
 laisser flirter avec les limites ;
 permettre des dépassements assumés ;
 préserver des sorties ;
 laisser l’override humain prioritaire.
+```
+
+Principe ajouté :
+
+```text
+certaines fonctions sont automatisées par le système ;
+d’autres restent réglées par Yohan ;
+mais dans tous les cas le Router doit présenter des contrôles optimisés pour le contexte actif.
 ```
 
 Les interdits, risques et garde-fous ne doivent pas devenir des murs esthétiques sauf lorsqu’ils protègent une confusion de statut ou une sécurité méthodologique.
@@ -339,13 +344,13 @@ modules/17_HARMONISATION_MODULES_CENTRAUX_CORPS_CONTROLES_LIMITES.md
 modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
-Rôle : relire les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override.
+Rôle : relire les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override / automation située.
 
 Décision :
 
 ```text
 modules/17 : guide transversal suffisant pour Conductor, Conflict, Registry, Trajectory, Pitch, Timbre, Source Needs ;
-modules/18 : addendum individuel nécessaire pour le Router, car il rend concrètement les limites et amplitudes jouables ;
+modules/18 : addendum individuel nécessaire pour le Router, car il rend concrètement les limites, amplitudes, automations et réglages contextuels jouables ;
 pas d’addendum individuel Conductor ou Conflict pour l’instant.
 ```
 
@@ -486,14 +491,13 @@ Il doit fonctionner par propagation contrôlée et par voies parallèles possibl
 2. Situer chaque concept selon son niveau de provenance.
 3. Décompacter les notions trop larges, notamment corps.
 4. Traduire seulement les fonctions suffisamment claires en exigences de contrôle.
-5. Penser les contrôles comme amplitudes, risques, limites et sorties.
+5. Penser les contrôles comme amplitudes, risques, limites, sorties, automations et réglages contextuels.
 6. Préserver les sources live fixes.
 7. Garder les sources conditionnelles comme conditionnelles.
 8. Harmoniser les statuts documentaires.
 9. Corriger les documents pratiques lorsqu’ils deviennent trop directifs.
 10. Auditer source_needs et données instrumentales avant toute collecte.
-11. Préparer l’interprétation des sorties AcousticArchive avant création de fiches instrumentales.
-12. Ne passer à une question technique ou performative que si le niveau concerné le justifie.
+11. Ne passer à une question technique ou performative que si le niveau concerné le justifie.
 ```
 
 Voies possibles ensuite :
@@ -502,9 +506,9 @@ Voies possibles ensuite :
 analyse documentaire ;
 consolidation des concepts ;
 audits des sources et instruments ;
-fiches instrumentales courtes à partir de données réelles ;
+fiches instrumentales courtes ;
 préparation de données acoustiques ciblées ;
-révision des contrôles et amplitudes ;
+révision des contrôles, amplitudes et automations ;
 phase de répétition optionnelle ;
 question technique ciblée ;
 prototypage ultérieur seulement si une fonction est suffisamment stabilisée.
@@ -525,7 +529,8 @@ documenté ;
 conçu pour répondre à une question précise ;
 compatible avec l’architecture globale ;
 compatible avec les besoins de sources / assets quand ils sont impliqués ;
-respectueux de l’override humain et de la priorité live.
+respectueux de l’override humain et de la priorité live ;
+clair sur ce qui est automatisé et ce qui reste sous contrôle humain.
 ```
 
 Les inventaires, protocoles, matrices, `source_needs`, schémas d’assets, cas de scène, tests fonctionnels, portes de décision, croquis d’engine, matrices de contrôle, exigences de visualisation, fiches de champs de scène, cartes d’arborescence et audits de congruence ne sont pas des prototypes.
@@ -548,7 +553,8 @@ Pré-drop = rythmique + corporel + spectral + harmonique + attente ;
 Halo = espace + queue + harmonie + risque d’ambientisation ;
 Freeze = temps + matière + risque anti-ambient + sortie obligatoire ;
 Loop live = trace + double + risque de remplacement + fonction de scène ;
-Scène ouverte = fonction centrale + bifurcations + protections + sorties.
+Scène ouverte = fonction centrale + bifurcations + protections + sorties ;
+Automation = aide située, pas décision esthétique globale.
 ```
 
 ---
@@ -560,6 +566,14 @@ La branche `12–26` reste intégrée et valide.
 Les documents `40–44` consolident et auditent le recentrage sans remplacer le socle.
 
 Les addenda `17A`, `19A`, `22A` harmonisent les contrôles, états et visualisation sans réécrire les documents originaux.
+
+Le document `42` précise désormais la distinction :
+
+```text
+automation située ;
+réglage humain contextualisé ;
+override humain.
+```
 
 Le document `modules/17` harmonise transversalement les modules centraux.
 
@@ -577,10 +591,14 @@ Prochaine étape recommandée :
 
 ```text
 attendre les premières données AcousticArchive réelles ;
-puis créer des fiches instrumentales courtes à partir de ces données,
-en priorité pour didgeridoo et guimbardes,
-puis gongs et tambours sur cadre.
+puis créer éventuellement des fiches instrumentales courtes pour :
+- didgeridoo ;
+- guimbardes ;
+- gongs ;
+- tambours sur cadre.
 ```
+
+Ces fiches ne doivent pas être des assets ni des protocoles d’enregistrement. Elles doivent seulement organiser les connaissances utiles : registre, corps, amplitude, limites, sorties, relations, et éventuelles automations de protection.
 
 Ne pas encore créer :
 
@@ -593,7 +611,5 @@ asset réel ;
 engine profile ;
 nouveau source_need ;
 nouvelle scène ;
-collecte audio obligatoire ;
-fiche instrumentale vide ;
-seuil fictif.
+collecte audio obligatoire.
 ```
