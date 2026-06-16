@@ -1,6 +1,6 @@
 # 18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM
 
-Version : v0.1  
+Version : v0.2  
 Statut : addendum ciblé à `05_CONTEXTUAL_CONTROL_ROUTER.md`. Sans interface, sans mapping, sans patch, sans prototype.
 
 ## Objet
@@ -13,7 +13,9 @@ amplitudes ;
 zones de bord ;
 limites jouables ;
 sorties ;
-override humain.
+override humain ;
+automation située ;
+contrôles optimisés par contexte.
 ```
 
 Il ne remplace pas le module `05`.  
@@ -45,7 +47,9 @@ Le Conductor peut dire :
 cette limite est autorisable ;
 cette scène est en zone de bord ;
 ce retour au corps est armé ;
-cette tension peut être retardée.
+cette tension peut être retardée ;
+cette automation locale est autorisée ;
+ce réglage doit rester humain.
 ```
 
 Mais c’est le Router qui doit décider :
@@ -56,7 +60,10 @@ quel contrôle reste profond ;
 quel contrôle devient urgent ;
 quel contrôle est masqué ;
 quel contrôle est verrouillé ;
-quel contrôle peut être override.
+quel contrôle peut être override ;
+quelle fonction est automatisée ;
+quelle fonction reste réglable ;
+quelle automation doit être visible ou silencieuse.
 ```
 
 ---
@@ -72,14 +79,112 @@ contrôle contextuel = intention jouable + contexte + priorité + cible(s) + gar
 Formule harmonisée :
 
 ```text
-contrôle contextuel = intention jouable + contexte + priorité + cible(s) + amplitude + risque + sortie + override.
+contrôle contextuel = intention jouable + contexte + priorité + cible(s) + amplitude + risque + sortie + automation_status + override.
 ```
 
 Ce changement ne remplace pas la formule initiale. Il la complète.
 
 ---
 
-# 3. Entrées supplémentaires à recevoir
+# 3. Automation située vs réglage humain
+
+Le Router doit distinguer, pour chaque fonction :
+
+```text
+automatiser ;
+assister ;
+suggérer ;
+présenter au réglage humain ;
+laisser profond ;
+laisser sous override ;
+verrouiller.
+```
+
+## 3.1 À automatiser ou semi-automatiser
+
+Surtout les fonctions de :
+
+```text
+sécurité ;
+coordination ;
+range limiting ;
+release obligatoire ;
+protection live ;
+routing contextuel ;
+promotion d’urgence ;
+masquage de paramètres inutiles ;
+suivi de zones de bord ;
+préservation des sorties.
+```
+
+Exemples :
+
+```text
+low-end guard ;
+high fatigue guard ;
+freeze release required ;
+sub/didgeridoo conflict warning ;
+control promotion ;
+control hiding ;
+source absent lock ;
+anti-feedback ;
+output safety ;
+live priority protection.
+```
+
+## 3.2 À laisser au réglage de Yohan
+
+Surtout les fonctions de :
+
+```text
+intensité ;
+timing ;
+choix de trajectoire ;
+franchissement de limite ;
+retard ou résolution ;
+exposition d’une matière ;
+rapport expressif à la tension ;
+décision de rester au bord.
+```
+
+Exemples :
+
+```text
+Pressure amount ;
+Body Return type ;
+Retarder / Résoudre / Annuler ;
+Polytexture Density ;
+Suspension depth ;
+Repeat intensity ;
+Loop as trace / shadow / double ;
+Freeze duration when safe ;
+Halo exposure ;
+Override edge.
+```
+
+## 3.3 À optimiser par contexte
+
+Même quand le réglage reste humain, le Router doit réduire la charge en présentant :
+
+```text
+les contrôles les plus pertinents maintenant ;
+les plages utiles ;
+les sorties disponibles ;
+les limites proches ;
+les réglages dangereux mais fertiles ;
+les contrôles profonds seulement si nécessaires.
+```
+
+Règle :
+
+```text
+Yohan ne doit pas avoir à chercher le bon paramètre dans tout le système.
+Le système doit lui présenter les bons gestes de contrôle au bon moment.
+```
+
+---
+
+# 4. Entrées supplémentaires à recevoir
 
 Le Router devrait pouvoir recevoir ou déduire :
 
@@ -90,17 +195,30 @@ edge_zone_status ;
 risk_profile ;
 output_or_exit_mode ;
 override_status ;
+automation_status ;
+manual_control_priority ;
 source_live_priority ;
 provenance_level.
 ```
 
 Ces informations ne doivent pas toutes être affichées.
 
-Elles servent à prioriser ce qui devient jouable.
+Elles servent à prioriser ce qui devient :
+
+```text
+automatisé ;
+visible ;
+urgent ;
+réglable ;
+profond ;
+masqué ;
+verrouillé ;
+overrideable.
+```
 
 ---
 
-# 4. Règle anti-dashboard
+# 5. Règle anti-dashboard
 
 Le Router ne doit pas tout montrer.
 
@@ -115,7 +233,9 @@ verrouiller ;
 rendre profond ;
 rendre urgent ;
 laisser permanent ;
-laisser accessible sur demande.
+laisser accessible sur demande ;
+automatiser silencieusement ;
+automatiser avec feedback visible.
 ```
 
 Règle :
@@ -135,62 +255,70 @@ vue permanente de toutes les amplitudes ;
 interface de monitoring ;
 paramètres techniques exposés sans fonction ;
 warnings qui remplacent l’écoute ;
-contrôles de bord visibles alors que la scène n’approche pas de limite.
+contrôles de bord visibles alors que la scène n’approche pas de limite ;
+automations invisibles qui changent la musique sans intelligibilité ;
+automations trop bavardes qui remplacent le geste musical.
 ```
 
 ---
 
-# 5. Amplitudes comme priorité de routing
+# 6. Amplitudes comme priorité de routing
 
 Le Router doit adapter la visibilité selon la zone actuelle.
 
-## 5.1 Zone sûre
+## 6.1 Zone sûre
 
 ```text
 afficher seulement le noyau de jeu ;
 masquer les warnings ;
-garder les sorties profondes mais disponibles.
+garder les sorties profondes mais disponibles ;
+laisser les protections de fond silencieuses.
 ```
 
-## 5.2 Zone expressive
+## 6.2 Zone expressive
 
 ```text
 montrer le contrôle en cours ;
 montrer éventuellement une sortie ;
-ne pas signaler comme danger.
+ne pas signaler comme danger ;
+automatiser seulement ce qui protège sans réduire l’expression.
 ```
 
-## 5.3 Zone de bord
+## 6.3 Zone de bord
 
 ```text
 montrer la limite approchée ;
 montrer ce qui est gagné ;
 montrer ce qui risque d’être perdu ;
-montrer au moins une sortie.
+montrer au moins une sortie ;
+présenter le réglage humain pertinent ;
+automatiser seulement les protections nécessaires.
 ```
 
-## 5.4 Zone dangereuse
+## 6.4 Zone dangereuse
 
 ```text
 promouvoir les sorties ;
 promouvoir les contrôles d’urgence ;
 avertir le Conductor ;
 réduire la profondeur disponible ;
-préparer un éventuel verrouillage.
+préparer un éventuel verrouillage ;
+automatiser davantage si risque technique réel.
 ```
 
-## 5.5 Zone override
+## 6.5 Zone override
 
 ```text
 montrer que l’override est actif ;
 maintenir sortie ou panic fonctionnel ;
 ne pas multiplier les warnings ;
-préserver la décision humaine.
+préserver la décision humaine ;
+ne pas reprendre automatiquement le contrôle sauf danger technique.
 ```
 
 ---
 
-# 6. Corps comme information de routing
+# 7. Corps comme information de routing
 
 Le Router ne doit pas seulement recevoir :
 
@@ -231,7 +359,7 @@ le Router peut promouvoir Sortie / Réduire halo / Release freeze / Repasser liv
 
 ---
 
-# 7. Limites jouables
+# 8. Limites jouables
 
 Le Router doit distinguer :
 
@@ -242,7 +370,7 @@ limite à bloquer ;
 limite à autoriser sous override.
 ```
 
-## 7.1 Limite à surveiller
+## 8.1 Limite à surveiller
 
 Exemple :
 
@@ -257,7 +385,7 @@ préparer Réduire halo ;
 ne pas encore l’imposer.
 ```
 
-## 7.2 Limite à rendre jouable
+## 8.2 Limite à rendre jouable
 
 Exemple :
 
@@ -271,7 +399,7 @@ Action Router :
 promouvoir Retarder / Annuler / Fausse résolution.
 ```
 
-## 7.3 Limite à bloquer
+## 8.3 Limite à bloquer
 
 Exemple :
 
@@ -288,7 +416,7 @@ Action Router :
 verrouiller ou promouvoir sortie urgente.
 ```
 
-## 7.4 Limite à autoriser sous override
+## 8.4 Limite à autoriser sous override
 
 Exemple :
 
@@ -309,7 +437,7 @@ ne pas bloquer trop tôt.
 
 ---
 
-# 8. Sorties comme contrôles prioritaires
+# 9. Sorties comme contrôles prioritaires
 
 Quand une zone de bord est proche, les sorties doivent devenir plus accessibles.
 
@@ -337,9 +465,9 @@ pas de zone de bord jouable sans sortie disponible.
 
 ---
 
-# 9. Exemples de routing harmonisé
+# 10. Exemples de routing harmonisé
 
-## 9.1 Suspension quasi-ambient
+## 10.1 Suspension quasi-ambient
 
 Contexte :
 
@@ -357,10 +485,11 @@ promouvoir Réduire halo ;
 promouvoir Release freeze si freeze actif ;
 garder Retour corps disponible ;
 montrer override si Yohan maintient la suspension ;
-masquer contrôles de densification non pertinents.
+masquer contrôles de densification non pertinents ;
+automatiser seulement release/safety, pas la décision de sortir.
 ```
 
-## 9.2 Tension pré-drop
+## 10.2 Tension pré-drop
 
 Contexte :
 
@@ -378,10 +507,11 @@ promouvoir Retarder ;
 promouvoir Annuler ;
 promouvoir Fausse résolution ;
 garder Résoudre disponible mais non central ;
-montrer zone de bord si la résolution devient trop attendue.
+montrer zone de bord si la résolution devient trop attendue ;
+ne pas automatiser la résolution.
 ```
 
-## 9.3 Corps-pression surcharge
+## 10.3 Corps-pression surcharge
 
 Contexte :
 
@@ -399,10 +529,11 @@ promouvoir Stabiliser sub ;
 promouvoir Réduire bas-médium ;
 montrer didgeridoo live menacé ;
 conserver Pressure mais afficher zone bord/danger ;
+automatiser low-end guard si nécessaire ;
 permettre override si niveau non dangereux et sortie disponible.
 ```
 
-## 9.4 Polytexture proche confusion
+## 10.4 Polytexture proche confusion
 
 Contexte :
 
@@ -420,14 +551,15 @@ promouvoir Raréfier ;
 promouvoir Lisibilité ;
 promouvoir Protéger guimbardes ;
 réduire visibilité des contrôles décoratifs ;
+automatiser seulement protections douces ;
 permettre chaos temporaire sous override.
 ```
 
 ---
 
-# 10. Relation avec Conductor
+# 11. Relation avec Conductor
 
-Le Router ne décide pas seul si une limite est acceptable.
+Le Router ne décide pas seul si une limite est acceptable ou si une automation est autorisée.
 
 Il reçoit du Conductor :
 
@@ -439,6 +571,7 @@ risque déclaré ;
 limite autorisable ;
 limite interdite ;
 conditions de sortie ;
+automation autorisée ou non ;
 override autorisé ou non.
 ```
 
@@ -449,12 +582,14 @@ le contrôle nécessaire n’est pas performable ;
 la limite approche trop vite ;
 la sortie manque ;
 l’interface risque d’être surchargée ;
-un contrôle d’urgence doit être promu.
+un contrôle d’urgence doit être promu ;
+une automation devient trop invasive ;
+une fonction devrait repasser au réglage humain.
 ```
 
 ---
 
-# 11. Relation avec Conflict / Protection Manager
+# 12. Relation avec Conflict / Protection Manager
 
 Le Conflict Manager signale :
 
@@ -463,7 +598,9 @@ risque ;
 gravité ;
 urgence ;
 réversibilité ;
-tension féconde ou danger réel.
+tension féconde ou danger réel ;
+protection automatique possible ;
+protection à laisser au musicien.
 ```
 
 Le Router transforme cela en :
@@ -475,6 +612,8 @@ message discret ;
 verrou temporaire ;
 contrôle profond ;
 sortie ;
+automation ;
+réglage manuel ;
 override.
 ```
 
@@ -482,11 +621,12 @@ Règle :
 
 ```text
 le Router ne doit pas transformer chaque warning en alarme.
+le Router ne doit pas transformer chaque protection possible en automation active.
 ```
 
 ---
 
-# 12. Décision actuelle
+# 13. Décision actuelle
 
 `05_CONTEXTUAL_CONTROL_ROUTER.md` reste valide.
 
@@ -496,6 +636,8 @@ Cet addendum ajoute une couche nécessaire parce que le Router est le lieu où :
 les amplitudes deviennent jouables ;
 les limites deviennent visibles ;
 les sorties deviennent accessibles ;
+les automations deviennent situées ;
+les réglages humains restent optimisés par contexte ;
 l’override humain devient performativement réel.
 ```
 
