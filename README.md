@@ -23,7 +23,8 @@ addenda de synchronisation ;
 supports pratiques de jeu et d’écoute ;
 audits de cohérence ;
 données instrumentales manquantes prioritaires ;
-correspondance AcousticArchive / Vesperare.
+correspondance AcousticArchive / Vesperare ;
+fiche de reprise depuis la fiche de mesures instrumentales.
 ```
 
 Le recentrage stratégique est documenté dans :
@@ -32,13 +33,14 @@ Le recentrage stratégique est documenté dans :
 docs/40_STRATEGIE_SYSTEME_CONTROLE_LIMITES_HARMONISATION.md
 ```
 
-Les fiches de consolidation et l’audit de cohérence précisent les points sensibles :
+Les fiches de consolidation, d’audit et de reprise précisent les points sensibles :
 
 ```text
 docs/41_CORPS_COMME_FONCTION_COMPOSEE_ET_SITUEE.md
 docs/42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 docs/43_HARMONISATION_CONTROLES_15_22.md
 docs/44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
+docs/45_REPRISE_DEPUIS_FICHE_MESURES_INSTRUMENTS.md
 ```
 
 Des addenda ciblés complètent ensuite certains documents sans les remplacer :
@@ -107,9 +109,10 @@ REPO_TREE_SNAPSHOT.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 43_HARMONISATION_CONTROLES_15_22.md
 44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
+45_REPRISE_DEPUIS_FICHE_MESURES_INSTRUMENTS.md
 ```
 
-Méthode, décisions, vocabulaire, organisation documentaire, workflow, trace d’arborescence, recentrage stratégique et consolidation des notions sensibles.
+Méthode, décisions, vocabulaire, organisation documentaire, workflow, trace d’arborescence, recentrage stratégique, consolidation des notions sensibles et fiche de reprise depuis les mesures instrumentales.
 
 ### Socle stylistique, phénoménal et architectural
 
@@ -258,7 +261,7 @@ NIVEAU 1 — DIRECTEUR
 Analyses stylistiques, cahier des phénomènes, cadres opératoires, exigences système, modules centraux.
 
 NIVEAU 2 — CONSOLIDATION TRANSVERSALE ET AUDIT
-40, 41, 42, 43, 44.
+40, 41, 42, 43, 44, 45.
 
 NIVEAU 3 — ADDENDA CIBLÉS DE CONTRÔLE
 17A, 19A, 22A, modules/17, modules/18.
@@ -323,15 +326,14 @@ prototypage ultérieur seulement si une fonction est suffisamment stabilisée.
 
 La prochaine étape n’est pas de créer un patch, un layout, un mapping, un prototype, un engine profile, un asset concret ou une banque de samples.
 
-Les audits `14–16` sont maintenant posés.
+Les audits `14–16` sont maintenant posés et la fiche `45` permet de reprendre depuis la fiche de mesures instrumentales.
 
 La prochaine étape recommandée est :
 
 ```text
-attendre les premières données AcousticArchive réelles ;
-puis créer des fiches instrumentales courtes uniquement à partir de ces données,
-en priorité pour didgeridoo et guimbardes,
-puis gongs et tambours sur cadre.
+continuer la conception système sans attendre toutes les mesures ;
+auditer la solidité des objectifs musicaux et esthétiques ;
+cartographier les possibilités structurelles du système ;
+intégrer les données réelles AcousticArchive quand elles arriveront ;
+ne pas créer de fiche instrumentale vide ni de seuil fictif.
 ```
-
-Ne pas créer de fiche instrumentale vide ni de seuil fictif.
