@@ -74,7 +74,7 @@ samples seulement si un besoin réel et documenté le justifie ;
 microtonalité, harmoniques, partiels et centres spectraux comme nœud transversal ;
 scènes, trajectoires, objets sonores et états de performance comme couche supérieure ;
 scènes conçues comme champs ouverts orientés : ouvrir sans diluer, structurer sans fermer ;
-contrôle live pensé par fonctions musicales, états, amplitudes, protections, arbitrages, limites et visualisations contextuelles ;
+contrôle live pensé par fonctions musicales, états, amplitudes, protections, arbitrages, automation située, limites et visualisations contextuelles ;
 Max for Live comme cœur temps réel futur ;
 Ableton Extensions SDK comme outil satellite de préparation et documentation.
 ```
@@ -84,10 +84,12 @@ Ableton Extensions SDK comme outil satellite de préparation et documentation.
 Dans Vesperare, un contrôle n’est pas un simple paramètre technique.
 
 ```text
-contrôle = sélection + organisation + amplitude + contexte + risque + sortie + override.
+contrôle = sélection + organisation + amplitude + contexte + risque + sortie + automation située + override.
 ```
 
 Le système doit donner à Yohan une capacité efficace de variation sur les dimensions stylistiquement pertinentes de sa musique.
+
+Certaines fonctions peuvent être automatisées par le système lorsqu’elles relèvent de protection, coordination, suivi, release, routing ou réduction de charge. D’autres doivent rester sous réglage humain, mais le système doit toujours présenter les contrôles les plus pertinents pour le contexte actif.
 
 Il doit aussi permettre de flirter intelligemment avec les limites : ambientisation, surcharge, cliché, perte du corps, drop automatique, freeze-drone, loop qui remplace le live, etc.
 
@@ -146,7 +148,7 @@ Ces documents définissent les bases : style, phénomènes sonores, scènes, tra
 22A_HARMONISATION_VISUALISATION_AMPLITUDES_LIMITES.md
 ```
 
-Ces documents traduisent les analyses en exigences de contrôle, couches de performance, infrastructure temporelle et visualisation contextuelle. Les addenda `17A`, `19A` et `22A` ajoutent la lecture par corps composé, amplitudes, zones de bord, sorties et override.
+Ces documents traduisent les analyses en exigences de contrôle, couches de performance, infrastructure temporelle et visualisation contextuelle. Les addenda `17A`, `19A` et `22A` ajoutent la lecture par corps composé, amplitudes, zones de bord, sorties, automation située et override.
 
 ### Scènes ouvertes, scènes-pivots et pont vers les modules
 
@@ -215,7 +217,7 @@ Addenda module actuels :
 /docs/modules/18_CONTEXTUAL_CONTROL_ROUTER_AMPLITUDES_LIMITES_OVERRIDE_ADDENDUM.md
 ```
 
-Le guide transversal `modules/17` relit les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override. L’addendum `modules/18` précise le Router, car c’est le module qui rend ces limites et amplitudes jouables.
+Le guide transversal `modules/17` relit les modules centraux avec la grille corps composé / amplitudes / zones de bord / sorties / override. L’addendum `modules/18` précise le Router, car c’est le module qui rend ces limites et amplitudes jouables, et qui décide ce qui est automatisé, réglable, masqué, suggéré ou verrouillé dans le contexte actif.
 
 ### Sources, besoins et assets
 
@@ -294,6 +296,7 @@ harmoniser les statuts documentaires ;
 requalifier les interdits en zones de bord jouables lorsque c’est musicalement juste ;
 préserver les sources live fixes ;
 maintenir les sources conditionnelles comme conditionnelles ;
+distinguer automation située et réglage humain contextualisé ;
 corriger 38–39 ;
 auditer assets/source_needs ;
 identifier les données instrumentales manquantes ;
