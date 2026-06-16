@@ -59,6 +59,40 @@ supports naturalisés : oiseaux, insectes, cymbalettes, clochettes, frottements,
 
 La fonction reste valide si le support conserve lisibilité temporelle, attaque, propulsion, intégration au groove et présence spectrale contrôlée.
 
+## Clarification techno-first et anti-caricature
+
+La techno reste le socle perceptible principal du projet. Le terme **techno organique** ne signifie donc pas :
+
+```text
+techno + sons naturels.
+```
+
+Il signifie plutôt : conserver les fonctions techno qui donnent corps, pression, impact, hypnose, répétition, tension, efficacité et forme longue, tout en transformant les supports qui les portent.
+
+La naturalisation n'est valide que si la fonction techno reste active. Un son acoustique, naturel, vocal, instrumental, microtonal ou riche en partiels ne vaut pas en lui-même. Il doit porter une fonction musicale claire :
+
+```text
+impact ;
+pression ;
+répétition ;
+hypnose ;
+intensité ;
+contour ;
+brillance ;
+polytexture ;
+espace ;
+voix ;
+beauté avec conséquence.
+```
+
+Cette clarification évite deux caricatures.
+
+Première caricature : réduire la techno à kick, beat, sub ou drop. Ces éléments peuvent être importants, mais ils ne résument pas les fonctions techno retenues ici : contour, répétition non redondante, hypnose active, pression spectrale, intensité sans agression, brillance rythmique, espace occupé et tension longue comptent aussi.
+
+Deuxième caricature : réduire l'organique à l'emploi de sons naturels. Une matière naturelle ou acoustique peut devenir décorative, illustrative ou ambient si elle ne conserve pas une fonction, une tension, une direction, une lisibilité ou une conséquence formelle.
+
+Les influences secondaires, jazz, dubstep, trance, acid, pitch, microtonalité et polytexture, enrichissent ce socle sans le remplacer. Elles peuvent apporter complexité, tension, couleur, finesse rythmique, attente, torsion, ouverture, partiels, battements ou matérialité. Elles ne doivent pas devenir des modes stylistiques autonomes ni déplacer le centre du projet hors des fonctions techno naturalisées.
+
 ## Points esthétiques confirmés
 
 ### Intensité phénoménale sans agression
