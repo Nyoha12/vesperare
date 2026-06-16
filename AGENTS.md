@@ -60,17 +60,22 @@ Ces documents sont prioritaires sur les sorties expérimentales d'agents.
 
 ---
 
-# 3. Règle anti-doublon
+# 3. Règle source-of-truth d'abord
 
-Ne pas créer un nouveau document pour chaque nuance.
-
-Avant de créer un document, demander :
+Avant de créer une sortie ou un document, l'agent doit demander :
 
 ```text
-existe-t-il déjà un document qui sert à trier cette question ?
+quel document existant sert déjà de lieu de tri pour cette question ?
 ```
 
-Si oui : proposer une mise à jour ciblée de ce document.
+Si un document existe déjà, préférer :
+
+```text
+une proposition de mise à jour ciblée ;
+un résumé de divergence ;
+un patch conceptuel limité ;
+une note de lecture courte.
+```
 
 Créer un nouveau document seulement si :
 
@@ -166,7 +171,51 @@ décision humaine attendue.
 
 ---
 
-# 7. Règle contrôle / automation
+# 7. Mode rapide / qualité
+
+La méthode doit être plus rapide en choisissant le niveau d'agent juste.
+
+## Pas d'agent
+
+Utiliser quand :
+
+```text
+le bon document existe déjà ;
+la réponse est une simple lecture ;
+la tâche est mécanique ;
+une mise à jour ciblée suffit.
+```
+
+## Agent unique
+
+Utiliser quand :
+
+```text
+le corpus est petit ;
+la tâche est une extraction ou une revue limitée ;
+les critères sont clairs ;
+la sortie attendue est courte.
+```
+
+## Multi-agents parallèles
+
+Utiliser quand :
+
+```text
+plusieurs cadres peuvent entrer en tension ;
+la tâche implique méthode + musique + technique + agency ;
+les risques sont différents selon les perspectives ;
+le désaccord est utile ;
+une décision future est coûteuse ou difficile à inverser.
+```
+
+Dans ce cas, chaque agent doit avoir un rôle indépendant et une sortie comparable.
+
+La synthèse doit préserver les désaccords, pas les écraser.
+
+---
+
+# 8. Règle contrôle / automation
 
 Respecter la méthode actuelle de `main` :
 
@@ -190,7 +239,7 @@ override.
 
 ---
 
-# 8. Interdictions fortes
+# 9. Interdictions fortes
 
 Ne pas :
 
@@ -211,7 +260,7 @@ remplacer le jugement musical de Yohan.
 
 ---
 
-# 9. Toujours faire
+# 10. Toujours faire
 
 ```text
 séparer fait / inférence / recommandation ;
@@ -220,5 +269,6 @@ limiter le corpus ;
 nommer les fichiers consultés ;
 préserver les divergences ;
 proposer la prochaine action minimale ;
-respecter les sources de vérité existantes.
+respecter les sources de vérité existantes ;
+choisir le niveau d'orchestration le plus léger qui suffit.
 ```
