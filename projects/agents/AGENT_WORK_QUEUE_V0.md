@@ -4,7 +4,7 @@
 
 Queue de travail pour agents cadrés.
 
-But : éviter de continuer par micro-documents dispersés.
+But : éviter de continuer par micro-documents dispersés et éviter de demander à Yohan de répondre à des questions que le programme doit instruire.
 
 ---
 
@@ -16,39 +16,52 @@ Pas de travail hors queue sans nouvelle décision.
 
 ---
 
-# 2. Queue actuelle
+# 2. Correction de trajectoire
 
-## RUN-01 — Revue critique de MTC01
+La focalisation sur MTC01 était prématurée.
+
+MTC01 reste en réserve, mais ne doit plus être la prochaine tâche.
+
+Raison : la question manque encore de matière musicale concrète.
+
+---
+
+# 3. Queue actuelle
+
+## RUN-01 — Musical material intake
 
 Statut : prêt.
 
 Prompt :
 
 ```text
-projects/agents/CODEX_AGENT_PROMPT_MTC01_REVIEW.md
+projects/agents/CODEX_AGENT_PROMPT_MUSICAL_MATERIAL_INTAKE.md
 ```
 
 Objet :
 
 ```text
-MICRO_TEST_AUTHORIZATION_DRAFT_MTC01_REVISED.md
+extraire du corpus les matières musicales concrètes disponibles ou décrites
 ```
 
 Sortie attendue :
 
 ```text
-projects/agents/outputs/MTC01_AGENT_REVIEW_OUTPUT.md
+projects/agents/outputs/MUSICAL_MATERIAL_INTAKE_OUTPUT.md
 ```
 
 Décision possible après sortie :
 
 ```text
-garder / réviser / suspendre / abandonner MTC01 comme candidat.
+choisir les vrais objets de conception ;
+identifier les matières manquantes ;
+choisir une question à instruire ;
+suspendre les micro-tests.
 ```
 
 ## RUN-02 — Revue méthode / surcharge
 
-Statut : à faire seulement après RUN-01.
+Statut : à faire seulement après RUN-01 si nécessaire.
 
 Objet :
 
@@ -62,58 +75,27 @@ Sortie attendue :
 projects/agents/outputs/METHOD_LOAD_REVIEW_OUTPUT.md
 ```
 
-Décision possible :
+## RUN-03 — Reprise éventuelle de MTC01
 
-```text
-alléger ;
-continuer ;
-figer ;
-refactoriser les documents.
-```
+Statut : suspendu.
 
-## RUN-03 — Source_needs next batch gate
-
-Statut : bloqué jusqu’après RUN-01 et RUN-02.
+Condition : seulement après MUSICAL_MATERIAL_INTAKE_OUTPUT et seulement si une matière musicale concrète rend la question pertinente.
 
 Objet :
 
 ```text
-faut-il ouvrir un Batch 02 source_needs ?
+MTC01 peut-il redevenir une question utile, ou doit-il rester suspendu ?
 ```
 
-Sortie attendue :
+## RUN-04 — Source_needs next batch gate
 
-```text
-projects/agents/outputs/SOURCE_NEEDS_BATCH_02_GATE_OUTPUT.md
-```
+Statut : bloqué.
 
-Décision possible :
-
-```text
-ouvrir un batch très limité ;
-rester sur micro-tests ;
-suspendre source_needs.
-```
-
-## RUN-04 — Préparation agent de spec locale
-
-Statut : pas encore autorisé.
-
-Objet possible futur :
-
-```text
-spécifier localement un micro-test autorisé, pas le système global.
-```
-
-Condition :
-
-```text
-un micro-test doit être explicitement autorisé avant.
-```
+Condition : seulement après clarification des matières musicales concrètes.
 
 ---
 
-# 3. Interdictions globales de la queue
+# 4. Interdictions globales de la queue
 
 Aucun run ne peut :
 
@@ -125,20 +107,16 @@ créer un mapping ;
 créer une spec globale ;
 lancer un prototype ;
 lancer un micro-test ;
-auditer tout le repo.
+auditer tout le repo ;
+demander à Yohan de résoudre une question de recherche à la place du programme.
 ```
 
 ---
 
-# 4. Prochaine action unique
+# 5. Prochaine action unique
 
 ```text
-RUN-01 — Revue critique de MTC01
+RUN-01 — Musical material intake
 ```
 
-Ne pas créer d’autre document avant d’avoir soit :
-
-```text
-une sortie d’agent pour RUN-01 ;
-soit une décision explicite de changer la queue.
-```
+Ne pas revenir à MTC01 avant cette sortie.
