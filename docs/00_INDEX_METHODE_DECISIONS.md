@@ -1,6 +1,6 @@
 # 00_INDEX_METHODE_DECISIONS
 
-Version : v4.7  
+Version : v4.8  
 Statut : document directeur de méthode, décisions, statuts et cartographie documentaire.
 
 ## Objet
@@ -17,6 +17,7 @@ Documents directeurs du recentrage actuel :
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 43_HARMONISATION_CONTROLES_15_22.md
 44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
+45_REPRISE_DEPUIS_FICHE_MESURES_INSTRUMENTS.md
 ```
 
 Addenda ciblés de contrôle et visualisation :
@@ -94,12 +95,19 @@ Le paquet de recentrage a été audité dans :
 44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
 ```
 
-Décision issue de cet audit :
+Le projet peut être repris depuis la fiche de mesures instrumentales via :
+
+```text
+45_REPRISE_DEPUIS_FICHE_MESURES_INSTRUMENTS.md
+```
+
+Décision issue de ces audits :
 
 ```text
 le paquet de recentrage est cohérent ;
 ne plus produire d’addenda de recentrage sans besoin net ;
-passer ensuite à l’audit assets/source_needs puis aux données instrumentales réellement manquantes.
+les données instrumentales et AcousticArchive sont utiles mais non bloquantes ;
+continuer la conception système sans créer de seuils fictifs ni fiches vides.
 ```
 
 ---
@@ -261,9 +269,10 @@ REPO_TREE_SNAPSHOT.md
 42_CONTROLES_AMPLITUDES_LIMITES_OVERRIDE.md
 43_HARMONISATION_CONTROLES_15_22.md
 44_AUDIT_COHERENCE_RECENTRAGE_PAQUET.md
+45_REPRISE_DEPUIS_FICHE_MESURES_INSTRUMENTS.md
 ```
 
-Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow, la trace d’arborescence et le recentrage stratégique.
+Rôle : présenter le projet, garder les décisions structurantes, organiser la méthode, le vocabulaire, le workflow, la trace d’arborescence, le recentrage stratégique et la reprise depuis la fiche de mesures.
 
 ## B. Style et influences
 
@@ -563,7 +572,7 @@ Automation = aide située, pas décision esthétique globale.
 
 La branche `12–26` reste intégrée et valide.
 
-Les documents `40–44` consolident et auditent le recentrage sans remplacer le socle.
+Les documents `40–45` consolident, auditent et rendent le projet reprenable sans remplacer le socle.
 
 Les addenda `17A`, `19A`, `22A` harmonisent les contrôles, états et visualisation sans réécrire les documents originaux.
 
@@ -581,6 +590,8 @@ Le document `modules/18` complète individuellement le Router.
 
 Les audits assets `14–16` reclassent les source_needs, données instrumentales et sorties AcousticArchive sans créer d’asset réel.
 
+Le document `45` indique les fichiers ajoutés/modifiés depuis la fiche de mesures instrumentales, et les décisions méthodologiques associées.
+
 Les addenda `27–31` restent utiles mais secondaires.
 
 Les documents `32–37` restent utiles comme supports pratiques et optionnels.
@@ -590,15 +601,11 @@ Les documents `38–39` sont corrigés en supports optionnels.
 Prochaine étape recommandée :
 
 ```text
-attendre les premières données AcousticArchive réelles ;
-puis créer éventuellement des fiches instrumentales courtes pour :
-- didgeridoo ;
-- guimbardes ;
-- gongs ;
-- tambours sur cadre.
+continuer la conception système sans attendre toutes les mesures ;
+auditer la solidité des objectifs musicaux et esthétiques ;
+cartographier les possibilités structurelles du système ;
+intégrer les données réelles AcousticArchive quand elles arriveront.
 ```
-
-Ces fiches ne doivent pas être des assets ni des protocoles d’enregistrement. Elles doivent seulement organiser les connaissances utiles : registre, corps, amplitude, limites, sorties, relations, et éventuelles automations de protection.
 
 Ne pas encore créer :
 
@@ -611,5 +618,7 @@ asset réel ;
 engine profile ;
 nouveau source_need ;
 nouvelle scène ;
-collecte audio obligatoire.
+collecte audio obligatoire ;
+fiche instrumentale vide ;
+seuil fictif.
 ```
