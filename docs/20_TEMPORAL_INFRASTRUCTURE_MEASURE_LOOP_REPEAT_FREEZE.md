@@ -57,6 +57,16 @@ conduite de scène.
 
 ---
 
+## Note de statut
+
+Dans ce document, loop, repeat, freeze, cycle et phase sont des affordances temporelles situées. Ils ne valent pas, par eux-mêmes, répétition non redondante ni hypnose active. Une répétition peut contribuer à une identité temporelle ; une hypnose peut utiliser boucle, stabilité ou mutation lente ; mais ces objets temporels restent des moyens au service d'une fonction de scène, d'une relation au live, d'un risque et d'une sortie.
+
+Une loop ne doit pas devenir banque, clip ou remplacement durable du didgeridoo ou des guimbardes. Un repeat ne doit pas devenir effet démonstratif. Un freeze ne doit pas devenir drone, stase ou ambientisation. Toute capture, répétition ou suspension doit garder une fonction musicale explicite, une relation au live, un risque identifié et une sortie / release disponible.
+
+Le système peut assister, signaler, rendre visible, limiter ou protéger. Il ne décide pas la forme expressive, le moment de résolution, le maintien au bord ou le retour au corps à la place de Yohan.
+
+---
+
 # 2. Objets temporels abstraits
 
 ## 2.1 TEMPO_STATE

@@ -26,6 +26,16 @@ comment éviter l’effet reconnaissable ou décoratif.
 
 ---
 
+## Note de statut
+
+Ce fichier est le document 21 temporel existant pour les questions de décision issues de `20`. Il suffit pour traiter les angles source-based, layer-based et state-based tant qu'une phase réelle ne demande pas un document séparé ; ne pas créer un nouveau document `SOURCE_BASED_LAYER_BASED` par simple découpage.
+
+Les catégories source-based, layer-based et state-based sont des angles de décision : elles aident à demander ce qui est capturé, suspendu ou répété, à quel niveau, pour quelle fonction et avec quelle sortie. Elles ne sont pas des modes automatiques, des presets, des clips ou des autorisations permanentes.
+
+Tout choix de cible temporelle doit préserver la source live, la fonction de scène, la relation au corps, le risque identifié et la sortie disponible. Toute capture, boucle, repeat ou freeze doit rester réversible, temporaire, ou explicitement assumé comme franchissement de limite sous contrôle humain. Le système peut protéger, signaler, rendre visible ou verrouiller en cas de risque ; il ne valide pas une décision expressive à la place de Yohan.
+
+---
+
 # 1. Quelles sources peuvent être capturées en loop ?
 
 Réponse : oui, mais seulement par fonction.
