@@ -260,6 +260,8 @@ automations invisibles qui changent la musique sans intelligibilité ;
 automations trop bavardes qui remplacent le geste musical.
 ```
 
+Note de statut : un contrôle permanent est seulement un accès de base disponible, pas une macro générale ouverte en continu. Un contrôle prioritaire de scène est une promotion temporaire issue du champ de scène actif, pas un preset ni une décision formelle. `Pressure`, `Body Return`, loop, repeat et freeze restent des raccourcis ou affordances situées : pression doit rester subdivisible, retour au corps reste une famille de sorties, et répétition / hypnose ne se réduisent pas aux objets temporels.
+
 ---
 
 # 6. Amplitudes comme priorité de routing

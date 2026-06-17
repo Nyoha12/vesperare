@@ -50,6 +50,8 @@ Priorité d’apparition :
 6. information de fond.
 ```
 
+Note de statut : une vue n’est pas un panneau permanent. Quand son déclencheur disparaît, elle doit se retirer, redevenir profonde ou rester accessible sur demande. `VIEW_GUARDS_WARNINGS` ne doit montrer que les risques actifs utiles ; `VIEW_SCENE_PROPORTIONS` et `VIEW_SOURCE_CONFIGURATION` ne doivent pas devenir des tableaux de bord ouverts en continu ni transformer une scène en preset.
+
 ---
 
 # 2. Vues nécessaires
