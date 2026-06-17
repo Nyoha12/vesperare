@@ -169,6 +169,8 @@ sub générique.
 
 Niveau de précision actuel : moyen. Il faut distinguer pression physique, pression spectrale, pression rythmique et pression de densité.
 
+Note de statut : cette entrée ne doit pas solidifier `pression` en macro unique. Dans ce document, `macro de pression`, `seuils de danger` et `saturation contrôlée` restent des raccourcis opératoires non calibrés : pression n’équivaut ni à volume, ni à sub, ni à saturation, ni à densité générale. Les protections peuvent signaler boue, fatigue, masquage ou perte de contour ; elles ne règlent pas l’intensité expressive à la place de Yohan.
+
 ## 3.3 Impact
 
 Statut : CENTRAL.
@@ -314,6 +316,8 @@ décision humaine du retour.
 ```
 
 Niveau de précision actuel : très bon dans l’axe harmonic drone, mais doit devenir principe transversal.
+
+Note de statut : `retour au corps` ne doit pas être transformé en macro unique solide. Il désigne ici une famille de sorties et de réancrages possibles : impact, sub stabilisé, reprise live, retrait de halo ou freeze, raréfaction, sortie anti-ambient, retour après matière exposée ou suspension. Le système peut rendre ces sorties disponibles ou visibles ; il ne choisit pas automatiquement le type, le timing ou l’intensité du retour.
 
 ---
 

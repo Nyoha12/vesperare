@@ -201,6 +201,8 @@ exit_modes ;
 return_to_body_modes.
 ```
 
+Note de statut : les champs `priority_controls`, `temporal_affordances` et `return_to_body_modes` ne stabilisent pas des macros, objets temporels ou retours définitifs. Ils nomment ce qui doit rester disponible ou lisible dans une scène. En particulier, `MACRO_BODY_RETURN` reste un raccourci pour plusieurs modes de sortie ; `MACRO_PRESSURE` reste subdivisible ; loop / repeat / freeze restent des moyens temporels attachés à une fonction de scène et à une sortie, pas des synonymes de répétition non redondante ou d’hypnose active.
+
 Cette fiche ne doit pas être un preset.
 
 Elle doit être une matrice de jeu.
