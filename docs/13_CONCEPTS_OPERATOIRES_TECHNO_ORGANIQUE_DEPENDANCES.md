@@ -234,6 +234,18 @@ capacité d’introduire un événement sans casser l’hypnose.
 
 Niveau de précision actuel : insuffisant pour l’interface. Le concept est central mais pas encore assez transformé en contrôles.
 
+### Distinction répétition / hypnose
+
+Cette entrée garde volontairement les deux notions ensemble, mais elles ne doivent pas être fusionnées.
+
+La `répétition non redondante` désigne d’abord la tenue d’une identité temporelle : motif ou cadre reconnaissable, retour perceptible, micro-variation signifiante, stabilité suffisante, mutation lente ou contextuelle. Elle répond à la question de ce qui revient, de ce qui reste identifiable et de la manière dont la variation évite la boucle morte.
+
+L’`hypnose active` désigne plutôt l’effet produit par cette organisation dans la durée : être porté, aspiré, entraîné, avec corps, tension, propulsion et perception longue. La répétition peut contribuer à cette hypnose, mais elle ne suffit pas toujours. L’hypnose peut aussi venir de pression, contour, polytexture, tension longue, ligne vivante ou mutation de matière.
+
+Conséquence méthode : côté système et interface, ces notions ne doivent pas être réduites à loop, repeat, freeze, randomisation ou automation générative. Avant toute interface forte, il faudra distinguer stabilité, identité, variation, mutation, continuité corporelle, usure perceptive et sortie disponible.
+
+Le réglage expressif reste humain. Le système peut seulement assister la variation fine, le maintien d’une stabilité vivante, la visualisation d’un cycle ou d’une usure, et la disponibilité d’une sortie.
+
 ## 3.5 Tension longue
 
 Statut : CENTRAL.
