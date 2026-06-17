@@ -69,6 +69,8 @@ IR_BODY_04: indicateur de conflit sub / live / champ.
 IR_BODY_05: contrôle de priorité entre sub, impact, didgeridoo, guimbardes et matières préparées.
 ```
 
+Note de statut : `macro Retour au corps` est un raccourci provisoire d’interface. Elle ne doit pas être lue comme bouton unique de reset, drop, reprise de beat ou sub fort. Elle agrège plusieurs sous-fonctions : réincorporation par impact, stabilisation du sub, reprise live, retrait de halo/freeze, sortie anti-ambient, retour après matière exposée ou suspension. Son timing, son intensité et sa forme restent du côté du jugement musical de Yohan ; le système peut seulement rendre ces sorties disponibles, visibles ou protégées.
+
 ## 2.3 PROTECTION_REQUIREMENTS
 
 ```text
@@ -120,6 +122,8 @@ IR_PRESSURE_03: contrôle Tension longue.
 IR_PRESSURE_04: contrôle Seuil de saturation.
 IR_PRESSURE_05: indication de danger : fatigue, boue, perte de lisibilité.
 ```
+
+Note de statut : `macro Pression` est légitime seulement si les sous-types restent distingués. Elle ne doit pas réduire la pression à volume, sub, saturation ou densité générale. Les sous-types déjà mentionnés, physique / spectrale / densité / rythmique, doivent rester accessibles ou différenciables. Les protections peuvent aider à surveiller boue, fatigue, masquage live ou perte de contour ; le réglage expressif de la pression reste humain.
 
 ## 3.3 PROTECTION_REQUIREMENTS
 
