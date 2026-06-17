@@ -1,6 +1,6 @@
 # 00_INDEX_RECHERCHES_SPECIALISEES
 
-Version : v0.1  
+Version : v0.2  
 Statut : dossier de stockage documentaire spécialisé. Support d'analyse et d'intégration, pas source de vérité esthétique, pas spécification système.
 
 ## Objet
@@ -14,7 +14,8 @@ faciles à extraire ;
 faciles à comparer ;
 faciles à relier aux documents internes ;
 faciles à intégrer plus tard sans doublonner ;
-faciles à déclasser si elles ne sont pas pertinentes.
+faciles à déclasser si elles ne sont pas pertinentes ;
+utilisables par d'autres conversations ou agents sans créer de doctrine parallèle.
 ```
 
 Ce dossier ne remplace pas :
@@ -96,7 +97,8 @@ contrôle gestuel ;
 performabilité ;
 liveness ;
 instruments numériques ;
-cohabitation électronique / acoustique.
+cohabitation électronique / acoustique ;
+vérification musicale intégrée.
 ```
 
 Usage principal : aider à penser l'interface, le contrôle contextuel, la performabilité et la relation aux instruments live.
@@ -132,6 +134,26 @@ usage Vesperare ;
 document interne cible ;
 statut d'intégration.
 ```
+
+Usage principal : éviter qu'une recherche externe devienne une règle brute ou un doublon.
+
+## `04_PRIORITES_RECHERCHES_ET_ANALYSES_RESTANTES.md`
+
+Stocke les besoins de recherches et d'analyses restantes :
+
+```text
+recherches techno à poursuivre ;
+recherches dubstep ;
+recherches jazz ;
+recherches trance ;
+recherches acid ;
+recherches live electronics / NIME / mapping ;
+recherches polytexture / écologie / génératif ;
+questions ciblées éventuelles ;
+format d'extraction attendu.
+```
+
+Usage principal : donner à une autre conversation ou à un agent une feuille de route de recherches spécialisées sans créer de nouvelles sources de vérité.
 
 ---
 
