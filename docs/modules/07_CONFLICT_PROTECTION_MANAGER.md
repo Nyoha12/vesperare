@@ -341,6 +341,8 @@ output_mix_warning.
 
 Il ne produit pas directement la musique. Il modifie les conditions de possibilité.
 
+Note de statut : ces sorties sont des demandes situées, pas des décisions de composition ni des interdits esthétiques globaux. Elles doivent distinguer le niveau d’intervention : signaler / avertir / rendre visible via le Router, promouvoir une sortie, demander une réduction, demander un masquage ou un verrou temporaire de contrôle, ou laisser l’override humain lorsque le risque est musical, lisible et réversible. Un `router_alert` ou `conductor_warning` ne doit pas devenir une alarme permanente ; un `lock_request` ou `cancel_request` ne doit viser qu’un risque actif, une incohérence documentée ou une sécurité technique, avec sortie ou justification explicite.
+
 ---
 
 # 7. Actions possibles
