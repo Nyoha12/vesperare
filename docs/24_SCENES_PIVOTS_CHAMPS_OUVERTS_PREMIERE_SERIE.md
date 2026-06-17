@@ -41,6 +41,16 @@ ouvrir sans diluer ;
 structurer sans fermer.
 ```
 
+## Note de statut — scènes-pivots
+
+Les scènes-pivots ci-dessous sont des champs ouverts de performance. Elles ne sont ni presets, ni modes fermés, ni scènes Ableton, ni architectures système, ni listes définitives de contrôles. Elles servent à vérifier des relations entre fonctions musicales, sources, trajectoires, temporalité, visualisations et protections, sans valider mapping, prototype, layout ou architecture finale.
+
+Les listes de sources, rôles, contrôles, temporalités, vues, guards et sorties indiquent des disponibilités contextuelles. Leur ordre n’établit ni priorité permanente, ni obligation d’usage, ni hiérarchie finale entre scène, Router, temporalité et protection. `priority_controls` désigne ce qui peut devenir saillant dans une scène selon l’état, le risque ou le geste en cours ; cela ne signifie pas que ces contrôles doivent rester visibles, ouverts ou mappés en permanence. `temporal_affordances` désigne des moyens temporels situés ; loop, repeat ou freeze ne sont pas obligatoires et ne valent pas par eux-mêmes répétition, hypnose ou suspension.
+
+`visualization_needs` désigne des vues utiles quand le contexte les rend nécessaires ; ce n’est pas un dashboard permanent. Les `guards` protègent les fonctions, les sources live, les sorties et la lisibilité des risques ; ils ne doivent pas devenir des interdits esthétiques globaux. `exit_modes` et `return_to_body_modes`, lorsqu’ils sont mobilisés par la méthode, doivent rester des sorties disponibles, préparées ou choisies, pas des automatismes expressifs ni un bouton unique de retour au corps.
+
+Les fiches pratiques `33–35` restent des supports de jeu, d’écoute et de réflexion. Leurs phases, durées, variantes et points de contrôle ne sont ni partitions, ni scripts, ni obligations de performance.
+
 ---
 
 # 1. SCENE_PIVOT_CORPS_VIVANT_POLYTEXTURE
