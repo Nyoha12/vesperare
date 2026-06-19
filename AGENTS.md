@@ -103,6 +103,34 @@ sortie d'agent ≠ preuve ;
 cohérence documentaire ≠ validation musicale.
 ```
 
+## Règle lexicale contextuelle
+
+Les mots pression, hypnose, répétition, beauté avec conséquence, corps et suspension ne doivent pas être traités comme des concepts autonomes ni employés seuls comme catégories déjà comprises.
+
+Ils ne deviennent utilisables que s'ils sont rattachés à un contexte musical précis : style ou tradition, phénomène reconnu, matériau sonore, registre, motif, type de répétition, source ou famille sonore, situation formelle, risque précis ou conséquence musicale nommée.
+
+### Exemples interdits
+
+```text
+didgeridoo = pression ;
+guimbardes = répétition ;
+gong = beauté ;
+field recording = suspension ;
+hypnose = loop ;
+beauté = joli son ;
+corps = sensation générale.
+```
+
+### Exemples acceptables
+
+```text
+pression dans un contexte de grave / bas-médium / centre spectral / intensité techno ;
+hypnose dans un contexte de motif stable, retour perceptible et micro-variation ;
+répétition liée à un motif identifiable, une stabilité et une mutation lente ;
+beauté d'une résonance longue ou d'une matière exposée avec conséquence formelle nommée ;
+suspension si le retrait, ce qui reste perceptible et la sortie sont précisés.
+```
+
 ---
 
 # 5. Règle human-in-the-loop
