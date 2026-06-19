@@ -105,9 +105,11 @@ cohérence documentaire ≠ validation musicale.
 
 ## Règle lexicale contextuelle
 
-Les mots pression, hypnose, répétition, beauté avec conséquence, corps et suspension ne doivent pas être traités comme des concepts autonomes ni employés seuls comme catégories déjà comprises.
+Les mots pression, hypnose, répétition, beauté avec conséquence, corps, suspension, organique, naturalisation, fonction et source live ne doivent pas être traités comme des concepts autonomes ni employés seuls comme catégories déjà comprises.
 
-Ils ne deviennent utilisables que s'ils sont rattachés à un contexte musical précis : style ou tradition, phénomène reconnu, matériau sonore, registre, motif, type de répétition, source ou famille sonore, situation formelle, risque précis ou conséquence musicale nommée.
+Ils ne deviennent utilisables que s'ils sont rattachés à un contexte musical précis : style ou tradition, phénomène musical reconnu, phénomène acoustique reconnu, matériau sonore, registre, motif, type de répétition, source ou famille sonore, situation formelle, risque précis ou conséquence musicale nommée.
+
+Pour suspension, préciser retrait / reste perceptible / sortie ; pour source live, présence, geste, jeu ou relation musicale ; pour naturalisation, support transformé et phénomène conservé ; pour fonction, phénomène et situation.
 
 ### Exemples interdits
 
@@ -118,7 +120,12 @@ gong = beauté ;
 field recording = suspension ;
 hypnose = loop ;
 beauté = joli son ;
-corps = sensation générale.
+corps = sensation générale ;
+organique = naturel ;
+naturalisation = sons naturels ;
+fonction = rôle fixe ;
+source live = input audio ;
+source live = banque de sons.
 ```
 
 ### Exemples acceptables
@@ -128,7 +135,11 @@ pression dans un contexte de grave / bas-médium / centre spectral / intensité 
 hypnose dans un contexte de motif stable, retour perceptible et micro-variation ;
 répétition liée à un motif identifiable, une stabilité et une mutation lente ;
 beauté d'une résonance longue ou d'une matière exposée avec conséquence formelle nommée ;
-suspension si le retrait, ce qui reste perceptible et la sortie sont précisés.
+suspension si le retrait, ce qui reste perceptible et la sortie sont précisés ;
+organique employé seulement avec support sonore, matériau et risque de décor explicités ;
+naturalisation comme changement de support sonore avec phénomène musical ou acoustique nommé ;
+fonction utilisée seulement pour décrire ce qu'un élément fait dans une situation musicale précise, sans fixer le rôle du jeu ;
+source live comme présence, geste ou relation musicale à préserver, jamais comme simple entrée audio.
 ```
 
 ---

@@ -175,9 +175,11 @@ Dire quel document existant devrait recevoir une information, au lieu de créer 
 
 ## Désambiguïsation lexicale contextuelle
 
-Quand un run manipule pression, hypnose, répétition, beauté avec conséquence, corps ou suspension, il doit les rattacher à un contexte musical précis.
+Quand un run manipule pression, hypnose, répétition, beauté avec conséquence, corps, suspension, organique, naturalisation, fonction ou source live, il doit les rattacher à un contexte musical précis.
 
-Ces mots ne doivent pas être employés comme concepts autonomes ou catégories déjà comprises. Un contexte peut être un style, une tradition, un phénomène musical reconnu, un matériau sonore, un registre, un motif, un type de répétition, une source ou famille sonore, une situation formelle, un risque précis ou une conséquence musicale nommée.
+Ces mots ne doivent pas être employés comme concepts autonomes ou catégories déjà comprises. Un contexte peut être un style, une tradition, un phénomène musical reconnu, un phénomène acoustique reconnu, un matériau sonore, un registre, un motif, un type de répétition, une source ou famille sonore, une situation formelle, un risque précis ou une conséquence musicale nommée.
+
+Pour suspension, préciser retrait / reste perceptible / sortie ; pour source live, présence, geste, jeu ou relation musicale ; pour naturalisation, support transformé et phénomène conservé ; pour fonction, phénomène et situation.
 
 ### Formulations à refuser
 
@@ -188,7 +190,12 @@ gong = beauté ;
 field recording = suspension ;
 hypnose = loop ;
 beauté = joli son ;
-corps = sensation générale.
+corps = sensation générale ;
+organique = naturel ;
+naturalisation = sons naturels ;
+fonction = rôle fixe ;
+source live = input audio ;
+source live = banque de sons.
 ```
 
 ### Formulations acceptables
@@ -198,7 +205,11 @@ pression dans un contexte de grave / bas-médium / centre spectral / intensité 
 hypnose dans un contexte de motif stable, retour perceptible et micro-variation ;
 répétition liée à un motif identifiable, une stabilité et une mutation lente ;
 beauté d'une résonance longue ou d'une matière exposée avec conséquence formelle nommée ;
-suspension si le retrait, ce qui reste perceptible et la sortie sont précisés.
+suspension si le retrait, ce qui reste perceptible et la sortie sont précisés ;
+organique employé seulement avec support sonore, matériau et risque de décor explicités ;
+naturalisation comme changement de support sonore avec phénomène musical ou acoustique nommé ;
+fonction utilisée seulement pour décrire ce qu'un élément fait dans une situation musicale précise, sans fixer le rôle du jeu ;
+source live comme présence, geste ou relation musicale à préserver, jamais comme simple entrée audio.
 ```
 
 ---
