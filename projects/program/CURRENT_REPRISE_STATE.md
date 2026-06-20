@@ -105,6 +105,40 @@ Hypothèses probables, à garder ouvertes :
 - suspendre « matière exposée », « son pur », « voix nue », « résonance longue » comme noyau de départ ;
 - suspendre Max for Live, système, architecture, rôles et macros comme souhaits esthétiques de départ.
 
+## Besoins performatifs initiaux probables
+
+Statut :
+
+- dérivation prudente ;
+- non validée musicalement ;
+- à revoir avec Yohan avant scénarios.
+
+Besoins à retenir comme noyau provisoire :
+
+- préserver rythme / présence sans réduire cela à une technique rythmique ;
+- faire émerger des appuis, retours perceptibles et une présence sonore active dans des grooves complexes ;
+- préserver les instruments acoustiques comme sons avant gestes, rôles ou système ;
+- chercher une intensité issue du club : tempo, groove, sons marquants, énergie émotionnelle portée par de bons performers ;
+- faire entendre des assemblages de sons comme figure globale, sans accumulation démonstrative ;
+- traiter attaque, durée, queue, registre et timbre comme éléments du groove ;
+- préserver les phénomènes audibles : partiels, harmoniques, attaques, résonances contextualisées ;
+- garder des repères, contrastes et plans perceptibles dans la densité ;
+- maintenir la liberté d'assignation future ;
+- arrêter la traduction dès qu'un besoin devient solution technique.
+
+Besoins ou formulations à surveiller :
+
+- "genre personnel nouveau" ne doit pas devenir architecture ou style figé ;
+- Keita / club / acoustique / électronique ne doivent pas être fusionnés trop vite en formule globale ;
+- traditions ou langages rythmiques non occidentaux restent à clarifier ;
+- matière exposée / son pur / voix nue / résonance longue restent hors noyau initial et peuvent revenir seulement dans des scénarios dédiés.
+
+Réponses provisoires aux questions du run :
+
+- rythme / présence renvoie à une combinaison : groove entendu, qualité sonore et énergie de jeu/performance ;
+- intensité club : tempo + groove + qualité phénoménale des sons + énergie de performers ;
+- matière exposée / son pur / voix nue / résonance longue : hors noyau initial, à réintroduire seulement plus tard dans des scénarios dédiés.
+
 ## 8. Éléments suspendus
 
 Ne pas traiter comme noyau de départ pour l'instant :
