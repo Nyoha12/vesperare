@@ -1,6 +1,6 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire minimal.  
+Statut : plan de reprise documentaire minimal apres DETTE-ACT-28.
 Date : 2026-06-30.
 
 ## 1. Principe
@@ -11,54 +11,89 @@ La prochaine action ne doit pas etre une implementation, un patch, un mapping, u
 
 Fait :
 
-Le corpus pointe vers une verification documentaire precise :
+DETTE-ACT-28 est instruite dans :
 
-`DETTE-ACT-28 - Audit compatibilite niveau 5 objets Max candidats avec matrice synthese candidats lourds`
+`docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+
+Fait :
+
+Son verdict est :
+
+```text
+compatible avec corrections documentaires limitees
+```
+
+Fait :
+
+La synchronisation niveau 5 / matrice lourde est creee dans :
+
+`docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
+
+Inference :
+
+DETTE-ACT-28 n'est plus une urgence ouverte dans le pilotage documentaire. La suite logique n'est pas de passer a l'implementation, mais de verifier si une reprise niveau 6 peut etre instruite proprement depuis le niveau 5 synchronise, la matrice lourde et la synchronisation ACT28.
 
 Sources :
 
-- `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
-- `reprise/REGISTRE_QUESTIONS_VIVANTES_ET_DETTES_ACTIVES_VESPERARE_v0_1.md`
+- `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
 - `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md`
 
-## 2. Plan de reprise
+## 2. Prochaine action logique
 
-1. Lire les syntheses `docs/reprise/00_INDEX.md`, `docs/reprise/01_PROJECT_BRIEF.md`, `docs/reprise/02_PROJECT_STATE.md`, `docs/reprise/03_DECISIONS_LOG.md` et `docs/reprise/04_OPEN_QUESTIONS.md`.
-2. Verifier la presence ou l'absence de la fiche DETTE-ACT-28 attendue.
-3. Si elle est absente, creer une fiche ciblee uniquement si la decision humaine attendue est claire : verifier niveau 5 objets Max candidats contre matrice synthese candidats lourds.
-4. Corpus autorise pour DETTE-ACT-28 :
-   - `reprise/SPECIFICATION_ARCHITECTURE_MAX_STANDALONE_DETAILLEE_NIVEAU_5_OBJETS_MAX_CANDIDATS_NON_DEFINITIFS_VESPERARE_v0_1.md`
-   - `reprise/AUDIT_COMPATIBILITE_ARCHITECTURE_MAX_STANDALONE_DETAILLEE_NIVEAU_5_OBJETS_MAX_CANDIDATS_NON_DEFINITIFS_AVEC_CORPUS_v0_1.md`
-   - `reprise/MATRICE_SYNTHESE_STATUTS_CANDIDATS_LOURDS_CONTRAINTES_MAX_STANDALONE_VESPERARE_v0_1.md`
-   - `reprise/AUDIT_COMPATIBILITE_MATRICE_SYNTHESE_STATUTS_CANDIDATS_LOURDS_CONTRAINTES_AVEC_AUDITS_SOURCES_VESPERARE_v0_1.md`
-   - `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md`
-   - `reprise/REGISTRE_QUESTIONS_VIVANTES_ET_DETTES_ACTIVES_VESPERARE_v0_1.md`
-5. Corpus interdit pour DETTE-ACT-28 :
-   - choix final d'objet Max ;
-   - implementation ;
-   - patch ;
-   - UI ;
-   - mapping ;
-   - seuils numeriques ;
-   - prototype ;
-   - asset reel ou sample bank.
-6. Sortie attendue de DETTE-ACT-28 :
-   - verdict compatible / compatible avec corrections / incompatible ;
-   - corrections limitees a reporter ;
-   - points niveau 5 fragilises par les candidats lourds ;
-   - confirmation P0/P1, direct/safe, MIN-DID-PC, fallback, SIG ;
-   - prochaines dettes si necessaire.
+Recommandation :
 
-## 3. Taches prioritaires
+Preparer une readiness niveau 6 documentaire.
+
+Cette readiness doit seulement verifier :
+
+- si le corpus niveau 6 a instruire est present, absent ou ambigu ;
+- si le futur niveau 6 peut citer le niveau 5 synchronise et la matrice lourde sans contredire P0/P1, direct/safe, MIN-DID-PC, fallback et SIG ;
+- si les corrections ACT28 doivent etre reportees avant tout document plus prescriptif ;
+- si des fichiers absents ou a statut inconnu bloquent la suite ;
+- quelles conditions d'arret doivent preceder toute implementation.
+
+Interdictions :
+
+- ne pas creer de niveau 6 ;
+- ne pas modifier `reprise/` ;
+- ne pas faire de patch Max ;
+- ne pas produire UI, mapping, prototype, asset, sample bank, seuil numerique ou objet Max final ;
+- ne pas transformer la synchronisation ACT28 en decision artistique.
+
+## 3. Corpus propose pour la readiness niveau 6
+
+Fait :
+
+Les sources minimales deja disponibles pour cadrer la readiness sont :
+
+- `docs/reprise/02_PROJECT_STATE.md`
+- `docs/reprise/03_DECISIONS_LOG.md`
+- `docs/reprise/04_OPEN_QUESTIONS.md`
+- `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
+- `reprise/SPECIFICATION_ARCHITECTURE_MAX_STANDALONE_DETAILLEE_NIVEAU_5_OBJETS_MAX_CANDIDATS_NON_DEFINITIFS_VESPERARE_v0_1.md`
+- `reprise/MATRICE_SYNTHESE_STATUTS_CANDIDATS_LOURDS_CONTRAINTES_MAX_STANDALONE_VESPERARE_v0_1.md`
+- `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md`
+- `reprise/REGISTRE_QUESTIONS_VIVANTES_ET_DETTES_ACTIVES_VESPERARE_v0_1.md`
+
+Inference :
+
+Le corpus niveau 6 ne doit pas etre suppose complet. La readiness doit d'abord verifier les references niveau 6 presentes, absentes ou ambigues avant toute creation de fiche.
+
+## 4. Taches prioritaires
 
 Priorite 1 :
 
-Verifier DETTE-ACT-28 et ne pas confondre avec l'audit niveau 5 deja present contre le corpus.
+Faire une readiness niveau 6 documentaire.
 
-Fichiers concernes :
+Sortie attendue :
 
-- `reprise/AUDIT_COMPATIBILITE_ARCHITECTURE_MAX_STANDALONE_DETAILLEE_NIVEAU_5_OBJETS_MAX_CANDIDATS_NON_DEFINITIFS_AVEC_CORPUS_v0_1.md`
-- `reprise/MATRICE_SYNTHESE_STATUTS_CANDIDATS_LOURDS_CONTRAINTES_MAX_STANDALONE_VESPERARE_v0_1.md`
+- statut pret / pret avec reserves / bloque ;
+- corpus autorise et corpus exclu ;
+- fichiers absents ou ambigus ;
+- conditions pour reporter les corrections ACT28 ;
+- rappel explicite : pas d'implementation et pas de creation de niveau 6.
 
 Priorite 2 :
 
@@ -89,19 +124,18 @@ Fichiers concernes :
 - `docs/assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md`
 - `docs/assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md`
 
-## 4. Decision humaine attendue
+## 5. Decision humaine attendue
 
 Yohan ne doit pas trancher une architecture non instruite.
 
-Decision humaine utile apres DETTE-ACT-28 :
+Decision humaine utile apres readiness niveau 6 :
 
-- accepter ou refuser les corrections documentaires proposees ;
-- confirmer si certains candidats Max restent admissibles, reportes ou exclus ;
-- corriger l'intention musicale si l'audit tire le systeme vers une direction trop technique ;
-- valider seulement ce qui a ete clairement separe entre fait, inference et recommandation.
+- accepter ou refuser le passage a une fiche niveau 6 separee ;
+- corriger l'intention musicale si les corrections ACT28 tirent le systeme vers une direction trop technique ;
+- confirmer seulement ce qui a ete clairement separe entre fait, inference et recommandation.
 
-## 5. Arret
+## 6. Arret
 
 Condition d'arret de la prochaine action :
 
-La reprise doit s'arreter avant implementation des que le statut de DETTE-ACT-28 est clair et que les corrections documentaires limitees sont listees.
+La reprise doit s'arreter des que le statut de readiness niveau 6 est clair. Elle ne doit pas produire de niveau 6, implementation, patch, mapping, UI, prototype, asset ou banque de samples.

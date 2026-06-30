@@ -43,7 +43,7 @@ Source :
 
 - comparaison entre `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md` et les fichiers presents dans `reprise/`
 
-### 1.3 DETTE-ACT-28 vs audit niveau 5 deja present
+### 1.3 DETTE-ACT-28 instruite, vigilance niveau 5 / matrice lourde
 
 Fait :
 
@@ -51,13 +51,29 @@ Un audit niveau 5 contre le corpus existe :
 
 `reprise/AUDIT_COMPATIBILITE_ARCHITECTURE_MAX_STANDALONE_DETAILLEE_NIVEAU_5_OBJETS_MAX_CANDIDATS_NON_DEFINITIFS_AVEC_CORPUS_v0_1.md`
 
-Mais la prochaine action demande un audit niveau 5 contre la matrice synthese candidats lourds :
+Fait :
 
-`AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+DETTE-ACT-28 est maintenant instruite dans :
+
+`docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+
+Fait :
+
+Le verdict est `compatible avec corrections documentaires limitees`.
+
+Fait :
+
+La synchronisation niveau 5 / matrice lourde est creee dans :
+
+`docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
 
 Inference :
 
-Ce sont deux controles differents. Le second manque encore ou n'a pas ete retrouve.
+Ce ne sont pas les memes controles : l'audit dans `reprise/` verifie le niveau 5 contre le corpus, tandis que la fiche ACT28 de `docs/reprise/` verifie le niveau 5 contre la matrice lourde. DETTE-ACT-28 n'est donc plus une urgence ouverte dans le pilotage, meme si le fichier canonique reste absent de `reprise/` par choix de perimetre.
+
+Recommandation :
+
+Garder comme vraie question ouverte la suite documentaire : verifier la readiness niveau 6 contre le niveau 5 synchronise, la matrice lourde et la synchronisation ACT28, sans creer de niveau 6 et sans implementation.
 
 ### 1.4 Copies suffixees `(1)`
 
@@ -126,9 +142,8 @@ Recommandation :
 
 Avant toute implementation :
 
-1. Confirmer le statut exact de DETTE-ACT-28.
+1. Preparer une readiness niveau 6 documentaire, sans creer de niveau 6.
 2. Clarifier les fichiers references mais absents.
 3. Clarifier les copies suffixees `(1)`.
-4. Verifier que niveau 5 objets Max candidats reste compatible avec la matrice des candidats lourds.
-5. Maintenir P0/P1, direct/safe, MIN-DID-PC, fallback et SIG comme garde-fous.
-6. Ne demander a Yohan une decision artistique qu'apres instruction documentaire bornee.
+4. Maintenir P0/P1, direct/safe, MIN-DID-PC, fallback et SIG comme garde-fous.
+5. Ne demander a Yohan une decision artistique qu'apres instruction documentaire bornee.

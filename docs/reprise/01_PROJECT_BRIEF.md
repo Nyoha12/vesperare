@@ -42,7 +42,15 @@ Le projet est en phase de conception, consolidation, audits et preparation avant
 
 Fait :
 
-Le point de reprise le plus recent indique par le corpus est DETTE-ACT-28 : audit de compatibilite du niveau 5 objets Max candidats avec la matrice de synthese des candidats lourds. Ce fichier est reference comme prochaine action mais n'est pas present dans `reprise/` au moment de cette synthese.
+DETTE-ACT-28 est maintenant instruite dans `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`. Le verdict est compatible avec corrections documentaires limitees.
+
+Fait :
+
+La synchronisation niveau 5 / matrice lourde est creee dans `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`.
+
+Inference :
+
+Le fichier canonique DETTE-ACT-28 reste absent de `reprise/`, car cette reprise ne modifie pas `reprise/`. Pour le pilotage courant, DETTE-ACT-28 n'est plus la prochaine urgence ouverte.
 
 Sources :
 
@@ -50,6 +58,8 @@ Sources :
 - `reprise/REGISTRE_QUESTIONS_VIVANTES_ET_DETTES_ACTIVES_VESPERARE_v0_1.md`
 - `reprise/MATRICE_PREUVE_VERIFICATION_DETTES_AVANT_REPRISE_VESPERARE_v0_1.md`
 - `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md`
+- `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
 
 ## 4. Contraintes
 
@@ -90,7 +100,7 @@ Hypotheses ou cadres actifs :
 
 Inference :
 
-La prochaine reprise utile n'est pas une implementation. Elle doit verifier la compatibilite documentaire et conceptuelle avant de faire progresser la traduction Max concrete.
+La prochaine reprise utile n'est pas une implementation. Elle doit probablement etre une readiness niveau 6 documentaire contre le niveau 5 synchronise, la matrice lourde et la synchronisation ACT28, sans creer de niveau 6.
 
 Sources :
 
@@ -98,3 +108,4 @@ Sources :
 - `reprise/MATRICE_SYNTHESE_STATUTS_CANDIDATS_LOURDS_CONTRAINTES_MAX_STANDALONE_VESPERARE_v0_1.md`
 - `reprise/AUDIT_COMPATIBILITE_MATRICE_SYNTHESE_STATUTS_CANDIDATS_LOURDS_CONTRAINTES_AVEC_AUDITS_SOURCES_VESPERARE_v0_1.md`
 - `docs/assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md`
+- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`

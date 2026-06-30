@@ -37,6 +37,11 @@ Bundle brut :
 
 - `docs/reprise/10_BUNDLE_ALL_MARKDOWN.md`
 
+Fichiers de pilotage post ACT28 :
+
+- `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
+
 ## 2. Carte claire du projet
 
 Fait :
@@ -70,9 +75,11 @@ Le point de reprise canonique n'est pas le dernier nom de fichier par ordre alph
 2. Lire `docs/reprise/02_PROJECT_STATE.md` pour l'etat canonique.
 3. Lire `docs/reprise/03_DECISIONS_LOG.md` pour les decisions et leur certitude.
 4. Lire `docs/reprise/04_OPEN_QUESTIONS.md` avant toute nouvelle fiche.
-5. Lire `docs/reprise/05_NEXT_ACTIONS.md` pour la prochaine action minimale.
-6. Revenir a `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md` pour l'ordre de lecture source.
-7. Consulter `docs/reprise/10_BUNDLE_ALL_MARKDOWN.md` seulement si une verification exhaustive du corpus brut est necessaire.
+5. Lire `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md` pour le verdict DETTE-ACT-28.
+6. Lire `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md` pour la synchronisation niveau 5 / matrice lourde.
+7. Lire `docs/reprise/05_NEXT_ACTIONS.md` pour la prochaine action minimale.
+8. Revenir a `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md` pour l'ordre de lecture source.
+9. Consulter `docs/reprise/10_BUNDLE_ALL_MARKDOWN.md` seulement si une verification exhaustive du corpus brut est necessaire.
 
 ## 5. Fichiers sources importants
 
@@ -110,10 +117,16 @@ Pour les dettes actives :
 
 Fait :
 
-`reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md` reference plusieurs fichiers qui ne sont pas presents dans le dossier `reprise/` actuel. Le cas le plus important est la prochaine fiche attendue :
+`reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md` reference plusieurs fichiers qui ne sont pas presents dans le dossier `reprise/` actuel. Le fichier canonique DETTE-ACT-28 reste absent de `reprise/`, mais DETTE-ACT-28 est instruite dans `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`.
 
-`AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+Fait :
+
+La synchronisation niveau 5 / matrice lourde est creee dans `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`.
+
+Inference :
+
+L'absence du fichier canonique dans `reprise/` n'est plus une urgence ouverte pour le pilotage documentaire courant. Les autres fichiers references mais absents restent une vraie question de navigation.
 
 Recommandation :
 
-Ne pas traiter cette absence comme une decision implicite. La signaler et, avant toute suite technique, confirmer si le fichier doit etre cree, retrouve ou remplace par un audit deja existant.
+Avant toute suite technique, utiliser le verdict ACT28 et la synchronisation ACT28 comme garde-fous. La prochaine action probable est une readiness niveau 6 documentaire, pas une implementation et pas une creation de niveau 6.
