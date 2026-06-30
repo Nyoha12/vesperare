@@ -19,27 +19,35 @@ Le runtime actif du corpus `reprise/` est Max/MSP standalone. Max for Live / Abl
 
 Fait :
 
-Le prochain point logique indique par le corpus est DETTE-ACT-28 :
+DETTE-ACT-28 est maintenant instruite dans :
+
+`docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+
+Fait :
+
+Le verdict de DETTE-ACT-28 est :
 
 ```text
-audit compatibilite niveau 5 objets Max candidats avec matrice synthese candidats lourds
+compatible avec corrections documentaires limitees
 ```
 
 Fait :
 
-La fiche attendue pour DETTE-ACT-28 n'est pas presente dans `reprise/` au moment de cette synthese. Il existe en revanche un audit niveau 5 contre le corpus :
+La synchronisation niveau 5 / matrice lourde est creee dans :
 
-`reprise/AUDIT_COMPATIBILITE_ARCHITECTURE_MAX_STANDALONE_DETAILLEE_NIVEAU_5_OBJETS_MAX_CANDIDATS_NON_DEFINITIFS_AVEC_CORPUS_v0_1.md`
+`docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
 
 Inference :
 
-Ces deux audits ne doivent pas etre confondus : l'audit present verifie le niveau 5 contre le corpus ; la prochaine fiche attendue doit verifier le niveau 5 contre la matrice de synthese des candidats lourds.
+Le fichier canonique attendu reste absent du dossier `reprise/`, car cette reprise ne modifie pas `reprise/`. Pour le pilotage documentaire courant, DETTE-ACT-28 n'est plus une urgence ouverte : le point a traiter ensuite est une readiness niveau 6 contre le niveau 5 synchronise, la matrice lourde et la synchronisation ACT28, sans implementation.
 
 Sources :
 
 - `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
 - `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md`
 - `reprise/MATRICE_PREUVE_VERIFICATION_DETTES_AVANT_REPRISE_VESPERARE_v0_1.md`
+- `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
+- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
 
 ## 2. Termine
 
@@ -66,7 +74,9 @@ Sont consideres termines ou absorbes dans le corpus actuel :
 - matrice de synthese des statuts candidats lourds ;
 - audit de compatibilite de cette matrice avec les audits sources ;
 - audit d'impact sur documents ulterieurs ;
-- registre et matrice de preuve de reprise.
+- registre et matrice de preuve de reprise ;
+- DETTE-ACT-28 instruite avec verdict compatible avec corrections documentaires limitees ;
+- synchronisation niveau 5 / matrice lourde creee pour statuts, chemins, interdits, fallback et SIG.
 
 Sources :
 
@@ -82,7 +92,6 @@ Sont encore actifs :
 
 - DETTE-ACT-3 : corrections OP a maintenir comme garde-fou ;
 - DETTE-ACT-6 : dette mere des audits candidats lourds ou opaques, meme si plusieurs audits individuels sont deja absorbes ;
-- DETTE-ACT-28 : audit compatibilite niveau 5 objets Max candidats avec matrice synthese candidats lourds ;
 - QV-2 : controles P2 immediats en setup didgeridoo seul ;
 - QV-7 : signaux pendant transgression ;
 - QV-9 : releases espace / halo / freeze ;
@@ -100,7 +109,6 @@ Fait :
 
 Les points a decider ou clarifier avant une suite technique sont :
 
-- confirmer si le fichier DETTE-ACT-28 doit etre cree, retrouve ou remplace par une fiche existante ;
 - clarifier le statut des fichiers references par l'index actif mais absents du dossier `reprise/` ;
 - clarifier le statut des copies suffixees `(1)` qui ne sont pas identiques a leurs fichiers sans suffixe ;
 - determiner les etats et signaux visibles sans surcharger le live ;
@@ -111,13 +119,14 @@ Les points a decider ou clarifier avant une suite technique sont :
 
 Recommandation :
 
-Ne pas demander a Yohan de trancher une architecture non instruite. La prochaine action doit instruire DETTE-ACT-28 a partir du corpus deja borne.
+Ne pas demander a Yohan de trancher une architecture non instruite. La prochaine action probable doit etre une readiness niveau 6 documentaire, pas une implementation, pas un patch, pas un mapping, pas une UI et pas un choix d'objet Max final.
 
 Sources :
 
 - `reprise/REGISTRE_QUESTIONS_VIVANTES_ET_DETTES_ACTIVES_VESPERARE_v0_1.md`
 - `docs/assets/15_DONNEES_INSTRUMENTALES_MANQUANTES_PRIORITAIRES.md`
 - `docs/assets/16_ACOUSTICARCHIVE_MAPPING_DONNEES_VESPERARE.md`
+- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
 
 ## 5. Non canonique ou a prudence
 

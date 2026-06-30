@@ -26,11 +26,13 @@ Certitude : certain / probable / flou.
 | Les candidats lourds ne portent pas P0/P1 par defaut et ne conditionnent pas MIN-DID-PC. | `reprise/MATRICE_SYNTHESE_STATUTS_CANDIDATS_LOURDS_CONTRAINTES_MAX_STANDALONE_VESPERARE_v0_1.md` | certain |
 | Les objets Max niveau 5 sont candidats non definitifs, pas choix finaux. | `reprise/SPECIFICATION_ARCHITECTURE_MAX_STANDALONE_DETAILLEE_NIVEAU_5_OBJETS_MAX_CANDIDATS_NON_DEFINITIFS_VESPERARE_v0_1.md` | certain |
 | DETTE-ACT-27 est absorbee par l'audit d'impact sur documents ulterieurs. | `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md` | certain |
-| La prochaine dette logique est DETTE-ACT-28. | `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md`, `reprise/REGISTRE_QUESTIONS_VIVANTES_ET_DETTES_ACTIVES_VESPERARE_v0_1.md` | certain |
-| Le fichier DETTE-ACT-28 est attendu mais absent du dossier `reprise/` actuel. | comparaison entre `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md` et les 129 fichiers presents dans `reprise/` | certain |
+| DETTE-ACT-28 est instruite dans le pilotage documentaire. | `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md` | certain |
+| Le verdict DETTE-ACT-28 est compatible avec corrections documentaires limitees. | `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md` | certain |
+| La synchronisation niveau 5 / matrice lourde est creee pour statuts, chemins, interdits, fallback et SIG. | `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md` | certain |
+| Le fichier canonique DETTE-ACT-28 reste absent du dossier `reprise/`, car la reprise documentaire ne modifie pas `reprise/`. | comparaison entre `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md` et les fichiers presents dans `reprise/`; `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md` | certain |
 | Les fichiers suffixes `(1)` sont des copies ou variantes a statut non tranche. | hash compares sur `REVERBS_ESPACE_REACTIF_v0_2 (1).md` et `MATRICE_BLOCS_RESPONSABILITES_PACKETS_CONTROLES_VESPERARE_v0_1 (1).md` | flou |
 | Les anciennes fiches Max for Live / RNBO ne doivent plus piloter la trajectoire si elles contredisent Max standalone. | `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`, `reprise/MATRICE_PREUVE_VERIFICATION_DETTES_AVANT_REPRISE_VESPERARE_v0_1.md` | certain |
-| L'implementation ne doit pas commencer avant les synchronisations et audits encore actifs. | `reprise/AUDIT_IMPACT_REPRISE_CANDIDATS_LOURDS_SUR_DOCUMENTS_ULTERIEURS_EXISTANTS_VESPERARE_v0_1.md` | certain |
+| L'implementation ne doit pas commencer avant une readiness niveau 6 documentaire appuyee sur le niveau 5 synchronise, la matrice lourde et la synchronisation ACT28. | `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md` | certain |
 
 ## 2. Comment lire ce journal
 
