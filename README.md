@@ -337,3 +337,13 @@ cartographier les possibilités structurelles du système ;
 intégrer les données réelles AcousticArchive quand elles arriveront ;
 ne pas créer de fiche instrumentale vide ni de seuil fictif.
 ```
+
+## Reprise documentaire
+
+Les synthèses centrales de reprise sont disponibles ici :
+
+```text
+docs/reprise/00_INDEX.md
+docs/reprise/01_PROJECT_BRIEF.md
+docs/reprise/02_PROJECT_STATE.md
+```
