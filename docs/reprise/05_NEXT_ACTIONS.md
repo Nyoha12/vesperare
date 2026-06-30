@@ -1,10 +1,22 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres creation de la fiche 21 de decision de passage vers prototype Max minimal `MIN-DID-PC`.
-Date : 2026-06-30.
-Verdict courant : `passage autorise avec reserves`.
+Statut : plan de reprise documentaire apres creation de la fiche 22 de cadrage operationnel de l'action prototype Max minimal `MIN-DID-PC`.
+Date : 2026-07-01.
+Verdict courant : `cadrage operationnel tres borne produit ; prototype reel non produit`.
 
 ## 1. Principe courant
+
+Fait :
+
+La fiche 22 existe :
+
+```text
+docs/reprise/22_CADRAGE_OPERATIONNEL_ACTION_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md
+```
+
+Fait :
+
+La fiche 22 cadre operationnellement l'action prototype Max minimal `MIN-DID-PC`. Elle ne produit pas le prototype reel.
 
 Fait :
 
@@ -56,11 +68,15 @@ docs/reprise/17_RECONDITIONNEMENT_DOCUMENTAIRE_BORNE_NIVEAU_6_ACT28.md
 
 Decision :
 
-La phase de decision de passage vers une action ulterieure de prototype Max minimal est produite. La prochaine action n'est pas un prototype reel produit par ce document ; elle est un cadrage operationnel tres borne de l'action prototype.
+La phase de cadrage operationnel tres borne de l'action prototype Max minimal est produite. La prochaine action n'est pas un prototype reel produit par ce document ; elle est la preparation d'une branche de travail pour un prototype Max minimal strictement borne.
+
+Decision :
+
+Le patch reel ne doit etre produit qu'apres verification explicite que la fiche 22 reste conforme aux fiches 20 et 21.
 
 Inference :
 
-Les fiches 20 et 21 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a la verification presence live didgeridoo / PC, direct/safe, sortie simple, absence/bypass/reduction de branches optionnelles, fallback et SIG.
+Les fiches 20, 21 et 22 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a la preparation d'une branche de prototype Max minimal, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/bypass/reduction de branches optionnelles, fallback et SIG.
 
 ## 2. Statut niveau 6
 
@@ -82,7 +98,7 @@ La matrice niveau 6 absente bloque toute validation du niveau 6, toute preuve et
 
 Decision :
 
-La matrice niveau 6 absente ne bloque pas le cadrage operationnel tres borne d'une action ulterieure de prototype Max minimal, si ce cadrage reste hors niveau 6, hors architecture validee, hors objet final et hors implementation generale.
+La matrice niveau 6 absente ne bloque pas la preparation d'une branche de prototype Max minimal strictement bornee, si cette preparation reste hors niveau 6, hors architecture validee, hors objet final et hors implementation generale.
 
 Recommandation :
 
@@ -92,13 +108,14 @@ Ne pas creer ni valider de niveau 6 maintenant. Ne pas recreer la matrice absent
 
 Decision :
 
-La prochaine action remplace l'ancienne action de decision de passage vers prototype :
+La prochaine action remplace l'ancienne action de cadrage operationnel :
 
 ```text
-cadrer operationnellement l'action de prototype Max minimal MIN-DID-PC,
+preparer une branche de travail pour le prototype Max minimal MIN-DID-PC,
 strictement conforme a
+docs/reprise/22_CADRAGE_OPERATIONNEL_ACTION_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
 docs/reprise/20_CADRAGE_DOCUMENTAIRE_PREMIER_PROTOTYPE_MINIMAL_MIN_DID_PC.md
-et a
+et
 docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
 avec verification limitee a presence live didgeridoo / PC, direct/safe,
 sortie simple, absence/bypass/reduction de branches optionnelles, fallback
@@ -107,11 +124,15 @@ et SIG.
 
 Decision :
 
-Cette prochaine action pourra preparer le patch minimal seulement si elle reste strictement conforme a la fiche 20 et a la decision 21.
+Le patch reel ne doit etre produit qu'apres verification que la fiche 22 reste conforme aux fiches 20 et 21.
+
+Decision :
+
+La preparation de branche ne vaut pas production de prototype reel, patch Max, objet Max final, routage final, UI, mapping, asset, sample bank, seuil numerique, niveau 6 ou architecture validee.
 
 Recommandation :
 
-La prochaine action doit verifier seulement :
+La preparation de branche doit verifier seulement :
 
 - presence live didgeridoo / PC ;
 - `direct/safe` ;
@@ -123,7 +144,11 @@ La prochaine action doit verifier seulement :
 
 Interdit :
 
-Cette prochaine action ne doit pas devenir un nouvel audit, un niveau 6, une matrice, un patch Max produit, un mapping, une UI, un prototype reel produit avant cadrage conforme, un asset, une sample bank, un seuil numerique, un choix d'objet Max final, un routage final, une architecture validee ou une implementation generale.
+Cette prochaine action ne doit pas devenir un nouvel audit, un niveau 6, une matrice, un patch Max produit, un mapping, une UI, un prototype reel produit, un asset, une sample bank, un seuil numerique, un choix d'objet Max final, un routage final, une architecture validee ou une implementation generale.
+
+Decision :
+
+La verification conforme de la fiche 22 contre les fiches 20 et 21 conditionne seulement une action ulterieure separee. Elle ne transforme pas la preparation de branche en patch reel dans la meme phase.
 
 Interdit :
 
@@ -135,6 +160,7 @@ Fait :
 
 Fiches documentaires directement stabilisees dans la chaine de sortie :
 
+- `docs/reprise/22_CADRAGE_OPERATIONNEL_ACTION_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/20_CADRAGE_DOCUMENTAIRE_PREMIER_PROTOTYPE_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/19_PRE_SPEC_MAX_CONCRETE_NON_IMPLEMENTATION_MIN_DID_PC.md`
@@ -153,7 +179,7 @@ Fiches documentaires directement stabilisees dans la chaine de sortie :
 
 Inference :
 
-Ce corpus suffit pour cadrer operationnellement une action ulterieure de prototype Max minimal strictement bornee par les fiches 20 et 21. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
+Ce corpus suffit pour preparer une branche de prototype Max minimal strictement bornee par les fiches 20, 21 et 22. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
 
 Recommandation :
 
@@ -171,10 +197,10 @@ Interdictions :
 - ne pas utiliser l'audit niveau 6 comme preuve ;
 - ne pas produire de nouvel audit dans la prochaine phase ;
 - ne pas implementer ;
-- ne pas faire de patch Max ;
+- ne pas faire de patch Max dans la phase de preparation de branche ;
 - ne pas produire UI ;
 - ne pas produire mapping ;
-- ne pas produire prototype reel ;
+- ne pas produire prototype reel dans la phase de preparation de branche ;
 - ne pas produire asset ;
 - ne pas produire sample bank ;
 - ne pas produire seuil numerique ;
@@ -192,15 +218,19 @@ Interdictions lourdes :
 
 Fait :
 
-Aucun prototype reel n'est produit par la fiche 20, par la fiche 21 ni par la presente mise a jour.
+Aucun prototype reel n'est produit par la fiche 20, par la fiche 21, par la fiche 22 ni par la presente mise a jour.
 
 Decision :
 
-Un futur prototype Max minimal est autorise avec reserves comme action ulterieure separee, explicitement bornee par la fiche 20 et par la decision 21.
+Un futur prototype Max minimal est autorise avec reserves comme action ulterieure separee, explicitement bornee par les fiches 20, 21 et 22.
+
+Decision :
+
+La prochaine intervention utile consiste seulement a preparer une branche de travail strictement bornee, puis a verifier que la fiche 22 reste conforme aux fiches 20 et 21 avant tout patch reel.
 
 Inference :
 
-La prochaine intervention utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a cadrer operationnellement l'action prototype Max minimal strictement bornee, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/bypass/reduction de branches optionnelles, fallback et SIG.
+La prochaine intervention utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a preparer la branche de prototype Max minimal strictement bornee, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/bypass/reduction de branches optionnelles, fallback et SIG.
 
 Recommandation :
 
@@ -214,15 +244,15 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la prochaine phase produit un nouvel audit au lieu du cadrage operationnel tres borne de l'action prototype Max minimal.
+Arreter si la prochaine phase produit un nouvel audit au lieu de preparer une branche de prototype Max minimal strictement bornee.
 
 Condition d'arret :
 
-Arreter si la prochaine phase produit directement une implementation generale, un patch Max produit, UI, mapping, prototype reel produit avant cadrage conforme, asset, sample bank, seuil numerique, routage final ou objet Max final.
+Arreter si la prochaine phase produit directement une implementation generale, un patch Max produit, UI, mapping, prototype reel produit, asset, sample bank, seuil numerique, routage final ou objet Max final.
 
 Condition d'arret :
 
-Arreter si la prochaine phase prepare un patch minimal sans rester strictement conforme a la fiche 20 et a la decision 21.
+Arreter si la prochaine phase prepare un patch minimal sans verifier explicitement que la fiche 22 reste conforme a la fiche 20 et a la decision 21.
 
 Condition d'arret :
 
@@ -230,7 +260,7 @@ Arreter si une famille lourde devient condition de P0/P1, direct/safe, protectio
 
 Condition d'arret :
 
-Arreter si le cadrage operationnel du prototype devient validation musicale, artistique, technique ou architecturale.
+Arreter si le cadrage operationnel du prototype ou la preparation de branche devient validation musicale, artistique, technique ou architecturale.
 
 Condition d'arret :
 
