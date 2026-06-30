@@ -56,6 +56,40 @@ Lire cette fiche comme un reconditionnement documentaire. Elle ne doit pas deven
 
 ---
 
+## Table de conditions documentaires bornees
+
+Fait :
+
+La table 15 fournit les elements a classer. La fiche 16 autorise seulement leur usage comme checklist documentaire de reconditionnement.
+
+Inference :
+
+Une affirmation issue de l'audit niveau 6 ne devient utilisable que si son statut, sa condition documentaire et son arret avant preuve ou implementation sont explicites.
+
+Recommandation :
+
+| Affirmation ou element repris de l'audit niveau 6 | Statut dans cette fiche | Condition documentaire bornee | Arret / interdit |
+|---|---|---|---|
+| Verdict final de compatibilite de la matrice niveau 6 | non prouvable | Marquer la dependance a la matrice absente ; conserver seulement comme symptome | Ne pas citer comme preuve ou validation niveau 6 |
+| Sous-verdicts `compatible` par section | non prouvable | Transformer en points a re-auditer contre ACT28 | Ne pas utiliser comme validations actives |
+| Usage de la matrice comme grille de liaison | suspendu | Attendre une matrice source retrouvee et relue contre ACT28 | Ne pas reconstruire ni inferer la matrice |
+| `FINAL-CANDIDATE` et objets Max nommes | a reconditionner | Lire comme candidat non final ou exemple seulement, avec statut lourd, owner, fonction et sortie | Ne pas choisir d'objet final, patch, prototype ou implementation |
+| Roles `MIN-*` et `MIN-DID-PC` | a reconditionner | Reformuler en responsabilites minimales : input live, direct, safe, mix, generation simple, analyse simple, espace simple, protection, controle live, SIG | Ne pas rendre une famille lourde obligatoire dans le setup minimal |
+| `PATH-*`, direct et safe | a reconditionner | Croiser chaque chemin avec P0/P1, direct/safe, famille lourde, chemin admis, interdit, sortie, fallback et SIG | Ne pas transformer `PATH` en routage Max reel |
+| Fallback generique et `SIGNAL` generique | a reconditionner | Remplacer par fallback/SIG situes par famille, risque, absence, bypass, reduction, incertitude, repli ou release | Ne pas faire du SIG une UI finale ou une decision expressive |
+| `SPC`, `HAL`, `GEN-HAL`, reverb, espace, halo, convolution, IR, corpus | a reconditionner / suspendu | Separer support, fonction, owner, sortie, risque, autorite documentaire et fallback espace simple/off | Ne pas ouvrir une fiche technique directe depuis l'audit |
+| `buffer~`, playback, corpus et fichiers prepares | a reconditionner | Maintenir comme supports conditionnels, lents, prepares ou offline, avec provenance, role, sortie, preload, fallback et SIG | Ne pas creer asset, sample bank, banque cachee ou remplacement du live |
+| `STATE-PRESET`, `STATE-TABLE`, scripts, presets et etats caches | a reconditionner | Declarer fonction, permission, sortie, risque, controle live, fallback manuel ou Max simple, mode absent et SIG | Ne pas laisser une composition cachee, un script ou un preset decider |
+| Classes `LAT-*` | utilisable | Garder comme signal, organisation de charge, diagnostic ou observation | Ne jamais en faire une autorite musicale ou un retrait automatique |
+| Roles `GEN-*` | a reconditionner | Exiger fonction situee, controle live, vocabulaire borne, fallback, SIG, sortie et condition d'arret avant algorithme | Ne pas creer scene autonome, compositeur global ou style plaque |
+| Hors-perimetre technique de l'audit | utilisable | Reprendre comme garde-fou documentaire | Arret avant patch, UI, mapping, prototype, asset, sample bank, seuil numerique ou objet Max final |
+
+Decision :
+
+Ces conditions sont des bornes documentaires. Elles ne valident pas le niveau 6, ne remplacent pas la matrice absente et ne transforment pas ACT28 en decision artistique.
+
+---
+
 ## 1. Statut de l'audit niveau 6
 
 Fait :
