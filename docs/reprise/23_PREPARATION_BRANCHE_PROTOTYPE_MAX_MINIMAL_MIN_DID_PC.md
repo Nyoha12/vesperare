@@ -72,7 +72,7 @@ La fiche 22 limite la verification autorisee a :
 - presence live didgeridoo / PC ;
 - `direct/safe` ;
 - sortie simple ;
-- absence, bypass ou reduction de branches optionnelles ;
+- absence, off, bypass ou reduction de branches optionnelles ;
 - fallback ;
 - SIG.
 

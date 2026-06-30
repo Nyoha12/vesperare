@@ -88,7 +88,7 @@ Le patch reel ne doit etre produit qu'apres verification explicite que la fiche 
 
 Inference :
 
-Les fiches 20, 21, 22 et 23 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a la verification finale de la branche de prototype Max minimal, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/bypass/reduction de branches optionnelles, fallback et SIG.
+Les fiches 20, 21, 22 et 23 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a la verification finale de la branche de prototype Max minimal, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
 
 ## 2. Statut niveau 6
 
@@ -134,7 +134,7 @@ docs/reprise/20_CADRAGE_DOCUMENTAIRE_PREMIER_PROTOTYPE_MINIMAL_MIN_DID_PC.md
 et
 docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
 avec verification limitee a presence live didgeridoo / PC, direct/safe,
-sortie simple, absence/bypass/reduction de branches optionnelles, fallback
+sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback
 et SIG.
 ```
 
@@ -153,7 +153,7 @@ La verification finale de branche doit verifier seulement :
 - presence live didgeridoo / PC ;
 - `direct/safe` ;
 - sortie simple ;
-- absence, bypass ou reduction de branches optionnelles ;
+- absence, off, bypass ou reduction de branches optionnelles ;
 - fallback ;
 - SIG ;
 - conditions d'arret.
@@ -249,7 +249,7 @@ La prochaine intervention utile consiste seulement a verifier la conformite fina
 
 Inference :
 
-La prochaine intervention utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a verifier la branche de prototype Max minimal strictement bornee, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/bypass/reduction de branches optionnelles, fallback et SIG.
+La prochaine intervention utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a verifier la branche de prototype Max minimal strictement bornee, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
 
 Recommandation :
 
