@@ -1,14 +1,22 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire minimal apres creation de la fiche 18 decision de sortie vers pre-specification Max concrete non-implementatoire.
+Statut : plan de reprise documentaire apres creation de la fiche 19 pre-specification Max concrete non-implementatoire minimale.
 Date : 2026-06-30.
-Verdict courant : `sortie autorisee avec reserves`.
+Verdict courant : `sortie documentaire autorisee avec reserves`.
 
 ## 1. Principe courant
 
 Fait :
 
-La fiche 18 existe :
+La fiche 19 existe :
+
+```text
+docs/reprise/19_PRE_SPEC_MAX_CONCRETE_NON_IMPLEMENTATION_MIN_DID_PC.md
+```
+
+Fait :
+
+La fiche 18 a autorise la sortie documentaire avec reserves vers une pre-specification Max concrete non-implementatoire :
 
 ```text
 docs/reprise/18_DECISION_SORTIE_REPRISE_DOCUMENTAIRE_VERS_PRE_SPEC_MAX.md
@@ -16,46 +24,19 @@ docs/reprise/18_DECISION_SORTIE_REPRISE_DOCUMENTAIRE_VERS_PRE_SPEC_MAX.md
 
 Fait :
 
-La reprise documentaire est cloturee avec reserves apres la fiche 18, sauf blocage critique nouveau.
-
-Fait :
-
-La fiche 17 existe et sert de dernier reconditionnement documentaire borne avant sortie :
+La fiche 17 reste le dernier reconditionnement documentaire borne avant sortie :
 
 ```text
 docs/reprise/17_RECONDITIONNEMENT_DOCUMENTAIRE_BORNE_NIVEAU_6_ACT28.md
 ```
 
-Fait :
+Decision :
 
-Les fiches documentaires directement stabilisees dans la chaine de sortie sont :
-
-- `docs/reprise/17_RECONDITIONNEMENT_DOCUMENTAIRE_BORNE_NIVEAU_6_ACT28.md`
-- `docs/reprise/16_STATUT_TABLE_15_RECONDITIONNEMENT_NIVEAU_6.md`
-- `docs/reprise/15_RECONCILIATION_NIVEAU_6_CORRIGEE_TABLE_COURTE.md`
-- `docs/reprise/14_READINESS_RECONCILIATION_NIVEAU_6_CORRIGEE.md`
-- `docs/reprise/12_CORRECTIONS_DOCUMENTAIRES_NIVEAU_6_ACT28.md`
-- `docs/reprise/11_RECONCILIATION_AUDIT_NIVEAU_6_EXISTANT_AVEC_ACT28_ET_MATRICE_LOURDE.md`
-- `docs/reprise/10_CLARIFICATION_MATRICE_NIVEAU_6_ABSENTE.md`
-- `docs/reprise/09_READINESS_NIVEAU_6_DOCUMENTAIRE.md`
-- `docs/reprise/08_SYNCHRONISATION_NIVEAU_5_MATRICE_LOURDE_STATUTS_CHEMINS_FALLBACK_SIG.md`
-- `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
-- `docs/reprise/MANIFEST_FICHIERS.yml`
+La phase de pre-specification Max concrete non-implementatoire minimale est ouverte.
 
 Inference :
 
-La prochaine action n'est plus de produire un audit, une table, une readiness ou un reconditionnement documentaire. Cette sequence existe deja. La suite doit reduire vers une pre-specification minimale, concrete et non implementatoire.
-
-Decision :
-
-La prochaine action remplace les anciennes priorites de reconditionnement documentaire :
-
-```text
-creer docs/reprise/19_PRE_SPEC_MAX_CONCRETE_NON_IMPLEMENTATION_MIN_DID_PC.md
-comme pre-specification Max concrete non-implementatoire minimale.
-```
-
----
+Cette phase ne rouvre pas une chaine d'audits, ne cree pas de niveau 6, ne recree pas la matrice niveau 6 absente et ne valide aucune architecture. Elle organise seulement les responsabilites minimales, chemins critiques non-implementatoires, direct/safe, P0/P1, fallback, SIG, exclusions et conditions avant patch.
 
 ## 2. Statut niveau 6
 
@@ -73,68 +54,51 @@ L'audit niveau 6 existant reste symptome documentaire, trace de sequence et chec
 
 Decision :
 
-La matrice niveau 6 absente bloque encore toute validation du niveau 6, toute preuve et toute prescription niveau 6.
+La matrice niveau 6 absente bloque toute validation du niveau 6, toute preuve et toute prescription niveau 6.
 
 Decision :
 
-La matrice niveau 6 absente ne bloque plus la sortie documentaire vers une pre-specification Max concrete non-implementatoire, si cette pre-specification reste minimale et s'arrete avant toute implementation.
+La matrice niveau 6 absente ne bloque pas la pre-specification Max concrete non-implementatoire minimale, tant que cette phase reste hors niveau 6, hors architecture validee, hors objet final et hors implementation.
 
 Recommandation :
 
 Ne pas creer ni valider de niveau 6 maintenant. Ne pas recreer la matrice absente. Ne pas utiliser l'audit niveau 6 comme preuve. Ne pas transformer la sortie documentaire en validation musicale, artistique, technique ou architecturale.
 
----
-
 ## 3. Prochaine action exacte
 
 Decision :
 
-Prochaine action exacte :
+La prochaine action remplace l'ancienne action de creation de la fiche 19 :
 
 ```text
-creer docs/reprise/19_PRE_SPEC_MAX_CONCRETE_NON_IMPLEMENTATION_MIN_DID_PC.md
+cadrer le premier prototype minimal MIN-DID-PC, uniquement comme cadrage
+documentaire avant patch, si et seulement si
+docs/reprise/19_PRE_SPEC_MAX_CONCRETE_NON_IMPLEMENTATION_MIN_DID_PC.md
+ne glisse pas vers implementation.
 ```
 
 Recommandation :
 
-Le document 19 doit etre une pre-specification Max concrete non-implementatoire minimale, centree sur :
+Ce cadrage doit rester avant patch. Il doit decrire seulement :
 
-- responsabilites minimales ;
-- chemins critiques ;
-- direct/safe ;
-- P0/P1 ;
-- `MIN-DID-PC` ;
-- fallback ;
-- SIG ;
-- exclusions ;
-- conditions avant patch.
-
-Recommandation :
-
-Le document 19 doit reduire les acquis documentaires vers une pre-specification minimale. Il ne doit pas produire de nouvel audit.
-
-Sortie attendue :
-
-- confirmation que la sortie documentaire est autorisee avec reserves ;
-- rappel que la matrice niveau 6 absente bloque validation/preuve/prescription niveau 6 ;
-- rappel que cette absence ne bloque plus la pre-specification minimale non-implementatoire ;
-- responsabilites minimales formulees sans accumulation d'objets ;
-- chemins critiques decrits sans routage Max final ;
-- clauses direct/safe et P0/P1 maintenues ;
-- `MIN-DID-PC` maintenu comme responsabilites minimales ;
+- objectif minimal du prototype ;
+- responsabilites P0/P1 sans objet Max final ;
+- garde-fous direct/safe ;
+- exclusions lourdes hors setup minimal ;
 - fallback et SIG situes ;
-- exclusions explicites ;
-- conditions avant patch ;
-- arret avant objet Max final, patch, mapping, UI, prototype, asset, sample bank, seuil numerique et implementation.
+- conditions d'arret avant patch.
 
----
+Interdit :
 
-## 4. Corpus autorise pour le document 19
+Cette prochaine action ne doit pas devenir un nouvel audit, un niveau 6, une matrice, un patch Max, un mapping, une UI, un prototype reel, un asset, une sample bank, un seuil numerique, un choix d'objet Max final ou une implementation.
+
+## 4. Corpus de reference courant
 
 Fait :
 
-Corpus autorise pour preparer le document 19 :
+Fiches documentaires directement stabilisees dans la chaine de sortie :
 
+- `docs/reprise/19_PRE_SPEC_MAX_CONCRETE_NON_IMPLEMENTATION_MIN_DID_PC.md`
 - `docs/reprise/18_DECISION_SORTIE_REPRISE_DOCUMENTAIRE_VERS_PRE_SPEC_MAX.md`
 - `docs/reprise/17_RECONDITIONNEMENT_DOCUMENTAIRE_BORNE_NIVEAU_6_ACT28.md`
 - `docs/reprise/16_STATUT_TABLE_15_RECONDITIONNEMENT_NIVEAU_6.md`
@@ -150,13 +114,11 @@ Corpus autorise pour preparer le document 19 :
 
 Inference :
 
-Ce corpus suffit pour une pre-specification minimale non-implementatoire. Il ne suffit pas pour creer un niveau 6, valider un niveau 6, valider une architecture, choisir des objets Max finaux, modifier l'audit niveau 6 source ou reconstruire la matrice absente.
+Ce corpus suffit pour cadrer une suite minimale non-implementatoire. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire un patch.
 
 Recommandation :
 
 Ne pas elargir le corpus pour produire un nouvel audit. Si une source absente, suffixee `(1)` ou a statut `inconnu` devient necessaire, arreter et ouvrir une clarification documentaire separee avant toute reprise.
-
----
 
 ## 5. Interdictions maintenues
 
@@ -173,7 +135,7 @@ Interdictions :
 - ne pas faire de patch Max ;
 - ne pas produire UI ;
 - ne pas produire mapping ;
-- ne pas produire prototype ;
+- ne pas produire prototype reel ;
 - ne pas produire asset ;
 - ne pas produire sample bank ;
 - ne pas produire seuil numerique ;
@@ -182,33 +144,29 @@ Interdictions :
 - ne pas transformer la sortie documentaire en validation du niveau 6 ;
 - ne pas demander a Yohan de trancher une architecture non instruite.
 
----
+Interdictions lourdes :
+
+- `gen~`, `poly~`, MC, `buffer~`, corpus, IR, convolution, pfft/FFT, scripts, presets critiques, externals, plugins, ML, Markov, grammaire et outils opaques restent hors P0/P1, hors direct/safe, hors protection, hors `MIN-DID-PC` et hors setup minimal.
 
 ## 6. Decision humaine attendue
 
 Fait :
 
-La decision de sortie documentaire est bornee :
+La decision de sortie documentaire reste bornee :
 
 ```text
-sortie autorisee avec reserves
+sortie documentaire autorisee avec reserves
 ```
 
 Inference :
 
-La prochaine intervention humaine utile ne consiste pas a valider le niveau 6. Elle consiste seulement, si le document 19 fait apparaitre une divergence documentaire ou un glissement vers une decision artistique, a confirmer ou corriger le statut documentaire de cette divergence.
+La prochaine intervention humaine utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a corriger une intention, signaler une divergence documentaire ou refuser un glissement vers implementation si le cadrage du premier prototype minimal franchit les limites de la fiche 19.
 
 Recommandation :
 
 Ne pas demander a Yohan de trancher une architecture niveau 6 non instruite. Ne pas transformer ACT28 en decision artistique. Ne pas transformer la pre-specification minimale en validation technique.
 
----
-
 ## 7. Conditions d'arret
-
-Condition d'arret :
-
-La reprise documentaire est cloturee avec reserves apres la fiche 18, sauf blocage critique nouveau.
 
 Condition d'arret :
 
@@ -216,11 +174,11 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la prochaine phase produit un nouvel audit au lieu d'une pre-specification minimale.
+Arreter si la prochaine phase produit un nouvel audit au lieu d'un cadrage minimal avant patch.
 
 Condition d'arret :
 
-Arreter si le document 19 produit ou implique implementation, patch Max, UI, mapping, prototype, asset, sample bank, seuil numerique ou objet Max final.
+Arreter si le cadrage du premier prototype minimal produit ou implique implementation, patch Max, UI, mapping, prototype reel, asset, sample bank, seuil numerique ou objet Max final.
 
 Condition d'arret :
 
