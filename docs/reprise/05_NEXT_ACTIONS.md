@@ -1,10 +1,22 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres creation de la fiche 23 de preparation de branche prototype Max minimal `MIN-DID-PC`.
+Statut : plan de reprise documentaire apres creation de la fiche 24 d'autorisation reservee du premier patch Max minimal `MIN-DID-PC`.
 Date : 2026-07-01.
-Verdict courant : `branche prototype/min-did-pc-minimal preparee ; prototype reel non produit`.
+Verdict courant : `passage patch minimal autorise avec reserves`.
 
 ## 1. Principe courant
+
+Fait :
+
+La fiche 24 existe :
+
+```text
+docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md
+```
+
+Fait :
+
+La fiche 24 autorise avec reserves une action ulterieure separee de premier patch Max minimal `MIN-DID-PC`, strictement bornee par les fiches 23, 22, 20 et 21. Elle ne produit pas le patch Max minimal.
 
 Fait :
 
@@ -62,33 +74,29 @@ La fiche 19 existe et reste la pre-specification Max concrete non-implementatoir
 docs/reprise/19_PRE_SPEC_MAX_CONCRETE_NON_IMPLEMENTATION_MIN_DID_PC.md
 ```
 
-Fait :
+Decision :
 
-La fiche 18 a autorise la sortie documentaire avec reserves vers une pre-specification Max concrete non-implementatoire :
-
-```text
-docs/reprise/18_DECISION_SORTIE_REPRISE_DOCUMENTAIRE_VERS_PRE_SPEC_MAX.md
-```
-
-Fait :
-
-La fiche 17 reste le dernier reconditionnement documentaire borne avant sortie :
-
-```text
-docs/reprise/17_RECONDITIONNEMENT_DOCUMENTAIRE_BORNE_NIVEAU_6_ACT28.md
-```
+La branche `prototype/min-did-pc-minimal` est suffisamment bornee documentairement.
 
 Decision :
 
-La branche `prototype/min-did-pc-minimal` est preparee comme branche de travail strictement bornee. La prochaine action n'est pas un prototype reel produit par ce document ; elle est la verification finale de conformite de la branche avant autorisation eventuelle d'un premier patch Max minimal.
+La fiche 23 est conforme a la fiche 22, puis aux fiches 20 et 21.
 
 Decision :
 
-Le patch reel ne doit etre produit qu'apres verification explicite que la fiche 23 et la branche restent conformes a la fiche 22, puis aux fiches 20 et 21.
+Le passage vers une action ulterieure separee de premier patch Max minimal est autorise avec reserves.
+
+Decision :
+
+La fiche 24 ne produit pas le patch Max minimal. Le patch reel ne peut etre produit que dans une action ulterieure separee, strictement conforme aux fiches 24, 23, 22, 20 et 21.
 
 Inference :
 
-Les fiches 20, 21, 22 et 23 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a la verification finale de la branche de prototype Max minimal, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
+Les fiches 20, 21, 22, 23 et 24 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a la creation d'une branche de premier patch Max minimal, avec verification limitee a presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
+
+Recommandation :
+
+La prochaine action doit rester strictement minimale : creer une branche de premier patch Max minimal bornee, puis produire un premier patch minimal seulement si les bornes documentaires restent tenues.
 
 ## 2. Statut niveau 6
 
@@ -110,7 +118,7 @@ La matrice niveau 6 absente bloque toute validation du niveau 6, toute preuve et
 
 Decision :
 
-La matrice niveau 6 absente ne bloque pas la preparation documentaire deja effectuee de la branche de prototype Max minimal strictement bornee, ni une verification finale de conformite, si cette suite reste hors niveau 6, hors architecture validee, hors objet final et hors implementation generale.
+La matrice niveau 6 absente ne bloque pas l'action ulterieure separee de premier patch Max minimal si cette action reste strictement conforme aux fiches 24, 23, 22, 20 et 21, hors niveau 6, hors architecture validee, hors objet final et hors routage final.
 
 Recommandation :
 
@@ -120,55 +128,42 @@ Ne pas creer ni valider de niveau 6 maintenant. Ne pas recreer la matrice absent
 
 Decision :
 
-La prochaine action remplace l'ancienne action de preparation de branche :
+La prochaine action remplace l'ancienne verification finale de branche :
 
 ```text
-verifier la conformite finale de la branche prototype/min-did-pc-minimal
-avant autorisation eventuelle d'un premier patch Max minimal, en controlant
-d'abord la conformite a
-docs/reprise/23_PREPARATION_BRANCHE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md
-et
+creer une branche de premier patch Max minimal strictement bornee, a partir
+de la branche prototype/min-did-pc-minimal, puis produire un premier patch
+Max minimal seulement si l'action reste strictement conforme a
+docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md,
+docs/reprise/23_PREPARATION_BRANCHE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
 docs/reprise/22_CADRAGE_OPERATIONNEL_ACTION_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
-avant de verifier la conformite a
 docs/reprise/20_CADRAGE_DOCUMENTAIRE_PREMIER_PROTOTYPE_MINIMAL_MIN_DID_PC.md
 et
-docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
-avec verification limitee a presence live didgeridoo / PC, direct/safe,
-sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback
-et SIG.
+docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md.
 ```
 
 Decision :
 
-Le patch reel ne doit etre produit qu'apres verification que la fiche 23 et la branche restent conformes a la fiche 22, puis aux fiches 20 et 21.
+Cette prochaine action pourra produire un premier patch minimal seulement si elle reste strictement conforme aux fiches 24, 23, 22, 20 et 21.
 
 Decision :
 
-La preparation de branche actee par la fiche 23 ne vaut pas production de prototype reel, patch Max, objet Max final, routage final, UI, mapping, asset, sample bank, seuil numerique, niveau 6 ou architecture validee.
-
-Recommandation :
-
-La verification finale de branche doit verifier seulement :
+La verification du futur patch minimal doit porter uniquement sur :
 
 - presence live didgeridoo / PC ;
 - `direct/safe` ;
 - sortie simple ;
 - absence, off, bypass ou reduction de branches optionnelles ;
 - fallback ;
-- SIG ;
-- conditions d'arret.
-
-Interdit :
-
-Cette prochaine action ne doit pas devenir un nouvel audit, un niveau 6, une matrice, un patch Max produit, un mapping, une UI, un prototype reel produit, un asset, une sample bank, un seuil numerique, un choix d'objet Max final, un routage final, une architecture validee ou une implementation generale.
+- SIG.
 
 Decision :
 
-La verification conforme de la fiche 23 et de la branche contre la fiche 22, puis contre les fiches 20 et 21, conditionne seulement une action ulterieure separee. Elle ne transforme pas la verification de branche en patch reel dans la meme phase.
+La creation de branche et le premier patch minimal ne valent pas production de niveau 6, matrice, architecture validee, objet Max final, routage final, UI, mapping, asset, sample bank ou seuil numerique.
 
 Interdit :
 
-Aucune famille lourde ne peut entrer dans P0/P1, `direct/safe`, protection ou `MIN-DID-PC`.
+Cette prochaine action ne doit pas produire de famille lourde en `P0/P1`, `direct/safe`, protection ou `MIN-DID-PC`. Elle ne doit pas produire niveau 6, matrice niveau 6, audit, architecture validee, objet Max final, routage final, UI, mapping, asset, sample bank ou seuil numerique.
 
 ## 4. Corpus de reference courant
 
@@ -176,6 +171,7 @@ Fait :
 
 Fiches documentaires directement stabilisees dans la chaine de sortie :
 
+- `docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/23_PREPARATION_BRANCHE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/22_CADRAGE_OPERATIONNEL_ACTION_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
@@ -196,7 +192,7 @@ Fiches documentaires directement stabilisees dans la chaine de sortie :
 
 Inference :
 
-Ce corpus suffit pour verifier la conformite finale de la branche de prototype Max minimal strictement bornee par les fiches 23, 22, 20 et 21. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
+Ce corpus suffit pour autoriser avec reserves une action ulterieure separee de premier patch Max minimal strictement bornee par les fiches 24, 23, 22, 20 et 21. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
 
 Recommandation :
 
@@ -213,13 +209,11 @@ Interdictions :
 - ne pas recreer la matrice niveau 6 absente ;
 - ne pas utiliser l'audit niveau 6 comme preuve ;
 - ne pas produire de nouvel audit dans la prochaine phase ;
-- ne pas implementer ;
-- ne pas faire de patch Max dans la phase de preparation de branche ;
-- ne pas faire de patch Max dans la phase de verification finale de branche ;
+- ne pas produire d'implementation generale ;
+- ne pas produire de patch Max dans la fiche 24 ;
+- ne pas produire de patch Max hors de l'action ulterieure strictement bornee par les fiches 24, 23, 22, 20 et 21 ;
 - ne pas produire UI ;
 - ne pas produire mapping ;
-- ne pas produire prototype reel dans la phase de preparation de branche ;
-- ne pas produire prototype reel dans la phase de verification finale de branche ;
 - ne pas produire asset ;
 - ne pas produire sample bank ;
 - ne pas produire seuil numerique ;
@@ -231,25 +225,25 @@ Interdictions :
 
 Interdictions lourdes :
 
-- `gen~`, `poly~`, MC, `buffer~`, corpus, IR, convolution, pfft/FFT, scripts, presets critiques, externals, plugins, ML, Markov, grammaire et outils opaques restent hors P0/P1, hors direct/safe, hors protection, hors `MIN-DID-PC` et hors setup minimal.
+- `gen~`, `poly~`, MC, `buffer~`, corpus, IR, convolution, pfft/FFT, scripts, presets critiques, externals, plugins, ML, Markov, grammaire et outils opaques restent hors `P0/P1`, hors `direct/safe`, hors protection, hors `MIN-DID-PC` et hors setup minimal.
 
-## 6. Prototype reel non produit
+## 6. Premier patch minimal non produit par la fiche 24
 
 Fait :
 
-Aucun prototype reel n'est produit par la fiche 20, par la fiche 21, par la fiche 22, par la fiche 23 ni par la presente mise a jour.
+Aucun prototype reel n'est produit par la fiche 20, par la fiche 21, par la fiche 22, par la fiche 23 ni par la fiche 24.
 
 Decision :
 
-Un futur prototype Max minimal reste seulement autorisable avec reserves comme action ulterieure separee, explicitement bornee par les fiches 23, 22, 20 et 21.
+Un futur premier patch Max minimal est autorise avec reserves comme action ulterieure separee, explicitement bornee par les fiches 24, 23, 22, 20 et 21.
 
 Decision :
 
-La prochaine intervention utile consiste seulement a verifier la conformite finale de la branche `prototype/min-did-pc-minimal` avant autorisation eventuelle d'un premier patch Max minimal.
+La prochaine intervention utile consiste a creer une branche de premier patch Max minimal strictement bornee. Elle pourra produire un premier patch minimal seulement si elle reste conforme aux fiches 24, 23, 22, 20 et 21.
 
 Inference :
 
-La prochaine intervention utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a verifier la branche de prototype Max minimal strictement bornee, avec verification limitee a presence live didgeridoo / PC, direct/safe, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
+La prochaine intervention utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a produire, si les conditions restent tenues, un premier patch minimal verifiant presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
 
 Recommandation :
 
@@ -263,23 +257,27 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la prochaine phase produit un nouvel audit au lieu de verifier la conformite finale de la branche de prototype Max minimal strictement bornee.
+Arreter si la prochaine phase produit un nouvel audit au lieu de creer une branche de premier patch Max minimal strictement bornee.
 
 Condition d'arret :
 
-Arreter si la prochaine phase produit directement une implementation generale, un patch Max produit, UI, mapping, prototype reel produit, asset, sample bank, seuil numerique, routage final ou objet Max final.
+Arreter si la prochaine phase produit une implementation generale, UI, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou patch Max hors des bornes minimales.
 
 Condition d'arret :
 
-Arreter si la prochaine phase prepare ou produit un patch minimal sans verifier explicitement que la fiche 23 et la branche restent conformes a la fiche 22, puis aux fiches 20 et 21.
+Arreter si la prochaine phase prepare ou produit un patch minimal sans verifier explicitement que l'action reste conforme aux fiches 24, 23, 22, 20 et 21.
 
 Condition d'arret :
 
-Arreter si une famille lourde devient condition de P0/P1, direct/safe, protection, `MIN-DID-PC`, grave critique, scene, HAL/SPC/REV ou decision expressive.
+Arreter si une famille lourde devient condition de `P0/P1`, `direct/safe`, protection, `MIN-DID-PC`, grave critique, scene, HAL/SPC/REV ou decision expressive.
 
 Condition d'arret :
 
-Arreter si le cadrage operationnel du prototype, la preparation de branche ou la verification finale de branche devient validation musicale, artistique, technique ou architecturale.
+Arreter si le futur patch minimal verifie autre chose que presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
+
+Condition d'arret :
+
+Arreter si la creation de branche ou le premier patch minimal devient validation musicale, artistique, technique ou architecturale.
 
 Condition d'arret :
 
