@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0, contrat state/session local v0, premier artefact Max observable v0 comment-only et pre-spec d'implementation Max-side harness fichiers v1.
+Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0, contrat state/session local v0, artefact Max observable v0 comment-only et patch Max harness fichiers v1 separe.
 Date : 2026-07-01.
-Perimetre : document de pilotage ; artefact Max observable separe documente ; sans lancement Max, sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Perimetre : document de pilotage ; artefacts Max harness separes documentes ; tentative de smoke test Max bornee pour le v1 ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -23,10 +23,12 @@ Fait :
 - `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
 - `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
 - `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
+- `docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
 - `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
+- `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 - `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
@@ -177,20 +179,37 @@ Cet artefact est documentaire et provisoire. Il ne lit pas de fichier, n'ecrit p
 
 Decision :
 
-La prochaine action n'est pas un test Max. Une pre-spec d'implementation Max-side minimale du harness fichiers v1 prepare maintenant une future creation de patch separe.
+La prochaine action n'est plus la creation du patch v1 : elle a ete faite. La suite eventuelle doit rester une correction ou instrumentation bornee de l'observabilite fichier du v1.
 
 Fait :
 
-La pre-spec et la decision de passage existent :
+La pre-spec, la decision de passage et la trace de creation existent :
 
 ```text
 docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
 docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md
 ```
+
+Fait :
+
+Le patch Max harness fichiers v1 separe existe :
+
+```text
+projects/max/_harness/patches/vesperare-harness-files-v1.maxpat
+```
+
+Fait :
+
+Le patch v1 est parseable comme JSON, contient la cle `patcher`, reste separe du patch 01 et utilise seulement les objets provisoires autorises par la pre-spec.
+
+Fait :
+
+Un smoke test Max borne a ete tente avec une commande `ping`, sans ouvrir le patch 01. Max n'a produit ni `ack.json`, ni `error.json`, ni `harness-session.jsonl`, ni `state.current.json`.
 
 Limite :
 
-Ces documents ne creent pas le patch v1, ne creent aucun `.maxpat`, ne modifient aucun `.maxpat`, ne lancent pas Max ou Ableton et ne valident ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
+Cette creation et ce lancement Max non concluant ne valident ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture, ni le patch 01.
 
 Decision :
 
@@ -292,11 +311,20 @@ Livrables de la preparation implementation Max-side harness fichiers v1 :
 - mise a jour ciblee de `projects/max/MANIFEST_MAX_PATCHES.md`
 - mise a jour ciblee de `projects/max/_harness/README.md`
 
+Livrables de la creation du patch Max harness fichiers v1 :
+
+- `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
+- `docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md`
+- mise a jour ciblee de `projects/max/_harness/README.md`
+- mise a jour ciblee de `projects/max/MANIFEST_MAX_PATCHES.md`
+- mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
+- mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
+
 Livrables futurs possibles, non produits maintenant :
 
-- patch Max harness fichiers v1 separe, strictement borne a `ping`, `request_state`, `ack.json`, `error.json`, `harness-session.jsonl` et `state.current.json` ;
 - lib Max observable future ;
-- trace de chargement Max instrumentee ;
+- correction ou instrumentation bornee du v1 pour obtenir au moins `ack.json` ou `error.json` sur `ping` ;
+- trace de chargement Max instrumentee seulement si le harness produit des sorties observables ;
 - smoke test GUI ponctuel par Codex Computer Use, seulement si le harness et les logs le justifient ;
 - test humain apres observabilite, jamais comme premiere preuve technique.
 
@@ -304,26 +332,24 @@ Livrables futurs possibles, non produits maintenant :
 
 Decision :
 
-Le premier artefact Max observable v0 est cree, separe du patch 01 et comment-only.
+Le premier artefact Max observable v0 est cree, separe du patch 01 et comment-only. Le patch Max harness fichiers v1 est aussi cree, separe du patch 01 et file-only, mais son smoke test Max n'a pas produit de sorties harness.
 
 Recommandation :
 
-Apres cette PR, la prochaine action minimale est la creation d'un patch Max harness fichiers v1 separe, seulement si la pre-spec reste conforme.
+Apres cette PR, la prochaine action minimale est une correction ou instrumentation bornee du patch v1, seulement sur l'observabilite fichier.
 
 Perimetre de cette action future :
 
-- lire ou importer `command.pending.json` ;
-- repondre a `ping` et `request_state` ;
-- produire `ack.json` ou `error.json` ;
-- produire `harness-session.jsonl` ;
-- produire ou rafraichir `state.current.json` ;
+- obtenir au moins `ack.json` ou `error.json` pour `ping` ;
+- tenter `request_state` seulement apres une reponse observable a `ping` ;
+- valider `ack.json`, `error.json`, `harness-session.jsonl` et `state.current.json` par les scripts PowerShell si ces fichiers sont produits ;
 - rester dans `projects/max/_harness/` ;
 - laisser le patch 01 inchange.
 
 Limite :
 
-Cette suite ne devra pas lancer Max ou Ableton, ne devra pas faire du futur v1 une architecture finale et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
+Cette suite ne devra pas lancer Ableton, ne devra pas faire du v1 une architecture finale et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
 
 Condition d'arret :
 
-Arreter si la suite demande de lancer Max dans cette phase, de lancer Ableton, de modifier le patch 01, de modifier `reprise/` hors document explicitement demande, de produire un mapping, une UI de performance, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.
+Arreter si la suite demande de lancer Max hors smoke test strictement borne du patch v1, de lancer Ableton, de modifier le patch 01, de modifier `reprise/` hors document explicitement demande, de produire un mapping, une UI de performance, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.
