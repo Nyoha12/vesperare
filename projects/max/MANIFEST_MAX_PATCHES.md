@@ -1,8 +1,8 @@
 # Manifest Max patches Vesperare
 
-Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side et de la preparation v1 non produite.
+Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side et du patch harness fichiers v1 separe.
 Date : 2026-07-01.
-Perimetre : inventaire documentaire ; sans lancement Max, sans validation technique, audio, DSP ou musicale.
+Perimetre : inventaire documentaire ; tentative de smoke test Max bornee pour le v1 ; sans validation technique, audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -17,9 +17,11 @@ Fait :
 - `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
 - `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
+- `docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md`
 - `tools/vesperare-harness/README.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
+- `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 
 ## 1. Patches listes
@@ -119,6 +121,73 @@ Limite :
 
 Ce fichier n'a pas ete charge dans Max. Sa lecture JSON n'est pas une validation Max, audio, DSP, musicale, technique ou architecturale.
 
+### `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
+
+Statut :
+
+```text
+patch Max harness fichiers v1 separe, provisoire, smoke Max non concluant
+```
+
+Fait :
+
+Le fichier existe comme artefact separe du patch 01.
+
+Fait :
+
+Il est parseable comme JSON et contient la cle top-level `patcher`.
+
+Fait :
+
+Il vise a importer :
+
+```text
+projects/max/_harness/commands/command.pending.json
+```
+
+Fait :
+
+Il vise a produire ou rafraichir :
+
+```text
+projects/max/_harness/responses/ack.json
+projects/max/_harness/responses/error.json
+projects/max/_harness/logs/harness-session.jsonl
+projects/max/_harness/state/state.current.json
+```
+
+Fait :
+
+Les classes Max detectees dans le fichier sont seulement :
+
+```text
+comment
+deferlow
+dict
+loadbang
+message
+route
+select
+text
+trigger
+```
+
+Fait :
+
+Il ne contient pas `adc~`, `dac~`, `gen~`, `poly~`, MC, `buffer~`, `pfft/FFT`, corpus, plugin, ML ou external.
+
+Fait :
+
+Un smoke test Max strictement borne a ete tente avec une commande `ping`. Le patch 01 n'a pas ete ouvert. Max n'a produit ni `ack.json`, ni `error.json`, ni `harness-session.jsonl`, ni `state.current.json`.
+
+Inference :
+
+Le smoke test prouve seulement qu'une tentative de lancement local du patch v1 a ete effectuee. Il ne prouve pas que le traitement Max-side de `command.pending.json` fonctionne.
+
+Limite :
+
+Le v1 ne valide pas Max, l'audio, le DSP, la jouabilite, le patch 01, une architecture, un routage final, un objet final, un niveau 6, un mapping, une UI ou la musicalite.
+
 ## 2. Dossier harness Max-side
 
 ### `projects/max/_harness/`
@@ -135,6 +204,7 @@ Le dossier contient actuellement :
 
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
+- `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 
 Fait :
 
@@ -161,21 +231,22 @@ Ce dossier ne vaut pas patch Max, validation Max, validation audio, validation D
 Statut :
 
 ```text
-autorisee avec reserves comme prochaine action ; non creee
+creee avec reserves ; smoke Max non concluant
 ```
 
 Fait :
 
-Les documents de preparation existent :
+Les documents de preparation et de trace existent :
 
 ```text
 docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
 docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md
 ```
 
 Decision :
 
-Un futur patch Max harness fichiers v1 separe est autorise seulement s'il reste borne a :
+Le patch Max harness fichiers v1 separe reste borne a :
 
 - lire ou importer `command.pending.json` ;
 - repondre a `ping` et `request_state` ;
@@ -187,7 +258,7 @@ Un futur patch Max harness fichiers v1 separe est autorise seulement s'il reste 
 
 Limite :
 
-Aucun patch v1 n'existe encore. Aucun `.maxpat` n'est cree ou modifie par cette preparation. Cette autorisation n'est pas une validation Max, audio, DSP, technique, architecturale ou musicale.
+Cette creation n'est pas une validation Max, audio, DSP, technique du patch 01, architecturale ou musicale.
 
 ## 3. Prochaine action Max
 
@@ -221,11 +292,11 @@ docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md
 
 Decision :
 
-Le premier artefact Max observable cree pour le harness est `vesperare-harness-file-observer-v0.maxpat`.
+Les artefacts Max-side crees pour le harness sont `vesperare-harness-file-observer-v0.maxpat` et `vesperare-harness-files-v1.maxpat`.
 
 Recommandation :
 
-La prochaine action Max eventuelle est la creation du patch Max harness fichiers v1 separe, seulement si la pre-spec reste conforme. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max, audio, DSP ou musicale.
+La prochaine action Max eventuelle est une correction ou instrumentation bornee du patch v1 pour obtenir au moins `ack.json` ou `error.json` sur `ping`. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max, audio, DSP ou musicale.
 
 ## 4. Conditions d'arret
 
@@ -233,7 +304,7 @@ Arreter si la suite tente de :
 
 - modifier `min-did-pc-minimal-01.maxpat` dans la phase actuelle ;
 - creer un nouveau patch sans autorisation explicite ;
-- lancer Max ;
+- lancer Max hors smoke test strictement borne du patch v1 ;
 - lancer Ableton ;
 - faire un test humain comme prochaine preuve ;
 - valider musicalement ou techniquement le patch 01 ;
