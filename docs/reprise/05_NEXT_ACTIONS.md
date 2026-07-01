@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs et conception de l'integration Max-side fichiers v0.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0 et finalisation du contrat state/session local v0.
 Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs testable sans Max ; integration Max-side fichier v0 en cours de conception`.
+Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers`.
 
 ## Sources consultees
 
@@ -24,6 +24,11 @@ Fait :
 - `tools/vesperare-harness/README.md`
 - `projects/max/_harness/README.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
+- `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
+- `tools/vesperare-harness/schemas/state.schema.json`
+- `tools/vesperare-harness/examples/command.request-state.json`
+- `tools/vesperare-harness/examples/state.current.sample.json`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
 
 ## 1. Principe courant
 
@@ -120,6 +125,12 @@ transformer ce squelette en flux local v0 testable sans Max :
 commande JSON -> stub local -> ack/error JSON -> log JSONL -> validation Codex.
 ```
 
+```text
+completer le contrat state/session local v0 :
+request_state -> ack.json + harness-session.jsonl avec state_snapshot
+state.current.json -> validation Codex sans Max.
+```
+
 Fait :
 
 Le dossier suivant existe :
@@ -135,27 +146,31 @@ Il contient les contrats, exemples, validateurs et stub v0 suivants :
 - `tools/vesperare-harness/schemas/log.schema.json`
 - `tools/vesperare-harness/schemas/ack.schema.json`
 - `tools/vesperare-harness/schemas/error.schema.json`
+- `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.ping.json`
+- `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/ack.ping.sample.json`
 - `tools/vesperare-harness/examples/error.unknown-command.sample.json`
 - `tools/vesperare-harness/examples/log.session.sample.jsonl`
+- `tools/vesperare-harness/examples/state.current.sample.json`
 - `tools/vesperare-harness/powershell/New-VesperareHarnessCommand.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessCommand.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessAck.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessError.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
 - `tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1`
 
 Inference :
 
-Ce flux local suffit a verifier le contrat fichier commandes/logs en local : commande JSON, ack ou error JSON, log JSONL et validation Codex. Il ne suffit pas a valider Max, le DSP, l'audio, la jouabilite, la musicalite, l'architecture, le routage final ou un objet Max final.
+Ce flux local suffit a verifier le contrat fichier commandes/logs/state en local : commande JSON, ack ou error JSON, log JSONL, `state.current.json` pour `request_state` et validation Codex. Il ne suffit pas a valider Max, le DSP, l'audio, la jouabilite, la musicalite, l'architecture, le routage final ou un objet Max final.
 
 Decision :
 
-La prochaine action exacte de la phase actuelle est :
+La phase actuelle a aussi specifie l'integration Max-side fichier v0 :
 
 ```text
-concevoir l'integration Max-side fichier v0 du harness :
+integration Max-side fichier v0 du harness :
 comment un futur patch Max observable lira command.pending.json,
 ecrira ack.json ou error.json, produira harness-session.jsonl
 et exposera state.current.json.
@@ -174,7 +189,7 @@ Cette phase ne cree pas de patch Max, ne cree pas de `.maxpat`, ne lance pas Max
 
 Recommandation :
 
-Apres cette PR, la prochaine action minimale sera de creer un premier artefact Max observable seulement si `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md` reste conforme.
+Apres cette PR, la prochaine action minimale sera de creer un premier artefact Max observable seulement si `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md` et le contrat local `state.current.json` restent conformes.
 
 Options futures possibles :
 

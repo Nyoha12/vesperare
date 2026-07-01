@@ -35,10 +35,15 @@ $accepted = $acceptedCommandTypes -contains $commandObject.type
 $ackPath = Join-Path $resolvedOutputDirectory "ack.json"
 $errorPath = Join-Path $resolvedOutputDirectory "error.json"
 $logPath = Join-Path $resolvedOutputDirectory "harness-session.jsonl"
+$statePath = Join-Path $resolvedOutputDirectory "state.current.json"
 
 $plannedOutputPaths = @($logPath)
 if ($accepted) {
     $plannedOutputPaths += $ackPath
+
+    if ($commandObject.type -eq "request_state") {
+        $plannedOutputPaths += $statePath
+    }
 }
 else {
     $plannedOutputPaths += $errorPath
@@ -64,11 +69,11 @@ function New-HarnessLogEvent {
         [string] $Level,
 
         [Parameter(Mandatory = $true)]
-        [ValidateSet("boot", "command_received", "command_ack", "command_error", "log_flush", "shutdown")]
+        [ValidateSet("boot", "command_received", "command_ack", "command_error", "state_snapshot", "log_flush", "shutdown")]
         [string] $Event,
 
         [Parameter(Mandatory = $true)]
-        [ValidateSet("ok", "blocked", "failed")]
+        [ValidateSet("ok", "blocked", "degraded", "failed", "unknown")]
         [string] $Status,
 
         [Parameter(Mandatory = $true)]
@@ -109,6 +114,41 @@ $events.Add((New-HarnessLogEvent -CommandId $commandObject.command_id -Level "in
 })))
 
 if ($accepted) {
+    if ($commandObject.type -eq "request_state") {
+        $stateCapabilities = @(
+            "file_command_read",
+            "ack_json_write",
+            "jsonl_log_write",
+            "state_current_write"
+        )
+
+        $stateObject = [ordered]@{
+            schema = "vesperare.max_harness.state.v0"
+            run_id = $commandObject.run_id
+            updated_at = New-HarnessUtcTimestamp
+            source = "harness"
+            status = "ok"
+            mode = $commandObject.mode
+            last_command_id = $commandObject.command_id
+            last_event = "state_snapshot"
+            capabilities = $stateCapabilities
+            errors = @()
+            message = "Local file-only harness state; not Max, audio, DSP or musical validation."
+        }
+
+        $stateJson = $stateObject | ConvertTo-Json -Depth 32
+        Set-Content -LiteralPath $statePath -Value $stateJson -Encoding UTF8
+
+        $events.Add((New-HarnessLogEvent -CommandId $commandObject.command_id -Level "info" -Event "state_snapshot" -Status "ok" -Message "Technical state snapshot written by local stub." -Data ([ordered]@{
+            state_path = $statePath
+            capabilities = $stateCapabilities
+            state_is_max_validation = $false
+            state_is_audio_validation = $false
+            state_is_dsp_validation = $false
+            state_is_musical_validation = $false
+        })))
+    }
+
     $ackObject = [ordered]@{
         schema = "vesperare.max_harness.ack.v0"
         command_id = $commandObject.command_id
@@ -172,6 +212,7 @@ if (-not $Quiet) {
         OutputDirectory = $resolvedOutputDirectory
         AckPath = if ($accepted) { $ackPath } else { $null }
         ErrorPath = if ($accepted) { $null } else { $errorPath }
+        StatePath = if ($accepted -and $commandObject.type -eq "request_state") { $statePath } else { $null }
         LogPath = $logPath
     }
 }
