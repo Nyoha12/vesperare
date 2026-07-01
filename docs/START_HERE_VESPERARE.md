@@ -24,6 +24,8 @@ Pour une reprise musicale ou methodologique plus large, revenir ensuite a `READM
 
 Les regles de pilotage doivent etre relues avec l'etat courant du repo.
 
+Pour Codex, `AGENTS.md` contient les regles operationnelles actives du repo.
+
 Certaines regles ont ete posees pour une phase precise ; elles peuvent devoir etre confirmees, assouplies ou remplacees quand le contexte change.
 
 Avant d'executer une prochaine action, verifier les traces recentes et l'etat Git reel.
