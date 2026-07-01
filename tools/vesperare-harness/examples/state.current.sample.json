@@ -1,0 +1,18 @@
+{
+  "schema": "vesperare.max_harness.state.v0",
+  "run_id": "run-sample-state-001",
+  "updated_at": "2026-07-01T00:00:02Z",
+  "source": "harness",
+  "status": "ok",
+  "mode": "active",
+  "last_command_id": "cmd-request-state-sample-001",
+  "last_event": "state_snapshot",
+  "capabilities": [
+    "file_command_read",
+    "ack_json_write",
+    "jsonl_log_write",
+    "state_current_write"
+  ],
+  "errors": [],
+  "message": "Local file-only harness state sample; not Max, audio, DSP or musical validation."
+}

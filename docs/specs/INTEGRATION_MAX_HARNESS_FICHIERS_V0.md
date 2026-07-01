@@ -20,12 +20,16 @@ Fait :
 - `docs/AI_WORKFLOW_CONTRACT.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
+- `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
 - `docs/reprise/05_NEXT_ACTIONS.md`
 - `tools/vesperare-harness/README.md`
 - `tools/vesperare-harness/schemas/command.schema.json`
 - `tools/vesperare-harness/schemas/log.schema.json`
 - `tools/vesperare-harness/schemas/ack.schema.json`
 - `tools/vesperare-harness/schemas/error.schema.json`
+- `tools/vesperare-harness/schemas/state.schema.json`
+- `tools/vesperare-harness/examples/command.request-state.json`
+- `tools/vesperare-harness/examples/state.current.sample.json`
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 
@@ -93,7 +97,7 @@ Roles :
 - `ack.json` : reponse positive du futur patch Max observable pour une commande acceptee.
 - `error.json` : reponse explicite du futur patch Max observable pour une commande refusee ou echouee.
 - `harness-session.jsonl` : journal de session, une ligne JSON par evenement.
-- `state.current.json` : dernier etat technique minimal observable.
+- `state.current.json` : dernier etat technique minimal observable, conforme a `tools/vesperare-harness/schemas/state.schema.json`.
 
 Decision :
 
@@ -146,6 +150,7 @@ Le harness PowerShell et Codex CLI devront :
 - lire `ack.json` ou `error.json` sans supposer qu'un timeout valide ou invalide la musique ;
 - lire `harness-session.jsonl` ligne par ligne ;
 - verifier que les lignes JSONL restent parseables et conformes au contrat de log ;
+- verifier que `state.current.json` reste parseable et conforme au contrat de state ;
 - verifier que `command_id` et `run_id` relient commande, ack, error et logs ;
 - verifier la presence des evenements attendus pour une session testee ;
 - reporter les blocages comme blocages d'observabilite, pas comme jugements audio ;
@@ -191,6 +196,7 @@ Commandes autorisees pour l'integration Max-side v0 :
 - demande l'ecriture ou le rafraichissement de `state.current.json` ;
 - produit `ack.json` si l'etat technique minimal est ecrit ;
 - produit au moins `command_received`, `state_snapshot` puis `command_ack` dans le log.
+- ne prouve pas que Max est charge, que le DSP fonctionne, que l'audio sort ou que la musique est validee.
 
 Decision :
 
@@ -244,19 +250,39 @@ Pour une commande traitee, le futur patch observable doit produire une seule rep
 
 ## 10. Etat courant minimal
 
-`state.current.json` est un etat technique minimal.
+`state.current.json` est un etat technique minimal conforme a :
 
-Il peut indiquer :
+```text
+tools/vesperare-harness/schemas/state.schema.json
+```
 
-- `schema` de l'etat si un schema est ajoute plus tard ;
-- `run_id` ;
-- horodatage de l'etat ;
-- disponibilite du harness observable ;
-- dernier `command_id` vu ou traite ;
-- dernier evenement significatif ;
-- mode technique declare parmi les modes deja presents dans les schemas ;
-- liste courte de capacites observees ;
-- erreurs techniques courantes si elles existent.
+Champs minimaux obligatoires :
+
+- `schema` : `vesperare.max_harness.state.v0` ;
+- `run_id` : identifiant de session ;
+- `updated_at` : horodatage lisible au format `date-time` ;
+- `source` : `harness`, `patch` ou `module` ;
+- `status` : `ok`, `blocked`, `degraded`, `failed` ou `unknown` ;
+- `mode` : `absent`, `off`, `bypass`, `reduit` ou `active` ;
+- `last_command_id` : derniere commande liee a l'etat, ou `null` ;
+- `last_event` : dernier evenement significatif dans les enumerations de log ;
+- `capabilities` : tableau simple de chaines ;
+- `errors` : tableau simple de chaines ;
+- `message` : court message lisible.
+
+Decision :
+
+`capabilities` et `errors` restent volontairement plats. Ils ne contiennent pas d'objet imbrique, pas de score, pas de seuil, pas de routage, pas de mapping et pas de decision musicale.
+
+Fait :
+
+Le harness local PowerShell peut maintenant produire ce state sans Max via :
+
+```text
+tools/vesperare-harness/examples/command.request-state.json
+tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1
+tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1
+```
 
 Limite :
 

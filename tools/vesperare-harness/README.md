@@ -21,16 +21,18 @@ Fait :
 
 Fait :
 
-Ce dossier contient le flux local v0 du harness commandes/logs :
+Ce dossier contient le flux local v0 du harness commandes/logs/state :
 
-- schemas JSON pour commande, log, ack et error ;
+- schemas JSON pour commande, log, ack, error et state ;
 - exemple de commande `ping` ;
+- exemple de commande `request_state` ;
 - exemple d'ack `ping` ;
 - exemple d'error pour commande non acceptee par le stub local ;
+- exemple de `state.current.json` ;
 - exemple de session log JSONL ;
 - script PowerShell de creation d'une commande JSON ;
-- scripts PowerShell de verification command / ack / error / log ;
-- stub PowerShell local qui lit une commande et produit ack ou error plus log JSONL.
+- scripts PowerShell de verification command / ack / error / log / state ;
+- stub PowerShell local qui lit une commande et produit ack ou error, log JSONL et state technique pour `request_state`.
 
 Inference :
 
@@ -44,10 +46,11 @@ Fait :
 - `schemas/log.schema.json` decrit une ligne JSONL de log.
 - `schemas/ack.schema.json` decrit un accuse de reception.
 - `schemas/error.schema.json` decrit une erreur explicite.
+- `schemas/state.schema.json` decrit `state.current.json`, etat technique minimal.
 
 Decision :
 
-Les schemas restent fermes au niveau racine avec `additionalProperties: false`. Les champs `payload` et `data` restent des objets libres pour ne pas transformer le harness v0 en architecture musicale ou technique finale.
+Les schemas restent fermes au niveau racine avec `additionalProperties: false`. Les champs `payload` et `data` restent des objets libres pour ne pas transformer le harness v0 en architecture musicale ou technique finale. Les champs `capabilities` et `errors` du state restent des tableaux simples de chaines.
 
 ## Scripts
 
@@ -85,11 +88,28 @@ powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test
 
 Le script verifie que chaque ligne non vide est un evenement JSON conforme au contrat v0 local. Il ne valide pas l'audio, la musicalite, l'architecture ou le patch.
 
+### Verifier un state JSON
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1 -StatePath tools/vesperare-harness/examples/state.current.sample.json
+```
+
+Le script verifie seulement que `state.current.json` est un etat technique minimal conforme au contrat v0. Il ne valide pas Max, l'audio, le DSP, la musicalite, l'architecture ou le patch.
+
 ### Executer le stub local fichier-only
 
 ```powershell
 $out = Join-Path $env:TEMP "vesperare-harness-local-stub"
 powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1 -CommandPath tools/vesperare-harness/examples/command.ping.json -OutputDirectory $out -Force
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1 -LogPath (Join-Path $out "harness-session.jsonl")
+```
+
+Pour tester `request_state` sans Max :
+
+```powershell
+$out = Join-Path $env:TEMP "vesperare-harness-local-state"
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1 -CommandPath tools/vesperare-harness/examples/command.request-state.json -OutputDirectory $out -Force
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1 -StatePath (Join-Path $out "state.current.json")
 powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1 -LogPath (Join-Path $out "harness-session.jsonl")
 ```
 
@@ -99,7 +119,8 @@ Regles du stub local v0 :
 - accepter seulement `ping` et `request_state` ;
 - produire `ack.json` pour une commande acceptee ;
 - produire `error.json` pour une commande refusee ;
-- produire `harness-session.jsonl` avec au moins `boot`, `command_received`, `command_ack` ou `command_error`, `log_flush`, `shutdown` ;
+- produire `state.current.json` pour `request_state` ;
+- produire `harness-session.jsonl` avec au moins `boot`, `command_received`, `state_snapshot` pour `request_state`, `command_ack` ou `command_error`, `log_flush`, `shutdown` ;
 - ecrire les sorties dans le dossier donne par `-OutputDirectory` ;
 - ne jamais lancer Max ou Ableton ;
 - ne jamais modifier de `.maxpat`.

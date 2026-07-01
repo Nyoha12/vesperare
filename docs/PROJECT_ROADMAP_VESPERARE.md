@@ -1,6 +1,6 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0 et integration Max-side fichiers v0 en conception.
+Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0 et contrat state/session local v0.
 Date : 2026-07-01.
 Perimetre : document de pilotage ; sans patch Max nouveau, sans lancement Max, sans UI, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation musicale.
 
@@ -20,8 +20,13 @@ Fait :
 - `docs/reprise/02_PROJECT_STATE.md`
 - `docs/reprise/05_NEXT_ACTIONS.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
+- `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
 - `projects/max/_harness/README.md`
+- `tools/vesperare-harness/schemas/state.schema.json`
+- `tools/vesperare-harness/examples/command.request-state.json`
+- `tools/vesperare-harness/examples/state.current.sample.json`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
@@ -122,14 +127,14 @@ Le flux local v0 cote fichiers existe dans :
 tools/vesperare-harness/
 ```
 
-Il contient schemas, exemples, validateurs PowerShell et un stub local fichier-only qui lit une commande JSON, produit ack ou error, produit un log JSONL, puis permet une validation Codex CLI. Il n'integre pas Max, ne lance pas Max ou Ableton et ne modifie pas le patch 01.
+Il contient schemas, exemples, validateurs PowerShell et un stub local fichier-only qui lit une commande JSON, produit ack ou error, produit un log JSONL, produit `state.current.json` pour `request_state`, puis permet une validation Codex CLI. Il n'integre pas Max, ne lance pas Max ou Ableton et ne modifie pas le patch 01.
 
 Decision :
 
 Le flux local v0 prouve seulement le contrat local commandes/logs :
 
 ```text
-commande JSON -> stub local -> ack/error JSON -> log JSONL -> validation Codex
+commande JSON -> stub local -> ack/error JSON -> log JSONL/state JSON -> validation Codex
 ```
 
 Limite :
@@ -157,6 +162,10 @@ state.current.json
 Limite :
 
 Cette conception ne cree pas de patch Max, ne cree pas de `.maxpat`, ne lance pas Max, ne lance pas Ableton, ne modifie pas le patch 01 et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
+
+Decision :
+
+Le contrat local `request_state` / `state.current.json` est complete cote harness PowerShell. `state.current.json` reste un etat technique minimal conforme au schema local ; il n'est pas une preuve de chargement Max, pas une validation audio, pas une validation DSP, pas une validation musicale et pas une validation architecturale.
 
 ## 4. Place du patch 01
 
@@ -211,17 +220,22 @@ Livrables deja presents pour le flux local v0 :
 - `tools/vesperare-harness/schemas/log.schema.json`
 - `tools/vesperare-harness/schemas/ack.schema.json`
 - `tools/vesperare-harness/schemas/error.schema.json`
+- `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.ping.json`
+- `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/ack.ping.sample.json`
 - `tools/vesperare-harness/examples/error.unknown-command.sample.json`
 - `tools/vesperare-harness/examples/log.session.sample.jsonl`
+- `tools/vesperare-harness/examples/state.current.sample.json`
 - `tools/vesperare-harness/powershell/New-VesperareHarnessCommand.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessCommand.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessAck.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessError.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
 - `tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
+- `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
 
 Livrables de la conception Max-side fichier v0 :
 
@@ -243,7 +257,7 @@ Livrables futurs possibles, non produits maintenant :
 
 Recommandation :
 
-Apres cette PR, la prochaine action minimale sera de creer un premier artefact Max observable seulement si `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md` reste conforme.
+Apres cette PR, la prochaine action minimale sera de creer un premier artefact Max observable seulement si `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md` et le contrat local `state.current.json` restent conformes.
 
 Options futures possibles :
 

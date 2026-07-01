@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vesperare Max harness state v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "run_id",
+    "updated_at",
+    "source",
+    "status",
+    "mode",
+    "last_command_id",
+    "last_event",
+    "capabilities",
+    "errors",
+    "message"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vesperare.max_harness.state.v0"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "enum": [
+        "harness",
+        "patch",
+        "module"
+      ]
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "blocked",
+        "degraded",
+        "failed",
+        "unknown"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "absent",
+        "off",
+        "bypass",
+        "reduit",
+        "active"
+      ]
+    },
+    "last_command_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_event": {
+      "enum": [
+        "boot",
+        "command_received",
+        "command_ack",
+        "command_error",
+        "state_snapshot",
+        "fallback_enter",
+        "fallback_exit",
+        "sig_emit",
+        "mode_change",
+        "patch_load_attempt",
+        "patch_load_result",
+        "log_flush",
+        "shutdown"
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}
