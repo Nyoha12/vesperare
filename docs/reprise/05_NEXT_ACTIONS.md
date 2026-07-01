@@ -1,10 +1,22 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres creation du premier patch Max minimal `MIN-DID-PC`.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`.
 Date : 2026-07-01.
-Verdict courant : `premier patch Max minimal produit ; validation musicale, technique, architecturale et niveau 6 non acquise`.
+Verdict courant : `chargement Max non teste ; blocage reel par absence de Max standalone local detectable ; patch minimal inchange ; validation musicale, technique, architecturale et niveau 6 non acquise`.
 
 ## 1. Principe courant
+
+Fait :
+
+La fiche 28 existe :
+
+```text
+docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md
+```
+
+Fait :
+
+La fiche 28 constate un blocage reel : Max standalone n'a pas ete trouve localement, donc le chargement reel du patch n'a pas ete teste.
 
 Fait :
 
@@ -24,6 +36,10 @@ projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
 
 Fait :
 
+La fiche 28 ne modifie pas le `.maxpat`. Elle cree seulement sa trace et met a jour la presente fiche. Elle ne modifie pas `reprise/`, ne modifie pas l'audit niveau 6 source, ne cree pas de niveau 6, ne recree pas la matrice niveau 6 absente et ne valide aucune architecture.
+
+Fait :
+
 La fiche 27 cree seulement ce fichier `.maxpat`, cree sa trace et met a jour la presente fiche. Elle ne modifie pas `reprise/`, ne modifie pas l'audit niveau 6 source, ne cree pas de niveau 6, ne recree pas la matrice niveau 6 absente et ne valide aucune architecture.
 
 Fait :
@@ -40,7 +56,7 @@ La fiche 25 avait bloque correctement la production du patch tant que l'emplacem
 
 Decision :
 
-Le patch cree par la fiche 27 est un premier contenant Max minimal, provisoire et strictement borne. Il ne vaut pas validation musicale, technique, architecturale, niveau 6, routage final, objet Max final, UI, mapping, asset, sample bank ou seuil numerique.
+Le patch cree par la fiche 27 et non modifie par la fiche 28 est un premier contenant Max minimal, provisoire et strictement borne. Il ne vaut pas validation musicale, technique, architecturale, niveau 6, routage final, objet Max final, UI, mapping, asset, sample bank ou seuil numerique.
 
 Decision :
 
@@ -55,11 +71,11 @@ La verification documentaire reste limitee a :
 
 Inference :
 
-Les objets et connexions presents dans le fichier `.maxpat` servent seulement a rendre le premier patch ouvrable et minimal. Ils ne sont pas des objets Max finaux et ne definissent pas un routage final.
+Les objets et connexions presents dans le fichier `.maxpat` servent seulement a rendre le premier patch ouvrable et minimal. Ils ne sont pas des objets Max finaux et ne definissent pas un routage final. La fiche 28 ne prouve pas que ce fichier s'ouvre dans Max standalone.
 
 Recommandation :
 
-La prochaine action doit etre une verification locale dans Max standalone, strictement bornee au chargement du fichier et aux six points ci-dessus, sans ajout d'UI, mapping, asset, sample bank, seuil numerique, objet Max final, routage final, architecture validee, niveau 6 ou famille lourde.
+La prochaine action doit etre une nouvelle verification locale sur un poste ou Max standalone est installe et lancable proprement, strictement bornee au chargement du fichier et aux six points ci-dessus, sans ajout d'UI, mapping, asset, sample bank, seuil numerique, objet Max final, routage final, architecture validee, niveau 6 ou famille lourde.
 
 ## 2. Statut niveau 6
 
@@ -94,13 +110,15 @@ Decision :
 La prochaine action exacte est :
 
 ```text
-ouvrir projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat dans
-Max standalone pour une verification locale strictement bornee de chargement,
-presence live didgeridoo / PC, direct/safe, sortie simple, branches
-optionnelles absentes, fallback minimal et SIG interne, puis documenter le
-resultat sans ajouter UI, mapping, asset, sample bank, seuil numerique,
-objet Max final, routage final, architecture validee, niveau 6 ou famille
-lourde.
+relancer, sur un poste ou Max standalone est installe et lancable proprement,
+l'ouverture de
+projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
+dans Max standalone pour une verification locale strictement bornee de
+chargement reel, presence live didgeridoo / PC prevue, direct/safe, sortie
+simple, branches optionnelles absentes, fallback minimal et SIG interne,
+puis documenter le resultat sans ajouter UI, mapping, asset, sample bank,
+seuil numerique, objet Max final, routage final, architecture validee,
+niveau 6 ou famille lourde.
 ```
 
 Decision :
@@ -118,6 +136,7 @@ Fait :
 Fiches documentaires directement stabilisees dans la chaine de sortie :
 
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
+- `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/26_CLARIFICATION_MINIMALE_EMPLACEMENT_FORMAT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/25_TRACE_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
