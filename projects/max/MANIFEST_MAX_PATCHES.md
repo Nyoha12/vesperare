@@ -1,6 +1,6 @@
 # Manifest Max patches Vesperare
 
-Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side, du patch harness fichiers v1 separe et de la voie Node for Max v2 strictement bornee au harness.
+Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side, du patch harness fichiers v1 separe et de la voie Node for Max v2 strictement bornee au harness avec chargement `node.script` diagnostique localement.
 Date : 2026-07-01.
 Perimetre : inventaire documentaire ; diagnostic smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; sans validation technique, audio, DSP ou musicale.
 
@@ -26,6 +26,9 @@ Fait :
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 - `projects/max/_harness/node/vesperare-harness-bridge-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
+- `projects/max/_harness/node/vesperare-node-script-probe-v2.js`
+- `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
+- `docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md`
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 
 ## 1. Patches listes
@@ -231,16 +234,20 @@ Fait :
 
 Le bridge fonctionne hors Max avec Node local pour `ping` et `request_state`, et les fichiers produits passent les validateurs PowerShell existants.
 
+Fait :
+
+Depuis la trace 38, le bridge v2 a aussi ete execute par Max via `node.script` avec chemin absolu local. Les smokes Max `ping` et `request_state` produisent les fichiers contractuels attendus.
+
 Limite :
 
-Cette verification standalone ne prouve pas l'execution par Max `node.script`.
+Cette verification ne prouve pas une strategie portable d'emballage Max, ni l'audio, ni le DSP, ni le patch 01, ni une architecture.
 
 ### `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
 
 Statut :
 
 ```text
-patch Node for Max v2 separe, smoke Max non concluant cote fichiers
+patch Node for Max v2 separe, chargement node.script local corrige
 ```
 
 Fait :
@@ -249,19 +256,94 @@ Le patch contient des commentaires de perimetre et un `node.script` avec `@autos
 
 Fait :
 
+Le script est reference par chemin absolu local, car le diagnostic a montre que le chemin relatif `../node/...` n'etait pas resolu dans le smoke test Max local.
+
+Fait :
+
 Il reste separe du patch 01 et ne contient aucun objet audio, DSP, mapping, UI de performance, asset, sample bank, seuil numerique, routage final ou objet final.
 
 Fait :
 
-Le smoke test Max v2 a reference ou ouvert le patch v2 dans Max, mais n'a produit ni `ack.json`, ni `error.json`, ni `harness-session.jsonl`, ni `state.current.json`.
+Le smoke test Max v2 `ping` produit :
+
+```text
+projects/max/_harness/responses/ack.json
+projects/max/_harness/logs/harness-session.jsonl
+```
+
+Fait :
+
+Le smoke test Max v2 `request_state` produit :
+
+```text
+projects/max/_harness/responses/ack.json
+projects/max/_harness/logs/harness-session.jsonl
+projects/max/_harness/state/state.current.json
+```
+
+Fait :
+
+Les validateurs PowerShell `ack`, `log` et `state` passent sur les fichiers produits.
 
 Inference :
 
-Le blocage restant est l'execution effective du bridge par `node.script` ou la resolution du script par Max, pas le contrat fichier Node standalone.
+Le blocage `node.script` etait la resolution relative du script, pas le contrat fichier du bridge.
 
 Limite :
 
-Le v2 ne valide pas Max, l'audio, le DSP, la jouabilite, le patch 01, une architecture, un routage final, un objet final, un niveau 6, un mapping, une UI ou la musicalite.
+Le v2 ne valide pas une strategie portable d'emballage Max, l'audio, le DSP, la jouabilite, le patch 01, une architecture, un routage final, un objet final, un niveau 6, un mapping, une UI ou la musicalite.
+
+### `projects/max/_harness/node/vesperare-node-script-probe-v2.js`
+
+Statut :
+
+```text
+probe node.script v2, strictement borne au diagnostic de chargement
+```
+
+Fait :
+
+Le fichier existe comme probe separe du patch 01.
+
+Fait :
+
+Il ecrit seulement :
+
+```text
+projects/max/_harness/logs/node-script-probe-proof.json
+```
+
+Fait :
+
+Le probe a reproduit l'echec du chemin relatif `../node/...`, puis a prouve que `node.script` execute le script avec chemin absolu local.
+
+Limite :
+
+Le probe ne traite pas le contrat harness, ne remplace pas le bridge v2 et ne valide pas Max en general, l'audio, le DSP, le patch 01, une architecture ou la musicalite.
+
+### `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
+
+Statut :
+
+```text
+patch probe node.script v2 separe
+```
+
+Fait :
+
+Le fichier existe comme patch de diagnostic separe du patch 01.
+
+Fait :
+
+Il contient un seul objet `node.script` de probe et des commentaires de perimetre.
+
+Fait :
+
+L'attribut `@log_path`, bien present dans la reference locale, a ete rejete par l'objet Max local pendant le probe.
+
+Limite :
+
+Ce patch ne vaut pas objet final, routage final, architecture, validation audio, validation DSP ou validation musicale.
 
 ## 2. Dossier harness Max-side
 
@@ -279,9 +361,11 @@ Le dossier contient actuellement :
 
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/node/vesperare-harness-bridge-v2.js`
+- `projects/max/_harness/node/vesperare-node-script-probe-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
+- `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
 
 Fait :
 
@@ -373,7 +457,7 @@ Les artefacts Max-side crees pour le harness sont `vesperare-harness-file-observ
 
 Recommandation :
 
-La prochaine action Max eventuelle est une isolation bornee du chargement `node.script` du patch v2 pour obtenir au moins `ack.json` ou `error.json` sur `ping`. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max, audio, DSP ou musicale.
+La prochaine action Max eventuelle est de decider si le harness garde le chemin absolu local comme outil de smoke test, ou si une action separee instruit une resolution portable Max project/search-path. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max generale, audio, DSP ou musicale.
 
 ## 4. Conditions d'arret
 

@@ -13,7 +13,7 @@
       120.0,
       120.0,
       940.0,
-      420.0
+      360.0
     ],
     "bglocked": 0,
     "openinpresentation": 0,
@@ -58,7 +58,7 @@
             820.0,
             20.0
           ],
-          "text": "Vesperare harness node bridge v2 - separate _harness file observability patch. It does not open, read, modify or validate patch 01."
+          "text": "Vesperare node.script probe v2 - separate _harness diagnostic patch only."
         }
       },
       {
@@ -73,7 +73,7 @@
             820.0,
             36.0
           ],
-          "text": "Scope: start one node.script bridge that reads ../commands/command.pending.json and writes ack/error/log/state files under projects/max/_harness only."
+          "text": "Scope: prove whether node.script can load a relative script from ../node and write a proof file under _harness/logs."
         }
       },
       {
@@ -88,7 +88,7 @@
             820.0,
             36.0
           ],
-          "text": "Strict file harness only: no signal path, no performance UI, no mapping, no asset, no sample bank, no threshold, no final routing and no final Max object choice."
+          "text": "Strict diagnostic only: no audio, no DSP, no patch 01, no mapping, no asset, no sample bank, no routing and no final object decision."
         }
       },
       {
@@ -112,9 +112,9 @@
             "defer": 0,
             "watch": 0
           },
-          "text": "node.script C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node/vesperare-harness-bridge-v2.js @autostart 1 @watch 0",
+          "text": "node.script C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node/vesperare-node-script-probe-v2.js @autostart 1 @watch 0",
           "textfile": {
-            "filename": "C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node/vesperare-harness-bridge-v2.js",
+            "filename": "C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node/vesperare-node-script-probe-v2.js",
             "flags": 0,
             "embed": 0,
             "autowatch": 0
@@ -130,17 +130,17 @@
           "patching_rect": [
             45.0,
             230.0,
-            500.0,
+            640.0,
             36.0
           ],
-          "text": "The bridge processes ping/request_state on startup. Max console output is diagnostic only; file outputs are the harness contract."
+          "text": "Expected proof: projects/max/_harness/logs/node-script-probe-proof.json. Relative path and @log_path failures are documented in the trace."
         }
       }
     ],
     "lines": [],
     "dependency_cache": [
       {
-        "name": "vesperare-harness-bridge-v2.js",
+        "name": "vesperare-node-script-probe-v2.js",
         "bootpath": "C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node",
         "patcherrelativepath": "../node",
         "type": "TEXT",
