@@ -2,7 +2,24 @@
 
 Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`.
 Date : 2026-07-01.
-Verdict courant : `chargement Max non teste ; blocage reel par absence de Max standalone local detectable ; patch minimal inchange ; validation musicale, technique, architecturale et niveau 6 non acquise`.
+Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; prochaine phase = harness commandes/logs Max <-> Codex`.
+
+## Sources consultees
+
+Fait :
+
+- `docs/reprise/00_INDEX.md`
+- `docs/reprise/02_PROJECT_STATE.md`
+- `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
+- `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
+- `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
+- `reprise/BESOINS_STYLISTIQUES_v0_4.md`
+- `reprise/BESOINS_GENERATION_v0_4.md`
+- `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
+- `docs/PROJECT_ROADMAP_VESPERARE.md`
+- `docs/AI_WORKFLOW_CONTRACT.md`
+- `projects/max/MANIFEST_MAX_PATCHES.md`
+- `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 
 ## 1. Principe courant
 
@@ -36,72 +53,51 @@ projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
 
 Fait :
 
-La fiche 28 ne modifie pas le `.maxpat`. Elle cree seulement sa trace et met a jour la presente fiche. Elle ne modifie pas `reprise/`, ne modifie pas l'audit niveau 6 source, ne cree pas de niveau 6, ne recree pas la matrice niveau 6 absente et ne valide aucune architecture.
+Le fichier `.maxpat` est lisible comme JSON selon la trace 28. Une verification Codex CLI actuelle confirme aussi le parsing JSON avec cle `patcher` presente. Cette lecture n'est pas un chargement Max.
 
-Fait :
+Decision :
 
-La fiche 27 cree seulement ce fichier `.maxpat`, cree sa trace et met a jour la presente fiche. Elle ne modifie pas `reprise/`, ne modifie pas l'audit niveau 6 source, ne cree pas de niveau 6, ne recree pas la matrice niveau 6 absente et ne valide aucune architecture.
-
-Fait :
-
-La fiche 26 a defini la convention minimale provisoire d'emplacement, de format et de nommage qui autorisait cette creation :
-
-```text
-projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
-```
-
-Fait :
-
-La fiche 25 avait bloque correctement la production du patch tant que l'emplacement et le format etaient ambigus. Ce blocage cible est leve uniquement par la fiche 26, puis execute dans la fiche 27.
+La reprise documentaire est terminee avec reserves.
 
 Decision :
 
 Le patch cree par la fiche 27 et non modifie par la fiche 28 est un premier contenant Max minimal, provisoire et strictement borne. Il ne vaut pas validation musicale, technique, architecturale, niveau 6, routage final, objet Max final, UI, mapping, asset, sample bank ou seuil numerique.
 
-Decision :
-
-La verification documentaire reste limitee a :
-
-- presence live didgeridoo / PC ;
-- `direct/safe` ;
-- sortie simple ;
-- absence, off, bypass ou reduction de branches optionnelles ;
-- fallback ;
-- SIG.
-
 Inference :
 
-Les objets et connexions presents dans le fichier `.maxpat` servent seulement a rendre le premier patch ouvrable et minimal. Ils ne sont pas des objets Max finaux et ne definissent pas un routage final. La fiche 28 ne prouve pas que ce fichier s'ouvre dans Max standalone.
+Continuer par lecture visuelle de Max ou par test humain precoce ne resout pas le manque principal constate par la trace 28 : l'absence d'un canal machine-lisible de commandes, etats, logs, fallback et SIG.
 
-Recommandation :
+## 2. Statut du patch 01
 
-La prochaine action doit etre une nouvelle verification locale sur un poste ou Max standalone est installe et lancable proprement, strictement bornee au chargement du fichier et aux six points ci-dessus, sans ajout d'UI, mapping, asset, sample bank, seuil numerique, objet Max final, routage final, architecture validee, niveau 6 ou famille lourde.
+Valide a ce stade :
 
-## 2. Statut niveau 6
+- existence du fichier ;
+- `.maxpat` parseable comme JSON ;
+- contenant minimal provisoire ;
+- absence de modification dans la presente phase.
 
-Fait :
+Non valide a ce stade :
 
-La matrice niveau 6 source reste absente :
-
-```text
-reprise/MATRICE_ARCHITECTURE_MAX_STANDALONE_NIVEAU_6_ROLES_TECHNIQUES_CANDIDATS_CHEMINS_RISQUES_VESPERARE_v0_1.md
-```
-
-Fait :
-
-L'audit niveau 6 existant reste symptome documentaire, trace de sequence et checklist. Il ne constitue pas une preuve, une source prescriptive, une nomenclature active ou une validation du niveau 6.
+- chargement Max ;
+- ouverture sans erreur dans Max ;
+- console Max sans erreur ;
+- DSP ;
+- audio ;
+- jouabilite ;
+- relation musicale didgeridoo / PC / sortie ;
+- validation musicale ;
+- validation technique ;
+- validation architecturale ;
+- validation niveau 6 ;
+- routage final ;
+- objet Max final ;
+- mapping ;
+- UI ;
+- protection critique finale.
 
 Decision :
 
-La matrice niveau 6 absente bloque toujours toute validation du niveau 6, toute preuve et toute prescription niveau 6.
-
-Decision :
-
-Le patch minimal cree par la fiche 27 ne debloque pas le niveau 6 et ne remplace pas la matrice absente.
-
-Recommandation :
-
-Ne pas creer ni valider de niveau 6 maintenant. Ne pas recreer la matrice absente. Ne pas utiliser l'audit niveau 6 comme preuve.
+Le patch 01 reste non valide par Max, non valide musicalement, non valide techniquement et non architectural.
 
 ## 3. Prochaine action exacte
 
@@ -110,33 +106,87 @@ Decision :
 La prochaine action exacte est :
 
 ```text
-relancer, sur un poste ou Max standalone est installe et lancable proprement,
-l'ouverture de
-projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
-dans Max standalone pour une verification locale strictement bornee de
-chargement reel, presence live didgeridoo / PC prevue, direct/safe, sortie
-simple, branches optionnelles absentes, fallback minimal et SIG interne,
-puis documenter le resultat sans ajouter UI, mapping, asset, sample bank,
-seuil numerique, objet Max final, routage final, architecture validee,
-niveau 6 ou famille lourde.
+concevoir et preparer le harness commandes/logs Max <-> Codex,
+afin qu'un futur patch observable puisse recevoir des commandes bornees,
+emettre des logs machine-lisibles, exposer ses etats, signaler ses fallback,
+emettre ses SIG et rendre visibles les modes absent/off/bypass/reduit,
+avant toute reprise de test Max local ou test humain.
 ```
 
 Decision :
 
-Cette prochaine action ne doit pas etendre le patch au-dela du noyau minimal autorise.
+Le test Max local est reporte.
 
 Decision :
 
-Aucune famille lourde ne peut entrer dans `P0/P1`, `direct/safe`, protection ou `MIN-DID-PC`.
+Les tests humains sont reportes.
 
-## 4. Corpus de reference courant
+Decision :
+
+La prochaine action n'est pas une lecture visuelle Max, pas une validation GUI et pas une validation musicale.
+
+Decision :
+
+Le harness est une couche de test et d'observabilite. Il n'est pas une condition `P0/P1`, `direct/safe`, protection ou `MIN-DID-PC`.
+
+## 4. Roles outils
+
+Decision :
+
+Codex CLI peut :
+
+- modifier le repo dans le perimetre autorise ;
+- verifier JSON ;
+- lire logs et traces ;
+- verifier les diffs ;
+- preparer commit, push, PR et merge si demande.
+
+Decision :
+
+Codex CLI ne doit pas :
+
+- valider l'audio ;
+- valider la musicalite ;
+- remplacer un chargement Max par une lecture JSON ;
+- transformer une sortie de log en decision artistique.
+
+Decision :
+
+Codex Computer Use peut etre envisage plus tard seulement comme smoke test GUI ponctuel, non principal.
+
+Decision :
+
+Pro etendu est reserve aux gates strategiques.
+
+Decision :
+
+Le multi-agent est reserve aux analyses independantes ; l'ecriture finale reste faite par l'agent principal.
+
+## 5. Exigences pour futurs modules observables
+
+Decision :
+
+Les futurs modules devront exposer :
+
+- commandes ;
+- etats ;
+- logs ;
+- fallback ;
+- SIG ;
+- modes `absent`, `off`, `bypass`, `reduit`.
+
+Inference :
+
+Ces expositions servent a rendre les tests lisibles par machine. Elles ne valident pas la musique et ne fixent pas une architecture finale.
+
+## 6. Corpus de reference courant
 
 Fait :
 
 Fiches documentaires directement stabilisees dans la chaine de sortie :
 
-- `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
+- `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/26_CLARIFICATION_MINIMALE_EMPLACEMENT_FORMAT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/25_TRACE_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
@@ -158,15 +208,20 @@ Fiches documentaires directement stabilisees dans la chaine de sortie :
 - `docs/reprise/07_AUDIT_COMPATIBILITE_NIVEAU_5_OBJETS_MAX_CANDIDATS_AVEC_MATRICE_SYNTHESE_CANDIDATS_LOURDS_VESPERARE_v0_1.md`
 - `docs/reprise/MANIFEST_FICHIERS.yml`
 
+Fait :
+
+Documents de pilotage crees pour la phase harness :
+
+- `docs/PROJECT_ROADMAP_VESPERARE.md`
+- `docs/AI_WORKFLOW_CONTRACT.md`
+- `projects/max/MANIFEST_MAX_PATCHES.md`
+- `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
+
 Inference :
 
-Ce corpus suffit pour encadrer le premier patch Max minimal produit par la fiche 27 et sa prochaine verification locale. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
+Ce corpus suffit pour encadrer la conception du harness commandes/logs. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
 
-Recommandation :
-
-Ne pas elargir le corpus pour produire un nouvel audit. Si une source absente, suffixee `(1)` ou a statut `inconnu` devient necessaire, arreter et ouvrir une clarification documentaire separee avant toute reprise.
-
-## 5. Interdictions maintenues
+## 7. Interdictions maintenues
 
 Interdictions :
 
@@ -186,6 +241,10 @@ Interdictions :
 - ne pas produire objet Max final ;
 - ne pas produire routage final ;
 - ne pas produire architecture validee ;
+- ne pas modifier le `.maxpat` existant dans cette phase ;
+- ne pas creer de nouveau patch dans cette phase ;
+- ne pas lancer Max ;
+- ne pas lancer Ableton ;
 - ne pas transformer ACT28 en decision artistique definitive ;
 - ne pas transformer la sortie documentaire en validation du niveau 6 ;
 - ne pas demander a Yohan de trancher une architecture non instruite.
@@ -194,11 +253,11 @@ Interdictions lourdes :
 
 - `gen~`, `poly~`, MC, `buffer~`, corpus, IR, convolution, pfft/FFT, scripts, presets critiques, externals, plugins, ML, Markov, grammaire et outils opaques restent hors `P0/P1`, hors `direct/safe`, hors protection, hors `MIN-DID-PC` et hors setup minimal.
 
-## 6. Conditions d'arret
+## 8. Conditions d'arret
 
 Condition d'arret :
 
-Arreter si la suite tente de deplacer, dupliquer ou remplacer le patch minimal hors de :
+Arreter si la suite tente de deplacer, dupliquer, remplacer ou modifier le patch minimal :
 
 ```text
 projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
@@ -210,19 +269,15 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la suite produit un nouvel audit au lieu de verifier localement le patch Max minimal deja cree.
+Arreter si la suite produit un nouvel audit au lieu de concevoir le harness commandes/logs.
 
 Condition d'arret :
 
-Arreter si la suite produit une implementation generale, UI, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou patch Max hors des bornes minimales definies par les fiches 26 et 27.
+Arreter si la suite produit une implementation generale, UI, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou patch Max.
 
 Condition d'arret :
 
 Arreter si une famille lourde devient condition de `P0/P1`, `direct/safe`, protection, `MIN-DID-PC`, grave critique, scene, HAL/SPC/REV ou decision expressive.
-
-Condition d'arret :
-
-Arreter si la prochaine phase verifie autre chose que chargement local, presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
 
 Condition d'arret :
 
