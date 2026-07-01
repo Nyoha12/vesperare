@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vesperare Max harness command v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "command_id",
+    "run_id",
+    "issued_by",
+    "created_at",
+    "type",
+    "target",
+    "mode",
+    "payload",
+    "expect_ack"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vesperare.max_harness.command.v0"
+    },
+    "command_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "issued_by": {
+      "enum": [
+        "codex_cli"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "enum": [
+        "ping",
+        "load_patch",
+        "request_state",
+        "set_mode",
+        "request_log_flush",
+        "stop_harness"
+      ]
+    },
+    "target": {
+      "enum": [
+        "harness",
+        "patch",
+        "module"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "absent",
+        "off",
+        "bypass",
+        "reduit",
+        "active"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    },
+    "expect_ack": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

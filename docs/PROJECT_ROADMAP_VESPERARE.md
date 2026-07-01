@@ -85,7 +85,7 @@ Continuer par lecture visuelle de Max ou test humain precoce ajouterait une vali
 
 Decision :
 
-Le prochain axe est la conception d'un harness commandes/logs Max <-> Codex.
+Le prochain axe est la conception puis la preparation d'un harness commandes/logs Max <-> Codex.
 
 Objectif de phase :
 
@@ -110,6 +110,16 @@ Le harness n'est pas :
 - une validation audio ;
 - une validation musicale ;
 - une architecture finale.
+
+Fait :
+
+Le squelette v0 cote fichiers existe dans :
+
+```text
+tools/vesperare-harness/
+```
+
+Il contient schemas, exemples et scripts PowerShell limites a la creation et a la verification de fichiers JSON/JSONL. Il n'integre pas Max et ne modifie pas le patch 01.
 
 ## 4. Place du patch 01
 
@@ -159,10 +169,18 @@ Livrables de la phase actuelle :
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
+- `tools/vesperare-harness/README.md`
+- `tools/vesperare-harness/schemas/command.schema.json`
+- `tools/vesperare-harness/schemas/log.schema.json`
+- `tools/vesperare-harness/schemas/ack.schema.json`
+- `tools/vesperare-harness/schemas/error.schema.json`
+- `tools/vesperare-harness/examples/command.ping.json`
+- `tools/vesperare-harness/examples/log.session.sample.jsonl`
+- `tools/vesperare-harness/powershell/New-VesperareHarnessCommand.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
 
 Livrables futurs possibles, non produits maintenant :
 
-- dossier de commandes/logs de harness ;
 - convention de fichiers JSONL ;
 - patch Max observable futur ;
 - trace de chargement Max instrumentee ;
@@ -173,7 +191,7 @@ Livrables futurs possibles, non produits maintenant :
 
 Recommandation :
 
-Travailler d'abord la conception du harness commandes/logs Max <-> Codex, puis seulement ensuite decider si un patch observable futur doit etre cree pour produire des logs machine-lisibles.
+Relire le squelette v0 du harness commandes/logs Max <-> Codex, puis seulement ensuite decider si un patch observable futur doit etre cree pour produire des logs machine-lisibles.
 
 Condition d'arret :
 

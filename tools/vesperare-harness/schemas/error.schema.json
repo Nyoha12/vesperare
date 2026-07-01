@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vesperare Max harness error v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "command_id",
+    "run_id",
+    "status",
+    "error_code",
+    "recoverable",
+    "message"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vesperare.max_harness.error.v0"
+    },
+    "command_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "status": {
+      "const": "error"
+    },
+    "error_code": {
+      "enum": [
+        "unknown_command",
+        "invalid_payload",
+        "target_absent",
+        "max_error",
+        "blocked_by_policy"
+      ]
+    },
+    "recoverable": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}
