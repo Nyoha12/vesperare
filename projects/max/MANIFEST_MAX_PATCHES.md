@@ -1,6 +1,6 @@
 # Manifest Max patches Vesperare
 
-Statut : manifeste minimal des artefacts Max presents dans `projects/max` et des conventions de harness Max-side.
+Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side et de la preparation v1 non produite.
 Date : 2026-07-01.
 Perimetre : inventaire documentaire ; sans lancement Max, sans validation technique, audio, DSP ou musicale.
 
@@ -14,7 +14,9 @@ Fait :
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
+- `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `tools/vesperare-harness/README.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
@@ -77,7 +79,7 @@ La lecture JSON permet seulement a Codex CLI de constater que le fichier est str
 Statut :
 
 ```text
-artefact Max-side observable documentaire v0
+artefact Max-side observable documentaire v0 comment-only
 ```
 
 Fait :
@@ -104,6 +106,10 @@ Il represente les commandes minimales :
 Fait :
 
 Il contient seulement des boites `comment`, aucune ligne de patch, aucun objet audio, aucun DSP, aucun objet lourd et aucune UI de performance.
+
+Fait :
+
+Il ne lit pas de fichier, n'ecrit pas de fichier et ne traite aucune commande.
 
 Decision :
 
@@ -150,6 +156,39 @@ Limite :
 
 Ce dossier ne vaut pas patch Max, validation Max, validation audio, validation DSP, validation musicale, routage final, objet Max final ou architecture validee.
 
+### Implementation harness fichiers v1
+
+Statut :
+
+```text
+autorisee avec reserves comme prochaine action ; non creee
+```
+
+Fait :
+
+Les documents de preparation existent :
+
+```text
+docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+```
+
+Decision :
+
+Un futur patch Max harness fichiers v1 separe est autorise seulement s'il reste borne a :
+
+- lire ou importer `command.pending.json` ;
+- repondre a `ping` et `request_state` ;
+- produire `ack.json` ou `error.json` ;
+- produire `harness-session.jsonl` ;
+- produire ou rafraichir `state.current.json` ;
+- rester dans `projects/max/_harness/` ;
+- laisser le patch 01 inchange.
+
+Limite :
+
+Aucun patch v1 n'existe encore. Aucun `.maxpat` n'est cree ou modifie par cette preparation. Cette autorisation n'est pas une validation Max, audio, DSP, technique, architecturale ou musicale.
+
 ## 3. Prochaine action Max
 
 Decision :
@@ -186,7 +225,7 @@ Le premier artefact Max observable cree pour le harness est `vesperare-harness-f
 
 Recommandation :
 
-La prochaine action Max eventuelle devra rester bornee a l'observabilite, par exemple une revue de chargement Max explicitement autorisee ou une iteration documentaire. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation audio, DSP ou musicale.
+La prochaine action Max eventuelle est la creation du patch Max harness fichiers v1 separe, seulement si la pre-spec reste conforme. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max, audio, DSP ou musicale.
 
 ## 4. Conditions d'arret
 

@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0 et creation du premier artefact Max observable v0.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only et preparation de l'implementation Max-side harness fichiers v1.
 Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais non teste dans Max`.
+Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; implementation Max-side harness fichiers v1 autorisee avec reserves mais non creee`.
 
 ## Sources consultees
 
@@ -26,6 +26,8 @@ Fait :
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 - `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
 - `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
+- `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
+- `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
@@ -209,9 +211,34 @@ Limite :
 
 Il ne lit pas de fichier, n'ecrit pas de fichier, ne traite pas de commande, ne lance pas Max, ne lance pas Ableton et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
 
+Fait :
+
+La preparation de l'implementation Max-side minimale du harness fichiers v1 est documentee dans :
+
+```text
+docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+```
+
+Decision :
+
+Ces documents autorisent avec reserves une future creation de patch Max harness fichiers v1 separe. Ils ne creent pas ce patch, ne creent aucun `.maxpat`, ne modifient aucun `.maxpat`, ne lancent pas Max ou Ableton et ne valident ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
+
 Recommandation :
 
-Apres cette PR, la prochaine action minimale pourra etre une revue de chargement Max de cet artefact seulement si elle est explicitement autorisee et bornee a l'observabilite. Elle ne devra pas convertir le patch 01 en architecture finale et ne devra pas presenter l'observabilite comme validation audio, DSP ou musicale.
+Apres cette PR, la prochaine action minimale est :
+
+```text
+creer un patch Max harness fichiers v1 separe dans projects/max/_harness/,
+strictement borne a lire command.pending.json, repondre ping/request_state,
+produire ack.json ou error.json, ecrire harness-session.jsonl et produire
+state.current.json, sans modifier le patch 01 et sans validation Max, audio,
+DSP, technique, architecturale ou musicale.
+```
+
+Limite :
+
+Cette prochaine action ne devra pas convertir le patch 01 en architecture finale, ne devra pas choisir d'objet Max final, ne devra pas definir de routage final et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
 
 Decision :
 
@@ -318,7 +345,9 @@ Documents de pilotage crees pour la phase harness :
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `projects/max/_harness/README.md`
+- `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 
 Inference :
 
@@ -345,7 +374,7 @@ Interdictions :
 - ne pas produire routage final ;
 - ne pas produire architecture validee ;
 - ne pas modifier le `.maxpat` existant dans cette phase ;
-- ne pas creer d'autre patch sans autorisation explicite ;
+- ne pas creer d'autre patch hors action future explicitement bornee par `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md` ;
 - ne pas lancer Max ;
 - ne pas lancer Ableton ;
 - ne pas transformer ACT28 en decision artistique definitive ;
@@ -376,7 +405,7 @@ Arreter si la suite produit un nouvel audit au lieu de concevoir le harness comm
 
 Condition d'arret :
 
-Arreter si la suite produit une implementation generale, UI de performance, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou autre patch Max sans autorisation explicite.
+Arreter si la suite produit une implementation generale, UI de performance, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou autre patch Max que le futur harness fichiers v1 separe explicitement borne par la pre-spec.
 
 Condition d'arret :
 
