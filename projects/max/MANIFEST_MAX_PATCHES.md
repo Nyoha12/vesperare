@@ -1,8 +1,8 @@
 # Manifest Max patches Vesperare
 
-Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side et du patch harness fichiers v1 separe.
+Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side, du patch harness fichiers v1 separe et de la voie Node for Max v2 strictement bornee au harness.
 Date : 2026-07-01.
-Perimetre : inventaire documentaire ; tentative de smoke test Max bornee pour le v1 ; sans validation technique, audio, DSP ou musicale.
+Perimetre : inventaire documentaire ; diagnostic smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; sans validation technique, audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -18,10 +18,14 @@ Fait :
 - `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
 - `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md`
+- `docs/reprise/37_DIAGNOSTIC_LOGS_MAX_PATCH_HARNESS_FICHIERS_V1.md`
+- `docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md`
 - `tools/vesperare-harness/README.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
+- `projects/max/_harness/node/vesperare-harness-bridge-v2.js`
+- `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 
 ## 1. Patches listes
@@ -188,6 +192,77 @@ Limite :
 
 Le v1 ne valide pas Max, l'audio, le DSP, la jouabilite, le patch 01, une architecture, un routage final, un objet final, un niveau 6, un mapping, une UI ou la musicalite.
 
+### `projects/max/_harness/node/vesperare-harness-bridge-v2.js`
+
+Statut :
+
+```text
+bridge Node for Max v2, strictement borne au harness fichiers
+```
+
+Fait :
+
+Le fichier existe comme bridge separe du patch 01.
+
+Fait :
+
+Il lit :
+
+```text
+projects/max/_harness/commands/command.pending.json
+```
+
+Fait :
+
+Il produit :
+
+```text
+projects/max/_harness/responses/ack.json
+projects/max/_harness/responses/error.json
+projects/max/_harness/logs/harness-session.jsonl
+projects/max/_harness/state/state.current.json
+```
+
+Fait :
+
+Il accepte seulement `ping` et `request_state`, sans dependance npm externe, sans reseau et sans logique musicale.
+
+Fait :
+
+Le bridge fonctionne hors Max avec Node local pour `ping` et `request_state`, et les fichiers produits passent les validateurs PowerShell existants.
+
+Limite :
+
+Cette verification standalone ne prouve pas l'execution par Max `node.script`.
+
+### `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
+
+Statut :
+
+```text
+patch Node for Max v2 separe, smoke Max non concluant cote fichiers
+```
+
+Fait :
+
+Le patch contient des commentaires de perimetre et un `node.script` avec `@autostart 1`.
+
+Fait :
+
+Il reste separe du patch 01 et ne contient aucun objet audio, DSP, mapping, UI de performance, asset, sample bank, seuil numerique, routage final ou objet final.
+
+Fait :
+
+Le smoke test Max v2 a reference ou ouvert le patch v2 dans Max, mais n'a produit ni `ack.json`, ni `error.json`, ni `harness-session.jsonl`, ni `state.current.json`.
+
+Inference :
+
+Le blocage restant est l'execution effective du bridge par `node.script` ou la resolution du script par Max, pas le contrat fichier Node standalone.
+
+Limite :
+
+Le v2 ne valide pas Max, l'audio, le DSP, la jouabilite, le patch 01, une architecture, un routage final, un objet final, un niveau 6, un mapping, une UI ou la musicalite.
+
 ## 2. Dossier harness Max-side
 
 ### `projects/max/_harness/`
@@ -203,8 +278,10 @@ Fait :
 Le dossier contient actuellement :
 
 - `projects/max/_harness/README.md`
+- `projects/max/_harness/node/vesperare-harness-bridge-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
+- `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
 
 Fait :
 
@@ -296,7 +373,7 @@ Les artefacts Max-side crees pour le harness sont `vesperare-harness-file-observ
 
 Recommandation :
 
-La prochaine action Max eventuelle est une correction ou instrumentation bornee du patch v1 pour obtenir au moins `ack.json` ou `error.json` sur `ping`. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max, audio, DSP ou musicale.
+La prochaine action Max eventuelle est une isolation bornee du chargement `node.script` du patch v2 pour obtenir au moins `ack.json` ou `error.json` sur `ping`. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max, audio, DSP ou musicale.
 
 ## 4. Conditions d'arret
 
@@ -309,4 +386,5 @@ Arreter si la suite tente de :
 - faire un test humain comme prochaine preuve ;
 - valider musicalement ou techniquement le patch 01 ;
 - transformer le harness en module musical final ;
+- faire entrer Node for Max hors `_harness`, notamment dans le noyau audio, `P0/P1`, `direct/safe`, protection, `MIN-DID-PC` ou le patch 01 ;
 - definir UI, mapping, asset, sample bank, seuil numerique, objet Max final ou routage final.
