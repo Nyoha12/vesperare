@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0 et flux local v0 de harness commandes/logs.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs et conception de l'integration Max-side fichiers v0.
 Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs testable sans Max ; integration Max reportee`.
+Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs testable sans Max ; integration Max-side fichier v0 en cours de conception`.
 
 ## Sources consultees
 
@@ -20,7 +20,9 @@ Fait :
 - `docs/AI_WORKFLOW_CONTRACT.md`
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
+- `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
 - `tools/vesperare-harness/README.md`
+- `projects/max/_harness/README.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 
 ## 1. Principe courant
@@ -105,17 +107,13 @@ Le patch 01 reste non valide par Max, non valide musicalement, non valide techni
 
 Decision :
 
-La prochaine action exacte realisee dans la phase precedente etait :
+Les actions exactes deja realisees sont :
 
 ```text
 creer le squelette v0 du harness commandes/logs Max <-> Codex cote fichiers,
 schemas, exemples et scripts PowerShell, sans lancer Max, sans modifier le
 patch 01 et sans creer de nouveau patch.
 ```
-
-Decision :
-
-La prochaine action exacte realisee dans la presente phase est :
 
 ```text
 transformer ce squelette en flux local v0 testable sans Max :
@@ -152,9 +150,38 @@ Inference :
 
 Ce flux local suffit a verifier le contrat fichier commandes/logs en local : commande JSON, ack ou error JSON, log JSONL et validation Codex. Il ne suffit pas a valider Max, le DSP, l'audio, la jouabilite, la musicalite, l'architecture, le routage final ou un objet Max final.
 
+Decision :
+
+La prochaine action exacte de la phase actuelle est :
+
+```text
+concevoir l'integration Max-side fichier v0 du harness :
+comment un futur patch Max observable lira command.pending.json,
+ecrira ack.json ou error.json, produira harness-session.jsonl
+et exposera state.current.json.
+```
+
+Fait :
+
+Les documents de conception Max-side fichier v0 sont :
+
+- `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `projects/max/_harness/README.md`
+
+Limite :
+
+Cette phase ne cree pas de patch Max, ne cree pas de `.maxpat`, ne lance pas Max, ne lance pas Ableton, ne modifie pas le patch 01 et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
+
 Recommandation :
 
-La prochaine action minimale est de relire la trace 32 et de decider, dans une phase future bornee, si un patch observable devra lire ou ecrire ces fichiers. Cette phase future ne devra pas convertir le patch 01 en architecture finale.
+Apres cette PR, la prochaine action minimale sera de creer un premier artefact Max observable seulement si `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md` reste conforme.
+
+Options futures possibles :
+
+- une lib Max observable ;
+- un patch `02` observable.
+
+Cette phase future ne devra pas convertir le patch 01 en architecture finale et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
 
 Decision :
 
@@ -166,7 +193,7 @@ Les tests humains sont reportes.
 
 Decision :
 
-La prochaine action n'est pas une lecture visuelle Max, pas une validation GUI et pas une validation musicale.
+La prochaine action n'est pas une lecture visuelle Max, pas une validation GUI, pas une modification du patch 01 et pas une validation musicale.
 
 Decision :
 
@@ -260,6 +287,8 @@ Documents de pilotage crees pour la phase harness :
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
+- `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `projects/max/_harness/README.md`
 
 Inference :
 
