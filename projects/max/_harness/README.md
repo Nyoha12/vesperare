@@ -1,6 +1,6 @@
 # Max harness Vesperare
 
-Statut : dossier de conventions, artefact documentaire comment-only v0, patch harness fichiers v1 separe et voie Node for Max v2 strictement bornee au harness.
+Statut : dossier de conventions, artefact documentaire comment-only v0, patch harness fichiers v1 separe et voie Node for Max v2 strictement bornee au harness, avec chargement `node.script` diagnostique localement.
 Date : 2026-07-01.
 Perimetre : conventions de fichiers et artefacts `.maxpat` separes ; diagnostic du smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; aucune UI de performance, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique, aucune validation audio, DSP, musicale ou architecturale.
 
@@ -10,7 +10,7 @@ Decision :
 
 `projects/max/_harness/` est le lieu de rangement Max-side pour l'observabilite du harness commandes/logs.
 
-Il accueille maintenant un premier artefact documentaire comment-only, un patch v1 separe destine a investiguer le contrat fichier, et une voie Node for Max v2 strictement bornee au harness.
+Il accueille maintenant un premier artefact documentaire comment-only, un patch v1 separe destine a investiguer le contrat fichier, une voie Node for Max v2 strictement bornee au harness et un probe `node.script` separe.
 
 Documents de reference :
 
@@ -19,6 +19,7 @@ docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md
 docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
 docs/reprise/37_DIAGNOSTIC_LOGS_MAX_PATCH_HARNESS_FICHIERS_V1.md
 docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md
+docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md
 ```
 
 Fait :
@@ -27,9 +28,11 @@ Le dossier contient :
 
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/node/vesperare-harness-bridge-v2.js`
+- `projects/max/_harness/node/vesperare-node-script-probe-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
+- `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
 
 Decision :
 
@@ -51,9 +54,17 @@ Decision :
 
 `vesperare-harness-bridge-v2.js` est un bridge Node for Max autorise seulement dans `_harness`. Il lit `commands/command.pending.json`, accepte `ping` et `request_state`, puis ecrit `ack.json` ou `error.json`, `harness-session.jsonl` et `state.current.json` pour `request_state`.
 
+Fait :
+
+Le diagnostic `node.script` a montre que le chemin relatif `../node/...` n'etait pas resolu par Max dans le contexte de lancement local. Le meme probe a fonctionne avec un chemin absolu local.
+
+Fait :
+
+Le patch v2 corrige par chemin absolu local produit maintenant `ack.json` et `harness-session.jsonl` depuis Max pour `ping`, puis `ack.json`, `harness-session.jsonl` et `state.current.json` depuis Max pour `request_state`.
+
 Limite :
 
-Le bridge v2 fonctionne hors Max avec Node local et les validateurs PowerShell, mais le smoke test Max v2 n'a pas encore produit de fichier via `node.script`. Le blocage restant est l'execution effective du bridge par Max, pas le contrat fichier Node standalone.
+Cette correction valide le chargement local par `node.script` et le contrat fichier du bridge depuis Max. Elle ne valide pas une strategie portable d'emballage Max, ni l'audio, ni le DSP, ni le patch 01, ni une architecture.
 
 ## Emplacements futurs possibles
 
@@ -194,21 +205,53 @@ Fait :
 
 Hors Max, le bridge produit des fichiers conformes aux validateurs PowerShell existants pour `ping` et `request_state`.
 
+Fait :
+
+Depuis la trace 38, cette verification standalone est completee par deux smoke tests Max du patch v2 corrige : `ping` et `request_state`.
+
 Limite :
 
-Cette verification standalone ne prouve pas l'execution par `node.script` dans Max.
+Ces smoke tests prouvent l'execution locale par `node.script` avec chemin absolu, pas une strategie portable ni une validation audio, DSP, patch 01, architecturale ou musicale.
+
+### `node/vesperare-node-script-probe-v2.js`
+
+Statut :
+
+```text
+probe node.script v2, strictement borne au diagnostic de chargement
+```
+
+Fait :
+
+Le script ecrit seulement :
+
+```text
+projects/max/_harness/logs/node-script-probe-proof.json
+```
+
+Fait :
+
+Il a prouve que `node.script` peut executer un script dans Max 9 quand le chemin du script est absolu.
+
+Limite :
+
+Le probe ne traite aucune commande harness, ne remplace pas le bridge v2 et ne valide aucun comportement audio, DSP, patch 01, architectural ou musical.
 
 ### `patches/vesperare-harness-node-bridge-v2.maxpat`
 
 Statut :
 
 ```text
-patch Node for Max v2 separe, strictement borne au lancement du bridge
+patch Node for Max v2 separe, chargement node.script local corrige
 ```
 
 Fait :
 
 Le patch contient seulement des commentaires de perimetre et un objet `node.script` avec `@autostart 1`.
+
+Fait :
+
+Le script est reference par chemin absolu local, car le diagnostic a montre que `../node/...` n'etait pas resolu dans le smoke test Max local.
 
 Fait :
 
@@ -218,9 +261,37 @@ Il ne lit pas, n'ouvre pas, ne modifie pas et ne valide pas :
 projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
 ```
 
+Fait :
+
+Le smoke test Max v2 `ping` produit `ack.json` et `harness-session.jsonl`, sans `error.json`.
+
+Fait :
+
+Le smoke test Max v2 `request_state` produit `ack.json`, `harness-session.jsonl` et `state.current.json`, sans `error.json`.
+
 Limite :
 
-Un smoke test Max v2 a ouvert ou reference le patch v2 dans Max, mais aucun fichier `ack/error/log/state` n'a ete produit. Le log Max local indique `Max: unable to open` sans detail exploitable supplementaire.
+Le chemin absolu local est une correction de diagnostic pour ce checkout. Il ne valide pas une strategie portable d'emballage Max.
+
+### `patches/vesperare-harness-node-script-probe-v2.maxpat`
+
+Statut :
+
+```text
+patch probe node.script v2 separe
+```
+
+Fait :
+
+Le patch probe a d'abord reproduit l'echec de resolution relative `../node/...`, puis a prouve l'execution `node.script` avec chemin absolu local.
+
+Fait :
+
+L'attribut `@log_path`, bien present dans la reference locale, a ete rejete par l'objet Max local pendant le probe.
+
+Limite :
+
+Ce patch est un outil de diagnostic, pas un patch musical, pas un objet final et pas une validation Max generale.
 
 ## Trace v1
 
