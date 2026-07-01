@@ -1,10 +1,22 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres creation de la fiche 25 de trace et blocage cible du premier patch Max minimal `MIN-DID-PC`.
+Statut : plan de reprise documentaire apres creation de la fiche 26 de clarification minimale d'emplacement et de format du premier patch Max minimal `MIN-DID-PC`.
 Date : 2026-07-01.
-Verdict courant : `patch minimal non produit : emplacement et format attendus ambigus`.
+Verdict courant : `convention minimale provisoire definie ; patch minimal non produit`.
 
 ## 1. Principe courant
+
+Fait :
+
+La fiche 26 existe :
+
+```text
+docs/reprise/26_CLARIFICATION_MINIMALE_EMPLACEMENT_FORMAT_PATCH_MAX_MINIMAL_MIN_DID_PC.md
+```
+
+Fait :
+
+La fiche 26 leve uniquement le blocage constate par la fiche 25 en definissant une convention minimale, provisoire et strictement bornee d'emplacement, de format et de nommage pour un futur premier patch Max minimal `MIN-DID-PC`. Elle ne produit pas le patch Max minimal.
 
 Fait :
 
@@ -96,19 +108,19 @@ La fiche 23 est conforme a la fiche 22, puis aux fiches 20 et 21.
 
 Decision :
 
-Le passage vers une action ulterieure separee de premier patch Max minimal reste autorise avec reserves, mais il ne peut pas etre execute tant que l'emplacement et le format attendus du patch Max minimal ne sont pas clarifies.
+Le passage vers une action ulterieure separee de premier patch Max minimal reste autorise avec reserves. Depuis la fiche 26, il ne peut etre execute que dans l'emplacement, le format et le nom de fichier minimaux definis par cette fiche.
 
 Decision :
 
-La fiche 24 ne produit pas le patch Max minimal. La fiche 25 ne produit pas le patch Max minimal non plus, parce que la convention locale d'emplacement et de format n'a pas ete localisee.
+La fiche 24 ne produit pas le patch Max minimal. La fiche 25 ne produit pas le patch Max minimal parce que la convention locale d'emplacement et de format n'avait pas ete localisee. La fiche 26 ne produit pas le patch Max minimal non plus ; elle definit seulement une convention minimale provisoire.
 
 Inference :
 
-Les fiches 20, 21, 22, 23, 24 et 25 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a un premier patch Max minimal, avec verification limitee a presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG, a condition que l'emplacement et le format attendus soient clarifies avant production.
+Les fiches 20, 21, 22, 23, 24, 25 et 26 ne rouvrent pas une chaine d'audits, ne creent pas de niveau 6, ne recreent pas la matrice niveau 6 absente et ne valident aucune architecture. Elles autorisent seulement une suite limitee a un premier patch Max minimal, avec verification limitee a presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG, a condition que la future production respecte strictement la convention minimale de la fiche 26.
 
 Recommandation :
 
-La prochaine action doit rester strictement minimale : clarifier l'emplacement et le format attendus du premier fichier Max minimal, sans produire de patch, UI, mapping, asset, sample bank, seuil numerique, objet Max final, routage final ou architecture validee.
+La prochaine action doit rester strictement minimale : produire, dans une action ulterieure separee, le premier patch Max minimal uniquement sous `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`, au format `.maxpat`, sans UI, mapping, asset, sample bank, seuil numerique, objet Max final, routage final ou architecture validee.
 
 ## 2. Statut niveau 6
 
@@ -130,7 +142,7 @@ La matrice niveau 6 absente bloque toute validation du niveau 6, toute preuve et
 
 Decision :
 
-La matrice niveau 6 absente ne bloque pas l'action ulterieure separee de premier patch Max minimal si cette action reste strictement conforme aux fiches 24, 23, 22, 20 et 21, hors niveau 6, hors architecture validee, hors objet final et hors routage final.
+La matrice niveau 6 absente ne bloque pas l'action ulterieure separee de premier patch Max minimal si cette action reste strictement conforme aux fiches 26, 24, 23, 22, 20 et 21, hors niveau 6, hors architecture validee, hors objet final et hors routage final.
 
 Recommandation :
 
@@ -140,13 +152,14 @@ Ne pas creer ni valider de niveau 6 maintenant. Ne pas recreer la matrice absent
 
 Decision :
 
-La prochaine action remplace l'ancienne production du premier patch Max minimal :
+La prochaine action remplace l'ancienne clarification d'emplacement et de format :
 
 ```text
-clarifier l'emplacement exact et le format attendu du premier fichier Max
-minimal MIN-DID-PC, sans produire le patch, puis reprendre la production du
-patch seulement dans une action ulterieure si l'action reste strictement
-conforme a
+produire, dans une action ulterieure separee, le premier patch Max minimal
+MIN-DID-PC uniquement sous
+projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat,
+au format .maxpat, apres verification explicite de conformite a
+docs/reprise/26_CLARIFICATION_MINIMALE_EMPLACEMENT_FORMAT_PATCH_MAX_MINIMAL_MIN_DID_PC.md,
 docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md,
 docs/reprise/23_PREPARATION_BRANCHE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
 docs/reprise/22_CADRAGE_OPERATIONNEL_ACTION_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md,
@@ -157,7 +170,7 @@ docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md.
 
 Decision :
 
-Cette prochaine action ne produit pas de premier patch minimal. Elle clarifie seulement l'emplacement et le format attendus qui ont bloque la fiche 25.
+Cette prochaine action pourra produire un premier patch minimal seulement dans l'emplacement et le format definis par la fiche 26.
 
 Decision :
 
@@ -172,11 +185,11 @@ La verification du futur patch minimal doit porter uniquement sur :
 
 Decision :
 
-La clarification d'emplacement et de format ne vaut pas production de niveau 6, matrice, architecture validee, objet Max final, routage final, UI, mapping, asset, sample bank, seuil numerique ou patch Max.
+La convention d'emplacement et de format ne vaut pas production de niveau 6, matrice, architecture validee, objet Max final, routage final, UI, mapping, asset, sample bank, seuil numerique ou patch Max deja produit.
 
 Interdit :
 
-Cette prochaine action ne doit pas produire de famille lourde en `P0/P1`, `direct/safe`, protection ou `MIN-DID-PC`. Elle ne doit pas produire niveau 6, matrice niveau 6, audit, architecture validee, objet Max final, routage final, UI, mapping, asset, sample bank, seuil numerique ou patch Max.
+Cette prochaine action ne doit pas produire de famille lourde en `P0/P1`, `direct/safe`, protection ou `MIN-DID-PC`. Elle ne doit pas produire niveau 6, matrice niveau 6, audit, architecture validee, objet Max final, routage final, UI, mapping, asset, sample bank ou seuil numerique. Elle ne doit pas produire le patch hors `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` ni hors format `.maxpat`.
 
 ## 4. Corpus de reference courant
 
@@ -184,8 +197,9 @@ Fait :
 
 Fiches documentaires directement stabilisees dans la chaine de sortie :
 
-- `docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
+- `docs/reprise/26_CLARIFICATION_MINIMALE_EMPLACEMENT_FORMAT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/25_TRACE_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
+- `docs/reprise/24_DECISION_AUTORISATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/23_PREPARATION_BRANCHE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/22_CADRAGE_OPERATIONNEL_ACTION_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/21_DECISION_PASSAGE_PROTOTYPE_MAX_MINIMAL_MIN_DID_PC.md`
@@ -206,7 +220,7 @@ Fiches documentaires directement stabilisees dans la chaine de sortie :
 
 Inference :
 
-Ce corpus suffit pour autoriser avec reserves une action ulterieure separee de premier patch Max minimal strictement bornee par les fiches 24, 23, 22, 20 et 21. La fiche 25 ajoute que ce corpus ne suffit pas a produire le patch tant que l'emplacement et le format attendus ne sont pas clarifies. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
+Ce corpus suffit pour autoriser avec reserves une action ulterieure separee de premier patch Max minimal strictement bornee par les fiches 26, 24, 23, 22, 20 et 21. La fiche 25 ajoute que le patch ne devait pas etre produit tant que l'emplacement et le format attendus n'etaient pas clarifies. La fiche 26 leve uniquement ce blocage par une convention minimale provisoire. Le corpus ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
 
 Recommandation :
 
@@ -224,8 +238,10 @@ Interdictions :
 - ne pas utiliser l'audit niveau 6 comme preuve ;
 - ne pas produire de nouvel audit dans la prochaine phase ;
 - ne pas produire d'implementation generale ;
-- ne pas produire de patch Max dans la fiche 24 ;
-- ne pas produire de patch Max hors de l'action ulterieure strictement bornee par les fiches 24, 23, 22, 20 et 21 ;
+- ne pas produire de patch Max dans les fiches 24, 25 ou 26 ;
+- ne pas produire de patch Max hors de l'action ulterieure strictement bornee par les fiches 26, 24, 23, 22, 20 et 21 ;
+- ne pas produire de patch Max hors `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` ;
+- ne pas produire de premier patch Max minimal dans un format autre que `.maxpat` ;
 - ne pas produire UI ;
 - ne pas produire mapping ;
 - ne pas produire asset ;
@@ -241,23 +257,27 @@ Interdictions lourdes :
 
 - `gen~`, `poly~`, MC, `buffer~`, corpus, IR, convolution, pfft/FFT, scripts, presets critiques, externals, plugins, ML, Markov, grammaire et outils opaques restent hors `P0/P1`, hors `direct/safe`, hors protection, hors `MIN-DID-PC` et hors setup minimal.
 
-## 6. Premier patch minimal non produit par la fiche 25
+## 6. Premier patch minimal non produit par les fiches 25 et 26
 
 Fait :
 
-Aucun prototype reel n'est produit par la fiche 20, par la fiche 21, par la fiche 22, par la fiche 23, par la fiche 24 ni par la fiche 25.
+Aucun prototype reel n'est produit par la fiche 20, par la fiche 21, par la fiche 22, par la fiche 23, par la fiche 24, par la fiche 25 ni par la fiche 26.
 
 Decision :
 
-Un futur premier patch Max minimal reste autorise avec reserves comme action ulterieure separee, explicitement bornee par les fiches 24, 23, 22, 20 et 21, mais il est reporte par la fiche 25 tant que l'emplacement et le format attendus restent ambigus.
+Un futur premier patch Max minimal reste autorise avec reserves comme action ulterieure separee, explicitement bornee par les fiches 26, 24, 23, 22, 20 et 21.
 
 Decision :
 
-La prochaine intervention utile consiste a clarifier l'emplacement et le format attendus du premier fichier Max minimal, sans produire le patch.
+La fiche 25 a bloque correctement la production du patch parce que l'emplacement et le format attendus etaient ambigus.
 
 Inference :
 
-La prochaine intervention utile ne consiste pas a valider le niveau 6 ou une architecture. Elle consiste seulement a lever le blocage d'emplacement et de format constate dans la fiche 25, afin qu'une action ulterieure puisse eventuellement produire un premier patch minimal verifiant presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
+La fiche 26 leve uniquement ce blocage d'emplacement et de format par une convention minimale provisoire. Elle ne valide pas le niveau 6, ne valide pas une architecture et ne produit pas le patch.
+
+Decision :
+
+La prochaine intervention utile consiste a produire, dans une action ulterieure separee, un premier patch minimal seulement sous `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`, au format `.maxpat`, et seulement pour verifier presence live didgeridoo / PC, `direct/safe`, sortie simple, absence/off/bypass/reduction de branches optionnelles, fallback et SIG.
 
 Recommandation :
 
@@ -267,7 +287,17 @@ Ne pas demander a Yohan de trancher une architecture niveau 6 non instruite. Lui
 
 Condition d'arret :
 
-Arreter si l'emplacement ou le format attendu du premier fichier Max minimal reste ambigu.
+Arreter si la future production du premier fichier Max minimal ne respecte pas exactement :
+
+```text
+projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
+```
+
+au format `.maxpat`.
+
+Condition d'arret :
+
+Arreter si l'emplacement ou le format attendu redevient ambigu, ou si une convention locale contradictoire est retrouvee.
 
 Condition d'arret :
 
@@ -275,15 +305,15 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la prochaine phase produit un nouvel audit au lieu de creer une branche de premier patch Max minimal strictement bornee.
+Arreter si la prochaine phase produit un nouvel audit au lieu de produire, dans une action ulterieure separee, le premier patch Max minimal strictement borne par la fiche 26.
 
 Condition d'arret :
 
-Arreter si la prochaine phase produit une implementation generale, UI, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou patch Max hors des bornes minimales.
+Arreter si la prochaine phase produit une implementation generale, UI, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou patch Max hors des bornes minimales definies par la fiche 26.
 
 Condition d'arret :
 
-Arreter si la prochaine phase prepare ou produit un patch minimal sans verifier explicitement que l'action reste conforme aux fiches 24, 23, 22, 20 et 21.
+Arreter si la prochaine phase prepare ou produit un patch minimal sans verifier explicitement que l'action reste conforme aux fiches 26, 24, 23, 22, 20 et 21.
 
 Condition d'arret :
 
