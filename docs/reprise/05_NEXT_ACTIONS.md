@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness et diagnostic local du chargement `node.script`.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script` et stabilisation du smoke runtime Max/Codex par script.
 Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; smoke Max v2 ping produit ack/log ; smoke Max v2 request_state produit ack/log/state`.
+Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; smoke Max/Codex v2 reproductible via script temporaire pour ping et request_state`.
 
 ## Sources consultees
 
@@ -42,6 +42,8 @@ Fait :
 - `projects/max/_harness/node/vesperare-node-script-probe-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
 - `docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md`
+- `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
+- `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 
 ## 1. Principe courant
 
@@ -173,6 +175,7 @@ Il contient les contrats, exemples, validateurs et stub v0 suivants :
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
 - `tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1`
+- `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 
 Inference :
 
@@ -312,9 +315,17 @@ Fait :
 
 Le probe `node.script` a montre que le chemin relatif `../node/...` n'etait pas resolu par Max dans le contexte local de lancement. Le meme probe a fonctionne avec un chemin absolu local.
 
+Decision :
+
+Le patch source v2 ne porte plus le chemin absolu local committe. Le smoke officiel passe par un patch temporaire genere sous `.codex_tmp/` par :
+
+```text
+tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1
+```
+
 Fait :
 
-Le patch v2 corrige par chemin absolu local produit depuis Max :
+Le workflow scripté produit depuis Max :
 
 - `ping` -> `ack.json` + `harness-session.jsonl`, sans `error.json` ;
 - `request_state` -> `ack.json` + `harness-session.jsonl` + `state.current.json`, sans `error.json`.
@@ -325,17 +336,17 @@ Les validateurs PowerShell `ack`, `log` et `state` passent sur les sorties produ
 
 Limite :
 
-Cette verification prouve l'execution locale par `node.script` avec chemin absolu, pas une strategie portable d'emballage Max, pas l'audio, pas le DSP, pas la technique du patch 01, pas l'architecture et pas la musicalite.
+Cette verification prouve l'execution locale par `node.script` avec chemin absolu genere temporairement, pas une strategie portable d'emballage Max, pas l'audio, pas le DSP, pas la technique du patch 01, pas l'architecture et pas la musicalite.
 
 Recommandation :
 
 Apres cette PR, la prochaine action minimale est :
 
 ```text
-decider si le harness garde le chemin absolu local comme outil de smoke test,
-ou si une action separee instruit une resolution portable Max project/search-path,
-sans modifier le patch 01 et sans validation audio, DSP, architecturale
-ou musicale.
+conserver le smoke Max/Codex local via script temporaire ;
+ne pas reintegrer de chemin absolu local dans un patch source ;
+instruire la portabilite Max project/search-path seulement dans une action separee,
+sans modifier le patch 01 et sans validation audio, DSP, architecturale ou musicale.
 ```
 
 Decision :
@@ -454,6 +465,8 @@ Documents de pilotage crees pour la phase harness :
 - `projects/max/_harness/node/vesperare-node-script-probe-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
 - `docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md`
+- `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
+- `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 
 Inference :
 

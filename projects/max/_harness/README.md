@@ -1,8 +1,8 @@
 # Max harness Vesperare
 
-Statut : dossier de conventions, artefact documentaire comment-only v0, patch harness fichiers v1 separe et voie Node for Max v2 strictement bornee au harness, avec chargement `node.script` diagnostique localement.
+Statut : dossier de conventions, artefact documentaire comment-only v0, patch harness fichiers v1 separe et voie Node for Max v2 strictement bornee au harness, avec smoke Max local stabilise par patch temporaire genere.
 Date : 2026-07-01.
-Perimetre : conventions de fichiers et artefacts `.maxpat` separes ; diagnostic du smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; aucune UI de performance, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique, aucune validation audio, DSP, musicale ou architecturale.
+Perimetre : conventions de fichiers et artefacts `.maxpat` separes ; diagnostic du smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; smoke Max local via `.codex_tmp/` ; aucune UI de performance, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique, aucune validation audio, DSP, musicale ou architecturale.
 
 ## Role du dossier
 
@@ -20,6 +20,7 @@ docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
 docs/reprise/37_DIAGNOSTIC_LOGS_MAX_PATCH_HARNESS_FICHIERS_V1.md
 docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md
 docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md
+docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md
 ```
 
 Fait :
@@ -33,6 +34,7 @@ Le dossier contient :
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
+- `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 
 Decision :
 
@@ -58,13 +60,21 @@ Fait :
 
 Le diagnostic `node.script` a montre que le chemin relatif `../node/...` n'etait pas resolu par Max dans le contexte de lancement local. Le meme probe a fonctionne avec un chemin absolu local.
 
+Decision :
+
+Le patch source v2 ne porte plus le chemin absolu local committe. Le smoke officiel passe par :
+
+```text
+tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1
+```
+
 Fait :
 
-Le patch v2 corrige par chemin absolu local produit maintenant `ack.json` et `harness-session.jsonl` depuis Max pour `ping`, puis `ack.json`, `harness-session.jsonl` et `state.current.json` depuis Max pour `request_state`.
+Ce script genere un `.maxpat` temporaire sous `.codex_tmp/` avec `node.script` pointant vers le chemin absolu local du bridge, lance Max via `VESPERARE_MAX_EXE`, puis valide `ack/log/state` avec les validateurs PowerShell existants.
 
 Limite :
 
-Cette correction valide le chargement local par `node.script` et le contrat fichier du bridge depuis Max. Elle ne valide pas une strategie portable d'emballage Max, ni l'audio, ni le DSP, ni le patch 01, ni une architecture.
+Cette stabilisation valide un workflow local reproductible sur cette machine si `VESPERARE_MAX_EXE` pointe vers Max. Elle ne valide pas une strategie portable d'emballage Max, ni l'audio, ni le DSP, ni le patch 01, ni une architecture.
 
 ## Emplacements futurs possibles
 
@@ -207,11 +217,11 @@ Hors Max, le bridge produit des fichiers conformes aux validateurs PowerShell ex
 
 Fait :
 
-Depuis la trace 38, cette verification standalone est completee par deux smoke tests Max du patch v2 corrige : `ping` et `request_state`.
+Depuis la trace 39, cette verification standalone est completee par deux smoke tests Max lances par script : `ping` et `request_state`.
 
 Limite :
 
-Ces smoke tests prouvent l'execution locale par `node.script` avec chemin absolu, pas une strategie portable ni une validation audio, DSP, patch 01, architecturale ou musicale.
+Ces smoke tests prouvent l'execution locale par `node.script` avec chemin absolu genere temporairement, pas une strategie portable ni une validation audio, DSP, patch 01, architecturale ou musicale.
 
 ### `node/vesperare-node-script-probe-v2.js`
 
@@ -242,7 +252,7 @@ Le probe ne traite aucune commande harness, ne remplace pas le bridge v2 et ne v
 Statut :
 
 ```text
-patch Node for Max v2 separe, chargement node.script local corrige
+patch Node for Max v2 separe, source sans chemin absolu local committe
 ```
 
 Fait :
@@ -251,7 +261,7 @@ Le patch contient seulement des commentaires de perimetre et un objet `node.scri
 
 Fait :
 
-Le script est reference par chemin absolu local, car le diagnostic a montre que `../node/...` n'etait pas resolu dans le smoke test Max local.
+Le patch source reference `../node/vesperare-harness-bridge-v2.js`. Cette reference reste une trace/source separee et parseable, pas le support officiel du smoke local.
 
 Fait :
 
@@ -263,15 +273,15 @@ projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat
 
 Fait :
 
-Le smoke test Max v2 `ping` produit `ack.json` et `harness-session.jsonl`, sans `error.json`.
+Le smoke test officiel genere un patch temporaire sous `.codex_tmp/` avec chemin absolu local. Avec ce patch temporaire, `ping` produit `ack.json` et `harness-session.jsonl`, sans `error.json`.
 
 Fait :
 
-Le smoke test Max v2 `request_state` produit `ack.json`, `harness-session.jsonl` et `state.current.json`, sans `error.json`.
+Avec le meme workflow temporaire, `request_state` produit `ack.json`, `harness-session.jsonl` et `state.current.json`, sans `error.json`.
 
 Limite :
 
-Le chemin absolu local est une correction de diagnostic pour ce checkout. Il ne valide pas une strategie portable d'emballage Max.
+Le chemin absolu local reste une condition du patch temporaire genere, pas une donnee source commitee. Cela ne valide pas une strategie portable d'emballage Max.
 
 ### `patches/vesperare-harness-node-script-probe-v2.maxpat`
 

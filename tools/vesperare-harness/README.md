@@ -1,8 +1,8 @@
 # Vesperare harness commandes/logs v0
 
-Statut : flux local v0 d'outillage fichiers pour le harness Max <-> Codex.
+Statut : flux local v0 d'outillage fichiers pour le harness Max <-> Codex, avec smoke Max local borne par patch temporaire.
 
-Perimetre : schemas, exemples, validateurs JSON/JSONL et stub local fichier-only. Aucun lancement Max, aucun lancement Ableton, aucune modification de patch, aucune UI, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique.
+Perimetre : schemas, exemples, validateurs JSON/JSONL, stub local fichier-only et script smoke Max local du bridge Node for Max v2. Aucun lancement Ableton, aucune modification du patch 01, aucune UI, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique.
 
 ## Sources consultees
 
@@ -15,6 +15,9 @@ Fait :
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `docs/reprise/05_NEXT_ACTIONS.md`
+- `docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md`
+- `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
+- `projects/max/_harness/README.md`
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 
 ## Role du dossier
@@ -32,11 +35,12 @@ Ce dossier contient le flux local v0 du harness commandes/logs/state :
 - exemple de session log JSONL ;
 - script PowerShell de creation d'une commande JSON ;
 - scripts PowerShell de verification command / ack / error / log / state ;
-- stub PowerShell local qui lit une commande et produit ack ou error, log JSONL et state technique pour `request_state`.
+- stub PowerShell local qui lit une commande et produit ack ou error, log JSONL et state technique pour `request_state` ;
+- smoke PowerShell Max local qui genere un `.maxpat` temporaire sous `.codex_tmp/`, lance Max via `VESPERARE_MAX_EXE`, puis valide `ack/log/state`.
 
 Inference :
 
-Ce flux rend possible une verification machine-lisible minimale avant toute integration Max future. Il ne valide pas Max, le DSP, l'audio, la jouabilite, la musicalite, une architecture finale, un routage final ou un objet Max final.
+Ce flux rend possible une verification machine-lisible minimale du contrat fichier, puis un smoke Max local borne du bridge v2. Il ne valide pas le DSP, l'audio, la jouabilite, la musicalite, une architecture finale, un routage final ou un objet Max final.
 
 ## Contrats v0
 
@@ -125,6 +129,31 @@ Regles du stub local v0 :
 - ne jamais lancer Max ou Ableton ;
 - ne jamais modifier de `.maxpat`.
 
+### Executer le smoke Max local du bridge v2
+
+Prerequis :
+
+```powershell
+$env:VESPERARE_MAX_EXE = "C:\Program Files\Cycling '74\Max 9\Max.exe"
+```
+
+Commandes :
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1 -Type ping
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1 -Type request_state
+```
+
+Regles du smoke Max local :
+
+- verifier `VESPERARE_MAX_EXE` et le repo root ;
+- ecrire `projects/max/_harness/commands/command.pending.json` ;
+- generer un patch temporaire ignore sous `.codex_tmp/` avec `node.script` pointant vers le chemin absolu local du bridge ;
+- lancer Max avec ce patch temporaire ;
+- attendre `ack.json`, `harness-session.jsonl` et, pour `request_state`, `state.current.json` ;
+- valider les sorties avec les validateurs PowerShell existants ;
+- ne jamais modifier `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`.
+
 ## Limites maintenues
 
 Decision :
@@ -133,10 +162,10 @@ Le harness v0 n'est pas une condition `P0/P1`, `direct/safe`, protection ou `MIN
 
 Interdictions :
 
-- ne pas lancer Max depuis ces scripts ;
+- ne pas lancer Max depuis les scripts locaux, sauf `Invoke-VesperareMaxHarnessSmoke.ps1` pour un smoke strictement borne du bridge v2 ;
 - ne pas lancer Ableton ;
 - ne pas modifier `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` ;
-- ne pas creer de nouveau `.maxpat` ;
+- ne pas creer de nouveau `.maxpat` source ; le smoke Max peut seulement generer un `.maxpat` temporaire ignore sous `.codex_tmp/` ;
 - ne pas fixer de seuil numerique ;
 - ne pas choisir d'objet Max final ;
 - ne pas definir de routage final ;

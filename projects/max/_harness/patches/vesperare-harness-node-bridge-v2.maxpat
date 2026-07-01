@@ -112,9 +112,9 @@
             "defer": 0,
             "watch": 0
           },
-          "text": "node.script C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node/vesperare-harness-bridge-v2.js @autostart 1 @watch 0",
+          "text": "node.script ../node/vesperare-harness-bridge-v2.js @autostart 1 @watch 0",
           "textfile": {
-            "filename": "C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node/vesperare-harness-bridge-v2.js",
+            "filename": "../node/vesperare-harness-bridge-v2.js",
             "flags": 0,
             "embed": 0,
             "autowatch": 0
@@ -141,7 +141,7 @@
     "dependency_cache": [
       {
         "name": "vesperare-harness-bridge-v2.js",
-        "bootpath": "C:/Users/User/Documents/GitHub/vesperare/projects/max/_harness/node",
+        "bootpath": "../node",
         "patcherrelativepath": "../node",
         "type": "TEXT",
         "implicit": 1
