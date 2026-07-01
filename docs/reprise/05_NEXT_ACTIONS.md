@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC` et creation du squelette v0 de harness commandes/logs.
 Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; prochaine phase = harness commandes/logs Max <-> Codex`.
+Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; squelette v0 harness commandes/logs cree cote fichiers ; integration Max reportee`.
 
 ## Sources consultees
 
@@ -20,6 +20,7 @@ Fait :
 - `docs/AI_WORKFLOW_CONTRACT.md`
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
+- `tools/vesperare-harness/README.md`
 
 ## 1. Principe courant
 
@@ -103,15 +104,41 @@ Le patch 01 reste non valide par Max, non valide musicalement, non valide techni
 
 Decision :
 
-La prochaine action exacte est :
+La prochaine action exacte realisee dans la presente phase est :
 
 ```text
-concevoir et preparer le harness commandes/logs Max <-> Codex,
-afin qu'un futur patch observable puisse recevoir des commandes bornees,
-emettre des logs machine-lisibles, exposer ses etats, signaler ses fallback,
-emettre ses SIG et rendre visibles les modes absent/off/bypass/reduit,
-avant toute reprise de test Max local ou test humain.
+creer le squelette v0 du harness commandes/logs Max <-> Codex cote fichiers,
+schemas, exemples et scripts PowerShell, sans lancer Max, sans modifier le
+patch 01 et sans creer de nouveau patch.
 ```
+
+Fait :
+
+Le dossier suivant existe :
+
+```text
+tools/vesperare-harness/
+```
+
+Il contient les contrats et exemples v0 suivants :
+
+- `tools/vesperare-harness/README.md`
+- `tools/vesperare-harness/schemas/command.schema.json`
+- `tools/vesperare-harness/schemas/log.schema.json`
+- `tools/vesperare-harness/schemas/ack.schema.json`
+- `tools/vesperare-harness/schemas/error.schema.json`
+- `tools/vesperare-harness/examples/command.ping.json`
+- `tools/vesperare-harness/examples/log.session.sample.jsonl`
+- `tools/vesperare-harness/powershell/New-VesperareHarnessCommand.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
+
+Inference :
+
+Ce squelette suffit a verifier des fichiers JSON/JSONL et a preparer une observabilite future. Il ne suffit pas a valider Max, le DSP, l'audio, la jouabilite, la musicalite, l'architecture, le routage final ou un objet Max final.
+
+Recommandation :
+
+La prochaine action minimale est de relire ce squelette v0 et de decider, dans une phase future bornee, si un patch observable devra lire ou ecrire ces fichiers. Cette phase future ne devra pas convertir le patch 01 en architecture finale.
 
 Decision :
 

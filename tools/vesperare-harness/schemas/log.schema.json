@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vesperare Max harness log event v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "event_id",
+    "run_id",
+    "command_id",
+    "timestamp",
+    "level",
+    "source",
+    "event",
+    "status",
+    "mode",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vesperare.max_harness.log.v0"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "command_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "level": {
+      "enum": [
+        "info",
+        "warning",
+        "error"
+      ]
+    },
+    "source": {
+      "enum": [
+        "harness",
+        "patch",
+        "module"
+      ]
+    },
+    "event": {
+      "enum": [
+        "boot",
+        "command_received",
+        "command_ack",
+        "command_error",
+        "state_snapshot",
+        "fallback_enter",
+        "fallback_exit",
+        "sig_emit",
+        "mode_change",
+        "patch_load_attempt",
+        "patch_load_result",
+        "log_flush",
+        "shutdown"
+      ]
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "blocked",
+        "degraded",
+        "failed",
+        "unknown"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "absent",
+        "off",
+        "bypass",
+        "reduit",
+        "active"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    }
+  }
+}
