@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script` et stabilisation du smoke runtime Max/Codex par script.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script` et stabilisation du smoke runtime Max/Codex par script, post PR #40.
 Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; smoke Max/Codex v2 reproductible via script temporaire pour ping et request_state`.
+Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; PR #40 rend le smoke Max/Codex reproductible via script temporaire pour ping et request_state`.
 
 ## Sources consultees
 
@@ -18,6 +18,7 @@ Fait :
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 - `docs/PROJECT_ROADMAP_VESPERARE.md`
 - `docs/AI_WORKFLOW_CONTRACT.md`
+- `docs/START_HERE_VESPERARE.md`
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
@@ -123,7 +124,37 @@ Decision :
 
 Le patch 01 reste non valide par Max, non valide musicalement, non valide techniquement et non architectural.
 
-## 3. Prochaine action exacte
+## 3. Prochaine action exacte et historique harness
+
+Point d'entree courant :
+
+```text
+docs/START_HERE_VESPERARE.md
+```
+
+Decision :
+
+PR #40 rend le smoke Max/Codex reproductible par :
+
+```text
+tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1
+```
+
+Decision :
+
+La prochaine action n'est plus d'isoler `node.script` ni de prolonger le harness. La prochaine action est :
+
+```text
+conception concrete du noyau systeme didgeridoo/PC.
+```
+
+Limite :
+
+Le harness est un outil d'observabilite technique. Il n'est pas le noyau musical, pas une validation audio, pas une validation DSP, pas une validation musicale et pas une architecture.
+
+Regle de reprise :
+
+La prochaine action doit etre verifiee contre l'etat reel du repo avant execution. Si une trace recente rend une ancienne prochaine action obsolete, mettre a jour le pilotage avant de continuer.
 
 Decision :
 
@@ -340,13 +371,16 @@ Cette verification prouve l'execution locale par `node.script` avec chemin absol
 
 Recommandation :
 
-Apres cette PR, la prochaine action minimale est :
+Apres PR #40, conserver le smoke Max/Codex local via script temporaire comme outil disponible, sans en faire la prochaine phase principale.
+
+La prochaine action minimale est :
 
 ```text
-conserver le smoke Max/Codex local via script temporaire ;
+concevoir concretement le noyau systeme didgeridoo/PC ;
 ne pas reintegrer de chemin absolu local dans un patch source ;
-instruire la portabilite Max project/search-path seulement dans une action separee,
-sans modifier le patch 01 et sans validation audio, DSP, architecturale ou musicale.
+garder la portabilite Max project/search-path comme dette separee,
+non bloquante sauf besoin explicite ;
+ne pas modifier le patch 01 sans demande future explicite et bornee.
 ```
 
 Decision :
@@ -470,7 +504,7 @@ Documents de pilotage crees pour la phase harness :
 
 Inference :
 
-Ce corpus suffit pour encadrer la conception du harness commandes/logs. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
+Ce corpus suffit pour constater la stabilisation du harness et reprendre la conception du noyau didgeridoo/PC. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
 
 ## 7. Interdictions maintenues
 
@@ -493,9 +527,9 @@ Interdictions :
 - ne pas produire routage final ;
 - ne pas produire architecture validee ;
 - ne pas modifier le `.maxpat` existant dans cette phase ;
-- ne pas creer d'autre patch hors action future explicitement bornee par une pre-spec de harness ;
+- ne pas creer de nouveau patch sans demande future explicite et bornee ;
 - ne pas faire entrer Node for Max hors `_harness`, notamment dans le noyau audio, `P0/P1`, `direct/safe`, protection, `MIN-DID-PC` ou le patch 01 ;
-- ne lancer Max que pour un smoke test strictement borne d'un patch harness explicitement autorise, sans ouvrir le patch 01 et sans presenter le lancement comme validation musicale ;
+- ne lancer Max que pour un smoke test strictement borne explicitement autorise, notamment via `Invoke-VesperareMaxHarnessSmoke.ps1`, sans ouvrir le patch 01 et sans presenter le lancement comme validation audio, DSP ou musicale ;
 - ne pas lancer Ableton ;
 - ne pas transformer ACT28 en decision artistique definitive ;
 - ne pas transformer la sortie documentaire en validation du niveau 6 ;
@@ -521,11 +555,11 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la suite produit un nouvel audit au lieu de concevoir le harness commandes/logs.
+Arreter si la suite produit un nouvel audit au lieu de reprendre la conception concrete du noyau didgeridoo/PC.
 
 Condition d'arret :
 
-Arreter si la suite produit une implementation generale, UI de performance, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou autre patch Max que le harness fichiers v1 separe explicitement borne par la pre-spec.
+Arreter si la suite produit une implementation generale, UI de performance, mapping, asset, sample bank, seuil numerique, routage final, objet Max final, architecture validee ou nouveau patch Max non explicitement autorise.
 
 Condition d'arret :
 
