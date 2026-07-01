@@ -1,6 +1,6 @@
 # Max harness Vesperare
 
-Statut : dossier de conventions et premier artefact documentaire pour un harness Max-side observable.
+Statut : dossier de conventions, premier artefact documentaire comment-only et preparation non produite d'un harness Max-side fichiers v1.
 Date : 2026-07-01.
 Perimetre : conventions de fichiers et artefact `.maxpat` observable separe ; aucun lancement Max, aucune UI de performance, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique, aucune validation audio, DSP, musicale ou architecturale.
 
@@ -10,10 +10,11 @@ Decision :
 
 `projects/max/_harness/` est le lieu de rangement Max-side pour l'observabilite du harness commandes/logs.
 
-Il accueille maintenant un premier artefact documentaire et pourra accueillir plus tard des elements capables de lire ou ecrire le contrat fichier decrit dans :
+Il accueille maintenant un premier artefact documentaire comment-only et pourra accueillir plus tard des elements capables de lire ou ecrire le contrat fichier decrit dans :
 
 ```text
 docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md
+docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
 ```
 
 Fait :
@@ -30,6 +31,10 @@ Decision :
 Limite :
 
 L'artefact n'a pas ete charge dans Max. La seule validation locale attendue est une lecture JSON avec cle `patcher`, plus les checks du harness fichiers.
+
+Decision :
+
+L'implementation Max-side harness fichiers v1 est preparee documentairement mais non produite. Aucun patch v1 n'existe encore dans ce dossier.
 
 ## Emplacements futurs possibles
 
@@ -93,6 +98,31 @@ Il contient uniquement des boites `comment` et aucune ligne de patch.
 Limite :
 
 Les objets Max possibles comme `dict`, `text`, `message`, `comment` et `loadbang` y sont cites seulement comme candidats provisoires. Ils ne sont pas choisis comme implementation finale.
+
+## Preparation v1 non produite
+
+Documents de reference :
+
+```text
+docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+```
+
+Decision :
+
+Un futur patch Max harness fichiers v1 separe est autorise avec reserves, seulement s'il reste borne a :
+
+- lire ou importer `command.pending.json` ;
+- repondre a `ping` et `request_state` ;
+- produire `ack.json` ou `error.json` ;
+- produire `harness-session.jsonl` ;
+- produire ou rafraichir `state.current.json` ;
+- rester dans `projects/max/_harness/` ;
+- laisser `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` inchange.
+
+Limite :
+
+Cette preparation ne cree pas de `.maxpat`, ne modifie pas de `.maxpat`, ne lance pas Max ou Ableton, ne choisit pas d'objet Max final, ne definit pas de routage final et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
 
 ## Limites maintenues
 

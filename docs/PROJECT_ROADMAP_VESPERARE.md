@@ -1,6 +1,6 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0, contrat state/session local v0 et premier artefact Max observable v0.
+Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0, contrat state/session local v0, premier artefact Max observable v0 comment-only et pre-spec d'implementation Max-side harness fichiers v1.
 Date : 2026-07-01.
 Perimetre : document de pilotage ; artefact Max observable separe documente ; sans lancement Max, sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
@@ -22,7 +22,9 @@ Fait :
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 - `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
 - `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
+- `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `tools/vesperare-harness/schemas/state.schema.json`
@@ -175,6 +177,23 @@ Cet artefact est documentaire et provisoire. Il ne lit pas de fichier, n'ecrit p
 
 Decision :
 
+La prochaine action n'est pas un test Max. Une pre-spec d'implementation Max-side minimale du harness fichiers v1 prepare maintenant une future creation de patch separe.
+
+Fait :
+
+La pre-spec et la decision de passage existent :
+
+```text
+docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
+```
+
+Limite :
+
+Ces documents ne creent pas le patch v1, ne creent aucun `.maxpat`, ne modifient aucun `.maxpat`, ne lancent pas Max ou Ableton et ne valident ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
+
+Decision :
+
 Le contrat local `request_state` / `state.current.json` est complete cote harness PowerShell. `state.current.json` reste un etat technique minimal conforme au schema local ; il n'est pas une preuve de chargement Max, pas une validation audio, pas une validation DSP, pas une validation musicale et pas une validation architecturale.
 
 ## 4. Place du patch 01
@@ -264,8 +283,18 @@ Livrables de l'artefact Max observable v0 :
 - mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
 - mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
 
+Livrables de la preparation implementation Max-side harness fichiers v1 :
+
+- `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
+- `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
+- mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
+- mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
+- mise a jour ciblee de `projects/max/MANIFEST_MAX_PATCHES.md`
+- mise a jour ciblee de `projects/max/_harness/README.md`
+
 Livrables futurs possibles, non produits maintenant :
 
+- patch Max harness fichiers v1 separe, strictement borne a `ping`, `request_state`, `ack.json`, `error.json`, `harness-session.jsonl` et `state.current.json` ;
 - lib Max observable future ;
 - trace de chargement Max instrumentee ;
 - smoke test GUI ponctuel par Codex Computer Use, seulement si le harness et les logs le justifient ;
@@ -275,16 +304,26 @@ Livrables futurs possibles, non produits maintenant :
 
 Decision :
 
-Le premier artefact Max observable v0 est cree et separe du patch 01.
+Le premier artefact Max observable v0 est cree, separe du patch 01 et comment-only.
 
 Recommandation :
 
-Apres cette PR, la prochaine action minimale pourra etre une revue de chargement Max de cet artefact seulement si elle est explicitement autorisee et reste bornee a l'observabilite.
+Apres cette PR, la prochaine action minimale est la creation d'un patch Max harness fichiers v1 separe, seulement si la pre-spec reste conforme.
+
+Perimetre de cette action future :
+
+- lire ou importer `command.pending.json` ;
+- repondre a `ping` et `request_state` ;
+- produire `ack.json` ou `error.json` ;
+- produire `harness-session.jsonl` ;
+- produire ou rafraichir `state.current.json` ;
+- rester dans `projects/max/_harness/` ;
+- laisser le patch 01 inchange.
 
 Limite :
 
-La suite ne devra pas modifier le patch 01, ne devra pas faire de cet artefact une architecture finale et ne devra pas presenter l'observabilite comme validation audio, DSP ou musicale.
+Cette suite ne devra pas lancer Max ou Ableton, ne devra pas faire du futur v1 une architecture finale et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
 
 Condition d'arret :
 
-Arreter si la suite demande de lancer Max sans autorisation explicite, de lancer Ableton, de creer un autre patch, de modifier le patch 01, de modifier `reprise/`, de produire un mapping, une UI de performance, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.
+Arreter si la suite demande de lancer Max dans cette phase, de lancer Ableton, de modifier le patch 01, de modifier `reprise/` hors document explicitement demande, de produire un mapping, une UI de performance, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.
