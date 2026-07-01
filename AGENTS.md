@@ -296,6 +296,44 @@ quand elle est disponible, preferer une authentification stable par `gh` local /
 ne pas modifier les tokens ni les variables d'environnement sans demande explicite.
 ```
 
+## Procedure de merge Codex stable
+
+Dans cet environnement, Codex ne doit pas utiliser `gh pr merge`.
+
+Pour merger une PR CLEAN / MERGEABLE, Codex doit utiliser `gh api` avec le SHA exact de la tete PR.
+
+Avant merge, lire la PR :
+
+```powershell
+gh pr view NUM --json number,headRefOid,mergeStateStatus,mergeable,isDraft
+```
+
+Refuser le merge si :
+
+```text
+isDraft=true ;
+mergeStateStatus != CLEAN ;
+mergeable != MERGEABLE.
+```
+
+Merge :
+
+```powershell
+gh api -X PUT repos/Nyoha12/vesperare/pulls/NUM/merge -f commit_title=\"TITRE\" -f commit_message=\"MESSAGE\" -f merge_method=\"squash\" -f sha=\"SHA_HEAD\"
+```
+
+Apres merge :
+
+```powershell
+git switch main
+git pull --ff-only origin main
+git status --short
+```
+
+Ne jamais utiliser `gh api` merge sans SHA verrouille.
+
+Si `gh api` merge echoue, laisser la PR ouverte et expliquer l'erreur.
+
 Si une PR CLEAN / mergeable ne merge pas a cause d'une politique locale, d'un connector 403 ou d'un blocage incoherent :
 
 ```text
