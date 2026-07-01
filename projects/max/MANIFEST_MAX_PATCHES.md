@@ -2,7 +2,7 @@
 
 Statut : manifeste minimal des artefacts Max presents dans `projects/max` et des conventions de harness Max-side.
 Date : 2026-07-01.
-Perimetre : inventaire documentaire ; sans modification de patch, sans lancement Max, sans validation technique ou musicale.
+Perimetre : inventaire documentaire ; sans lancement Max, sans validation technique, audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -14,8 +14,10 @@ Fait :
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
 - `tools/vesperare-harness/README.md`
 - `projects/max/_harness/README.md`
+- `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 
 ## 1. Patches listes
@@ -70,6 +72,47 @@ Inference :
 
 La lecture JSON permet seulement a Codex CLI de constater que le fichier est structurellement lisible. Elle ne prouve rien sur Max standalone, le DSP, l'audio, la latence, la protection, la jouabilite ou la musicalite.
 
+### `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
+
+Statut :
+
+```text
+artefact Max-side observable documentaire v0
+```
+
+Fait :
+
+Le fichier existe comme artefact separe du patch 01.
+
+Fait :
+
+Il materialise le contrat fichier v0 du harness :
+
+- `command.pending.json`
+- `ack.json`
+- `error.json`
+- `harness-session.jsonl`
+- `state.current.json`
+
+Fait :
+
+Il represente les commandes minimales :
+
+- `ping`
+- `request_state`
+
+Fait :
+
+Il contient seulement des boites `comment`, aucune ligne de patch, aucun objet audio, aucun DSP, aucun objet lourd et aucune UI de performance.
+
+Decision :
+
+Les classes Max citees dans l'artefact, comme `dict`, `text`, `message`, `comment` et `loadbang`, restent des candidats provisoires pour investigation future. Elles ne sont pas choisies comme objets finaux.
+
+Limite :
+
+Ce fichier n'a pas ete charge dans Max. Sa lecture JSON n'est pas une validation Max, audio, DSP, musicale, technique ou architecturale.
+
 ## 2. Dossier harness Max-side
 
 ### `projects/max/_harness/`
@@ -85,10 +128,11 @@ Fait :
 Le dossier contient actuellement :
 
 - `projects/max/_harness/README.md`
+- `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 
 Fait :
 
-Aucun `.maxpat` n'est cree dans ce dossier par la presente phase.
+Un premier `.maxpat` documentaire existe dans ce dossier. Il ne lit pas de fichier, n'ecrit pas de fichier, ne traite pas de commande et ne valide pas Max.
 
 Decision :
 
@@ -130,15 +174,19 @@ Ce flux local n'integre pas Max, ne lance pas Max, ne lance pas Ableton et ne mo
 
 Decision :
 
-L'integration Max-side fichier v0 est en cours de conception dans :
+L'integration Max-side fichier v0 est specifiee dans :
 
 ```text
 docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md
 ```
 
+Decision :
+
+Le premier artefact Max observable cree pour le harness est `vesperare-harness-file-observer-v0.maxpat`.
+
 Recommandation :
 
-Le prochain artefact Max, s'il est cree plus tard, devra etre un premier artefact observable seulement si la spec reste conforme. Options futures possibles : une lib Max observable ou un patch `02` observable. Il ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max, audio, DSP ou musicale.
+La prochaine action Max eventuelle devra rester bornee a l'observabilite, par exemple une revue de chargement Max explicitement autorisee ou une iteration documentaire. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation audio, DSP ou musicale.
 
 ## 4. Conditions d'arret
 

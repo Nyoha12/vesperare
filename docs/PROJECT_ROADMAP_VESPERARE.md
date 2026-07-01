@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0 et contrat state/session local v0.
+Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0, contrat state/session local v0 et premier artefact Max observable v0.
 Date : 2026-07-01.
-Perimetre : document de pilotage ; sans patch Max nouveau, sans lancement Max, sans UI, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation musicale.
+Perimetre : document de pilotage ; artefact Max observable separe documente ; sans lancement Max, sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -21,8 +21,10 @@ Fait :
 - `docs/reprise/05_NEXT_ACTIONS.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 - `docs/reprise/33_TRACE_CONTRAT_STATE_SESSION_HARNESS_FICHIERS_V0.md`
+- `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
 - `projects/max/_harness/README.md`
+- `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
@@ -143,7 +145,7 @@ Cette preuve n'est pas une integration Max, pas un test audio, pas une validatio
 
 Decision :
 
-L'integration Max-side fichier v0 est maintenant en cours de conception dans :
+L'integration Max-side fichier v0 est specifiee dans :
 
 ```text
 docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md
@@ -159,9 +161,17 @@ harness-session.jsonl
 state.current.json
 ```
 
+Fait :
+
+Un premier artefact Max-side observable separe existe maintenant :
+
+```text
+projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat
+```
+
 Limite :
 
-Cette conception ne cree pas de patch Max, ne cree pas de `.maxpat`, ne lance pas Max, ne lance pas Ableton, ne modifie pas le patch 01 et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
+Cet artefact est documentaire et provisoire. Il ne lit pas de fichier, n'ecrit pas de fichier, ne traite pas de commande, ne lance pas Max, ne lance pas Ableton, ne modifie pas le patch 01 et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
 
 Decision :
 
@@ -245,29 +255,36 @@ Livrables de la conception Max-side fichier v0 :
 - mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
 - mise a jour ciblee de `projects/max/MANIFEST_MAX_PATCHES.md`
 
+Livrables de l'artefact Max observable v0 :
+
+- `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
+- `docs/reprise/34_TRACE_ARTEFACT_MAX_OBSERVABLE_HARNESS_FICHIERS_V0.md`
+- mise a jour ciblee de `projects/max/_harness/README.md`
+- mise a jour ciblee de `projects/max/MANIFEST_MAX_PATCHES.md`
+- mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
+- mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
+
 Livrables futurs possibles, non produits maintenant :
 
 - lib Max observable future ;
-- patch Max observable futur, par exemple un patch `02` observable ;
 - trace de chargement Max instrumentee ;
 - smoke test GUI ponctuel par Codex Computer Use, seulement si le harness et les logs le justifient ;
 - test humain apres observabilite, jamais comme premiere preuve technique.
 
 ## 7. Prochaine action minimale
 
+Decision :
+
+Le premier artefact Max observable v0 est cree et separe du patch 01.
+
 Recommandation :
 
-Apres cette PR, la prochaine action minimale sera de creer un premier artefact Max observable seulement si `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md` et le contrat local `state.current.json` restent conformes.
-
-Options futures possibles :
-
-- une lib Max observable ;
-- un patch `02` observable.
+Apres cette PR, la prochaine action minimale pourra etre une revue de chargement Max de cet artefact seulement si elle est explicitement autorisee et reste bornee a l'observabilite.
 
 Limite :
 
-Cette action future ne devra pas modifier le patch 01, ne devra pas en faire une architecture finale et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
+La suite ne devra pas modifier le patch 01, ne devra pas faire de cet artefact une architecture finale et ne devra pas presenter l'observabilite comme validation audio, DSP ou musicale.
 
 Condition d'arret :
 
-Arreter si la suite demande de lancer Max, de lancer Ableton, de creer un patch, de modifier le `.maxpat`, de modifier `reprise/`, de produire un mapping, une UI, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.
+Arreter si la suite demande de lancer Max sans autorisation explicite, de lancer Ableton, de creer un autre patch, de modifier le patch 01, de modifier `reprise/`, de produire un mapping, une UI de performance, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.
