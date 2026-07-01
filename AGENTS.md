@@ -299,8 +299,16 @@ ne pas modifier les tokens ni les variables d'environnement sans demande explici
 ## Procedure de merge Codex stable
 
 Dans cet environnement, Codex ne doit pas utiliser `gh pr merge`.
+Le sous-commandement est bloque par la couche d'execution Codex meme en YOLO.
 
-Pour merger une PR CLEAN / MERGEABLE, Codex doit utiliser `gh api` avec le SHA exact de la tete PR.
+La procedure officielle Codex est :
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/github/Merge-CleanPrSquash.ps1 -PrNumber NUM -Subject "TITRE" -Body "MESSAGE"
+```
+
+Pour merger une PR CLEAN / MERGEABLE / non draft, Codex doit utiliser `gh api` avec le SHA exact de la tete PR.
+Cet usage de `gh api` + SHA verrouille est autorise uniquement pour une PR ouverte, base `main`, CLEAN, MERGEABLE et non draft.
 
 Avant merge, lire la PR :
 
@@ -332,7 +340,7 @@ git status --short
 
 Ne jamais utiliser `gh api` merge sans SHA verrouille.
 
-Si `gh api` merge echoue, laisser la PR ouverte et expliquer l'erreur.
+Si le script ou `gh api` merge echoue, ne pas insister, laisser la PR ouverte et expliquer l'erreur.
 
 Si une PR CLEAN / mergeable ne merge pas a cause d'une politique locale, d'un connector 403 ou d'un blocage incoherent :
 

@@ -26,6 +26,8 @@ Les regles de pilotage doivent etre relues avec l'etat courant du repo.
 
 Pour Codex, `AGENTS.md` contient les regles operationnelles actives du repo.
 
+Pour merger une PR depuis Codex, utiliser `tools/github/Merge-CleanPrSquash.ps1` ; ne pas utiliser `gh pr merge`.
+
 Certaines regles ont ete posees pour une phase precise ; elles peuvent devoir etre confirmees, assouplies ou remplacees quand le contexte change.
 
 Avant d'executer une prochaine action, verifier les traces recentes et l'etat Git reel.
