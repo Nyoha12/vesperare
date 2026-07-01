@@ -1,6 +1,6 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres reprise documentaire, trace 28 et flux local harness v0.
+Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0 et integration Max-side fichiers v0 en conception.
 Date : 2026-07-01.
 Perimetre : document de pilotage ; sans patch Max nouveau, sans lancement Max, sans UI, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation musicale.
 
@@ -20,6 +20,8 @@ Fait :
 - `docs/reprise/02_PROJECT_STATE.md`
 - `docs/reprise/05_NEXT_ACTIONS.md`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
+- `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `projects/max/_harness/README.md`
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
@@ -134,6 +136,28 @@ Limite :
 
 Cette preuve n'est pas une integration Max, pas un test audio, pas une validation DSP, pas une validation musicale et pas une validation technique du patch 01.
 
+Decision :
+
+L'integration Max-side fichier v0 est maintenant en cours de conception dans :
+
+```text
+docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md
+```
+
+Elle definit comment un futur patch Max observable pourra lire ou ecrire :
+
+```text
+command.pending.json
+ack.json
+error.json
+harness-session.jsonl
+state.current.json
+```
+
+Limite :
+
+Cette conception ne cree pas de patch Max, ne cree pas de `.maxpat`, ne lance pas Max, ne lance pas Ableton, ne modifie pas le patch 01 et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
+
 ## 4. Place du patch 01
 
 Decision :
@@ -175,7 +199,7 @@ Non-usages :
 
 ## 6. Livrables attendus
 
-Livrables de la phase actuelle :
+Livrables deja presents pour le flux local v0 :
 
 - `docs/PROJECT_ROADMAP_VESPERARE.md`
 - `docs/AI_WORKFLOW_CONTRACT.md`
@@ -199,10 +223,18 @@ Livrables de la phase actuelle :
 - `tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1`
 - `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 
+Livrables de la conception Max-side fichier v0 :
+
+- `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
+- `projects/max/_harness/README.md`
+- mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
+- mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
+- mise a jour ciblee de `projects/max/MANIFEST_MAX_PATCHES.md`
+
 Livrables futurs possibles, non produits maintenant :
 
-- convention de fichiers JSONL ;
-- patch Max observable futur ;
+- lib Max observable future ;
+- patch Max observable futur, par exemple un patch `02` observable ;
 - trace de chargement Max instrumentee ;
 - smoke test GUI ponctuel par Codex Computer Use, seulement si le harness et les logs le justifient ;
 - test humain apres observabilite, jamais comme premiere preuve technique.
@@ -211,7 +243,16 @@ Livrables futurs possibles, non produits maintenant :
 
 Recommandation :
 
-Relire la trace du flux local v0 du harness commandes/logs, puis seulement ensuite decider si un patch observable futur doit etre cree pour produire des logs machine-lisibles.
+Apres cette PR, la prochaine action minimale sera de creer un premier artefact Max observable seulement si `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md` reste conforme.
+
+Options futures possibles :
+
+- une lib Max observable ;
+- un patch `02` observable.
+
+Limite :
+
+Cette action future ne devra pas modifier le patch 01, ne devra pas en faire une architecture finale et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
 
 Condition d'arret :
 
