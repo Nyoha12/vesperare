@@ -278,7 +278,36 @@ override.
 
 ---
 
-# 9. Interdictions fortes
+# 9. GitHub CLI / authentification
+
+Avant de creer ou merger une PR via GitHub CLI, verifier :
+
+```text
+gh auth status
+```
+
+L'agent doit signaler si `GH_TOKEN` ou `GITHUB_TOKEN` est present dans l'environnement, sans jamais afficher sa valeur.
+
+Rappels :
+
+```text
+GH_TOKEN et GITHUB_TOKEN peuvent prendre priorite sur l'authentification locale du keyring `gh` ;
+quand elle est disponible, preferer une authentification stable par `gh` local / keyring ;
+ne pas modifier les tokens ni les variables d'environnement sans demande explicite.
+```
+
+Si une PR CLEAN / mergeable ne merge pas a cause d'une politique locale, d'un connector 403 ou d'un blocage incoherent :
+
+```text
+ne pas insister ;
+laisser la PR ouverte ;
+fournir la commande manuelle exacte ;
+documenter que le blocage vient probablement de la couche auth / execution, pas forcement du repo.
+```
+
+---
+
+# 10. Interdictions fortes
 
 Ne pas :
 
@@ -299,7 +328,7 @@ remplacer le jugement musical de Yohan.
 
 ---
 
-# 10. Toujours faire
+# 11. Toujours faire
 
 ```text
 séparer fait / inférence / recommandation ;
