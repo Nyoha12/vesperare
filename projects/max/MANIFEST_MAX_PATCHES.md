@@ -1,8 +1,8 @@
 # Manifest Max patches Vesperare
 
-Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side, du patch harness fichiers v1 separe et de la voie Node for Max v2 strictement bornee au harness avec chargement `node.script` diagnostique localement.
+Statut : manifeste minimal des artefacts Max presents dans `projects/max`, des conventions de harness Max-side, du patch harness fichiers v1 separe et de la voie Node for Max v2 strictement bornee au harness avec smoke Max local par patch temporaire genere.
 Date : 2026-07-01.
-Perimetre : inventaire documentaire ; diagnostic smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; sans validation technique, audio, DSP ou musicale.
+Perimetre : inventaire documentaire ; diagnostic smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; smoke local via `.codex_tmp/` ; sans validation technique, audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -29,6 +29,8 @@ Fait :
 - `projects/max/_harness/node/vesperare-node-script-probe-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-node-script-probe-v2.maxpat`
 - `docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md`
+- `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
+- `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 - `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat`
 
 ## 1. Patches listes
@@ -236,7 +238,7 @@ Le bridge fonctionne hors Max avec Node local pour `ping` et `request_state`, et
 
 Fait :
 
-Depuis la trace 38, le bridge v2 a aussi ete execute par Max via `node.script` avec chemin absolu local. Les smokes Max `ping` et `request_state` produisent les fichiers contractuels attendus.
+Depuis la trace 39, le bridge v2 est execute par Max via un patch temporaire genere sous `.codex_tmp/` avec chemin absolu local. Les smokes Max `ping` et `request_state` produisent les fichiers contractuels attendus.
 
 Limite :
 
@@ -247,7 +249,7 @@ Cette verification ne prouve pas une strategie portable d'emballage Max, ni l'au
 Statut :
 
 ```text
-patch Node for Max v2 separe, chargement node.script local corrige
+patch Node for Max v2 separe, source sans chemin absolu local committe
 ```
 
 Fait :
@@ -256,7 +258,7 @@ Le patch contient des commentaires de perimetre et un `node.script` avec `@autos
 
 Fait :
 
-Le script est reference par chemin absolu local, car le diagnostic a montre que le chemin relatif `../node/...` n'etait pas resolu dans le smoke test Max local.
+Le patch source reference `../node/vesperare-harness-bridge-v2.js`. Il ne contient plus le chemin absolu local committe.
 
 Fait :
 
@@ -264,7 +266,11 @@ Il reste separe du patch 01 et ne contient aucun objet audio, DSP, mapping, UI d
 
 Fait :
 
-Le smoke test Max v2 `ping` produit :
+Le smoke test officiel ne depend pas du lancement direct de ce patch source. Il genere un patch temporaire sous `.codex_tmp/` avec le chemin absolu local du bridge.
+
+Fait :
+
+Avec ce patch temporaire, le smoke test Max v2 `ping` produit :
 
 ```text
 projects/max/_harness/responses/ack.json
@@ -273,7 +279,7 @@ projects/max/_harness/logs/harness-session.jsonl
 
 Fait :
 
-Le smoke test Max v2 `request_state` produit :
+Avec ce patch temporaire, le smoke test Max v2 `request_state` produit :
 
 ```text
 projects/max/_harness/responses/ack.json
@@ -457,7 +463,7 @@ Les artefacts Max-side crees pour le harness sont `vesperare-harness-file-observ
 
 Recommandation :
 
-La prochaine action Max eventuelle est de decider si le harness garde le chemin absolu local comme outil de smoke test, ou si une action separee instruit une resolution portable Max project/search-path. Elle ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max generale, audio, DSP ou musicale.
+La prochaine action Max eventuelle est de decider si une action separee instruit une resolution portable Max project/search-path. Le smoke local courant est stabilise par script et patch temporaire ; il ne devra pas definir de routage final, choisir d'objet Max final, modifier le patch 01 ou se presenter comme validation Max generale, audio, DSP ou musicale.
 
 ## 4. Conditions d'arret
 

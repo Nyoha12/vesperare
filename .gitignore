@@ -1,0 +1,13 @@
+.codex_tmp/
+
+# Max/Codex harness runtime outputs
+projects/max/_harness/commands/
+projects/max/_harness/responses/
+projects/max/_harness/logs/
+projects/max/_harness/state/
+
+# Accidental runtime files written next to harness patches
+projects/max/_harness/patches/ack.json
+projects/max/_harness/patches/error.json
+projects/max/_harness/patches/harness-session.jsonl
+projects/max/_harness/patches/state.current.json
