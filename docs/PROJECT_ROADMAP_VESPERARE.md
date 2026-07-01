@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres reprise documentaire, trace 28, flux local harness v0, integration Max-side fichiers v0, contrat state/session local v0, artefact Max observable v0 comment-only, patch Max harness fichiers v1 separe, diagnostic v1 et voie Node for Max v2 bornee au harness.
+Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script.
 Date : 2026-07-01.
-Perimetre : document de pilotage ; artefacts Max harness separes documentes ; diagnostic smoke test Max v1 ; bridge Node for Max v2 dans `_harness` ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; prochaine phase noyau didgeridoo/PC ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -25,6 +25,8 @@ Fait :
 - `docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/reprise/37_DIAGNOSTIC_LOGS_MAX_PATCH_HARNESS_FICHIERS_V1.md`
+- `docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md`
+- `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
 - `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md`
@@ -37,6 +39,7 @@ Fait :
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
+- `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
@@ -99,35 +102,79 @@ Inference :
 
 Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir une observabilite machine-lisible.
 
-## 3. Prochaine phase : harness commandes/logs
+## 3. Harness Max/Codex stabilise
 
 Decision :
 
-Le prochain axe est la conception puis la preparation d'un harness commandes/logs Max <-> Codex.
+Le harness Max/Codex n'est plus la prochaine phase principale. Il est stabilise comme outil d'observabilite technique borne.
 
-Objectif de phase :
+Fait :
+
+Le script suivant rend le smoke local reproductible :
 
 ```text
-preparer une couche minimale d'observabilite et de pilotage machine-lisible,
-afin que les prochains patchs observables puissent exposer commandes, etats,
-logs, fallback, SIG et modes absent/off/bypass/reduit.
+tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1
 ```
 
-Decision :
+Fait :
 
-Cette phase remplace la relance immediate du test Max local. Le test Max local et les tests humains sont reportes.
+Le smoke officiel genere un patch temporaire sous `.codex_tmp/`, lance Max via `VESPERARE_MAX_EXE`, puis valide les sorties fichier du bridge Node for Max v2.
+
+Fait :
+
+Les commandes stabilisees sont :
+
+```text
+ping
+request_state
+```
+
+Fait :
+
+`ping` produit `ack.json` et `harness-session.jsonl`. `request_state` produit aussi `state.current.json`. Les validateurs PowerShell `ack`, `log` et `state` passent sur ces sorties.
 
 Limite :
 
-Le harness n'est pas :
+Cette stabilisation prouve une observabilite locale bornee du harness. Elle ne valide pas :
 
-- une condition `P0/P1` ;
-- une condition `direct/safe` ;
-- une condition de protection ;
-- une condition de `MIN-DID-PC` ;
-- une validation audio ;
-- une validation musicale ;
-- une architecture finale.
+- audio ;
+- DSP ;
+- musicalite ;
+- patch 01 ;
+- architecture ;
+- routage final ;
+- objet Max final ;
+- mapping ;
+- UI ;
+- asset ou sample bank.
+
+Decision :
+
+Le harness reste un outil d'observabilite, pas le noyau musical didgeridoo/PC.
+
+Decision :
+
+Node for Max reste autorise seulement dans :
+
+```text
+projects/max/_harness/
+```
+
+Il reste interdit dans le noyau audio, `P0/P1`, `direct/safe`, protection, `MIN-DID-PC` et le patch 01.
+
+Dette separee :
+
+La portabilite Max project/search-path reste a instruire seulement si un besoin explicite apparait. Elle n'est pas bloquante pour la reprise de conception du noyau didgeridoo/PC.
+
+Decision :
+
+La prochaine phase principale est la conception concrete du noyau systeme didgeridoo/PC.
+
+Recommandation :
+
+La reprise documentaire peut produire des traces fines. La phase de construction doit privilegier des livrables utiles et regroupes.
+
+## 3A. Corpus harness conserve
 
 Fait :
 
@@ -137,123 +184,26 @@ Le flux local v0 cote fichiers existe dans :
 tools/vesperare-harness/
 ```
 
-Il contient schemas, exemples, validateurs PowerShell et un stub local fichier-only qui lit une commande JSON, produit ack ou error, produit un log JSONL, produit `state.current.json` pour `request_state`, puis permet une validation Codex CLI. Il n'integre pas Max, ne lance pas Max ou Ableton et ne modifie pas le patch 01.
+Fait :
 
-Decision :
-
-Le flux local v0 prouve seulement le contrat local commandes/logs :
-
-```text
-commande JSON -> stub local -> ack/error JSON -> log JSONL/state JSON -> validation Codex
-```
-
-Limite :
-
-Cette preuve n'est pas une integration Max, pas un test audio, pas une validation DSP, pas une validation musicale et pas une validation technique du patch 01.
-
-Decision :
-
-L'integration Max-side fichier v0 est specifiee dans :
+L'integration Max-side fichier v0, le patch harness fichiers v1, le bridge Node for Max v2 et les traces associees restent documentes dans :
 
 ```text
 docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md
-```
-
-Elle definit comment un futur patch Max observable pourra lire ou ecrire :
-
-```text
-command.pending.json
-ack.json
-error.json
-harness-session.jsonl
-state.current.json
-```
-
-Fait :
-
-Un premier artefact Max-side observable separe existe maintenant :
-
-```text
-projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat
-```
-
-Limite :
-
-Cet artefact est documentaire et provisoire. Il ne lit pas de fichier, n'ecrit pas de fichier, ne traite pas de commande, ne lance pas Max, ne lance pas Ableton, ne modifie pas le patch 01 et ne valide ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture.
-
-Decision :
-
-La prochaine action n'est plus la creation du patch v1 : elle a ete faite. La suite eventuelle doit rester une correction ou instrumentation bornee de l'observabilite fichier du v1.
-
-Fait :
-
-La pre-spec, la decision de passage et la trace de creation existent :
-
-```text
 docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
-docs/reprise/35_DECISION_PASSAGE_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md
-docs/reprise/36_TRACE_CREATION_PATCH_MAX_HARNESS_FICHIERS_V1.md
-```
-
-Fait :
-
-Le patch Max harness fichiers v1 separe existe :
-
-```text
+docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md
+docs/reprise/37_DIAGNOSTIC_LOGS_MAX_PATCH_HARNESS_FICHIERS_V1.md
+docs/reprise/38_TRACE_DIAGNOSTIC_NODE_SCRIPT_MAX_HARNESS_V2.md
+docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md
+projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat
 projects/max/_harness/patches/vesperare-harness-files-v1.maxpat
-```
-
-Fait :
-
-Le patch v1 est parseable comme JSON, contient la cle `patcher`, reste separe du patch 01 et utilise seulement les objets provisoires autorises par la pre-spec.
-
-Fait :
-
-Un smoke test Max borne a ete tente avec une commande `ping`, sans ouvrir le patch 01. Max n'a produit ni `ack.json`, ni `error.json`, ni `harness-session.jsonl`, ni `state.current.json`.
-
-Limite :
-
-Cette creation et ce lancement Max non concluant ne valident ni Max, ni l'audio, ni le DSP, ni la musique, ni une architecture, ni le patch 01.
-
-Decision :
-
-Le diagnostic v1 retient que Max est lancable et que le patch v1 s'ouvre assez pour produire des logs, mais que l'implementation `message` / `text` / `dict` du v1 est non fiable pour JSON brut, chemins relatifs et ecriture de fichiers. Le probleme observe est donc l'implementation v1, pas l'installation Max.
-
-Decision :
-
-Node for Max est autorise comme couche de harness `_harness` seulement. Il reste interdit dans le noyau audio, `P0/P1`, `direct/safe`, protection, `MIN-DID-PC` et le patch 01.
-
-Fait :
-
-Le bridge Node for Max v2 existe :
-
-```text
+projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat
 projects/max/_harness/node/vesperare-harness-bridge-v2.js
 ```
 
-Fait :
-
-Le patch Max v2 separe existe :
-
-```text
-projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat
-```
-
-Fait :
-
-Hors Max, le bridge Node v2 lit `command.pending.json`, accepte `ping` et `request_state`, produit `ack.json`, `harness-session.jsonl` et `state.current.json` pour `request_state`, puis passe les validateurs PowerShell existants.
-
-Fait :
-
-Un smoke test Max v2 a ouvert ou reference le patch v2, mais n'a produit ni `ack.json`, ni `error.json`, ni `harness-session.jsonl`, ni `state.current.json`.
-
 Limite :
 
-Le v2 prouve actuellement le contrat fichier du bridge Node standalone, pas encore l'execution effective par `node.script` dans Max.
-
-Decision :
-
-Le contrat local `request_state` / `state.current.json` est complete cote harness PowerShell. `state.current.json` reste un etat technique minimal conforme au schema local ; il n'est pas une preuve de chargement Max, pas une validation audio, pas une validation DSP, pas une validation musicale et pas une validation architecturale.
+Ce corpus suffit pour observer le harness et comprendre sa stabilisation. Il ne suffit pas pour valider le noyau didgeridoo/PC.
 
 ## 4. Place du patch 01
 
@@ -271,7 +221,7 @@ Il ne doit pas etre modifie dans la presente phase.
 
 Recommandation :
 
-Le prochain patch Max observable, s'il est autorise plus tard, devra etre pense apres la conception du harness. Il ne devra pas convertir le patch 01 en architecture finale.
+Toute modification future du patch 01 devra etre explicitement bornee et ne devra pas convertir ce patch en architecture finale par glissement.
 
 ## 5. Gates Pro etendu
 
@@ -373,35 +323,34 @@ Livrables de diagnostic v1 et voie Node for Max v2 :
 
 Livrables futurs possibles, non produits maintenant :
 
-- lib Max observable future ;
-- correction ou instrumentation bornee du v1 pour obtenir au moins `ack.json` ou `error.json` sur `ping` ;
-- trace de chargement Max instrumentee seulement si le harness produit des sorties observables ;
-- smoke test GUI ponctuel par Codex Computer Use, seulement si le harness et les logs le justifient ;
-- test humain apres observabilite, jamais comme premiere preuve technique.
+- cadrage concret du noyau systeme didgeridoo/PC ;
+- regroupement des decisions utiles pour la construction, sans multiplier les traces fines ;
+- resolution portabilite Max project/search-path seulement si un besoin explicite apparait ;
+- smoke Max/Codex via script seulement si une action technique le justifie ;
+- test humain ou GUI seulement apres une question bornee, jamais comme premiere preuve musicale.
 
 ## 7. Prochaine action minimale
 
 Decision :
 
-Le premier artefact Max observable v0 est cree, separe du patch 01 et comment-only. Le patch Max harness fichiers v1 est cree, separe du patch 01 et file-only, mais son smoke test Max n'a pas produit de sorties harness. Le bridge Node for Max v2 est cree et valide hors Max par fichiers, mais le smoke test Max v2 n'a pas encore produit de sortie via `node.script`.
+Le harness Max/Codex est stabilise comme outil d'observabilite technique borne. La prochaine action n'est plus d'isoler `node.script`.
 
 Recommandation :
 
-Apres cette PR, la prochaine action minimale est d'isoler le chargement `node.script` du patch v2, seulement sur l'observabilite fichier.
+La prochaine action minimale est la conception concrete du noyau systeme didgeridoo/PC.
 
 Perimetre de cette action future :
 
-- obtenir au moins `ack.json` ou `error.json` depuis Max pour `ping` ;
-- verifier la resolution du chemin du script par `node.script` ;
-- tenter `request_state` seulement apres une reponse observable a `ping` ;
-- valider `ack.json`, `error.json`, `harness-session.jsonl` et `state.current.json` par les scripts PowerShell si ces fichiers sont produits ;
-- rester dans `projects/max/_harness/` ;
-- laisser le patch 01 inchange.
+- repartir de l'etat courant du repo, pas d'une ancienne prochaine action ;
+- distinguer noyau musical didgeridoo/PC et harness d'observabilite ;
+- produire des livrables utiles et regroupes ;
+- garder la portabilite Max project/search-path comme dette separee, non bloquante sauf besoin explicite ;
+- laisser le patch 01 inchange sauf demande future explicite et bornee.
 
 Limite :
 
-Cette suite ne devra pas lancer Ableton, ne devra pas faire de Node for Max une architecture finale et ne devra pas presenter l'observabilite comme validation Max, audio, DSP ou musicale.
+Cette suite ne devra pas lancer Ableton, ne devra pas faire de Node for Max une architecture finale et ne devra pas presenter l'observabilite comme validation audio, DSP ou musicale.
 
 Condition d'arret :
 
-Arreter si la suite demande de lancer Max hors smoke test strictement borne du patch v1, de lancer Ableton, de modifier le patch 01, de modifier `reprise/` hors document explicitement demande, de produire un mapping, une UI de performance, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.
+Arreter si la suite demande de lancer Max hors smoke Max/Codex strictement borne et explicitement justifie, de lancer Ableton, de modifier le patch 01, de modifier `reprise/` hors document explicitement demande, de produire un mapping, une UI de performance, un asset, une sample bank, un seuil numerique, un objet Max final, un routage final, un nouvel audit ou une validation musicale.

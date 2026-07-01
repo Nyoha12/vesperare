@@ -1,8 +1,8 @@
 # Contrat de workflow IA Vesperare
 
-Statut : contrat de roles et d'orchestration pour la phase harness Max <-> Codex.
+Statut : contrat de roles et d'orchestration pour la reprise post-harness Max <-> Codex.
 Date : 2026-07-01.
-Perimetre : methode de travail ; sans patch, sans prototype, sans lancement Max, sans validation musicale.
+Perimetre : methode de travail ; usage de Max seulement si le contexte est explicite et borne ; sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -19,8 +19,12 @@ Fait :
 - `docs/reprise/00_INDEX.md`
 - `docs/reprise/02_PROJECT_STATE.md`
 - `docs/reprise/05_NEXT_ACTIONS.md`
+- `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
+- `docs/START_HERE_VESPERARE.md`
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
+- `tools/vesperare-harness/README.md`
+- `projects/max/_harness/README.md`
 - `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
 - `reprise/BESOINS_STYLISTIQUES_v0_4.md`
 - `reprise/BESOINS_GENERATION_v0_4.md`
@@ -38,7 +42,19 @@ Le workflow doit rester source-of-truth d'abord. Avant de creer une sortie, l'ag
 
 Inference :
 
-La phase actuelle justifie de nouveaux documents parce qu'elle ouvre une nouvelle couche de pilotage : roadmap projet, contrat IA, manifeste Max et conception du harness commandes/logs.
+Les documents de pilotage servent maintenant a reprendre depuis l'etat post-harness sans transformer une ancienne regle de phase en interdiction generale.
+
+Decision :
+
+Une regle de workflow vaut dans le contexte qui l'a justifiee. Avant de l'appliquer comme interdiction generale, l'agent doit verifier les traces recentes et l'objectif de l'action.
+
+Decision :
+
+Les regles restent contraignantes, mais leur contexte d'application doit etre verifie avant de les etendre a une nouvelle phase.
+
+Decision :
+
+Des permissions techniques larges ne changent pas le perimetre projet. Meme avec acces complet, Codex doit respecter les interdictions du prompt et des fichiers de pilotage.
 
 ## 2. Role de GPT
 
@@ -70,14 +86,20 @@ Role :
 - lire logs, traces et fichiers JSONL futurs ;
 - produire des docs ou patches textuels controles ;
 - lancer des checks non audio comme `git diff --check` ;
+- lancer un smoke Max/Codex borne quand le contexte le justifie explicitement ;
 - preparer commits, branches, PR et merges lorsque c'est demande.
+
+Decision :
+
+Max peut etre lance quand le contexte le justifie explicitement, notamment via `Invoke-VesperareMaxHarnessSmoke.ps1`, pour observabilite technique bornee.
 
 Limites :
 
-- ne lance pas Max sauf demande et contexte explicite futurs ;
 - ne lance pas Ableton ;
 - ne valide pas l'audio ;
+- ne valide pas le DSP ;
 - ne valide pas la musicalite ;
+- ne transforme pas un smoke Max/Codex en validation audio, DSP ou musicale ;
 - ne remplace pas un chargement Max reel par une lecture JSON ;
 - ne doit pas modifier `reprise/` sans demande explicite.
 
@@ -188,7 +210,7 @@ Interdictions :
 - ne pas modifier `reprise/` sans demande explicite ;
 - ne pas creer de patch Max dans la phase actuelle ;
 - ne pas modifier le `.maxpat` existant ;
-- ne pas lancer Max ;
+- ne pas lancer Max sans contexte explicite, objectif borne et trace recente le justifiant ;
 - ne pas lancer Ableton ;
 - ne pas produire UI ;
 - ne pas produire mapping ;
@@ -200,6 +222,7 @@ Interdictions :
 - ne pas produire de nouvel audit ;
 - ne pas valider niveau 6 ;
 - ne pas transformer lecture JSON en chargement Max ;
+- ne pas transformer un smoke Max/Codex en validation audio, DSP ou musicale ;
 - ne pas transformer logs futurs en jugement musical.
 
 ## 10. Definition de conformite pour la phase actuelle
@@ -207,7 +230,7 @@ Interdictions :
 Conforme :
 
 - creer des documents de pilotage ;
-- concevoir le principe du harness commandes/logs ;
+- utiliser le smoke Max/Codex borne si une action technique le justifie explicitement ;
 - mettre a jour la prochaine action ;
 - verifier JSON sans Max ;
 - verifier diff et whitespace ;
@@ -215,6 +238,7 @@ Conforme :
 
 Non conforme :
 
+- lancer Max dans une PR documentaire sans besoin technique ;
 - continuer par lecture visuelle Max ;
 - demander un test humain precoce ;
 - etendre le patch minimal ;
