@@ -26,8 +26,16 @@ function Invoke-CheckedCommand {
         [string[]] $Arguments
     )
 
-    $output = & $Command @Arguments 2>&1
-    $exitCode = $LASTEXITCODE
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    try {
+        $output = & $Command @Arguments 2>&1
+        $exitCode = $LASTEXITCODE
+    }
+    finally {
+        $ErrorActionPreference = $previousErrorActionPreference
+    }
+
     $text = ($output | ForEach-Object { $_.ToString() }) -join [Environment]::NewLine
 
     if ($exitCode -ne 0) {
