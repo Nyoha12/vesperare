@@ -1,0 +1,8 @@
+{
+  "schema": "vesperare.max_harness.ack.v0",
+  "command_id": "cmd-ping-sample-001",
+  "run_id": "run-sample-001",
+  "status": "ack",
+  "accepted": true,
+  "message": "Ping command accepted by local file-only harness sample."
+}

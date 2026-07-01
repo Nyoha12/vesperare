@@ -1,8 +1,8 @@
 # Vesperare harness commandes/logs v0
 
-Statut : squelette v0 d'outillage fichiers pour le harness Max <-> Codex.
+Statut : flux local v0 d'outillage fichiers pour le harness Max <-> Codex.
 
-Perimetre : schemas, exemples et scripts PowerShell de creation/verification JSON/JSONL. Aucun lancement Max, aucun lancement Ableton, aucune modification de patch, aucune UI, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique.
+Perimetre : schemas, exemples, validateurs JSON/JSONL et stub local fichier-only. Aucun lancement Max, aucun lancement Ableton, aucune modification de patch, aucune UI, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique.
 
 ## Sources consultees
 
@@ -21,17 +21,20 @@ Fait :
 
 Fait :
 
-Ce dossier contient le squelette v0 du harness commandes/logs :
+Ce dossier contient le flux local v0 du harness commandes/logs :
 
 - schemas JSON pour commande, log, ack et error ;
 - exemple de commande `ping` ;
+- exemple d'ack `ping` ;
+- exemple d'error pour commande non acceptee par le stub local ;
 - exemple de session log JSONL ;
 - script PowerShell de creation d'une commande JSON ;
-- script PowerShell de verification d'un log JSONL.
+- scripts PowerShell de verification command / ack / error / log ;
+- stub PowerShell local qui lit une commande et produit ack ou error plus log JSONL.
 
 Inference :
 
-Ce squelette rend possible une verification machine-lisible minimale avant toute integration Max future. Il ne valide pas Max, le DSP, l'audio, la jouabilite, la musicalite, une architecture finale, un routage final ou un objet Max final.
+Ce flux rend possible une verification machine-lisible minimale avant toute integration Max future. Il ne valide pas Max, le DSP, l'audio, la jouabilite, la musicalite, une architecture finale, un routage final ou un objet Max final.
 
 ## Contrats v0
 
@@ -56,6 +59,24 @@ powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/New-
 
 Le script cree seulement un fichier JSON de commande. Il ne lit pas Max, ne lance pas Max, ne lance pas Ableton et ne modifie aucun `.maxpat`.
 
+### Verifier une commande JSON
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessCommand.ps1 -CommandPath tools/vesperare-harness/examples/command.ping.json
+```
+
+### Verifier un ack JSON
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessAck.ps1 -AckPath tools/vesperare-harness/examples/ack.ping.sample.json
+```
+
+### Verifier un error JSON
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessError.ps1 -ErrorPath tools/vesperare-harness/examples/error.unknown-command.sample.json
+```
+
 ### Verifier un log JSONL
 
 ```powershell
@@ -63,6 +84,25 @@ powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test
 ```
 
 Le script verifie que chaque ligne non vide est un evenement JSON conforme au contrat v0 local. Il ne valide pas l'audio, la musicalite, l'architecture ou le patch.
+
+### Executer le stub local fichier-only
+
+```powershell
+$out = Join-Path $env:TEMP "vesperare-harness-local-stub"
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1 -CommandPath tools/vesperare-harness/examples/command.ping.json -OutputDirectory $out -Force
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1 -LogPath (Join-Path $out "harness-session.jsonl")
+```
+
+Regles du stub local v0 :
+
+- lire une commande JSON conforme ;
+- accepter seulement `ping` et `request_state` ;
+- produire `ack.json` pour une commande acceptee ;
+- produire `error.json` pour une commande refusee ;
+- produire `harness-session.jsonl` avec au moins `boot`, `command_received`, `command_ack` ou `command_error`, `log_flush`, `shutdown` ;
+- ecrire les sorties dans le dossier donne par `-OutputDirectory` ;
+- ne jamais lancer Max ou Ableton ;
+- ne jamais modifier de `.maxpat`.
 
 ## Limites maintenues
 

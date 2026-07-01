@@ -1,0 +1,9 @@
+{
+  "schema": "vesperare.max_harness.error.v0",
+  "command_id": "cmd-load-patch-sample-unsupported-001",
+  "run_id": "run-sample-unsupported-001",
+  "status": "error",
+  "error_code": "unknown_command",
+  "recoverable": true,
+  "message": "Command type 'load_patch' is not accepted by local file-only harness stub v0."
+}

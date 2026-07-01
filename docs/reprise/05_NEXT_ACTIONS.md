@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC` et creation du squelette v0 de harness commandes/logs.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0 et flux local v0 de harness commandes/logs.
 Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; squelette v0 harness commandes/logs cree cote fichiers ; integration Max reportee`.
+Verdict courant : `reprise documentaire terminee avec reserves ; chargement Max non teste ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs testable sans Max ; integration Max reportee`.
 
 ## Sources consultees
 
@@ -21,6 +21,7 @@ Fait :
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
 - `tools/vesperare-harness/README.md`
+- `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 
 ## 1. Principe courant
 
@@ -104,12 +105,21 @@ Le patch 01 reste non valide par Max, non valide musicalement, non valide techni
 
 Decision :
 
-La prochaine action exacte realisee dans la presente phase est :
+La prochaine action exacte realisee dans la phase precedente etait :
 
 ```text
 creer le squelette v0 du harness commandes/logs Max <-> Codex cote fichiers,
 schemas, exemples et scripts PowerShell, sans lancer Max, sans modifier le
 patch 01 et sans creer de nouveau patch.
+```
+
+Decision :
+
+La prochaine action exacte realisee dans la presente phase est :
+
+```text
+transformer ce squelette en flux local v0 testable sans Max :
+commande JSON -> stub local -> ack/error JSON -> log JSONL -> validation Codex.
 ```
 
 Fait :
@@ -120,7 +130,7 @@ Le dossier suivant existe :
 tools/vesperare-harness/
 ```
 
-Il contient les contrats et exemples v0 suivants :
+Il contient les contrats, exemples, validateurs et stub v0 suivants :
 
 - `tools/vesperare-harness/README.md`
 - `tools/vesperare-harness/schemas/command.schema.json`
@@ -128,17 +138,23 @@ Il contient les contrats et exemples v0 suivants :
 - `tools/vesperare-harness/schemas/ack.schema.json`
 - `tools/vesperare-harness/schemas/error.schema.json`
 - `tools/vesperare-harness/examples/command.ping.json`
+- `tools/vesperare-harness/examples/ack.ping.sample.json`
+- `tools/vesperare-harness/examples/error.unknown-command.sample.json`
 - `tools/vesperare-harness/examples/log.session.sample.jsonl`
 - `tools/vesperare-harness/powershell/New-VesperareHarnessCommand.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessCommand.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessAck.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessError.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
+- `tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1`
 
 Inference :
 
-Ce squelette suffit a verifier des fichiers JSON/JSONL et a preparer une observabilite future. Il ne suffit pas a valider Max, le DSP, l'audio, la jouabilite, la musicalite, l'architecture, le routage final ou un objet Max final.
+Ce flux local suffit a verifier le contrat fichier commandes/logs en local : commande JSON, ack ou error JSON, log JSONL et validation Codex. Il ne suffit pas a valider Max, le DSP, l'audio, la jouabilite, la musicalite, l'architecture, le routage final ou un objet Max final.
 
 Recommandation :
 
-La prochaine action minimale est de relire ce squelette v0 et de decider, dans une phase future bornee, si un patch observable devra lire ou ecrire ces fichiers. Cette phase future ne devra pas convertir le patch 01 en architecture finale.
+La prochaine action minimale est de relire la trace 32 et de decider, dans une phase future bornee, si un patch observable devra lire ou ecrire ces fichiers. Cette phase future ne devra pas convertir le patch 01 en architecture finale.
 
 Decision :
 
@@ -243,6 +259,7 @@ Documents de pilotage crees pour la phase harness :
 - `docs/AI_WORKFLOW_CONTRACT.md`
 - `projects/max/MANIFEST_MAX_PATCHES.md`
 - `docs/specs/CONCEPTION_HARNESS_COMMANDES_LOGS_MAX_CODEX.md`
+- `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 
 Inference :
 

@@ -1,6 +1,6 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres reprise documentaire et trace 28.
+Statut : pilotage global de construction apres reprise documentaire, trace 28 et flux local harness v0.
 Date : 2026-07-01.
 Perimetre : document de pilotage ; sans patch Max nouveau, sans lancement Max, sans UI, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation musicale.
 
@@ -19,6 +19,7 @@ Fait :
 - `docs/reprise/00_INDEX.md`
 - `docs/reprise/02_PROJECT_STATE.md`
 - `docs/reprise/05_NEXT_ACTIONS.md`
+- `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `docs/reprise/28_TRACE_TEST_CHARGEMENT_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
 - `reprise/INDEX_ACTIF_VESPERARE_CONCEPTION.md`
@@ -113,13 +114,25 @@ Le harness n'est pas :
 
 Fait :
 
-Le squelette v0 cote fichiers existe dans :
+Le flux local v0 cote fichiers existe dans :
 
 ```text
 tools/vesperare-harness/
 ```
 
-Il contient schemas, exemples et scripts PowerShell limites a la creation et a la verification de fichiers JSON/JSONL. Il n'integre pas Max et ne modifie pas le patch 01.
+Il contient schemas, exemples, validateurs PowerShell et un stub local fichier-only qui lit une commande JSON, produit ack ou error, produit un log JSONL, puis permet une validation Codex CLI. Il n'integre pas Max, ne lance pas Max ou Ableton et ne modifie pas le patch 01.
+
+Decision :
+
+Le flux local v0 prouve seulement le contrat local commandes/logs :
+
+```text
+commande JSON -> stub local -> ack/error JSON -> log JSONL -> validation Codex
+```
+
+Limite :
+
+Cette preuve n'est pas une integration Max, pas un test audio, pas une validation DSP, pas une validation musicale et pas une validation technique du patch 01.
 
 ## 4. Place du patch 01
 
@@ -175,9 +188,16 @@ Livrables de la phase actuelle :
 - `tools/vesperare-harness/schemas/ack.schema.json`
 - `tools/vesperare-harness/schemas/error.schema.json`
 - `tools/vesperare-harness/examples/command.ping.json`
+- `tools/vesperare-harness/examples/ack.ping.sample.json`
+- `tools/vesperare-harness/examples/error.unknown-command.sample.json`
 - `tools/vesperare-harness/examples/log.session.sample.jsonl`
 - `tools/vesperare-harness/powershell/New-VesperareHarnessCommand.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessCommand.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessAck.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareHarnessError.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
+- `tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1`
+- `docs/reprise/32_TRACE_HARNESS_LOCAL_STUB_COMMANDES_LOGS_V0.md`
 
 Livrables futurs possibles, non produits maintenant :
 
@@ -191,7 +211,7 @@ Livrables futurs possibles, non produits maintenant :
 
 Recommandation :
 
-Relire le squelette v0 du harness commandes/logs Max <-> Codex, puis seulement ensuite decider si un patch observable futur doit etre cree pour produire des logs machine-lisibles.
+Relire la trace du flux local v0 du harness commandes/logs, puis seulement ensuite decider si un patch observable futur doit etre cree pour produire des logs machine-lisibles.
 
 Condition d'arret :
 
