@@ -1,6 +1,6 @@
 # START_HERE_VESPERARE
 
-Statut : point d'entree court pour reprendre Vesperare apres PR #40, cadrage post-harness et pre-spec du noyau P0/P1 observable.
+Statut : point d'entree court pour reprendre Vesperare apres PR #40, cadrage post-harness, pre-spec P0/P1 observable, contrat P0 direct/safe/sortie et decision de passage technique observable.
 Date : 2026-07-02.
 Perimetre : navigation, etat courant et prudence de reprise ; sans validation audio, DSP, musicale ou architecturale.
 
@@ -15,11 +15,13 @@ Ce fichier sert a reprendre le repo sans relire tout le corpus et sans appliquer
 3. `docs/PROJECT_ROADMAP_VESPERARE.md`
 4. `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
 5. `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`
-6. `docs/AI_WORKFLOW_CONTRACT.md`
-7. `projects/max/MANIFEST_MAX_PATCHES.md`
-8. `tools/vesperare-harness/README.md`
-9. `projects/max/_harness/README.md`
-10. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
+6. `docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
+7. `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
+8. `docs/AI_WORKFLOW_CONTRACT.md`
+9. `projects/max/MANIFEST_MAX_PATCHES.md`
+10. `tools/vesperare-harness/README.md`
+11. `projects/max/_harness/README.md`
+12. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 
 Pour une reprise musicale ou methodologique plus large, revenir ensuite a `README.md` et `docs/00_INDEX_METHODE_DECISIONS.md`.
 
@@ -43,12 +45,14 @@ Fait :
 - Le harness Max/Codex est un outil d'observabilite technique borne.
 - Le cadrage post-harness du noyau systeme didgeridoo/PC existe dans `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`.
 - La pre-spec courte du noyau P0/P1 observable existe dans `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`.
+- Le contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` existe dans `docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md`.
+- La decision documentaire de passage vers une action technique observable bornee existe dans `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`.
 - Le patch minimal `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` existe, mais reste non valide par Max, non valide musicalement et non architectural.
 - Le patch source v2 ne contient pas de chemin absolu local committe ; le smoke utilise un patch temporaire ignore sous `.codex_tmp/`.
 
 Inference :
 
-Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness, sans refaire le cadrage global du noyau systeme et sans refaire la pre-spec P0/P1 observable.
+Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness, sans refaire le cadrage global du noyau systeme, sans refaire la pre-spec P0/P1 observable, sans refaire le contrat P0 direct/safe/sortie et sans refaire la decision de passage technique observable.
 
 ## Ce qui est valide
 
@@ -58,6 +62,8 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 - La separation entre observabilite technique et noyau musical.
 - Le cadrage documentaire non implementatoire du noyau systeme didgeridoo/PC post-harness.
 - La pre-spec documentaire non implementatoire du noyau P0/P1 observable.
+- Le contrat documentaire non implementatoire `P0-DIRECT / P0-SAFE / P0-SORTIE`.
+- La decision documentaire autorisant une prochaine action technique observable strictement bornee.
 
 ## Ce qui n'est pas valide
 
@@ -75,15 +81,15 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 
 ## Prochaine action recommandee
 
-Preparer un contrat documentaire court pour le triplet :
+Preparer la specification technique observable minimale suivante :
 
 ```text
-P0-DIRECT / P0-SAFE / P0-SORTIE
+CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE
 ```
 
-Cette action doit rester non implementatoire : definitions bornees, modes `absent`, `off`, `bypass`, `reduit`, fallback, SIG, relation avec `P0-DID` et `P0-CONTROLE`, preuve possible future et preuve interdite.
+Cette action doit rester strictement bornee : etats observables minimaux pour `P0-DIRECT`, `P0-SAFE`, `P0-SORTIE`, modes `absent`, `off`, `bypass`, `reduit`, fallback et SIG representables, preuve machine possible, preuve interdite, separation noyau / optionnel / harness et aucune implementation Max.
 
-Elle ne doit pas creer de patch, choisir d'objets Max finaux, de routage final, de mapping, d'UI, d'asset, de seuil numerique ou d'architecture validee.
+Elle ne doit pas creer de patch, lancer Max hors justification explicite et strictement bornee, choisir d'objets Max finaux, de routage final, de mapping, d'UI, d'asset, de seuil numerique ou d'architecture validee. Elle ne valide pas l'audio, le DSP ou la musicalite.
 
 ## Smoke Max/Codex
 
