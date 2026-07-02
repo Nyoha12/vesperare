@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script`, stabilisation du smoke runtime Max/Codex par script post PR #40, et cadrage non implementatoire du noyau systeme didgeridoo/PC post-harness.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script`, stabilisation du smoke runtime Max/Codex par script post PR #40, cadrage non implementatoire du noyau systeme didgeridoo/PC post-harness, et pre-spec courte du noyau P0/P1 observable.
 Date : 2026-07-02.
-Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; PR #40 rend le smoke Max/Codex reproductible via script temporaire pour ping et request_state ; cadrage post-harness du noyau systeme didgeridoo/PC produit ; prochaine action : pre-spec courte du noyau P0/P1 observable, sans patch, sans objet Max final, sans routage final et sans validation musicale`.
+Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; PR #40 rend le smoke Max/Codex reproductible via script temporaire pour ping et request_state ; cadrage post-harness du noyau systeme didgeridoo/PC produit ; pre-spec P0/P1 observable produite ; prochaine action : contrat documentaire court P0-DIRECT / P0-SAFE / P0-SORTIE, sans patch, sans objet Max final, sans routage final et sans validation musicale`.
 
 ## Sources consultees
 
@@ -33,6 +33,7 @@ Fait :
 - `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md`
 - `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
+- `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`
 - `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
@@ -157,12 +158,20 @@ Cette action est maintenant cadre documentairement par :
 docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
 ```
 
-Decision :
+Fait :
 
-La prochaine action n'est plus d'isoler `node.script`, ni de prolonger le harness, ni de refaire le cadrage global du noyau. La prochaine action est :
+La pre-spec P0/P1 observable est maintenant produite par :
 
 ```text
-preparer une pre-spec courte du noyau P0/P1 observable.
+docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md
+```
+
+Decision :
+
+La prochaine action n'est plus d'isoler `node.script`, ni de prolonger le harness, ni de refaire le cadrage global du noyau, ni de refaire la pre-spec P0/P1. La prochaine action est :
+
+```text
+preparer un contrat documentaire court pour P0-DIRECT / P0-SAFE / P0-SORTIE.
 ```
 
 Limite :
@@ -396,10 +405,16 @@ La prochaine action issue de PR #40 a ete traitee par :
 docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
 ```
 
+La pre-spec P0/P1 observable a ete traitee par :
+
+```text
+docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md
+```
+
 La prochaine action minimale devient :
 
 ```text
-preparer une pre-spec courte du noyau P0/P1 observable ;
+preparer un contrat documentaire court pour P0-DIRECT / P0-SAFE / P0-SORTIE ;
 ne pas reintegrer de chemin absolu local dans un patch source ;
 garder la portabilite Max project/search-path comme dette separee,
 non bloquante sauf besoin explicite ;
@@ -531,9 +546,15 @@ Document de cadrage post-harness du noyau systeme didgeridoo/PC :
 
 - `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
 
+Fait :
+
+Document de pre-spec du noyau P0/P1 observable :
+
+- `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`
+
 Inference :
 
-Ce corpus suffit pour constater la stabilisation du harness, le cadrage du noyau systeme didgeridoo/PC et la prochaine action de pre-spec P0/P1 observable. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
+Ce corpus suffit pour constater la stabilisation du harness, le cadrage du noyau systeme didgeridoo/PC, la pre-spec P0/P1 observable et la prochaine action de contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE`. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
 
 ## 7. Interdictions maintenues
 
@@ -584,7 +605,7 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la suite produit un nouvel audit au lieu de reprendre la pre-spec P0/P1 observable du noyau didgeridoo/PC.
+Arreter si la suite produit un nouvel audit au lieu de reprendre le contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE`.
 
 Condition d'arret :
 
@@ -602,14 +623,14 @@ Condition d'arret :
 
 Arreter et requalifier si la matrice niveau 6 absente est retrouvee : elle devra etre relue contre ACT28 et contre la chaine documentaire avant toute suite, sans validation automatique.
 
-## 9. Prochaine action active post-cadrage
+## 9. Prochaine action active post-pre-spec
 
 Decision :
 
-Le cadrage post-harness du noyau systeme didgeridoo/PC existe et devient le point de depart actif :
+La pre-spec courte du noyau P0/P1 observable existe et devient le point de depart actif :
 
 ```text
-docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
+docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md
 ```
 
 Recommandation :
@@ -617,17 +638,18 @@ Recommandation :
 La prochaine action minimale est :
 
 ```text
-preparer une pre-spec courte du noyau P0/P1 observable.
+preparer un contrat documentaire court pour P0-DIRECT / P0-SAFE / P0-SORTIE.
 ```
 
 Sortie attendue :
 
-- responsabilites P0/P1 retenues ;
-- modes `absent`, `off`, `bypass`, `reduit` ;
+- definitions bornees des trois responsabilites ;
+- modes `absent`, `off`, `bypass`, `reduit` pour chacune ;
 - fallback et SIG par responsabilite ;
-- separation explicite noyau / optionnel / harness ;
-- conditions d'arret avant toute action de patch.
+- relation explicite avec `P0-DID` et `P0-CONTROLE` ;
+- preuve possible future et preuve interdite ;
+- condition d'arret avant tout patch.
 
 Limite :
 
-Cette pre-spec ne doit pas choisir d'objet Max final, de routage final, de mapping, d'UI, d'asset, de sample bank, de seuil numerique ou d'architecture validee. Elle ne doit pas lancer Max ou Ableton. Elle ne valide pas l'audio, le DSP, la musicalite, le patch 01 ou le noyau musical.
+Ce contrat ne doit pas choisir d'objet Max final, de routage final, de mapping, d'UI, d'asset, de sample bank, de seuil numerique ou d'architecture validee. Il ne doit pas lancer Max ou Ableton. Il ne valide pas l'audio, le DSP, la musicalite, le patch 01 ou le noyau musical.

@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script et cadrage post-harness du noyau systeme didgeridoo/PC.
+Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC et pre-spec du noyau P0/P1 observable.
 Date : 2026-07-02.
-Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; prochaine phase pre-spec P0/P1 observable ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; prochaine phase contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -31,6 +31,7 @@ Fait :
 - `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md`
 - `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
+- `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
@@ -65,7 +66,8 @@ Phases consolidees ou deja engagees :
 - reprise documentaire post ACT28 avec synchronisation niveau 5 / matrice lourde ;
 - sortie strictement bornee vers un premier artefact Max minimal `MIN-DID-PC` ;
 - stabilisation du harness Max/Codex comme outil d'observabilite technique borne ;
-- cadrage concret non implementatoire du noyau systeme didgeridoo/PC post-harness.
+- cadrage concret non implementatoire du noyau systeme didgeridoo/PC post-harness ;
+- pre-spec courte du noyau P0/P1 observable.
 
 Inference :
 
@@ -109,13 +111,21 @@ Le cadrage documentaire du noyau systeme didgeridoo/PC post-harness existe :
 docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
 ```
 
+Fait :
+
+La pre-spec courte du noyau P0/P1 observable existe :
+
+```text
+docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md
+```
+
 Limite :
 
-Ce cadrage nomme des responsabilites, invariants, contrats, modes, fallbacks, SIG et conditions d'arret. Il ne valide pas le patch 01, ne choisit pas d'objets Max finaux, ne produit pas de routage final et ne valide ni audio, ni DSP, ni musicalite, ni architecture.
+Ces documents nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG et conditions d'arret. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
 
 Inference :
 
-Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir precise les responsabilites observables P0/P1 du noyau.
+Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir contractualise un premier triplet observable direct/safe/sortie.
 
 ## 3. Harness Max/Codex stabilise
 
@@ -185,9 +195,13 @@ Decision :
 
 La conception concrete du noyau systeme didgeridoo/PC est maintenant cadree documentairement par `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`.
 
+Decision :
+
+La pre-spec courte du noyau P0/P1 observable est maintenant produite dans `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`.
+
 Recommandation :
 
-La prochaine phase principale doit transformer ce cadrage en pre-spec courte des responsabilites P0/P1 observables, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
+La prochaine phase principale doit formaliser un contrat documentaire court pour `P0-DIRECT / P0-SAFE / P0-SORTIE`, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
 
 ## 3A. Corpus harness conserve
 
@@ -343,9 +357,16 @@ Livrable du cadrage post-harness du noyau systeme didgeridoo/PC :
 - mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
 - mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
 
+Livrable de la pre-spec du noyau P0/P1 observable :
+
+- `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`
+- mise a jour ciblee de `docs/START_HERE_VESPERARE.md`
+- mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
+- mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
+
 Livrables futurs possibles, non produits maintenant :
 
-- pre-spec courte du noyau P0/P1 observable ;
+- contrat documentaire court `P0-DIRECT / P0-SAFE / P0-SORTIE` ;
 - regroupement des decisions utiles pour la construction, sans multiplier les traces fines ;
 - resolution portabilite Max project/search-path seulement si un besoin explicite apparait ;
 - smoke Max/Codex via script seulement si une action technique le justifie ;
@@ -365,21 +386,30 @@ Le cadrage concret non implementatoire du noyau systeme didgeridoo/PC existe dan
 docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
 ```
 
+Decision :
+
+La pre-spec courte du noyau P0/P1 observable existe dans :
+
+```text
+docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md
+```
+
 Recommandation :
 
 La prochaine action minimale est maintenant :
 
 ```text
-preparer une pre-spec courte du noyau P0/P1 observable.
+preparer un contrat documentaire court pour P0-DIRECT / P0-SAFE / P0-SORTIE.
 ```
 
 Perimetre de cette action future :
 
-- repartir du cadrage post-harness, pas d'une ancienne prochaine action ;
-- distinguer noyau musical didgeridoo/PC, optionnel et harness d'observabilite ;
-- decrire les responsabilites P0/P1 retenues ;
-- expliciter les modes `absent`, `off`, `bypass`, `reduit` ;
+- repartir de la pre-spec P0/P1 observable, pas d'une ancienne prochaine action ;
+- definir strictement `P0-DIRECT`, `P0-SAFE` et `P0-SORTIE` ;
+- expliciter les modes `absent`, `off`, `bypass`, `reduit` pour chacune ;
 - decrire fallback et SIG par responsabilite ;
+- clarifier la relation avec `P0-DID` et `P0-CONTROLE` ;
+- nommer preuve possible future et preuve interdite ;
 - garder la portabilite Max project/search-path comme dette separee, non bloquante sauf besoin explicite ;
 - laisser le patch 01 inchange sauf demande future explicite et bornee.
 
