@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vesperare P0 direct safe sortie observable v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "mode",
+    "updated_at",
+    "source",
+    "responsibilities",
+    "proof"
+  ],
+  "properties": {
+    "schema": {
+      "const": "vesperare.p0_direct_safe_sortie.observable.v0"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "mode": {
+      "$ref": "#/$defs/mode"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "enum": [
+        "module"
+      ]
+    },
+    "responsibilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "p0_direct",
+        "p0_safe",
+        "p0_sortie"
+      ],
+      "properties": {
+        "p0_direct": {
+          "$ref": "#/$defs/p0_direct"
+        },
+        "p0_safe": {
+          "$ref": "#/$defs/p0_safe"
+        },
+        "p0_sortie": {
+          "$ref": "#/$defs/p0_sortie"
+        }
+      }
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "machine_checkable",
+        "forbidden"
+      ],
+      "properties": {
+        "machine_checkable": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "required_fields_present",
+              "modes_representable",
+              "fallback_representable",
+              "sig_representable",
+              "forbidden_dependencies_absent"
+            ]
+          }
+        },
+        "forbidden": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "audio_validation",
+              "dsp_validation",
+              "musical_validation",
+              "patch_01_validation",
+              "architecture_validation"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "enum": [
+        "ok",
+        "blocked",
+        "degraded",
+        "failed",
+        "unknown"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "absent",
+        "off",
+        "bypass",
+        "reduit",
+        "active"
+      ]
+    },
+    "fallback": {
+      "enum": [
+        "none",
+        "required",
+        "active",
+        "failed",
+        "unknown"
+      ]
+    },
+    "stop_condition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "base_responsibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "mode",
+        "state",
+        "fallback",
+        "sig",
+        "stop_condition"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "mode": {
+          "$ref": "#/$defs/mode"
+        },
+        "state": {
+          "type": "string"
+        },
+        "fallback": {
+          "$ref": "#/$defs/fallback"
+        },
+        "sig": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "stop_condition": {
+          "$ref": "#/$defs/stop_condition"
+        }
+      }
+    },
+    "p0_direct": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/base_responsibility"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "active",
+                "menace",
+                "preserved_by_reduction",
+                "absent",
+                "unknown"
+              ]
+            },
+            "sig": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "direct_active",
+                  "direct_menace",
+                  "direct_preserved_by_reduction",
+                  "direct_absent"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "p0_safe": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/base_responsibility"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "available",
+                "active",
+                "unavailable",
+                "reduced",
+                "unknown"
+              ]
+            },
+            "sig": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "safe_available",
+                  "safe_active",
+                  "safe_unavailable",
+                  "fallback_active"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "p0_sortie": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/base_responsibility"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "available",
+                "promoted",
+                "missing",
+                "reduced",
+                "unknown"
+              ]
+            },
+            "sig": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "sortie_available",
+                  "sortie_promoted",
+                  "sortie_missing",
+                  "sortie_reduced"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
