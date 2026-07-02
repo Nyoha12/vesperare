@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC et pre-spec du noyau P0/P1 observable.
+Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC, pre-spec du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie et decision de passage technique observable bornee.
 Date : 2026-07-02.
-Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; prochaine phase contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` produit ; decision de passage technique observable produite ; prochaine phase contrat technique observable minimal ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -32,6 +32,8 @@ Fait :
 - `docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md`
 - `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
 - `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`
+- `docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
+- `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
@@ -67,7 +69,9 @@ Phases consolidees ou deja engagees :
 - sortie strictement bornee vers un premier artefact Max minimal `MIN-DID-PC` ;
 - stabilisation du harness Max/Codex comme outil d'observabilite technique borne ;
 - cadrage concret non implementatoire du noyau systeme didgeridoo/PC post-harness ;
-- pre-spec courte du noyau P0/P1 observable.
+- pre-spec courte du noyau P0/P1 observable ;
+- contrat documentaire P0 direct/safe/sortie ;
+- decision documentaire de passage technique observable bornee.
 
 Inference :
 
@@ -119,13 +123,29 @@ La pre-spec courte du noyau P0/P1 observable existe :
 docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md
 ```
 
+Fait :
+
+Le contrat documentaire P0 direct/safe/sortie existe :
+
+```text
+docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md
+```
+
+Fait :
+
+La decision documentaire de passage technique observable bornee existe :
+
+```text
+docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md
+```
+
 Limite :
 
-Ces documents nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG et conditions d'arret. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
+Ces documents nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG, conditions d'arret et une autorisation documentaire de prochaine action technique observable bornee. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
 
 Inference :
 
-Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir contractualise un premier triplet observable direct/safe/sortie.
+Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir formule le contrat technique observable minimal du triplet direct/safe/sortie.
 
 ## 3. Harness Max/Codex stabilise
 
@@ -199,9 +219,17 @@ Decision :
 
 La pre-spec courte du noyau P0/P1 observable est maintenant produite dans `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`.
 
+Decision :
+
+Le contrat documentaire P0 direct/safe/sortie est maintenant produit dans `docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md`.
+
+Decision :
+
+La decision documentaire de passage technique observable bornee est maintenant produite dans `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`.
+
 Recommandation :
 
-La prochaine phase principale doit formaliser un contrat documentaire court pour `P0-DIRECT / P0-SAFE / P0-SORTIE`, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
+La prochaine phase principale doit formaliser le contrat technique observable minimal pour `P0-DIRECT / P0-SAFE / P0-SORTIE`, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
 
 ## 3A. Corpus harness conserve
 
@@ -364,9 +392,14 @@ Livrable de la pre-spec du noyau P0/P1 observable :
 - mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
 - mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
 
+Livrables post-pre-spec P0 :
+
+- `docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
+- `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
+
 Livrables futurs possibles, non produits maintenant :
 
-- contrat documentaire court `P0-DIRECT / P0-SAFE / P0-SORTIE` ;
+- contrat technique observable minimal `P0-DIRECT / P0-SAFE / P0-SORTIE` ;
 - regroupement des decisions utiles pour la construction, sans multiplier les traces fines ;
 - resolution portabilite Max project/search-path seulement si un besoin explicite apparait ;
 - smoke Max/Codex via script seulement si une action technique le justifie ;
@@ -394,22 +427,39 @@ La pre-spec courte du noyau P0/P1 observable existe dans :
 docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md
 ```
 
+Decision :
+
+Le contrat documentaire P0 direct/safe/sortie existe dans :
+
+```text
+docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md
+```
+
+Decision :
+
+La decision documentaire de passage technique observable bornee existe dans :
+
+```text
+docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md
+```
+
 Recommandation :
 
 La prochaine action minimale est maintenant :
 
 ```text
-preparer un contrat documentaire court pour P0-DIRECT / P0-SAFE / P0-SORTIE.
+preparer un contrat technique observable minimal pour P0-DIRECT / P0-SAFE / P0-SORTIE.
 ```
 
 Perimetre de cette action future :
 
-- repartir de la pre-spec P0/P1 observable, pas d'une ancienne prochaine action ;
-- definir strictement `P0-DIRECT`, `P0-SAFE` et `P0-SORTIE` ;
-- expliciter les modes `absent`, `off`, `bypass`, `reduit` pour chacune ;
-- decrire fallback et SIG par responsabilite ;
-- clarifier la relation avec `P0-DID` et `P0-CONTROLE` ;
-- nommer preuve possible future et preuve interdite ;
+- repartir de la decision de passage technique observable, pas d'une ancienne prochaine action ;
+- definir les etats observables minimaux pour `P0-DIRECT`, `P0-SAFE` et `P0-SORTIE` ;
+- rendre representables les modes `absent`, `off`, `bypass`, `reduit` ;
+- rendre representables fallback et SIG ;
+- nommer preuve machine possible et preuve interdite ;
+- maintenir la separation stricte noyau / optionnel / harness ;
+- ne produire aucune implementation Max ;
 - garder la portabilite Max project/search-path comme dette separee, non bloquante sauf besoin explicite ;
 - laisser le patch 01 inchange sauf demande future explicite et bornee.
 
