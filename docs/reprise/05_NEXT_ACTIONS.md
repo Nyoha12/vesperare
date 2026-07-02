@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script` et stabilisation du smoke runtime Max/Codex par script, post PR #40.
-Date : 2026-07-01.
-Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; PR #40 rend le smoke Max/Codex reproductible via script temporaire pour ping et request_state`.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script`, stabilisation du smoke runtime Max/Codex par script post PR #40, et cadrage non implementatoire du noyau systeme didgeridoo/PC post-harness.
+Date : 2026-07-02.
+Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; PR #40 rend le smoke Max/Codex reproductible via script temporaire pour ping et request_state ; cadrage post-harness du noyau systeme didgeridoo/PC produit ; prochaine action : pre-spec courte du noyau P0/P1 observable, sans patch, sans objet Max final, sans routage final et sans validation musicale`.
 
 ## Sources consultees
 
@@ -32,6 +32,7 @@ Fait :
 - `docs/reprise/37_DIAGNOSTIC_LOGS_MAX_PATCH_HARNESS_FICHIERS_V1.md`
 - `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md`
+- `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
 - `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
@@ -140,12 +141,28 @@ PR #40 rend le smoke Max/Codex reproductible par :
 tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1
 ```
 
-Decision :
+Fait :
 
-La prochaine action n'est plus d'isoler `node.script` ni de prolonger le harness. La prochaine action est :
+La prochaine action issue de PR #40 etait :
 
 ```text
 conception concrete du noyau systeme didgeridoo/PC.
+```
+
+Fait :
+
+Cette action est maintenant cadre documentairement par :
+
+```text
+docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
+```
+
+Decision :
+
+La prochaine action n'est plus d'isoler `node.script`, ni de prolonger le harness, ni de refaire le cadrage global du noyau. La prochaine action est :
+
+```text
+preparer une pre-spec courte du noyau P0/P1 observable.
 ```
 
 Limite :
@@ -356,7 +373,7 @@ tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1
 
 Fait :
 
-Le workflow scripté produit depuis Max :
+Le workflow scripte produit depuis Max :
 
 - `ping` -> `ack.json` + `harness-session.jsonl`, sans `error.json` ;
 - `request_state` -> `ack.json` + `harness-session.jsonl` + `state.current.json`, sans `error.json`.
@@ -373,10 +390,16 @@ Recommandation :
 
 Apres PR #40, conserver le smoke Max/Codex local via script temporaire comme outil disponible, sans en faire la prochaine phase principale.
 
-La prochaine action minimale est :
+La prochaine action issue de PR #40 a ete traitee par :
 
 ```text
-concevoir concretement le noyau systeme didgeridoo/PC ;
+docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
+```
+
+La prochaine action minimale devient :
+
+```text
+preparer une pre-spec courte du noyau P0/P1 observable ;
 ne pas reintegrer de chemin absolu local dans un patch source ;
 garder la portabilite Max project/search-path comme dette separee,
 non bloquante sauf besoin explicite ;
@@ -502,9 +525,15 @@ Documents de pilotage crees pour la phase harness :
 - `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 - `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 
+Fait :
+
+Document de cadrage post-harness du noyau systeme didgeridoo/PC :
+
+- `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
+
 Inference :
 
-Ce corpus suffit pour constater la stabilisation du harness et reprendre la conception du noyau didgeridoo/PC. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
+Ce corpus suffit pour constater la stabilisation du harness, le cadrage du noyau systeme didgeridoo/PC et la prochaine action de pre-spec P0/P1 observable. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente ou produire une architecture validee.
 
 ## 7. Interdictions maintenues
 
@@ -555,7 +584,7 @@ Arreter si la suite tente de creer ou valider un niveau 6, de valider une archit
 
 Condition d'arret :
 
-Arreter si la suite produit un nouvel audit au lieu de reprendre la conception concrete du noyau didgeridoo/PC.
+Arreter si la suite produit un nouvel audit au lieu de reprendre la pre-spec P0/P1 observable du noyau didgeridoo/PC.
 
 Condition d'arret :
 
@@ -572,3 +601,33 @@ Arreter si le patch minimal devient validation musicale, artistique, technique o
 Condition d'arret :
 
 Arreter et requalifier si la matrice niveau 6 absente est retrouvee : elle devra etre relue contre ACT28 et contre la chaine documentaire avant toute suite, sans validation automatique.
+
+## 9. Prochaine action active post-cadrage
+
+Decision :
+
+Le cadrage post-harness du noyau systeme didgeridoo/PC existe et devient le point de depart actif :
+
+```text
+docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
+```
+
+Recommandation :
+
+La prochaine action minimale est :
+
+```text
+preparer une pre-spec courte du noyau P0/P1 observable.
+```
+
+Sortie attendue :
+
+- responsabilites P0/P1 retenues ;
+- modes `absent`, `off`, `bypass`, `reduit` ;
+- fallback et SIG par responsabilite ;
+- separation explicite noyau / optionnel / harness ;
+- conditions d'arret avant toute action de patch.
+
+Limite :
+
+Cette pre-spec ne doit pas choisir d'objet Max final, de routage final, de mapping, d'UI, d'asset, de sample bank, de seuil numerique ou d'architecture validee. Elle ne doit pas lancer Max ou Ableton. Elle ne valide pas l'audio, le DSP, la musicalite, le patch 01 ou le noyau musical.

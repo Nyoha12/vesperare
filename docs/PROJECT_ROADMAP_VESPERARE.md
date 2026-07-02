@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script.
-Date : 2026-07-01.
-Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; prochaine phase noyau didgeridoo/PC ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script et cadrage post-harness du noyau systeme didgeridoo/PC.
+Date : 2026-07-02.
+Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; prochaine phase pre-spec P0/P1 observable ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -30,6 +30,7 @@ Fait :
 - `docs/specs/INTEGRATION_MAX_HARNESS_FICHIERS_V0.md`
 - `docs/specs/PRE_SPEC_IMPLEMENTATION_MAX_HARNESS_FICHIERS_V1.md`
 - `docs/specs/PRE_SPEC_NODE_FOR_MAX_HARNESS_FICHIERS_V2.md`
+- `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
@@ -62,11 +63,13 @@ Phases consolidees ou deja engagees :
 - runtime Max standalone comme axe actif du corpus `reprise/` ;
 - audits candidats et contraintes avant traduction Max concrete ;
 - reprise documentaire post ACT28 avec synchronisation niveau 5 / matrice lourde ;
-- sortie strictement bornee vers un premier artefact Max minimal `MIN-DID-PC`.
+- sortie strictement bornee vers un premier artefact Max minimal `MIN-DID-PC` ;
+- stabilisation du harness Max/Codex comme outil d'observabilite technique borne ;
+- cadrage concret non implementatoire du noyau systeme didgeridoo/PC post-harness.
 
 Inference :
 
-La phase actuelle n'est plus une pure reprise documentaire, mais elle n'est pas encore une phase de test musical ou d'architecture Max validee.
+La phase actuelle n'est plus une pure reprise documentaire ni une stabilisation du harness. Elle n'est pas encore une phase de test musical ou d'architecture Max validee.
 
 ## 2. Etat actuel
 
@@ -98,9 +101,21 @@ Le patch 01 reste :
 - non probant pour un routage final ;
 - non probant pour un objet Max final.
 
+Fait :
+
+Le cadrage documentaire du noyau systeme didgeridoo/PC post-harness existe :
+
+```text
+docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
+```
+
+Limite :
+
+Ce cadrage nomme des responsabilites, invariants, contrats, modes, fallbacks, SIG et conditions d'arret. Il ne valide pas le patch 01, ne choisit pas d'objets Max finaux, ne produit pas de routage final et ne valide ni audio, ni DSP, ni musicalite, ni architecture.
+
 Inference :
 
-Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir une observabilite machine-lisible.
+Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir precise les responsabilites observables P0/P1 du noyau.
 
 ## 3. Harness Max/Codex stabilise
 
@@ -168,11 +183,11 @@ La portabilite Max project/search-path reste a instruire seulement si un besoin 
 
 Decision :
 
-La prochaine phase principale est la conception concrete du noyau systeme didgeridoo/PC.
+La conception concrete du noyau systeme didgeridoo/PC est maintenant cadree documentairement par `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`.
 
 Recommandation :
 
-La reprise documentaire peut produire des traces fines. La phase de construction doit privilegier des livrables utiles et regroupes.
+La prochaine phase principale doit transformer ce cadrage en pre-spec courte des responsabilites P0/P1 observables, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
 
 ## 3A. Corpus harness conserve
 
@@ -321,9 +336,16 @@ Livrables de diagnostic v1 et voie Node for Max v2 :
 - mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
 - mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
 
+Livrable du cadrage post-harness du noyau systeme didgeridoo/PC :
+
+- `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
+- mise a jour ciblee de `docs/START_HERE_VESPERARE.md`
+- mise a jour ciblee de `docs/PROJECT_ROADMAP_VESPERARE.md`
+- mise a jour ciblee de `docs/reprise/05_NEXT_ACTIONS.md`
+
 Livrables futurs possibles, non produits maintenant :
 
-- cadrage concret du noyau systeme didgeridoo/PC ;
+- pre-spec courte du noyau P0/P1 observable ;
 - regroupement des decisions utiles pour la construction, sans multiplier les traces fines ;
 - resolution portabilite Max project/search-path seulement si un besoin explicite apparait ;
 - smoke Max/Codex via script seulement si une action technique le justifie ;
@@ -335,15 +357,29 @@ Decision :
 
 Le harness Max/Codex est stabilise comme outil d'observabilite technique borne. La prochaine action n'est plus d'isoler `node.script`.
 
+Decision :
+
+Le cadrage concret non implementatoire du noyau systeme didgeridoo/PC existe dans :
+
+```text
+docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md
+```
+
 Recommandation :
 
-La prochaine action minimale est la conception concrete du noyau systeme didgeridoo/PC.
+La prochaine action minimale est maintenant :
+
+```text
+preparer une pre-spec courte du noyau P0/P1 observable.
+```
 
 Perimetre de cette action future :
 
-- repartir de l'etat courant du repo, pas d'une ancienne prochaine action ;
-- distinguer noyau musical didgeridoo/PC et harness d'observabilite ;
-- produire des livrables utiles et regroupes ;
+- repartir du cadrage post-harness, pas d'une ancienne prochaine action ;
+- distinguer noyau musical didgeridoo/PC, optionnel et harness d'observabilite ;
+- decrire les responsabilites P0/P1 retenues ;
+- expliciter les modes `absent`, `off`, `bypass`, `reduit` ;
+- decrire fallback et SIG par responsabilite ;
 - garder la portabilite Max project/search-path comme dette separee, non bloquante sauf besoin explicite ;
 - laisser le patch 01 inchange sauf demande future explicite et bornee.
 
