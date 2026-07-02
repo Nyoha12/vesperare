@@ -1,6 +1,6 @@
 # START_HERE_VESPERARE
 
-Statut : point d'entree court pour reprendre Vesperare apres PR #40 et cadrage post-harness du noyau systeme didgeridoo/PC.
+Statut : point d'entree court pour reprendre Vesperare apres PR #40, cadrage post-harness et pre-spec du noyau P0/P1 observable.
 Date : 2026-07-02.
 Perimetre : navigation, etat courant et prudence de reprise ; sans validation audio, DSP, musicale ou architecturale.
 
@@ -14,11 +14,12 @@ Ce fichier sert a reprendre le repo sans relire tout le corpus et sans appliquer
 2. `docs/reprise/05_NEXT_ACTIONS.md`
 3. `docs/PROJECT_ROADMAP_VESPERARE.md`
 4. `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`
-5. `docs/AI_WORKFLOW_CONTRACT.md`
-6. `projects/max/MANIFEST_MAX_PATCHES.md`
-7. `tools/vesperare-harness/README.md`
-8. `projects/max/_harness/README.md`
-9. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
+5. `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`
+6. `docs/AI_WORKFLOW_CONTRACT.md`
+7. `projects/max/MANIFEST_MAX_PATCHES.md`
+8. `tools/vesperare-harness/README.md`
+9. `projects/max/_harness/README.md`
+10. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 
 Pour une reprise musicale ou methodologique plus large, revenir ensuite a `README.md` et `docs/00_INDEX_METHODE_DECISIONS.md`.
 
@@ -41,12 +42,13 @@ Fait :
 - PR #40 rend le smoke Max/Codex reproductible via `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`.
 - Le harness Max/Codex est un outil d'observabilite technique borne.
 - Le cadrage post-harness du noyau systeme didgeridoo/PC existe dans `docs/specs/CADRAGE_NOYAU_SYSTEME_DIDGERIDOO_PC_POST_HARNESS.md`.
+- La pre-spec courte du noyau P0/P1 observable existe dans `docs/specs/PRE_SPEC_NOYAU_P0_P1_OBSERVABLE.md`.
 - Le patch minimal `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` existe, mais reste non valide par Max, non valide musicalement et non architectural.
 - Le patch source v2 ne contient pas de chemin absolu local committe ; le smoke utilise un patch temporaire ignore sous `.codex_tmp/`.
 
 Inference :
 
-Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness et sans refaire le cadrage global du noyau systeme.
+Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness, sans refaire le cadrage global du noyau systeme et sans refaire la pre-spec P0/P1 observable.
 
 ## Ce qui est valide
 
@@ -55,6 +57,7 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 - La separation du harness dans `projects/max/_harness/`.
 - La separation entre observabilite technique et noyau musical.
 - Le cadrage documentaire non implementatoire du noyau systeme didgeridoo/PC post-harness.
+- La pre-spec documentaire non implementatoire du noyau P0/P1 observable.
 
 ## Ce qui n'est pas valide
 
@@ -72,11 +75,15 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 
 ## Prochaine action recommandee
 
-Preparer une pre-spec courte du noyau P0/P1 observable.
+Preparer un contrat documentaire court pour le triplet :
 
-Cette action doit partir du cadrage post-harness et rester non implementatoire : responsabilites P0/P1, modes `absent`, `off`, `bypass`, `reduit`, fallback, SIG, separation noyau / optionnel / harness et conditions d'arret avant toute action de patch.
+```text
+P0-DIRECT / P0-SAFE / P0-SORTIE
+```
 
-Elle ne doit pas choisir d'objets Max finaux, de routage final, de mapping, d'UI, d'asset, de seuil numerique ou d'architecture validee.
+Cette action doit rester non implementatoire : definitions bornees, modes `absent`, `off`, `bypass`, `reduit`, fallback, SIG, relation avec `P0-DID` et `P0-CONTROLE`, preuve possible future et preuve interdite.
+
+Elle ne doit pas creer de patch, choisir d'objets Max finaux, de routage final, de mapping, d'UI, d'asset, de seuil numerique ou d'architecture validee.
 
 ## Smoke Max/Codex
 
