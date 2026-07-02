@@ -98,7 +98,7 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 
 ## Prochaine action recommandee
 
-Synchroniser `docs/reprise/05_NEXT_ACTIONS.md` avec l'etat post-validateur par une methode sure, puis decider si un test negatif documentaire est utile :
+Decider si un test negatif documentaire du validateur est utile, ou synchroniser la suite de pilotage si necessaire :
 
 ```text
 tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1
