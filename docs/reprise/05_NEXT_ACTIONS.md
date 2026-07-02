@@ -1,8 +1,8 @@
 # Prochaines actions de reprise
 
-Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script`, stabilisation du smoke runtime Max/Codex par script post PR #40, cadrage non implementatoire du noyau systeme didgeridoo/PC post-harness, pre-spec courte du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee, contrat technique observable P0 direct/safe/sortie, decision de materialisation machine-lisible bornee et materialisation schema/exemple P0.
+Statut : plan de reprise documentaire apres tentative de test de chargement du premier patch Max minimal `MIN-DID-PC`, creation du squelette v0, flux local v0 de harness commandes/logs, conception de l'integration Max-side fichiers v0, finalisation du contrat state/session local v0, creation du premier artefact Max observable v0 comment-only, creation du patch Max harness fichiers v1 separe, diagnostic v1, voie Node for Max v2 bornee au harness, diagnostic local du chargement `node.script`, stabilisation du smoke runtime Max/Codex par script post PR #40, cadrage non implementatoire du noyau systeme didgeridoo/PC post-harness, pre-spec courte du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee, contrat technique observable P0 direct/safe/sortie, decision de materialisation machine-lisible bornee, materialisation schema/exemple P0, decision de validation machine documentaire hors Max et validateur documentaire P0 produit.
 Date : 2026-07-02.
-Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; PR #40 rend le smoke Max/Codex reproductible via script temporaire pour ping et request_state ; cadrage post-harness du noyau systeme didgeridoo/PC produit ; pre-spec P0/P1 observable produite ; contrat P0 direct/safe/sortie produit ; decision de passage technique observable bornee produite ; contrat technique observable P0 produit ; decision de materialisation machine-lisible bornee produite ; schema et exemple P0 direct/safe/sortie materialises ; prochaine action : decision separee de passage ou non vers validation machine documentaire hors Max, sans patch, sans lancement Max et sans validation musicale`.
+Verdict courant : `reprise documentaire terminee avec reserves ; patch minimal existant mais non valide ; flux local v0 harness commandes/logs/state testable sans Max ; integration Max-side fichier v0 specifiee ; contrat state/session local v0 valide par fichiers ; artefact Max observable v0 cree mais comment-only ; patch Max harness fichiers v1 cree, parseable et separe ; smoke test Max v1 tente mais sans production de ack/error/log/state ; diagnostic v1 : implementation message/text/dict non fiable ; bridge Node for Max v2 cree et valide hors Max ; diagnostic node.script v2 : chemin relatif ../node non resolu localement, chemin absolu local concluant ; patch source v2 sans chemin absolu local committe ; PR #40 rend le smoke Max/Codex reproductible via script temporaire pour ping et request_state ; cadrage post-harness du noyau systeme didgeridoo/PC produit ; pre-spec P0/P1 observable produite ; contrat P0 direct/safe/sortie produit ; decision de passage technique observable bornee produite ; contrat technique observable P0 produit ; decision de materialisation machine-lisible bornee produite ; schema et exemple P0 direct/safe/sortie materialises ; decision de validation machine documentaire hors Max produite ; validateur documentaire P0 hors Max produit ; prochaine action : decider si un test negatif documentaire du validateur est utile, ou synchroniser la suite de pilotage si necessaire, sans patch, sans lancement Max et sans validation musicale`.
 
 ## Sources consultees
 
@@ -38,8 +38,10 @@ Fait :
 - `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
+- `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`
 - `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
 - `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
+- `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`
 - `tools/vesperare-harness/schemas/state.schema.json`
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
@@ -215,10 +217,10 @@ tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
 
 Decision :
 
-La prochaine action n'est plus d'isoler `node.script`, ni de prolonger le harness, ni de refaire le cadrage global du noyau, ni de refaire la pre-spec P0/P1, ni de refaire le contrat documentaire direct/safe/sortie, ni de refaire la decision de passage, ni de refaire le contrat technique observable P0, ni de refaire la decision de materialisation, ni de rematerialiser le schema/exemple. La prochaine action est :
+La prochaine action n'est plus d'isoler `node.script`, ni de prolonger le harness, ni de refaire le cadrage global du noyau, ni de refaire la pre-spec P0/P1, ni de refaire le contrat documentaire direct/safe/sortie, ni de refaire la decision de passage, ni de refaire le contrat technique observable P0, ni de refaire la decision de materialisation, ni de rematerialiser le schema/exemple, ni de decider le passage vers un validateur, ni de le recreer. Le validateur documentaire hors Max existe maintenant. La prochaine action est :
 
 ```text
-decider separement du passage ou non vers une validation machine documentaire hors Max du schema et de l'exemple.
+decider si un test negatif documentaire du validateur est utile, ou synchroniser la suite de pilotage si necessaire.
 ```
 
 Limite :
@@ -280,6 +282,7 @@ Il contient les contrats, exemples, validateurs et stub v0 suivants :
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessError.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessLog.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
+- `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`
 - `tools/vesperare-harness/powershell/Invoke-VesperareHarnessStub.ps1`
 - `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 
@@ -485,10 +488,17 @@ tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json
 tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
 ```
 
+La validation machine documentaire hors Max a ete traitee par :
+
+```text
+docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md
+tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1
+```
+
 La prochaine action minimale devient :
 
 ```text
-preparer une decision separee de passage ou non vers une validation machine documentaire hors Max ;
+decider si un test negatif documentaire du validateur est utile, ou synchroniser la suite de pilotage si necessaire ;
 ne pas reintegrer de chemin absolu local dans un patch source ;
 garder la portabilite Max project/search-path comme dette separee,
 non bloquante sauf besoin explicite ;
@@ -639,10 +649,11 @@ Artefacts machine-lisibles post-contrat P0 :
 
 - `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
 - `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
+- `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`
 
 Inference :
 
-Ce corpus suffit pour constater la stabilisation du harness, le cadrage du noyau systeme didgeridoo/PC, la pre-spec P0/P1 observable, le contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE`, la decision de passage technique observable bornee, le contrat technique observable minimal, la decision de materialisation machine-lisible bornee et la materialisation schema/exemple. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente, produire une architecture validee ou autoriser un validateur sans decision separee.
+Ce corpus suffit pour constater la stabilisation du harness, le cadrage du noyau systeme didgeridoo/PC, la pre-spec P0/P1 observable, le contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE`, la decision de passage technique observable bornee, le contrat technique observable minimal, la decision de materialisation machine-lisible bornee, la materialisation schema/exemple et l'existence du validateur documentaire hors Max. Il ne suffit pas pour valider un niveau 6, choisir des objets Max finaux, modifier l'audit niveau 6 source, reconstruire la matrice absente, produire une architecture validee ou transformer le validateur documentaire en preuve audio, DSP, musicale ou architecturale.
 
 ## 7. Interdictions maintenues
 
@@ -711,15 +722,16 @@ Condition d'arret :
 
 Arreter et requalifier si la matrice niveau 6 absente est retrouvee : elle devra etre relue contre ACT28 et contre la chaine documentaire avant toute suite, sans validation automatique.
 
-## 9. Prochaine action active post-materialisation machine-lisible
+## 9. Prochaine action active post-validateur documentaire P0
 
 Decision :
 
-Le schema et l'exemple machine-lisibles documentaires existent et deviennent le point de depart actif :
+Le schema, l'exemple machine-lisible et le validateur documentaire hors Max existent et deviennent le point de depart actif :
 
 ```text
 tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json
 tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
+tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1
 ```
 
 Recommandation :
@@ -727,21 +739,21 @@ Recommandation :
 La prochaine action minimale est :
 
 ```text
-preparer une decision separee de passage ou non vers une validation machine documentaire hors Max.
+decider si un test negatif documentaire du validateur est utile, ou synchroniser la suite de pilotage si necessaire.
 ```
 
 Sortie attendue :
 
-- verifier que le schema et l'exemple sont suffisants comme cible documentaire ;
-- choisir entre autoriser un validateur documentaire strictement borne, reporter ou refuser ;
-- nommer les fichiers autorises si un validateur est autorise plus tard ;
+- verifier que le validateur existant reste seulement documentaire et hors Max ;
+- choisir entre autoriser un test negatif documentaire strictement borne, reporter, refuser ou synchroniser d'autres fichiers de pilotage ;
+- nommer les fichiers autorises si un test negatif documentaire est autorise plus tard ;
 - nommer les preuves possibles et les preuves interdites ;
 - maintenir la separation noyau / optionnel / harness ;
 - ne produire aucun script dans cette action de decision ;
-- ne produire aucun validateur dans cette action de decision ;
+- ne pas reproduire le validateur deja existant dans cette action de decision ;
 - ne produire aucun patch ;
 - ne lancer Max sous aucune forme dans cette action.
 
 Limite :
 
-Cette decision future ne doit pas creer de script ou validateur dans la meme action, creer de patch, choisir d'objet Max final, de routage final, de mapping, d'UI, d'asset, de sample bank, de seuil numerique ou d'architecture validee. Elle ne doit pas lancer Max. Elle ne valide pas l'audio, le DSP, la musicalite, le patch 01 ou le noyau musical.
+Cette decision future ne doit pas recreer le validateur, creer de patch, choisir d'objet Max final, de routage final, de mapping, d'UI, d'asset, de sample bank, de seuil numerique ou d'architecture validee. Elle ne doit pas lancer Max. Elle ne valide pas l'audio, le DSP, la musicalite, le patch 01 ou le noyau musical.
