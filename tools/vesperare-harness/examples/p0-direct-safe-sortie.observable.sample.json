@@ -1,0 +1,55 @@
+{
+  "schema": "vesperare.p0_direct_safe_sortie.observable.v0",
+  "status": "ok",
+  "mode": "active",
+  "updated_at": "2026-07-02T00:00:00Z",
+  "source": "module",
+  "responsibilities": {
+    "p0_direct": {
+      "status": "ok",
+      "mode": "active",
+      "state": "active",
+      "fallback": "none",
+      "sig": [
+        "direct_active"
+      ],
+      "stop_condition": null
+    },
+    "p0_safe": {
+      "status": "ok",
+      "mode": "active",
+      "state": "available",
+      "fallback": "none",
+      "sig": [
+        "safe_available"
+      ],
+      "stop_condition": null
+    },
+    "p0_sortie": {
+      "status": "ok",
+      "mode": "active",
+      "state": "available",
+      "fallback": "none",
+      "sig": [
+        "sortie_available"
+      ],
+      "stop_condition": null
+    }
+  },
+  "proof": {
+    "machine_checkable": [
+      "required_fields_present",
+      "modes_representable",
+      "fallback_representable",
+      "sig_representable",
+      "forbidden_dependencies_absent"
+    ],
+    "forbidden": [
+      "audio_validation",
+      "dsp_validation",
+      "musical_validation",
+      "patch_01_validation",
+      "architecture_validation"
+    ]
+  }
+}
