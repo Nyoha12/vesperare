@@ -36,6 +36,7 @@ Ce dossier contient le flux local v0 du harness commandes/logs/state :
 - schema et exemple documentaires pour le contrat observable `P0-DIRECT / P0-SAFE / P0-SORTIE` ;
 - script PowerShell de creation d'une commande JSON ;
 - scripts PowerShell de verification command / ack / error / log / state ;
+- script PowerShell de verification documentaire P0 direct/safe/sortie ;
 - stub PowerShell local qui lit une commande et produit ack ou error, log JSONL et state technique pour `request_state` ;
 - smoke PowerShell Max local qui genere un `.maxpat` temporaire sous `.codex_tmp/`, lance Max via `VESPERARE_MAX_EXE`, puis valide `ack/log/state`.
 
@@ -54,6 +55,7 @@ Fait :
 - `schemas/state.schema.json` decrit `state.current.json`, etat technique minimal.
 - `schemas/p0-direct-safe-sortie.observable.schema.json` decrit la forme machine-lisible documentaire du contrat observable `P0-DIRECT / P0-SAFE / P0-SORTIE`.
 - `examples/p0-direct-safe-sortie.observable.sample.json` fournit un exemple conforme non validant pour ce contrat.
+- `powershell/Test-VesperareP0DirectSafeSortieObservable.ps1` verifie cette forme documentaire hors Max.
 
 Decision :
 
@@ -62,6 +64,10 @@ Les schemas restent fermes au niveau racine avec `additionalProperties: false`. 
 Decision :
 
 Le schema et l'exemple `P0-DIRECT / P0-SAFE / P0-SORTIE` sont des artefacts documentaires d'observabilite. Ils ne creent pas de script, ne creent pas de validateur, ne lancent pas Max, ne modifient pas de patch et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
+
+Decision :
+
+Le validateur `P0-DIRECT / P0-SAFE / P0-SORTIE` verifie seulement la forme documentaire machine-lisible : champs requis, proprietes interdites, enums, modes, fallback, SIG et preuves interdites. Il ne lance pas Max, ne modifie pas de patch et ne valide ni audio, ni DSP, ni musicalite, ni architecture.
 
 ## Scripts
 
@@ -106,6 +112,14 @@ powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test
 ```
 
 Le script verifie seulement que `state.current.json` est un etat technique minimal conforme au contrat v0. Il ne valide pas Max, l'audio, le DSP, la musicalite, l'architecture ou le patch.
+
+### Verifier le contrat documentaire P0 direct/safe/sortie
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1 -ObservablePath tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
+```
+
+Le script verifie seulement la forme documentaire machine-lisible du contrat `P0-DIRECT / P0-SAFE / P0-SORTIE`. Il ne lance pas Max, ne modifie aucun `.maxpat` et ne valide pas l'audio, le DSP, la musicalite, l'architecture ou le patch.
 
 ### Executer le stub local fichier-only
 

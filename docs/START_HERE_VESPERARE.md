@@ -1,6 +1,6 @@
 # START_HERE_VESPERARE
 
-Statut : point d'entree court pour reprendre Vesperare apres PR #40, cadrage post-harness, pre-spec P0/P1 observable, contrat P0 direct/safe/sortie, decision de passage technique observable, contrat technique observable P0, decision de materialisation machine-lisible bornee, materialisation schema/exemple P0 et decision de validation machine documentaire.
+Statut : point d'entree court pour reprendre Vesperare apres PR #40, cadrage post-harness, pre-spec P0/P1 observable, contrat P0 direct/safe/sortie, decision de passage technique observable, contrat technique observable P0, decision de materialisation machine-lisible bornee, materialisation schema/exemple P0, decision de validation machine documentaire et validateur documentaire P0.
 Date : 2026-07-02.
 Perimetre : navigation, etat courant et prudence de reprise ; sans validation audio, DSP, musicale ou architecturale.
 
@@ -22,11 +22,12 @@ Ce fichier sert a reprendre le repo sans relire tout le corpus et sans appliquer
 10. `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
 11. `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
 12. `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`
-13. `docs/AI_WORKFLOW_CONTRACT.md`
-14. `projects/max/MANIFEST_MAX_PATCHES.md`
-15. `tools/vesperare-harness/README.md`
-16. `projects/max/_harness/README.md`
-17. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
+13. `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`
+14. `docs/AI_WORKFLOW_CONTRACT.md`
+15. `projects/max/MANIFEST_MAX_PATCHES.md`
+16. `tools/vesperare-harness/README.md`
+17. `projects/max/_harness/README.md`
+18. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 
 Pour une reprise musicale ou methodologique plus large, revenir ensuite a `README.md` et `docs/00_INDEX_METHODE_DECISIONS.md`.
 
@@ -57,12 +58,13 @@ Fait :
 - Le schema machine-lisible documentaire existe dans `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`.
 - L'exemple JSON conforme existe dans `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`.
 - La decision documentaire de passage vers une validation machine documentaire hors Max existe dans `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`.
+- Le validateur documentaire hors Max existe dans `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`.
 - Le patch minimal `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` existe, mais reste non valide par Max, non valide musicalement et non architectural.
 - Le patch source v2 ne contient pas de chemin absolu local committe ; le smoke utilise un patch temporaire ignore sous `.codex_tmp/`.
 
 Inference :
 
-Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness, sans refaire le cadrage global du noyau systeme, sans refaire la pre-spec P0/P1 observable, sans refaire le contrat P0 direct/safe/sortie, sans refaire la decision de passage technique observable, sans refaire le contrat technique observable P0, sans refaire la decision de materialisation machine-lisible, sans rematerialiser le schema/exemple P0 et sans refaire la decision de validation machine documentaire.
+Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness, sans refaire le cadrage global du noyau systeme, sans refaire la pre-spec P0/P1 observable, sans refaire le contrat P0 direct/safe/sortie, sans refaire la decision de passage technique observable, sans refaire le contrat technique observable P0, sans refaire la decision de materialisation machine-lisible, sans rematerialiser le schema/exemple P0, sans refaire la decision de validation machine documentaire et sans reproduire le validateur documentaire P0.
 
 ## Ce qui est valide
 
@@ -78,6 +80,7 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 - La decision documentaire autorisant une materialisation machine-lisible limitee a un schema et un exemple.
 - L'existence du schema JSON documentaire et de l'exemple conforme pour `P0-DIRECT / P0-SAFE / P0-SORTIE`.
 - La decision documentaire autorisant un futur validateur documentaire hors Max, sans le produire dans la meme action.
+- L'existence du validateur documentaire hors Max pour `P0-DIRECT / P0-SAFE / P0-SORTIE`.
 
 ## Ce qui n'est pas valide
 
@@ -95,13 +98,13 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 
 ## Prochaine action recommandee
 
-Produire le validateur documentaire hors Max autorise pour le schema et l'exemple :
+Synchroniser `docs/reprise/05_NEXT_ACTIONS.md` avec l'etat post-validateur par une methode sure, puis decider si un test negatif documentaire est utile :
 
 ```text
 tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1
 ```
 
-Cette prochaine action doit verifier seulement la forme documentaire machine-lisible du contrat `P0-DIRECT / P0-SAFE / P0-SORTIE`.
+Le validateur existe maintenant ; la prochaine action ne doit pas le recreer.
 
 Elle ne doit pas creer de patch, lancer Max, choisir d'objets Max finaux, de routage final, de mapping, d'UI, d'asset, de seuil numerique ou d'architecture validee. Elle ne valide pas l'audio, le DSP, la musicalite, le patch 01 ou le noyau musical.
 
