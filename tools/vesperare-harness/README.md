@@ -1,8 +1,8 @@
 # Vesperare harness commandes/logs v0
 
-Statut : flux local v0 d'outillage fichiers pour le harness Max <-> Codex, avec smoke Max local borne par patch temporaire.
+Statut : flux local v0 d'outillage fichiers pour le harness Max <-> Codex, avec smoke Max local borne par patch temporaire et schema/exemple documentaire P0 direct/safe/sortie.
 
-Perimetre : schemas, exemples, validateurs JSON/JSONL, stub local fichier-only et script smoke Max local du bridge Node for Max v2. Aucun lancement Ableton, aucune modification du patch 01, aucune UI, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique.
+Perimetre : schemas, exemples, validateurs JSON/JSONL, stub local fichier-only, script smoke Max local du bridge Node for Max v2 et artefacts documentaires d'observabilite P0. Aucun lancement Ableton, aucune modification du patch 01, aucune UI, aucun mapping, aucun asset, aucune sample bank, aucun seuil numerique.
 
 ## Sources consultees
 
@@ -33,6 +33,7 @@ Ce dossier contient le flux local v0 du harness commandes/logs/state :
 - exemple d'error pour commande non acceptee par le stub local ;
 - exemple de `state.current.json` ;
 - exemple de session log JSONL ;
+- schema et exemple documentaires pour le contrat observable `P0-DIRECT / P0-SAFE / P0-SORTIE` ;
 - script PowerShell de creation d'une commande JSON ;
 - scripts PowerShell de verification command / ack / error / log / state ;
 - stub PowerShell local qui lit une commande et produit ack ou error, log JSONL et state technique pour `request_state` ;
@@ -51,10 +52,16 @@ Fait :
 - `schemas/ack.schema.json` decrit un accuse de reception.
 - `schemas/error.schema.json` decrit une erreur explicite.
 - `schemas/state.schema.json` decrit `state.current.json`, etat technique minimal.
+- `schemas/p0-direct-safe-sortie.observable.schema.json` decrit la forme machine-lisible documentaire du contrat observable `P0-DIRECT / P0-SAFE / P0-SORTIE`.
+- `examples/p0-direct-safe-sortie.observable.sample.json` fournit un exemple conforme non validant pour ce contrat.
 
 Decision :
 
 Les schemas restent fermes au niveau racine avec `additionalProperties: false`. Les champs `payload` et `data` restent des objets libres pour ne pas transformer le harness v0 en architecture musicale ou technique finale. Les champs `capabilities` et `errors` du state restent des tableaux simples de chaines.
+
+Decision :
+
+Le schema et l'exemple `P0-DIRECT / P0-SAFE / P0-SORTIE` sont des artefacts documentaires d'observabilite. Ils ne creent pas de script, ne creent pas de validateur, ne lancent pas Max, ne modifient pas de patch et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
 
 ## Scripts
 

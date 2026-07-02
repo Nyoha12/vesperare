@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC, pre-spec du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee et contrat technique observable P0.
+Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC, pre-spec du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee, contrat technique observable P0, decision de materialisation machine-lisible et materialisation schema/exemple P0.
 Date : 2026-07-02.
-Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` produit ; decision de passage technique observable produite ; contrat technique observable minimal produit ; prochaine phase decision de passage vers materialisation machine-lisible ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` produit ; decision de passage technique observable produite ; contrat technique observable minimal produit ; schema et exemple machine-lisibles produits ; prochaine phase decision separee de passage vers validation machine documentaire hors Max ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -35,14 +35,17 @@ Fait :
 - `docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
+- `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
 - `projects/max/_harness/node/vesperare-harness-bridge-v2.js`
 - `projects/max/_harness/patches/vesperare-harness-node-bridge-v2.maxpat`
 - `tools/vesperare-harness/schemas/state.schema.json`
+- `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
+- `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
 - `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
@@ -73,7 +76,9 @@ Phases consolidees ou deja engagees :
 - pre-spec courte du noyau P0/P1 observable ;
 - contrat documentaire P0 direct/safe/sortie ;
 - decision documentaire de passage technique observable bornee ;
-- contrat technique observable minimal P0 direct/safe/sortie.
+- contrat technique observable minimal P0 direct/safe/sortie ;
+- decision documentaire de materialisation machine-lisible bornee ;
+- materialisation schema/exemple P0 direct/safe/sortie.
 
 Inference :
 
@@ -149,13 +154,30 @@ Le contrat technique observable minimal P0 direct/safe/sortie existe :
 docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md
 ```
 
+Fait :
+
+La decision documentaire de materialisation machine-lisible existe :
+
+```text
+docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md
+```
+
+Fait :
+
+Le schema et l'exemple machine-lisibles documentaires existent :
+
+```text
+tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json
+tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
+```
+
 Limite :
 
-Ces documents nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG, conditions d'arret, une autorisation documentaire de prochaine action technique observable bornee et une forme observable pre-machine. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
+Ces documents et artefacts nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG, conditions d'arret, une autorisation documentaire de prochaine action technique observable bornee, une forme observable pre-machine et sa materialisation JSON minimale. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
 
 Inference :
 
-Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir decide si le contrat technique observable doit etre materialise en artefact machine-lisible.
+Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir decide si un validateur documentaire strictement borne est utile pour le schema et l'exemple.
 
 ## 3. Harness Max/Codex stabilise
 
@@ -241,9 +263,17 @@ Decision :
 
 Le contrat technique observable minimal est maintenant produit dans `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`.
 
+Decision :
+
+La decision de materialisation machine-lisible bornee est maintenant produite dans `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`.
+
+Decision :
+
+Le schema et l'exemple machine-lisibles documentaires sont maintenant produits dans `tools/vesperare-harness/`.
+
 Recommandation :
 
-La prochaine phase principale doit decider si ce contrat doit etre materialise en schema et exemple strictement bornes, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
+La prochaine phase principale doit decider separement s'il faut produire une validation machine documentaire hors Max du schema et de l'exemple, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
 
 ## 3A. Corpus harness conserve
 
@@ -411,10 +441,13 @@ Livrables post-pre-spec P0 :
 - `docs/specs/CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
+- `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
+- `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
+- `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
 
 Livrables futurs possibles, non produits maintenant :
 
-- decision de passage ou non vers materialisation machine-lisible du contrat technique observable ;
+- decision de passage ou non vers validation machine documentaire hors Max du schema et de l'exemple ;
 - regroupement des decisions utiles pour la construction, sans multiplier les traces fines ;
 - resolution portabilite Max project/search-path seulement si un besoin explicite apparait ;
 - smoke Max/Codex via script seulement si une action technique le justifie ;
@@ -466,19 +499,28 @@ Le contrat technique observable minimal existe dans :
 docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md
 ```
 
+Decision :
+
+La materialisation machine-lisible bornee existe dans :
+
+```text
+tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json
+tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
+```
+
 Recommandation :
 
 La prochaine action minimale est maintenant :
 
 ```text
-preparer une decision documentaire de passage ou non vers materialisation machine-lisible du contrat technique observable.
+preparer une decision documentaire de passage ou non vers validation machine documentaire hors Max du schema et de l'exemple.
 ```
 
 Perimetre de cette action future :
 
-- repartir du contrat technique observable, pas d'une ancienne prochaine action ;
-- choisir seulement entre autoriser, reporter ou refuser la materialisation ;
-- si autorisee plus tard, limiter la materialisation a un schema et un exemple strictement bornes ;
+- repartir du schema et de l'exemple materialises, pas d'une ancienne prochaine action ;
+- choisir seulement entre autoriser, reporter ou refuser une validation machine documentaire strictement bornee ;
+- ne pas produire le validateur dans la meme action de decision ;
 - maintenir la separation stricte noyau / optionnel / harness ;
 - ne produire aucun patch et aucune implementation Max ;
 - garder la portabilite Max project/search-path comme dette separee, non bloquante sauf besoin explicite ;

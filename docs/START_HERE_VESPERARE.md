@@ -1,6 +1,6 @@
 # START_HERE_VESPERARE
 
-Statut : point d'entree court pour reprendre Vesperare apres PR #40, cadrage post-harness, pre-spec P0/P1 observable, contrat P0 direct/safe/sortie, decision de passage technique observable, contrat technique observable P0 et decision de materialisation machine-lisible bornee.
+Statut : point d'entree court pour reprendre Vesperare apres PR #40, cadrage post-harness, pre-spec P0/P1 observable, contrat P0 direct/safe/sortie, decision de passage technique observable, contrat technique observable P0, decision de materialisation machine-lisible bornee et materialisation schema/exemple P0.
 Date : 2026-07-02.
 Perimetre : navigation, etat courant et prudence de reprise ; sans validation audio, DSP, musicale ou architecturale.
 
@@ -19,11 +19,13 @@ Ce fichier sert a reprendre le repo sans relire tout le corpus et sans appliquer
 7. `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 8. `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 9. `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
-10. `docs/AI_WORKFLOW_CONTRACT.md`
-11. `projects/max/MANIFEST_MAX_PATCHES.md`
-12. `tools/vesperare-harness/README.md`
-13. `projects/max/_harness/README.md`
-14. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
+10. `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
+11. `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
+12. `docs/AI_WORKFLOW_CONTRACT.md`
+13. `projects/max/MANIFEST_MAX_PATCHES.md`
+14. `tools/vesperare-harness/README.md`
+15. `projects/max/_harness/README.md`
+16. `docs/reprise/39_TRACE_STABILISATION_RUNTIME_HARNESS_MAX_CODEX.md`
 
 Pour une reprise musicale ou methodologique plus large, revenir ensuite a `README.md` et `docs/00_INDEX_METHODE_DECISIONS.md`.
 
@@ -51,12 +53,14 @@ Fait :
 - La decision documentaire de passage vers une action technique observable bornee existe dans `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`.
 - Le contrat technique observable minimal `P0-DIRECT / P0-SAFE / P0-SORTIE` existe dans `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`.
 - La decision documentaire de passage vers une materialisation machine-lisible bornee existe dans `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`.
+- Le schema machine-lisible documentaire existe dans `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`.
+- L'exemple JSON conforme existe dans `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`.
 - Le patch minimal `projects/max/min-did-pc-minimal/min-did-pc-minimal-01.maxpat` existe, mais reste non valide par Max, non valide musicalement et non architectural.
 - Le patch source v2 ne contient pas de chemin absolu local committe ; le smoke utilise un patch temporaire ignore sous `.codex_tmp/`.
 
 Inference :
 
-Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness, sans refaire le cadrage global du noyau systeme, sans refaire la pre-spec P0/P1 observable, sans refaire le contrat P0 direct/safe/sortie, sans refaire la decision de passage technique observable, sans refaire le contrat technique observable P0 et sans refaire la decision de materialisation machine-lisible.
+Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de stabilisation du harness, sans refaire le cadrage global du noyau systeme, sans refaire la pre-spec P0/P1 observable, sans refaire le contrat P0 direct/safe/sortie, sans refaire la decision de passage technique observable, sans refaire le contrat technique observable P0, sans refaire la decision de materialisation machine-lisible et sans rematerialiser le schema/exemple P0.
 
 ## Ce qui est valide
 
@@ -70,6 +74,7 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 - La decision documentaire autorisant une prochaine action technique observable strictement bornee.
 - Le contrat technique observable minimal, pre-machine et non implementatoire, pour `P0-DIRECT / P0-SAFE / P0-SORTIE`.
 - La decision documentaire autorisant une materialisation machine-lisible limitee a un schema et un exemple.
+- L'existence du schema JSON documentaire et de l'exemple conforme pour `P0-DIRECT / P0-SAFE / P0-SORTIE`.
 
 ## Ce qui n'est pas valide
 
@@ -87,16 +92,16 @@ Le repo peut etre repris dans une nouvelle conversation sans refaire la phase de
 
 ## Prochaine action recommandee
 
-Materialiser le contrat technique observable par deux artefacts strictement bornes :
+Preparer une decision separee de passage ou non vers une validation machine documentaire hors Max du schema et de l'exemple :
 
 ```text
 tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json
 tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
 ```
 
-Cette action peut inclure une mention courte dans `tools/vesperare-harness/README.md` et une mise a jour ciblee du pilotage.
+Cette prochaine decision doit choisir entre autoriser un validateur documentaire strictement borne, reporter, ou refuser si cela commence a devenir runtime, architecture ou validation musicale.
 
-Elle ne doit pas creer de script, de validateur, de patch, lancer Max, choisir d'objets Max finaux, de routage final, de mapping, d'UI, d'asset, de seuil numerique ou d'architecture validee. Elle ne valide pas l'audio, le DSP ou la musicalite.
+Elle ne doit pas creer de patch, lancer Max, choisir d'objets Max finaux, de routage final, de mapping, d'UI, d'asset, de seuil numerique ou d'architecture validee. Elle ne valide pas l'audio, le DSP ou la musicalite.
 
 ## Smoke Max/Codex
 
