@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC, pre-spec du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee, contrat technique observable P0, decision de materialisation machine-lisible, materialisation schema/exemple P0 et decision de validation machine documentaire.
+Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC, pre-spec du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee, contrat technique observable P0, decision de materialisation machine-lisible, materialisation schema/exemple P0, decision de validation machine documentaire et validateur documentaire P0 produit.
 Date : 2026-07-02.
-Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` produit ; decision de passage technique observable produite ; contrat technique observable minimal produit ; schema et exemple machine-lisibles produits ; decision de validation machine documentaire hors Max produite ; prochaine phase materialisation du validateur documentaire autorise ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` produit ; decision de passage technique observable produite ; contrat technique observable minimal produit ; schema et exemple machine-lisibles produits ; decision de validation machine documentaire hors Max produite ; validateur documentaire hors Max produit ; prochaine phase limitee a decider si un test negatif documentaire du validateur est utile, ou a synchroniser la suite de pilotage si necessaire ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -47,6 +47,7 @@ Fait :
 - `tools/vesperare-harness/examples/command.request-state.json`
 - `tools/vesperare-harness/examples/state.current.sample.json`
 - `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
+- `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`
 - `tools/vesperare-harness/powershell/Test-VesperareHarnessState.ps1`
 - `tools/vesperare-harness/powershell/Invoke-VesperareMaxHarnessSmoke.ps1`
 - `docs/reprise/27_TRACE_CREATION_PREMIER_PATCH_MAX_MINIMAL_MIN_DID_PC.md`
@@ -81,6 +82,7 @@ Phases consolidees ou deja engagees :
 - decision documentaire de materialisation machine-lisible bornee ;
 - materialisation schema/exemple P0 direct/safe/sortie ;
 - decision documentaire de validation machine documentaire hors Max.
+- validateur documentaire hors Max P0 direct/safe/sortie.
 
 Inference :
 
@@ -181,9 +183,17 @@ La decision documentaire de validation machine documentaire hors Max existe :
 docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md
 ```
 
+Fait :
+
+Le validateur documentaire hors Max existe :
+
+```text
+tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1
+```
+
 Limite :
 
-Ces documents et artefacts nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG, conditions d'arret, une autorisation documentaire de prochaine action technique observable bornee, une forme observable pre-machine, sa materialisation JSON minimale et une autorisation de validation documentaire hors Max. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
+Ces documents, artefacts et le validateur nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG, conditions d'arret, une autorisation documentaire de prochaine action technique observable bornee, une forme observable pre-machine, sa materialisation JSON minimale et une verification documentaire hors Max. Le validateur verifie seulement la forme documentaire machine-lisible du contrat `P0-DIRECT / P0-SAFE / P0-SORTIE`. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
 
 Inference :
 
@@ -285,9 +295,13 @@ Decision :
 
 La decision de validation machine documentaire hors Max est maintenant produite dans `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`.
 
+Decision :
+
+Le validateur documentaire hors Max est maintenant produit dans `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`.
+
 Recommandation :
 
-La prochaine phase principale doit produire le validateur documentaire hors Max autorise, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
+La prochaine phase principale doit decider si un test negatif documentaire du validateur est utile, ou synchroniser la suite de pilotage si necessaire, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
 
 ## 3A. Corpus harness conserve
 
@@ -459,10 +473,11 @@ Livrables post-pre-spec P0 :
 - `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`
 - `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
 - `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
+- `tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1`
 
 Livrables futurs possibles, non produits maintenant :
 
-- validateur documentaire hors Max du schema et de l'exemple ;
+- test negatif documentaire du validateur, seulement si une decision le juge utile ;
 - regroupement des decisions utiles pour la construction, sans multiplier les traces fines ;
 - resolution portabilite Max project/search-path seulement si un besoin explicite apparait ;
 - smoke Max/Codex via script seulement si une action technique le justifie ;
@@ -531,19 +546,27 @@ La decision de validation machine documentaire hors Max existe dans :
 docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md
 ```
 
+Decision :
+
+Le validateur documentaire hors Max existe dans :
+
+```text
+tools/vesperare-harness/powershell/Test-VesperareP0DirectSafeSortieObservable.ps1
+```
+
 Recommandation :
 
 La prochaine action minimale est maintenant :
 
 ```text
-produire le validateur documentaire hors Max autorise.
+decider si un test negatif documentaire du validateur est utile, ou synchroniser la suite de pilotage si necessaire.
 ```
 
 Perimetre de cette action future :
 
-- repartir de la decision de validation machine documentaire, pas d'une ancienne prochaine action ;
-- produire seulement le validateur documentaire autorise ;
-- verifier positivement l'exemple JSON conforme ;
+- repartir du validateur documentaire existant, pas d'une ancienne prochaine action ;
+- ne pas reproduire le validateur documentaire deja produit ;
+- verifier si une preuve negative documentaire ajoute une valeur reelle ;
 - maintenir la separation stricte noyau / optionnel / harness ;
 - ne produire aucun patch et aucune implementation Max ;
 - garder la portabilite Max project/search-path comme dette separee, non bloquante sauf besoin explicite ;
