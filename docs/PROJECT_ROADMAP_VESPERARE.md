@@ -1,8 +1,8 @@
 # Roadmap projet Vesperare
 
-Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC, pre-spec du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee, contrat technique observable P0, decision de materialisation machine-lisible et materialisation schema/exemple P0.
+Statut : pilotage global de construction apres stabilisation du smoke Max/Codex par script, cadrage post-harness du noyau systeme didgeridoo/PC, pre-spec du noyau P0/P1 observable, contrat documentaire P0 direct/safe/sortie, decision de passage technique observable bornee, contrat technique observable P0, decision de materialisation machine-lisible, materialisation schema/exemple P0 et decision de validation machine documentaire.
 Date : 2026-07-02.
-Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` produit ; decision de passage technique observable produite ; contrat technique observable minimal produit ; schema et exemple machine-lisibles produits ; prochaine phase decision separee de passage vers validation machine documentaire hors Max ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
+Perimetre : document de pilotage ; harness Max/Codex borne dans `_harness` ; noyau systeme didgeridoo/PC cadre documentairement ; pre-spec P0/P1 observable produite ; contrat documentaire `P0-DIRECT / P0-SAFE / P0-SORTIE` produit ; decision de passage technique observable produite ; contrat technique observable minimal produit ; schema et exemple machine-lisibles produits ; decision de validation machine documentaire hors Max produite ; prochaine phase materialisation du validateur documentaire autorise ; sans UI de performance, sans mapping, sans asset, sans sample bank, sans seuil numerique et sans validation audio, DSP ou musicale.
 
 ## Sources consultees
 
@@ -36,6 +36,7 @@ Fait :
 - `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
+- `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`
 - `projects/max/_harness/README.md`
 - `projects/max/_harness/patches/vesperare-harness-file-observer-v0.maxpat`
 - `projects/max/_harness/patches/vesperare-harness-files-v1.maxpat`
@@ -78,7 +79,8 @@ Phases consolidees ou deja engagees :
 - decision documentaire de passage technique observable bornee ;
 - contrat technique observable minimal P0 direct/safe/sortie ;
 - decision documentaire de materialisation machine-lisible bornee ;
-- materialisation schema/exemple P0 direct/safe/sortie.
+- materialisation schema/exemple P0 direct/safe/sortie ;
+- decision documentaire de validation machine documentaire hors Max.
 
 Inference :
 
@@ -171,13 +173,21 @@ tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json
 tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
 ```
 
+Fait :
+
+La decision documentaire de validation machine documentaire hors Max existe :
+
+```text
+docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md
+```
+
 Limite :
 
-Ces documents et artefacts nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG, conditions d'arret, une autorisation documentaire de prochaine action technique observable bornee, une forme observable pre-machine et sa materialisation JSON minimale. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
+Ces documents et artefacts nomment des responsabilites, invariants, contrats, modes, fallbacks, SIG, conditions d'arret, une autorisation documentaire de prochaine action technique observable bornee, une forme observable pre-machine, sa materialisation JSON minimale et une autorisation de validation documentaire hors Max. Ils ne valident pas le patch 01, ne choisissent pas d'objets Max finaux, ne produisent pas de routage final et ne valident ni audio, ni DSP, ni musicalite, ni architecture.
 
 Inference :
 
-Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir decide si un validateur documentaire strictement borne est utile pour le schema et l'exemple.
+Continuer par lecture visuelle de Max ou test humain precoce ajouterait une validation subjective ou fragile avant d'avoir produit la verification documentaire hors Max deja autorisee.
 
 ## 3. Harness Max/Codex stabilise
 
@@ -271,9 +281,13 @@ Decision :
 
 Le schema et l'exemple machine-lisibles documentaires sont maintenant produits dans `tools/vesperare-harness/`.
 
+Decision :
+
+La decision de validation machine documentaire hors Max est maintenant produite dans `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`.
+
 Recommandation :
 
-La prochaine phase principale doit decider separement s'il faut produire une validation machine documentaire hors Max du schema et de l'exemple, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
+La prochaine phase principale doit produire le validateur documentaire hors Max autorise, toujours sans patch, sans objet Max final, sans routage final et sans validation musicale.
 
 ## 3A. Corpus harness conserve
 
@@ -442,12 +456,13 @@ Livrables post-pre-spec P0 :
 - `docs/specs/DECISION_PASSAGE_ACTION_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/CONTRAT_TECHNIQUE_OBSERVABLE_P0_DIRECT_SAFE_SORTIE.md`
 - `docs/specs/DECISION_PASSAGE_MATERIALISATION_MACHINE_CONTRAT_P0_DIRECT_SAFE_SORTIE.md`
+- `docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md`
 - `tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json`
 - `tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json`
 
 Livrables futurs possibles, non produits maintenant :
 
-- decision de passage ou non vers validation machine documentaire hors Max du schema et de l'exemple ;
+- validateur documentaire hors Max du schema et de l'exemple ;
 - regroupement des decisions utiles pour la construction, sans multiplier les traces fines ;
 - resolution portabilite Max project/search-path seulement si un besoin explicite apparait ;
 - smoke Max/Codex via script seulement si une action technique le justifie ;
@@ -508,19 +523,27 @@ tools/vesperare-harness/schemas/p0-direct-safe-sortie.observable.schema.json
 tools/vesperare-harness/examples/p0-direct-safe-sortie.observable.sample.json
 ```
 
+Decision :
+
+La decision de validation machine documentaire hors Max existe dans :
+
+```text
+docs/specs/DECISION_PASSAGE_VALIDATION_MACHINE_DOCUMENTAIRE_P0_DIRECT_SAFE_SORTIE.md
+```
+
 Recommandation :
 
 La prochaine action minimale est maintenant :
 
 ```text
-preparer une decision documentaire de passage ou non vers validation machine documentaire hors Max du schema et de l'exemple.
+produire le validateur documentaire hors Max autorise.
 ```
 
 Perimetre de cette action future :
 
-- repartir du schema et de l'exemple materialises, pas d'une ancienne prochaine action ;
-- choisir seulement entre autoriser, reporter ou refuser une validation machine documentaire strictement bornee ;
-- ne pas produire le validateur dans la meme action de decision ;
+- repartir de la decision de validation machine documentaire, pas d'une ancienne prochaine action ;
+- produire seulement le validateur documentaire autorise ;
+- verifier positivement l'exemple JSON conforme ;
 - maintenir la separation stricte noyau / optionnel / harness ;
 - ne produire aucun patch et aucune implementation Max ;
 - garder la portabilite Max project/search-path comme dette separee, non bloquante sauf besoin explicite ;
